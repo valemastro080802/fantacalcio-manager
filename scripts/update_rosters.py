@@ -77,7 +77,8 @@ def fetch(url, tries=3):
 def normalize(text):
     text = unicodedata.normalize("NFKD", text or "")
     text = "".join(
-        char for char in text
+        char
+        for char in text
         if not unicodedata.combining(char)
     )
 
@@ -90,40 +91,14 @@ def plausible_player_name(name):
 
     name = re.sub(r"\s+", " ", name).strip()
 
-    if len(name) < 4 or len(name) > 80:
+    if len(name) < 4 or len(name) > 90:
         return False
 
     low = normalize(name)
 
-    banned_exact = {
+    # Elementi della pagina che non sono giocatori.
+    banned = (
         "nationality logo",
-        "atalanta",
-        "bologna",
-        "cagliari",
-        "como",
-        "fiorentina",
-        "frosinone",
-        "genoa",
-        "inter",
-        "juventus",
-        "lazio",
-        "lecce",
-        "milan",
-        "monza",
-        "napoli",
-        "parma",
-        "roma",
-        "sassuolo",
-        "torino",
-        "udinese",
-        "venezia",
-    }
-
-    if low in banned_exact:
-        return False
-
-    banned_words = (
-        "logo",
         "serie a",
         "coppa italia",
         "supercoppa",
@@ -134,20 +109,24 @@ def plausible_player_name(name):
         "website",
         "tickets",
         "shop",
+        "youtube",
+        "facebook",
+        "instagram",
+        "twitter",
+        "tiktok",
     )
 
-    if any(word in low for word in banned_words):
+    if any(word in low for word in banned):
         return False
 
-    # Sigle squadra/nazione tipo ATA, ITA, BRA ecc.
+    # Sigle tipo ATA, ITA, BRA ecc.
     if re.fullmatch(r"[A-Z]{2,4}", name):
         return False
 
-    # Numeri di maglia o altri valori numerici.
+    # Numero di maglia.
     if re.fullmatch(r"\d+", name):
         return False
 
-    # Un nome di calciatore deve contenere almeno una lettera.
     if not re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", name):
         return False
 
@@ -163,15 +142,26 @@ class SquadParser(HTMLParser):
         self.players = []
 
         self.current_role = None
-
         self.heading_level = None
         self.heading_text = []
+
+        self.roster_started = False
+        self.roster_finished = False
 
 
     def handle_starttag(self, tag, attrs):
 
         tag = tag.lower()
         attrs = dict(attrs)
+
+        # Una volta raggiunto il footer la rosa è terminata.
+        if tag == "footer":
+            self.current_role = None
+            self.roster_finished = True
+            return
+
+        if self.roster_finished:
+            return
 
         if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
             self.heading_level = tag
@@ -181,10 +171,15 @@ class SquadParser(HTMLParser):
         if tag != "img":
             return
 
+        # Prima di "Portiere" non leggiamo alcuna immagine.
+        if not self.roster_started:
+            return
+
         if not self.current_role:
             return
 
         alt = (attrs.get("alt") or "").strip()
+
         src = (
             attrs.get("src")
             or attrs.get("data-src")
@@ -192,13 +187,13 @@ class SquadParser(HTMLParser):
             or ""
         ).strip()
 
-        # Le foto dei giocatori ufficiali sono servite da
-        # images.legaseriea.it.
+        # Le foto dei giocatori sono sul dominio immagini
+        # ufficiale della Lega.
         if "images.legaseriea.it" not in src:
             return
 
-        # Le bandiere/nazionalità usano lo stesso dominio,
-        # ma hanno alt "Nationality Logo".
+        # Le bandiere nazionali usano lo stesso dominio:
+        # vanno quindi escluse espressamente.
         if normalize(alt) == "nationality logo":
             return
 
@@ -222,17 +217,31 @@ class SquadParser(HTMLParser):
 
         tag = tag.lower()
 
-        if self.heading_level and tag == self.heading_level:
+        if not self.heading_level:
+            return
 
-            heading = normalize(
-                " ".join(self.heading_text)
-            )
+        if tag != self.heading_level:
+            return
 
-            if heading in ROLE_MAP:
-                self.current_role = ROLE_MAP[heading]
+        heading = normalize(
+            " ".join(self.heading_text)
+        )
 
-            self.heading_level = None
-            self.heading_text = []
+        # I quattro titoli ufficiali aprono le sezioni
+        # della rosa.
+        if heading in ROLE_MAP:
+            self.current_role = ROLE_MAP[heading]
+            self.roster_started = True
+
+        # Se, dopo l'inizio della rosa, incontriamo un altro
+        # titolo non appartenente ai quattro ruoli,
+        # smettiamo di considerare immagini come giocatori.
+        elif self.roster_started:
+            self.current_role = None
+            self.roster_finished = True
+
+        self.heading_level = None
+        self.heading_text = []
 
 
 def dedupe(players):
@@ -252,9 +261,12 @@ def dedupe(players):
 
         seen.add(key)
 
+        # Identificatore utile al database.
+        # Se un giocatore cambia squadra, il sito ha comunque
+        # il confronto per nome per conservare i dati personali.
         player["officialId"] = (
-            normalize(player["name"])
-            .replace(" ", "-")
+            f"{normalize(player['team'])}:"
+            f"{normalize(player['name'])}"
         )
 
         output.append(player)
@@ -264,7 +276,10 @@ def dedupe(players):
 
 def scrape_team(team, slug):
 
-    url = f"https://www.legaseriea.it/team/{slug}/squad"
+    url = (
+        f"https://www.legaseriea.it/"
+        f"team/{slug}/squad"
+    )
 
     page = fetch(url)
 
@@ -291,36 +306,44 @@ def scrape_team(team, slug):
         f"A {roles['A']})"
     )
 
-    # CONTROLLI DI SICUREZZA PER SINGOLA SQUADRA
+    # -----------------------------
+    # CONTROLLI DI SICUREZZA
+    # -----------------------------
 
     if len(players) < 15:
         raise RuntimeError(
-            f"{team}: trovati soltanto {len(players)} giocatori"
+            f"{team}: soltanto "
+            f"{len(players)} giocatori"
         )
 
-    if len(players) > 45:
+    if len(players) > 40:
         raise RuntimeError(
-            f"{team}: trovati troppi giocatori ({len(players)})"
+            f"{team}: numero sospetto "
+            f"({len(players)} giocatori)"
         )
 
-    if roles["P"] < 1:
+    if not 1 <= roles["P"] <= 7:
         raise RuntimeError(
-            f"{team}: nessun portiere trovato"
+            f"{team}: portieri sospetti "
+            f"({roles['P']})"
         )
 
-    if roles["D"] < 3:
+    if not 3 <= roles["D"] <= 18:
         raise RuntimeError(
-            f"{team}: numero difensori sospetto"
+            f"{team}: difensori sospetti "
+            f"({roles['D']})"
         )
 
-    if roles["C"] < 3:
+    if not 3 <= roles["C"] <= 18:
         raise RuntimeError(
-            f"{team}: numero centrocampisti sospetto"
+            f"{team}: centrocampisti sospetti "
+            f"({roles['C']})"
         )
 
-    if roles["A"] < 1:
+    if not 1 <= roles["A"] <= 15:
         raise RuntimeError(
-            f"{team}: nessun attaccante trovato"
+            f"{team}: attaccanti sospetti "
+            f"({roles['A']})"
         )
 
     return players
@@ -346,26 +369,25 @@ def main():
         for player in all_players
     }
 
-
     print()
     print(
         f"Totale: {len(all_players)} giocatori "
         f"in {len(teams_found)} squadre"
     )
 
-
-    # CONTROLLO DI SICUREZZA GENERALE
-
+    # Se anche UNA SOLA squadra dà un risultato anomalo,
+    # il JSON NON viene aggiornato.
     if errors:
+
         print(
-            "\nERRORI:",
-            file=sys.stderr
+            "\nCONTROLLO DI SICUREZZA FALLITO:",
+            file=sys.stderr,
         )
 
         for error in errors:
             print(
                 f"- {error}",
-                file=sys.stderr
+                file=sys.stderr,
             )
 
         sys.exit(1)
@@ -373,32 +395,38 @@ def main():
 
     if len(teams_found) != 20:
         print(
-            f"ERRORE: trovate {len(teams_found)}/20 squadre",
-            file=sys.stderr
+            f"ERRORE: trovate "
+            f"{len(teams_found)}/20 squadre",
+            file=sys.stderr,
         )
         sys.exit(1)
 
 
+    # Range generale abbastanza ampio da consentire
+    # normali variazioni delle rose, ma impedire risultati
+    # evidentemente errati come i precedenti 745/845.
     if len(all_players) < 300:
         print(
-            f"ERRORE: soltanto {len(all_players)} giocatori",
-            file=sys.stderr
+            f"ERRORE: soltanto "
+            f"{len(all_players)} giocatori",
+            file=sys.stderr,
         )
         sys.exit(1)
 
 
     if len(all_players) > 700:
         print(
-            f"ERRORE: {len(all_players)} giocatori è un numero sospetto",
-            file=sys.stderr
+            f"ERRORE: {len(all_players)} giocatori "
+            f"è un numero sospetto",
+            file=sys.stderr,
         )
         sys.exit(1)
 
 
     payload = {
         "source": (
-            "Lega Serie A - pagine ufficiali "
-            "delle rose dei club"
+            "Lega Serie A - "
+            "pagine ufficiali delle rose dei club"
         ),
         "generated_at": datetime.now(
             timezone.utc
