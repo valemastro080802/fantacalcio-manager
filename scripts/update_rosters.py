@@ -350,7 +350,10 @@ def scrape_team(team, slug):
 
 def test_market_page():
     url = "https://www.legaseriea.it/serie-a"
-    page = fetch(url)
+    page = fetch(url)    
+    pos = normalize(page).find("pinamonti")
+    if pos != -1:
+        print(page[max(0, pos - 1000):pos + 2000])
 
     print()
     print("TEST CALCIOMERCATO LEGA SERIE A")
