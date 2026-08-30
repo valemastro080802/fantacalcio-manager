@@ -1,6 +1,6 @@
 {
   "source": "Lega Serie A - rose ufficiali dei club + aggiornamenti ufficiali Calciomercato",
-  "generated_at": "2026-08-30T22:10:45.236814+00:00",
+  "generated_at": "2026-08-30T22:14:40.931086+00:00",
   "teams": 20,
   "players_count": 605,
   "players": [
@@ -627,12 +627,6 @@
       "team": "Como",
       "role": "D",
       "officialId": "como:edoardo goldaniga"
-    },
-    {
-      "name": "Ignace Fabienne Van Der Brempt",
-      "team": "Como",
-      "role": "D",
-      "officialId": "como:ignace fabienne van der brempt"
     },
     {
       "name": "Ivan Smolčić",
@@ -2147,6 +2141,12 @@
       "officialId": "monza:dany mota"
     },
     {
+      "name": "El Bilal Toure",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:el bilal toure"
+    },
+    {
       "name": "Gustavo Miguel Pereira De Sousa Varela",
       "team": "Monza",
       "role": "A",
@@ -2499,12 +2499,6 @@
       "team": "Napoli",
       "role": "P",
       "officialId": "napoli:vanja milinkovic-savic"
-    },
-    {
-      "name": "El Bilal Toure",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:el bilal toure"
     },
     {
       "name": "Jose David Romero",
@@ -2973,6 +2967,12 @@
       "team": "Sassuolo",
       "role": "D",
       "officialId": "sassuolo:giorgio vezzosi"
+    },
+    {
+      "name": "Ignace Fabienne Van Der Brempt",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:ignace fabienne van der brempt"
     },
     {
       "name": "Jay Noah Idzes",
