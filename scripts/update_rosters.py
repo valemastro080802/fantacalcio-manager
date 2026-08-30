@@ -350,25 +350,34 @@ def scrape_team(team, slug):
 
 def test_market_page():
     url = "https://www.legaseriea.it/serie-a/news/calciomercato-gli-aggiornamenti-in-serie-a-enilive"
-    page = fetch(url)    
-    pos = normalize(page).find("calciomercato")
-    if pos != -1:
-        print(page[max(0, pos - 1000):pos + 2000])
+    page = fetch(url)
 
     print()
     print("TEST CALCIOMERCATO LEGA SERIE A")
     print("--------------------------------")
 
-    checks = [
-        "PINAMONTI",
-        "LAZIO",
-        "SASSUOLO",
-        "Calciomercato",
-    ]
+    matches = list(
+        re.finditer(
+            r"pinamonti",
+            page,
+            flags=re.IGNORECASE,
+        )
+    )
 
-    for text in checks:
-        found = normalize(text) in normalize(page)
-        print(f"{text}: {'TROVATO' if found else 'NON TROVATO'}")
+    print(f"Occorrenze PINAMONTI: {len(matches)}")
+
+    for index, match in enumerate(matches, start=1):
+        pos = match.start()
+
+        print()
+        print(f"--- PINAMONTI OCCORRENZA {index} ---")
+        print(
+            page[
+                max(0, pos - 3000):
+                min(len(page), pos + 5000)
+            ]
+        )
+        print(f"--- FINE OCCORRENZA {index} ---")
 def main():
     test_market_page()
     all_players = []
