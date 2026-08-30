@@ -5,932 +5,405 @@ import re
 import sys
 import time
 import unicodedata
-from pathlib import Path
-from urllib.request import Request, urlopen
 from datetime import datetime, timezone
 from html.parser import HTMLParser
+from pathlib import Path
+from urllib.request import Request, urlopen
+from urllib.parse import urljoin
 
-
-TEAMS = {
-    "Atalanta": "atalanta",
-    "Bologna": "bologna",
-    "Cagliari": "cagliari",
-    "Como": "como",
-    "Fiorentina": "fiorentina",
-    "Frosinone": "frosinone",
-    "Genoa": "genoa",
-    "Inter": "inter",
-    "Juventus": "juventus",
-    "Lazio": "lazio",
-    "Lecce": "lecce",
-    "Milan": "milan",
-    "Monza": "monza",
-    "Napoli": "napoli",
-    "Parma": "parma",
-    "Roma": "roma",
-    "Sassuolo": "sassuolo",
-    "Torino": "torino",
-    "Udinese": "udinese",
-    "Venezia": "venezia",
-}
-
-
-ROLE_MAP = {
-    "portiere": "P",
-    "portieri": "P",
-    "difensore": "D",
-    "difensori": "D",
-    "centrocampista": "C",
-    "centrocampisti": "C",
-    "attaccante": "A",
-    "attaccanti": "A",
-}
-
+SOURCE_URL = "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27"
+OUTPUT = Path("data/seriea_rosters.json")
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 Safari/537.36"
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/126.0 Safari/537.36"
     ),
     "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
     "Accept-Language": "it-IT,it;q=0.9,en;q=0.7",
+    "Cache-Control": "no-cache",
+}
+
+TEAM_BY_SLUG = {
+    "atalanta": "Atalanta",
+    "bologna": "Bologna",
+    "cagliari": "Cagliari",
+    "como": "Como",
+    "fiorentina": "Fiorentina",
+    "frosinone": "Frosinone",
+    "genoa": "Genoa",
+    "inter": "Inter",
+    "juventus": "Juventus",
+    "lazio": "Lazio",
+    "lecce": "Lecce",
+    "milan": "Milan",
+    "monza": "Monza",
+    "napoli": "Napoli",
+    "parma": "Parma",
+    "roma": "Roma",
+    "sassuolo": "Sassuolo",
+    "torino": "Torino",
+    "udinese": "Udinese",
+    "venezia": "Venezia",
+}
+
+ROLE_WORDS = {
+    "P": ("p", "por", "portiere", "portieri", "goalkeeper"),
+    "D": ("d", "dif", "difensore", "difensori", "defender"),
+    "C": ("c", "cen", "centrocampista", "centrocampisti", "midfielder"),
+    "A": ("a", "att", "attaccante", "attaccanti", "forward", "striker"),
 }
 
 
 def fetch(url, tries=3):
     last_error = None
-
     for attempt in range(tries):
         try:
             request = Request(url, headers=HEADERS)
-
             with urlopen(request, timeout=30) as response:
                 return response.read().decode("utf-8", "replace")
-
         except Exception as exc:
             last_error = exc
-            time.sleep(2 * (attempt + 1))
-
+            if attempt + 1 < tries:
+                time.sleep(2 * (attempt + 1))
     raise last_error
 
 
 def normalize(text):
     text = unicodedata.normalize("NFKD", text or "")
-    text = "".join(
-        char
-        for char in text
-        if not unicodedata.combining(char)
-    )
-
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
     return re.sub(r"\s+", " ", text).strip().casefold()
 
 
-def plausible_player_name(name):
-    if not name:
+def clean_text(text):
+    text = re.sub(r"\s+", " ", text or "").strip()
+    return text.replace("\xa0", " ").strip()
+
+
+def plausible_name(value):
+    value = clean_text(value)
+    if not value or len(value) < 2 or len(value) > 90:
         return False
-
-    name = re.sub(r"\s+", " ", name).strip()
-
-    if len(name) < 4 or len(name) > 90:
-        return False
-
-    low = normalize(name)
-
-    # Elementi della pagina che non sono giocatori.
+    low = normalize(value)
     banned = (
-        "nationality logo",
-        "serie a",
-        "coppa italia",
-        "supercoppa",
-        "primavera",
-        "enilive",
-        "sponsor",
-        "fantacalcio",
-        "website",
-        "tickets",
-        "shop",
-        "youtube",
-        "facebook",
-        "instagram",
-        "twitter",
-        "tiktok",
+        "calciatore", "quotazione", "fantacalcio", "campioncino",
+        "logo", "squadra", "classic", "mantra", "fvm", "cerca",
+    )
+    if any(item in low for item in banned):
+        return False
+    if re.fullmatch(r"[A-Z]{2,4}", value):
+        return False
+    return bool(re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", value))
+
+
+class QuotesParser(HTMLParser):
+    """Estrae le righe della tabella quotazioni senza dipendere da classi CSS specifiche."""
+
+    PROFILE_RE = re.compile(
+        r"/serie-a/squadre/([^/]+)/([^/]+)/([0-9]+)(?:[/?#]|$)",
+        re.IGNORECASE,
     )
 
-    if any(word in low for word in banned):
-        return False
-
-    # Sigle tipo ATA, ITA, BRA ecc.
-    if re.fullmatch(r"[A-Z]{2,4}", name):
-        return False
-
-    # Numero di maglia.
-    if re.fullmatch(r"\d+", name):
-        return False
-
-    if not re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", name):
-        return False
-
-    return True
-
-
-class SquadParser(HTMLParser):
-
-    def __init__(self, team):
-        super().__init__()
-
-        self.team = team
-        self.players = []
-
-        self.current_role = None
-        self.heading_level = None
-        self.heading_text = []
-
-        self.roster_started = False
-        self.roster_finished = False
-
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_row = False
+        self.row_depth = 0
+        self.row_text = []
+        self.row_attrs = []
+        self.row_links = []
+        self.active_link = None
+        self.active_link_text = []
+        self.rows = []
 
     def handle_starttag(self, tag, attrs):
-
         tag = tag.lower()
-        attrs = dict(attrs)
+        attrs_dict = dict(attrs)
 
-        # Una volta raggiunto il footer la rosa è terminata.
-        if tag == "footer":
-            self.current_role = None
-            self.roster_finished = True
+        if tag == "tr":
+            self.in_row = True
+            self.row_depth = 1
+            self.row_text = []
+            self.row_attrs = []
+            self.row_links = []
+            self.active_link = None
+            self.active_link_text = []
+            self.row_attrs.extend(attrs)
             return
 
-        if self.roster_finished:
+        if not self.in_row:
             return
 
-        if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
-            self.heading_level = tag
-            self.heading_text = []
-            return
+        if tag == "tr":
+            self.row_depth += 1
 
-        if tag != "img":
-            return
+        self.row_attrs.extend(attrs)
 
-        # Prima di "Portiere" non leggiamo alcuna immagine.
-        if not self.roster_started:
-            return
-
-        if not self.current_role:
-            return
-
-        alt = (attrs.get("alt") or "").strip()
-
-        src = (
-            attrs.get("src")
-            or attrs.get("data-src")
-            or attrs.get("data-lazy-src")
-            or ""
-        ).strip()
-
-        # Le foto dei giocatori sono sul dominio immagini
-        # ufficiale della Lega.
-        if "images.legaseriea.it" not in src:
-            return
-
-        # Le bandiere nazionali usano lo stesso dominio:
-        # vanno quindi escluse espressamente.
-        if normalize(alt) == "nationality logo":
-            return
-
-        if not plausible_player_name(alt):
-            return
-
-        self.players.append({
-            "name": alt,
-            "team": self.team,
-            "role": self.current_role,
-        })
-
+        if tag == "a":
+            href = attrs_dict.get("href") or ""
+            if self.PROFILE_RE.search(href):
+                self.active_link = {
+                    "href": href,
+                    "attrs": attrs,
+                    "text": [],
+                }
+                self.row_links.append(self.active_link)
 
     def handle_data(self, data):
-
-        if self.heading_level:
-            self.heading_text.append(data)
-
+        if not self.in_row:
+            return
+        value = clean_text(data)
+        if not value:
+            return
+        self.row_text.append(value)
+        if self.active_link is not None:
+            self.active_link["text"].append(value)
 
     def handle_endtag(self, tag):
-
         tag = tag.lower()
-
-        if not self.heading_level:
+        if not self.in_row:
             return
 
-        if tag != self.heading_level:
+        if tag == "a":
+            self.active_link = None
             return
 
-        heading = normalize(
-            " ".join(self.heading_text)
-        )
-
-        # I quattro titoli ufficiali aprono le sezioni
-        # della rosa.
-        if heading in ROLE_MAP:
-            self.current_role = ROLE_MAP[heading]
-            self.roster_started = True
-
-        # Se, dopo l'inizio della rosa, incontriamo un altro
-        # titolo non appartenente ai quattro ruoli,
-        # smettiamo di considerare immagini come giocatori.
-        elif self.roster_started:
-            self.current_role = None
-            self.roster_finished = True
-
-        self.heading_level = None
-        self.heading_text = []
+        if tag == "tr":
+            self.row_depth -= 1
+            if self.row_depth <= 0:
+                if self.row_links:
+                    self.rows.append({
+                        "text": self.row_text[:],
+                        "attrs": self.row_attrs[:],
+                        "links": self.row_links[:],
+                    })
+                self.in_row = False
 
 
-def dedupe(players):
+def role_from_row(row):
+    values = []
+    values.extend(row["text"])
+    for key, value in row["attrs"]:
+        if value:
+            values.append(value)
+        if key:
+            values.append(key)
 
-    output = []
-    seen = set()
+    # Prima: parole intere chiare come "Attaccante" o "role-a".
+    joined = " ".join(values)
+    normalized = normalize(joined)
+    for role, words in ROLE_WORDS.items():
+        for word in words[2:]:
+            if re.search(rf"\b{re.escape(word)}\b", normalized):
+                return role
 
-    for player in players:
-
-        key = (
-            normalize(player["team"]),
-            normalize(player["name"]),
-        )
-
-        if key in seen:
+    # Poi: token CSS/attributi comuni (role-a, ruolo_a, player-role-p...).
+    tokens = re.split(r"[^a-zA-Z]+", joined.casefold())
+    for index, token in enumerate(tokens):
+        if token not in {"p", "d", "c", "a", "por", "dif", "cen", "att"}:
             continue
+        nearby = " ".join(tokens[max(0, index - 2): index + 3])
+        if not any(marker in nearby for marker in ("role", "ruolo", "position", "posizione")):
+            continue
+        if token in {"p", "por"}:
+            return "P"
+        if token in {"d", "dif"}:
+            return "D"
+        if token in {"c", "cen"}:
+            return "C"
+        if token in {"a", "att"}:
+            return "A"
 
-        seen.add(key)
-
-        # Identificatore utile al database.
-        # Se un giocatore cambia squadra, il sito ha comunque
-        # il confronto per nome per conservare i dati personali.
-        player["officialId"] = (
-            f"{normalize(player['team'])}:"
-            f"{normalize(player['name'])}"
-        )
-
-        output.append(player)
-
-    return output
+    return None
 
 
-def scrape_team(team, slug):
+def best_name_from_row(row, link):
+    candidates = []
 
-    url = (
-        f"https://www.legaseriea.it/"
-        f"team/{slug}/squad"
-    )
+    # Il testo del link è il candidato base.
+    link_text = clean_text(" ".join(link.get("text") or []))
+    if plausible_name(link_text):
+        candidates.append(link_text)
 
-    page = fetch(url)
+    # Fantacalcio spesso mette il nome esteso in title/aria-label/alt.
+    for key, value in link.get("attrs") or []:
+        if key.lower() in {"title", "aria-label", "data-name", "data-player-name"}:
+            if plausible_name(value):
+                candidates.append(clean_text(value))
 
-    parser = SquadParser(team)
+    for key, value in row["attrs"]:
+        if key.lower() in {"title", "aria-label", "alt", "data-name", "data-player-name"}:
+            if plausible_name(value):
+                candidates.append(clean_text(value))
+
+    if not candidates:
+        return None
+
+    # Preferiamo il candidato più informativo, evitando etichette generiche.
+    unique = []
+    seen = set()
+    for candidate in candidates:
+        key = normalize(candidate)
+        if key not in seen:
+            seen.add(key)
+            unique.append(candidate)
+
+    return max(unique, key=lambda value: (len(value.split()), len(value)))
+
+
+def load_previous_players():
+    if not OUTPUT.exists():
+        return []
+    try:
+        payload = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        players = payload.get("players") or []
+        return players if isinstance(players, list) else []
+    except Exception:
+        return []
+
+
+def previous_role_index(players):
+    by_name = {}
+    for player in players:
+        name = normalize(player.get("name"))
+        role = player.get("role")
+        if name and role in {"P", "D", "C", "A"}:
+            by_name.setdefault(name, set()).add(role)
+    return by_name
+
+
+def resolve_previous_role(name, index):
+    roles = index.get(normalize(name), set())
+    if len(roles) == 1:
+        return next(iter(roles))
+    return None
+
+
+def scrape_fantacalcio():
+    page = fetch(SOURCE_URL)
+    parser = QuotesParser()
     parser.feed(page)
 
-    players = dedupe(parser.players)
+    previous = load_previous_players()
+    old_roles = previous_role_index(previous)
 
-    roles = {
-        "P": 0,
-        "D": 0,
-        "C": 0,
-        "A": 0,
-    }
+    players = []
+    unresolved_roles = []
+    seen_ids = set()
 
+    for row in parser.rows:
+        for link in row["links"]:
+            href = link.get("href") or ""
+            match = QuotesParser.PROFILE_RE.search(href)
+            if not match:
+                continue
+
+            team_slug, _player_slug, player_id = match.groups()
+            team = TEAM_BY_SLUG.get(normalize(team_slug))
+            if not team:
+                continue
+
+            if player_id in seen_ids:
+                continue
+
+            name = best_name_from_row(row, link)
+            if not name:
+                continue
+
+            role = role_from_row(row)
+            if role is None:
+                role = resolve_previous_role(name, old_roles)
+
+            if role is None:
+                unresolved_roles.append((name, team, player_id))
+                continue
+
+            seen_ids.add(player_id)
+            players.append({
+                "name": name,
+                "team": team,
+                "role": role,
+                # ID stabile Fantacalcio: non cambia quando il giocatore cambia club.
+                "officialId": f"fantacalcio:{player_id}",
+                "fantacalcioId": int(player_id),
+                "profileUrl": urljoin(SOURCE_URL, href),
+            })
+
+    if unresolved_roles:
+        print("ATTENZIONE: giocatori senza ruolo riconoscibile:", file=sys.stderr)
+        for name, team, player_id in unresolved_roles[:30]:
+            print(f"- {name} | {team} | id {player_id}", file=sys.stderr)
+        if len(unresolved_roles) > 30:
+            print(f"- ... altri {len(unresolved_roles) - 30}", file=sys.stderr)
+
+    return players, unresolved_roles
+
+
+def safety_checks(players, unresolved_roles):
+    teams = {player["team"] for player in players}
+
+    if len(players) < 300:
+        raise RuntimeError(f"soltanto {len(players)} giocatori riconosciuti")
+    if len(players) > 750:
+        raise RuntimeError(f"numero sospetto di giocatori: {len(players)}")
+    if len(teams) != 20:
+        raise RuntimeError(f"trovate {len(teams)}/20 squadre")
+
+    # Se il parser perde troppi ruoli, non sovrascriviamo il JSON sano.
+    if len(unresolved_roles) > 15:
+        raise RuntimeError(
+            f"troppi giocatori senza ruolo ({len(unresolved_roles)}): "
+            "probabile cambio HTML di Fantacalcio.it"
+        )
+
+    roles = {"P": 0, "D": 0, "C": 0, "A": 0}
     for player in players:
         roles[player["role"]] += 1
 
-    print(
-        f"{team}: {len(players)} giocatori "
-        f"(P {roles['P']} | "
-        f"D {roles['D']} | "
-        f"C {roles['C']} | "
-        f"A {roles['A']})"
-    )
-
-    # -----------------------------
-    # CONTROLLI DI SICUREZZA
-    # -----------------------------
-
-    if len(players) < 15:
-        raise RuntimeError(
-            f"{team}: soltanto "
-            f"{len(players)} giocatori"
-        )
-
-    if len(players) > 40:
-        raise RuntimeError(
-            f"{team}: numero sospetto "
-            f"({len(players)} giocatori)"
-        )
-
-    if not 1 <= roles["P"] <= 7:
-        raise RuntimeError(
-            f"{team}: portieri sospetti "
-            f"({roles['P']})"
-        )
-
-    if not 3 <= roles["D"] <= 18:
-        raise RuntimeError(
-            f"{team}: difensori sospetti "
-            f"({roles['D']})"
-        )
-
-    if not 3 <= roles["C"] <= 18:
-        raise RuntimeError(
-            f"{team}: centrocampisti sospetti "
-            f"({roles['C']})"
-        )
-
-    if not 1 <= roles["A"] <= 15:
-        raise RuntimeError(
-            f"{team}: attaccanti sospetti "
-            f"({roles['A']})"
-        )
-
-    return players
-
-def apply_market_corrections(players):
-    """
-    Usa gli aggiornamenti ufficiali di Calciomercato della Lega Serie A
-    per correggere le rose quando le pagine squadra non sono ancora
-    aggiornate.
-
-    Gestisce:
-    - giocatore già presente -> cambio squadra;
-    - giocatore assente dalle rose -> inserimento, ma soltanto quando
-      nome completo e ruolo possono essere ricavati con sufficiente
-      sicurezza dal comunicato ufficiale.
-    """
-
-    url = (
-        "https://www.legaseriea.it/serie-a/news/"
-        "calciomercato-gli-aggiornamenti-in-serie-a-enilive"
-    )
-
-    try:
-        page = fetch(url)
-    except Exception as exc:
-        print()
-        print(
-            "ATTENZIONE: impossibile leggere il Calciomercato "
-            f"({exc}). Uso soltanto le rose ufficiali."
-        )
-        return players
-
-    team_by_normalized = {
-        normalize(team): team
-        for team in TEAMS
-    }
-
-    heading_pattern = re.compile(
-        r"<p>\s*<strong>\s*"
-        r"([^<]+?)\s*[-–—]\s*([^<]+?)"
-        r"\s*</strong>\s*</p>",
-        flags=re.IGNORECASE,
-    )
-
-    headings = list(heading_pattern.finditer(page))
-
-    if not headings:
-        print()
-        print(
-            "ATTENZIONE: nessun aggiornamento Calciomercato "
-            "riconosciuto."
-        )
-        return players
-
-    corrections = []
-    additions = []
-    seen_operations = set()
-
-    def clean_html(text):
-        text = re.sub(r"<[^>]+>", " ", text)
-
-        replacements = {
-            "&nbsp;": " ",
-            "&amp;": "&",
-            "&#39;": "'",
-            "&quot;": '"',
-            "&rsquo;": "’",
-            "&agrave;": "à",
-            "&egrave;": "è",
-            "&igrave;": "ì",
-            "&ograve;": "ò",
-            "&ugrave;": "ù",
-        }
-
-        for old, new in replacements.items():
-            text = text.replace(old, new)
-
-        return re.sub(r"\s+", " ", text).strip()
-
-    def infer_role(text):
-        """
-        Restituisce P/D/C/A soltanto quando il testo contiene
-        indicazioni sufficientemente chiare sul ruolo.
-        """
-
-        value = normalize(text)
-
-        role_words = {
-            "P": [
-                "portiere",
-                "goalkeeper",
-            ],
-            "D": [
-                "difensore",
-                "terzino",
-                "centrale difensivo",
-                "difensivo",
-            ],
-            "C": [
-                "centrocampista",
-                "centrocampo",
-                "mediano",
-                "mezzala",
-                "regista",
-            ],
-            "A": [
-                "attaccante",
-                "centravanti",
-                "punta",
-                "esterno offensivo",
-                "reparto offensivo",
-            ],
-        }
-
-        matches = []
-
-        for role, words in role_words.items():
-            if any(word in value for word in words):
-                matches.append(role)
-
-        if len(set(matches)) == 1:
-            return matches[0]
-
-        return None
-
-    def extract_full_name(block, surname):
-        """
-        Prova a ricavare il nome completo dal testo del comunicato.
-
-        Prima cerca testi di link, molto affidabili per casi come
-        <a ...>Andrea Pinamonti</a>.
-        """
-
-        surname_norm = normalize(surname)
-
-        anchor_pattern = re.compile(
-            r"<a\b[^>]*>(.*?)</a>",
-            flags=re.IGNORECASE | re.DOTALL,
-        )
-
-        possible_names = []
-
-        for match in anchor_pattern.finditer(block):
-            anchor_text = clean_html(match.group(1))
-
-            words = anchor_text.split()
-
-            if not 2 <= len(words) <= 5:
-                continue
-
-            if surname_norm not in normalize(anchor_text).split():
-                continue
-
-            if all(
-                re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", word)
-                for word in words
-            ):
-                possible_names.append(anchor_text)
-
-        unique_names = []
-
-        seen_names = set()
-
-        for name in possible_names:
-            key = normalize(name)
-
-            if key not in seen_names:
-                seen_names.add(key)
-                unique_names.append(name)
-
-        if len(unique_names) == 1:
-            return unique_names[0]
-
-        # Fallback: cerca nel testo sequenze di 2-4 parole
-        # che terminano con il cognome del titolo.
-        plain_text = clean_html(block)
-
-        name_pattern = re.compile(
-            rf"\b("
-            rf"[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+"
-            rf"(?:\s+[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+){{0,2}}"
-            rf"\s+{re.escape(surname)}"
-            rf")\b",
-            flags=re.IGNORECASE,
-        )
-
-        possible_names = []
-
-        for match in name_pattern.finditer(plain_text):
-            candidate = match.group(1).strip()
-
-            if normalize(candidate).endswith(surname_norm):
-                possible_names.append(candidate)
-
-        unique_names = []
-
-        seen_names = set()
-
-        for name in possible_names:
-            key = normalize(name)
-
-            if key not in seen_names:
-                seen_names.add(key)
-                unique_names.append(name)
-
-        if len(unique_names) == 1:
-            return unique_names[0]
-
-        return None
-
-    for index, heading in enumerate(headings):
-        destination_raw = heading.group(1).strip()
-        headline = clean_html(heading.group(2))
-
-        destination = team_by_normalized.get(
-            normalize(destination_raw)
-        )
-
-        if not destination:
-            continue
-
-        block_start = heading.end()
-
-        if index + 1 < len(headings):
-            block_end = headings[index + 1].start()
-        else:
-            block_end = min(
-                len(page),
-                block_start + 12000,
-            )
-
-        block = page[block_start:block_end]
-
-        normalized_headline = normalize(headline)
-
-        #
-        # 1. CERCHIAMO PRIMA UN GIOCATORE GIÀ PRESENTE
-        #
-        existing_candidates = []
-
-        for player in players:
-            if normalize(player["team"]) == normalize(destination):
-                continue
-
-            normalized_name = normalize(player["name"])
-
-            if not normalized_name:
-                continue
-
-            name_parts = normalized_name.split()
-
-            if not name_parts:
-                continue
-
-            surname = name_parts[-1]
-
-            if re.search(
-                rf"\b{re.escape(surname)}\b",
-                normalized_headline,
-            ):
-                existing_candidates.append(player)
-
-        unique_existing = []
-        existing_names = set()
-
-        for player in existing_candidates:
-            key = normalize(player["name"])
-
-            if key not in existing_names:
-                existing_names.add(key)
-                unique_existing.append(player)
-
-        if len(unique_existing) == 1:
-            player = unique_existing[0]
-
-            operation_key = (
-                normalize(player["name"]),
-                normalize(destination),
-            )
-
-            if operation_key in seen_operations:
-                continue
-
-            seen_operations.add(operation_key)
-
-            old_team = player["team"]
-
-            player["team"] = destination
-            player["officialId"] = (
-                f"{normalize(destination)}:"
-                f"{normalize(player['name'])}"
-            )
-
-            corrections.append(
-                (
-                    player["name"],
-                    old_team,
-                    destination,
-                )
-            )
-
-            continue
-
-        #
-        # 2. SE NON ESISTE NELLE ROSE, PROVIAMO AD AGGIUNGERLO
-        #
-        headline_words = normalized_headline.split()
-
-        matched_surname = None
-
-        # Cerchiamo quale parola del titolo potrebbe essere
-        # il cognome del giocatore.
-        for raw_word in headline.split():
-            word = re.sub(
-                r"[^A-Za-zÀ-ÖØ-öø-ÿ'’-]",
-                "",
-                raw_word,
-            ).strip()
-
-            if len(word) < 3:
-                continue
-
-            word_norm = normalize(word)
-
-            if word_norm in {
-                "ufficiale",
-                "giallorosso",
-                "neroverde",
-                "biancoceleste",
-                "rossoblu",
-                "rossoblu",
-                "qualita",
-                "rinforzo",
-                "nuovo",
-                "arriva",
-                "colpo",
-            }:
-                continue
-
-            # Il cognome deve comparire anche nel testo
-            # immediatamente successivo al titolo.
-            if re.search(
-                rf"\b{re.escape(word_norm)}\b",
-                normalize(clean_html(block)),
-            ):
-                matched_surname = word
-                break
-
-        if not matched_surname:
-            continue
-
-        full_name = extract_full_name(
-            block,
-            matched_surname,
-        )
-
-        if not full_name:
-            continue
-
-        # Non inseriamo qualcuno che in realtà esiste già
-        # con il nome completo.
-        already_exists = any(
-            normalize(player["name"]) == normalize(full_name)
-            for player in players
-        )
-
-        if already_exists:
-            continue
-
-        role = infer_role(
-            clean_html(block[:5000])
-        )
-
-        # Per i nuovi inserimenti il ruolo è obbligatorio:
-        # se non siamo sicuri, non aggiungiamo nulla.
-        if not role:
-            print(
-                "SKIP NUOVO GIOCATORE: "
-                f"{full_name} -> {destination} "
-                "(ruolo non determinabile con sicurezza)"
-            )
-            continue
-
-        operation_key = (
-            normalize(full_name),
-            normalize(destination),
-        )
-
-        if operation_key in seen_operations:
-            continue
-
-        seen_operations.add(operation_key)
-
-        new_player = {
-            "name": full_name,
-            "team": destination,
-            "role": role,
-            "officialId": (
-                f"{normalize(destination)}:"
-                f"{normalize(full_name)}"
-            ),
-        }
-
-        players.append(new_player)
-
-        additions.append(
-            (
-                full_name,
-                destination,
-                role,
-            )
-        )
-
-    players = dedupe(players)
-
-    print()
-    print("CORREZIONI CALCIOMERCATO LEGA SERIE A")
-    print("-------------------------------------")
-
-    if not corrections:
-        print("Nessun trasferimento interno da correggere.")
-    else:
-        for name, old_team, new_team in corrections:
-            print(
-                f"{name}: {old_team} -> {new_team}"
-            )
-
-    if not additions:
-        print("Nessun nuovo giocatore da aggiungere.")
-    else:
-        for name, team, role in additions:
-            print(
-                f"NUOVO: {name} -> {team} ({role})"
-            )
-
-    print(
-        f"Trasferimenti corretti: {len(corrections)}"
-    )
-    print(
-        f"Nuovi giocatori aggiunti: {len(additions)}"
-    )
-
-    return players
+    for role, count in roles.items():
+        if count < 20:
+            raise RuntimeError(f"ruolo {role}: soltanto {count} giocatori")
+
+    return teams, roles
 
 
 def main():
-    all_players = []
-    errors = []
-
-    for team, slug in TEAMS.items():
-
-        try:
-            players = scrape_team(team, slug)
-            all_players.extend(players)
-
-        except Exception as exc:
-            errors.append(str(exc))
-
+    print("Fonte: Fantacalcio.it — Quotazioni ufficiali 2026/27")
+    print(SOURCE_URL)
     print()
-    print(
-        f"Totale iniziale: {len(all_players)} giocatori"
-    )
 
-    # Se anche UNA SOLA squadra dà un risultato anomalo,
-    # il JSON NON viene aggiornato.
-    if errors:
-
-        print(
-            "\nCONTROLLO DI SICUREZZA FALLITO:",
-            file=sys.stderr,
-        )
-
-        for error in errors:
-            print(
-                f"- {error}",
-                file=sys.stderr,
-            )
-
+    try:
+        players, unresolved_roles = scrape_fantacalcio()
+        teams, roles = safety_checks(players, unresolved_roles)
+    except Exception as exc:
+        print(f"ERRORE: {exc}", file=sys.stderr)
+        print("Il file JSON esistente NON è stato modificato.", file=sys.stderr)
         sys.exit(1)
 
-    teams_found = {
-        player["team"]
-        for player in all_players
-    }
-
-    if len(teams_found) != 20:
-        print(
-            f"ERRORE: trovate "
-            f"{len(teams_found)}/20 squadre",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    if len(all_players) < 300:
-        print(
-            f"ERRORE: soltanto "
-            f"{len(all_players)} giocatori",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    if len(all_players) > 700:
-        print(
-            f"ERRORE: {len(all_players)} giocatori "
-            f"è un numero sospetto",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    # Dopo aver verificato che le rose ufficiali siano sane,
-    # usiamo il Calciomercato Lega Serie A per correggere
-    # eventuali trasferimenti non ancora recepiti dalle rose.
-    all_players = apply_market_corrections(
-        all_players
-    )
-
-    # Nuovo controllo di sicurezza dopo le correzioni.
-    teams_found = {
-        player["team"]
-        for player in all_players
-    }
-
-    if len(teams_found) != 20:
-        print(
-            "ERRORE DOPO CALCIOMERCATO: "
-            f"trovate {len(teams_found)}/20 squadre",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    if not 300 <= len(all_players) <= 700:
-        print(
-            "ERRORE DOPO CALCIOMERCATO: "
-            f"{len(all_players)} giocatori",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    print()
-    print(
-        f"Totale finale: {len(all_players)} giocatori "
-        f"in {len(teams_found)} squadre"
-    )
+    players.sort(key=lambda p: (p["team"], p["role"], normalize(p["name"])))
 
     payload = {
-        "source": (
-            "Lega Serie A - rose ufficiali dei club "
-            "+ aggiornamenti ufficiali Calciomercato"
-        ),
-        "generated_at": datetime.now(
-            timezone.utc
-        ).isoformat(),
-        "teams": 20,
-        "players_count": len(all_players),
-        "players": sorted(
-            all_players,
-            key=lambda player: (
-                player["team"],
-                player["role"],
-                player["name"],
-            )
-        ),
+        "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
+        "source_url": SOURCE_URL,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "teams": len(teams),
+        "players_count": len(players),
+        "players": players,
     }
 
-    output = Path(
-        "data/seriea_rosters.json"
-    )
-
-    output.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    output.write_text(
-        json.dumps(
-            payload,
-            ensure_ascii=False,
-            indent=2,
-        ),
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
-    print()
     print(
-        f"OK: salvati {len(all_players)} "
-        f"giocatori in {output}"
+        f"OK: {len(players)} giocatori | {len(teams)} squadre | "
+        f"P {roles['P']} D {roles['D']} C {roles['C']} A {roles['A']}"
     )
+    if unresolved_roles:
+        print(f"Saltati per ruolo non riconosciuto: {len(unresolved_roles)}")
+    print(f"Salvato: {OUTPUT}")
 
 
 if __name__ == "__main__":
