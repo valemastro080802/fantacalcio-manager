@@ -1,8 +1,8 @@
 {
   "source": "Lega Serie A - rose ufficiali dei club + aggiornamenti ufficiali Calciomercato",
-  "generated_at": "2026-08-30T22:18:02.414756+00:00",
+  "generated_at": "2026-08-30T22:22:05.262974+00:00",
   "teams": 20,
-  "players_count": 605,
+  "players_count": 615,
   "players": [
     {
       "name": "Giacomo Raspadori",
@@ -273,6 +273,12 @@
       "team": "Bologna",
       "role": "D",
       "officialId": "bologna:abdel rahim alhassane bonkano"
+    },
+    {
+      "name": "Arthur Theate torna al Bologna",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:arthur theate torna al bologna"
     },
     {
       "name": "Eivind Fauske Helland",
@@ -611,6 +617,12 @@
       "officialId": "como:samuele ricci"
     },
     {
+      "name": "che accoglie Samuele Ricci",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:che accoglie samuele ricci"
+    },
+    {
       "name": "Alberto Dossena",
       "team": "Como",
       "role": "D",
@@ -669,6 +681,12 @@
       "team": "Como",
       "role": "D",
       "officialId": "como:yan bueno couto"
+    },
+    {
+      "name": "al Como arriva Willy",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:al como arriva willy"
     },
     {
       "name": "Emil Audero Mulyadi",
@@ -1277,6 +1295,12 @@
       "officialId": "inter:andy diouf"
     },
     {
+      "name": "Curtis Jones",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:curtis jones"
+    },
+    {
       "name": "Curtis Julian Jones",
       "team": "Inter",
       "role": "C",
@@ -1547,6 +1571,12 @@
       "officialId": "juventus:guglielmo vicario"
     },
     {
+      "name": "Guglielmo Vicario alla Juventus",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "juventus:guglielmo vicario alla juventus"
+    },
+    {
       "name": "Kamil Mieczyslaw Grabara",
       "team": "Juventus",
       "role": "P",
@@ -1557,6 +1587,12 @@
       "team": "Juventus",
       "role": "P",
       "officialId": "juventus:riccardo adrian radu"
+    },
+    {
+      "name": "Andrea Pinamonti",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:andrea pinamonti"
     },
     {
       "name": "Boulaye Dia",
@@ -1991,6 +2027,12 @@
       "officialId": "milan:samuel chimerenka chukwueze"
     },
     {
+      "name": "sportive del calciatore Diego",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:sportive del calciatore diego"
+    },
+    {
       "name": "Adrien Rabiot",
       "team": "Milan",
       "role": "C",
@@ -2225,6 +2267,12 @@
       "officialId": "monza:matteo pessina"
     },
     {
+      "name": "Michael Folorunsho",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:michael folorunsho"
+    },
+    {
       "name": "Michael Folorunsho Ijiemuan",
       "team": "Monza",
       "role": "C",
@@ -2421,6 +2469,12 @@
       "team": "Napoli",
       "role": "D",
       "officialId": "napoli:amir rrahmani"
+    },
+    {
+      "name": "Benoit Badiashile",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:benoit badiashile"
     },
     {
       "name": "Benoît Ntambue Badiashile Mukinayi Baya",
@@ -2691,6 +2745,12 @@
       "team": "Roma",
       "role": "A",
       "officialId": "roma:robinio vaz"
+    },
+    {
+      "name": "Rodrigo Mora",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:rodrigo mora"
     },
     {
       "name": "Santiago Thomas Castro",
