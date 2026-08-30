@@ -348,9 +348,26 @@ def scrape_team(team, slug):
 
     return players
 
+def test_market_page():
+    url = "https://www.legaseriea.it/serie-a"
+    page = fetch(url)
 
+    print()
+    print("TEST CALCIOMERCATO LEGA SERIE A")
+    print("--------------------------------")
+
+    checks = [
+        "PINAMONTI",
+        "LAZIO",
+        "SASSUOLO",
+        "Calciomercato",
+    ]
+
+    for text in checks:
+        found = normalize(text) in normalize(page)
+        print(f"{text}: {'TROVATO' if found else 'NON TROVATO'}")
 def main():
-
+    test_market_page()
     all_players = []
     errors = []
 
