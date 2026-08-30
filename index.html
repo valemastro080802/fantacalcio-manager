@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v1.4.1</title>
+<title>Fantacalcio Manager Online v1.4.2</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -713,6 +713,31 @@ tbody tr:hover{
   }
 }
 
+
+/* v1.4.2 — formazione più compatta su desktop: campo intero senza scroll */
+@media(min-width:901px){
+  #formation.page{padding-top:14px!important;padding-bottom:14px!important}
+  #formation .pitch-box{padding:14px!important}
+  #formation .pitch{
+    width:94%!important;
+    height:clamp(610px,calc(100vh - 230px),650px)!important;
+    min-height:0!important;
+    max-height:650px!important;
+    aspect-ratio:auto!important;
+  }
+  #formation .avatar{width:48px!important;height:48px!important}
+  #formation .formation-player-name{
+    width:140px!important;max-width:140px!important;
+    font-size:12px!important;line-height:1.12!important;
+    min-height:22px!important;margin-top:4px!important;
+  }
+  #formation .sub-slot{margin-top:3px!important;gap:2px!important;min-height:18px!important}
+  #formation .sub-slot button{
+    width:138px!important;max-width:138px!important;
+    font-size:9.5px!important;line-height:1.1!important;
+  }
+}
+
 </style>
 
 <style>
@@ -745,7 +770,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.1</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.2</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
