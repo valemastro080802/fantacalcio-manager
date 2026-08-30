@@ -350,12 +350,9 @@ def scrape_team(team, slug):
 
 def apply_market_corrections(players):
     """
-    Usa la pagina ufficiale Calciomercato della Lega Serie A
-    come correttivo delle rose dei club.
-
-    Per sicurezza corregge soltanto trasferimenti tra squadre
-    di Serie A quando il giocatore è già presente nelle rose
-    ufficiali ma risulta ancora assegnato alla vecchia squadra.
+    Usa gli aggiornamenti ufficiali di Calciomercato della Lega Serie A
+    per correggere trasferimenti tra club di Serie A quando le pagine
+    delle rose risultano ancora in ritardo.
     """
 
     url = (
@@ -378,9 +375,10 @@ def apply_market_corrections(players):
         for team in TEAMS
     }
 
-    # Titoli come:
-    # <p><strong>Lazio - Pinamonti è ufficiale!</strong></p>
-    # <p><strong>Lecce - Ilić è giallorosso!</strong></p>
+    # Esempi ufficiali:
+    # Lazio - Pinamonti è ufficiale!
+    # Lecce - Ilić è giallorosso!
+    # Como - Ricci, qualità in mezzo al campo
     heading_pattern = re.compile(
         r"<p>\s*<strong>\s*"
         r"([^<]+?)\s*[-–—]\s*([^<]+?)"
@@ -393,15 +391,15 @@ def apply_market_corrections(players):
     if not headings:
         print()
         print(
-            "ATTENZIONE: nessun blocco Calciomercato "
-            "riconosciuto. Nessuna correzione applicata."
+            "ATTENZIONE: nessun aggiornamento Calciomercato "
+            "riconosciuto."
         )
         return players
 
     corrections = []
-    seen_corrections = set()
+    seen = set()
 
-    for index, heading in enumerate(headings):
+    for heading in headings:
         destination_raw = heading.group(1).strip()
         headline = heading.group(2).strip()
 
@@ -409,97 +407,85 @@ def apply_market_corrections(players):
             normalize(destination_raw)
         )
 
-        # Ci interessano soltanto club dell'attuale Serie A.
         if not destination:
             continue
 
-        block_start = heading.end()
-
-        if index + 1 < len(headings):
-            block_end = headings[index + 1].start()
-        else:
-            block_end = min(
-                len(page),
-                block_start + 10000,
-            )
-
-        block = page[block_start:block_end]
-
-        # Rimuoviamo i tag HTML per facilitare il confronto
-        # con i nomi dei giocatori.
-        block_text = re.sub(
-            r"<[^>]+>",
-            " ",
-            block,
-        )
-
-        block_text = (
-            block_text
-            .replace("&nbsp;", " ")
-            .replace("&amp;", "&")
-            .replace("&#39;", "'")
-            .replace("&quot;", '"')
-        )
-
         normalized_headline = normalize(headline)
-        normalized_block = normalize(block_text)
 
         candidates = []
 
         for player in players:
-            # Se è già nella squadra corretta non dobbiamo fare nulla.
             if normalize(player["team"]) == normalize(destination):
                 continue
 
-            player_name = normalize(player["name"])
+            normalized_name = normalize(player["name"])
 
-            if not player_name:
+            if not normalized_name:
                 continue
 
-            name_parts = player_name.split()
+            name_parts = normalized_name.split()
 
             if not name_parts:
                 continue
 
+            # Cerchiamo prima il cognome.
             surname = name_parts[-1]
 
-            # Regola di sicurezza:
-            # 1. il cognome deve comparire nel titolo dell'operazione;
-            # 2. il nome completo deve comparire nel testo del blocco.
-            surname_in_headline = re.search(
+            if re.search(
                 rf"\b{re.escape(surname)}\b",
                 normalized_headline,
-            )
+            ):
+                candidates.append(player)
+                continue
 
-            full_name_in_block = re.search(
-                rf"\b{re.escape(player_name)}\b",
-                normalized_block,
-            )
-
-            if surname_in_headline and full_name_in_block:
+            # Se il titolo contiene invece il nome completo,
+            # consideriamo comunque il giocatore candidato.
+            if re.search(
+                rf"\b{re.escape(normalized_name)}\b",
+                normalized_headline,
+            ):
                 candidates.append(player)
 
-        # Applichiamo la correzione soltanto se abbiamo
-        # identificato un singolo giocatore senza ambiguità.
-        if len(candidates) != 1:
+        # Correzione soltanto se il titolo identifica
+        # un solo giocatore nel database.
+        unique_candidates = []
+
+        seen_names = set()
+
+        for player in candidates:
+            key = normalize(player["name"])
+
+            if key not in seen_names:
+                seen_names.add(key)
+                unique_candidates.append(player)
+
+        if len(unique_candidates) != 1:
             continue
 
-        player = candidates[0]
+        player = unique_candidates[0]
 
         correction_key = (
             normalize(player["name"]),
             normalize(destination),
         )
 
-        # La pagina può contenere lo stesso articolo più volte
-        # nel codice HTML: evitiamo correzioni duplicate.
-        if correction_key in seen_corrections:
+        # Evita duplicati dovuti alla presenza ripetuta
+        # dello stesso contenuto nell'HTML.
+        if correction_key in seen:
             continue
 
-        seen_corrections.add(correction_key)
+        seen.add(correction_key)
 
         old_team = player["team"]
+
+        if old_team == destination:
+            continue
+
         player["team"] = destination
+        player["officialId"] = (
+            f"{normalize(destination)}:"
+            f"{normalize(player['name'])}"
+        )
 
         corrections.append(
             (
@@ -509,9 +495,6 @@ def apply_market_corrections(players):
             )
         )
 
-    # Ricalcola officialId ed elimina eventuali duplicati nel caso
-    # in cui la nuova squadra abbia già aggiornato la propria rosa
-    # mentre la vecchia squadra non lo abbia ancora fatto.
     players = dedupe(players)
 
     print()
