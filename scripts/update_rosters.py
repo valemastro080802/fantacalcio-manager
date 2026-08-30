@@ -351,8 +351,14 @@ def scrape_team(team, slug):
 def apply_market_corrections(players):
     """
     Usa gli aggiornamenti ufficiali di Calciomercato della Lega Serie A
-    per correggere trasferimenti tra club di Serie A quando le pagine
-    delle rose risultano ancora in ritardo.
+    per correggere le rose quando le pagine squadra non sono ancora
+    aggiornate.
+
+    Gestisce:
+    - giocatore già presente -> cambio squadra;
+    - giocatore assente dalle rose -> inserimento, ma soltanto quando
+      nome completo e ruolo possono essere ricavati con sufficiente
+      sicurezza dal comunicato ufficiale.
     """
 
     url = (
@@ -375,10 +381,6 @@ def apply_market_corrections(players):
         for team in TEAMS
     }
 
-    # Esempi ufficiali:
-    # Lazio - Pinamonti è ufficiale!
-    # Lecce - Ilić è giallorosso!
-    # Como - Ricci, qualità in mezzo al campo
     heading_pattern = re.compile(
         r"<p>\s*<strong>\s*"
         r"([^<]+?)\s*[-–—]\s*([^<]+?)"
@@ -397,11 +399,164 @@ def apply_market_corrections(players):
         return players
 
     corrections = []
-    seen = set()
+    additions = []
+    seen_operations = set()
 
-    for heading in headings:
+    def clean_html(text):
+        text = re.sub(r"<[^>]+>", " ", text)
+
+        replacements = {
+            "&nbsp;": " ",
+            "&amp;": "&",
+            "&#39;": "'",
+            "&quot;": '"',
+            "&rsquo;": "’",
+            "&agrave;": "à",
+            "&egrave;": "è",
+            "&igrave;": "ì",
+            "&ograve;": "ò",
+            "&ugrave;": "ù",
+        }
+
+        for old, new in replacements.items():
+            text = text.replace(old, new)
+
+        return re.sub(r"\s+", " ", text).strip()
+
+    def infer_role(text):
+        """
+        Restituisce P/D/C/A soltanto quando il testo contiene
+        indicazioni sufficientemente chiare sul ruolo.
+        """
+
+        value = normalize(text)
+
+        role_words = {
+            "P": [
+                "portiere",
+                "goalkeeper",
+            ],
+            "D": [
+                "difensore",
+                "terzino",
+                "centrale difensivo",
+                "difensivo",
+            ],
+            "C": [
+                "centrocampista",
+                "centrocampo",
+                "mediano",
+                "mezzala",
+                "regista",
+            ],
+            "A": [
+                "attaccante",
+                "centravanti",
+                "punta",
+                "esterno offensivo",
+                "reparto offensivo",
+            ],
+        }
+
+        matches = []
+
+        for role, words in role_words.items():
+            if any(word in value for word in words):
+                matches.append(role)
+
+        if len(set(matches)) == 1:
+            return matches[0]
+
+        return None
+
+    def extract_full_name(block, surname):
+        """
+        Prova a ricavare il nome completo dal testo del comunicato.
+
+        Prima cerca testi di link, molto affidabili per casi come
+        <a ...>Andrea Pinamonti</a>.
+        """
+
+        surname_norm = normalize(surname)
+
+        anchor_pattern = re.compile(
+            r"<a\b[^>]*>(.*?)</a>",
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+
+        possible_names = []
+
+        for match in anchor_pattern.finditer(block):
+            anchor_text = clean_html(match.group(1))
+
+            words = anchor_text.split()
+
+            if not 2 <= len(words) <= 5:
+                continue
+
+            if surname_norm not in normalize(anchor_text).split():
+                continue
+
+            if all(
+                re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", word)
+                for word in words
+            ):
+                possible_names.append(anchor_text)
+
+        unique_names = []
+
+        seen_names = set()
+
+        for name in possible_names:
+            key = normalize(name)
+
+            if key not in seen_names:
+                seen_names.add(key)
+                unique_names.append(name)
+
+        if len(unique_names) == 1:
+            return unique_names[0]
+
+        # Fallback: cerca nel testo sequenze di 2-4 parole
+        # che terminano con il cognome del titolo.
+        plain_text = clean_html(block)
+
+        name_pattern = re.compile(
+            rf"\b("
+            rf"[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+"
+            rf"(?:\s+[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+){{0,2}}"
+            rf"\s+{re.escape(surname)}"
+            rf")\b",
+            flags=re.IGNORECASE,
+        )
+
+        possible_names = []
+
+        for match in name_pattern.finditer(plain_text):
+            candidate = match.group(1).strip()
+
+            if normalize(candidate).endswith(surname_norm):
+                possible_names.append(candidate)
+
+        unique_names = []
+
+        seen_names = set()
+
+        for name in possible_names:
+            key = normalize(name)
+
+            if key not in seen_names:
+                seen_names.add(key)
+                unique_names.append(name)
+
+        if len(unique_names) == 1:
+            return unique_names[0]
+
+        return None
+
+    for index, heading in enumerate(headings):
         destination_raw = heading.group(1).strip()
-        headline = heading.group(2).strip()
+        headline = clean_html(heading.group(2))
 
         destination = team_by_normalized.get(
             normalize(destination_raw)
@@ -410,9 +565,24 @@ def apply_market_corrections(players):
         if not destination:
             continue
 
+        block_start = heading.end()
+
+        if index + 1 < len(headings):
+            block_end = headings[index + 1].start()
+        else:
+            block_end = min(
+                len(page),
+                block_start + 12000,
+            )
+
+        block = page[block_start:block_end]
+
         normalized_headline = normalize(headline)
 
-        candidates = []
+        #
+        # 1. CERCHIAMO PRIMA UN GIOCATORE GIÀ PRESENTE
+        #
+        existing_candidates = []
 
         for player in players:
             if normalize(player["team"]) == normalize(destination):
@@ -428,70 +598,162 @@ def apply_market_corrections(players):
             if not name_parts:
                 continue
 
-            # Cerchiamo prima il cognome.
             surname = name_parts[-1]
 
             if re.search(
                 rf"\b{re.escape(surname)}\b",
                 normalized_headline,
             ):
-                candidates.append(player)
-                continue
+                existing_candidates.append(player)
 
-            # Se il titolo contiene invece il nome completo,
-            # consideriamo comunque il giocatore candidato.
-            if re.search(
-                rf"\b{re.escape(normalized_name)}\b",
-                normalized_headline,
-            ):
-                candidates.append(player)
+        unique_existing = []
+        existing_names = set()
 
-        # Correzione soltanto se il titolo identifica
-        # un solo giocatore nel database.
-        unique_candidates = []
-
-        seen_names = set()
-
-        for player in candidates:
+        for player in existing_candidates:
             key = normalize(player["name"])
 
-            if key not in seen_names:
-                seen_names.add(key)
-                unique_candidates.append(player)
+            if key not in existing_names:
+                existing_names.add(key)
+                unique_existing.append(player)
 
-        if len(unique_candidates) != 1:
+        if len(unique_existing) == 1:
+            player = unique_existing[0]
+
+            operation_key = (
+                normalize(player["name"]),
+                normalize(destination),
+            )
+
+            if operation_key in seen_operations:
+                continue
+
+            seen_operations.add(operation_key)
+
+            old_team = player["team"]
+
+            player["team"] = destination
+            player["officialId"] = (
+                f"{normalize(destination)}:"
+                f"{normalize(player['name'])}"
+            )
+
+            corrections.append(
+                (
+                    player["name"],
+                    old_team,
+                    destination,
+                )
+            )
+
             continue
 
-        player = unique_candidates[0]
+        #
+        # 2. SE NON ESISTE NELLE ROSE, PROVIAMO AD AGGIUNGERLO
+        #
+        headline_words = normalized_headline.split()
 
-        correction_key = (
-            normalize(player["name"]),
+        matched_surname = None
+
+        # Cerchiamo quale parola del titolo potrebbe essere
+        # il cognome del giocatore.
+        for raw_word in headline.split():
+            word = re.sub(
+                r"[^A-Za-zÀ-ÖØ-öø-ÿ'’-]",
+                "",
+                raw_word,
+            ).strip()
+
+            if len(word) < 3:
+                continue
+
+            word_norm = normalize(word)
+
+            if word_norm in {
+                "ufficiale",
+                "giallorosso",
+                "neroverde",
+                "biancoceleste",
+                "rossoblu",
+                "rossoblu",
+                "qualita",
+                "rinforzo",
+                "nuovo",
+                "arriva",
+                "colpo",
+            }:
+                continue
+
+            # Il cognome deve comparire anche nel testo
+            # immediatamente successivo al titolo.
+            if re.search(
+                rf"\b{re.escape(word_norm)}\b",
+                normalize(clean_html(block)),
+            ):
+                matched_surname = word
+                break
+
+        if not matched_surname:
+            continue
+
+        full_name = extract_full_name(
+            block,
+            matched_surname,
+        )
+
+        if not full_name:
+            continue
+
+        # Non inseriamo qualcuno che in realtà esiste già
+        # con il nome completo.
+        already_exists = any(
+            normalize(player["name"]) == normalize(full_name)
+            for player in players
+        )
+
+        if already_exists:
+            continue
+
+        role = infer_role(
+            clean_html(block[:5000])
+        )
+
+        # Per i nuovi inserimenti il ruolo è obbligatorio:
+        # se non siamo sicuri, non aggiungiamo nulla.
+        if not role:
+            print(
+                "SKIP NUOVO GIOCATORE: "
+                f"{full_name} -> {destination} "
+                "(ruolo non determinabile con sicurezza)"
+            )
+            continue
+
+        operation_key = (
+            normalize(full_name),
             normalize(destination),
         )
 
-        # Evita duplicati dovuti alla presenza ripetuta
-        # dello stesso contenuto nell'HTML.
-        if correction_key in seen:
+        if operation_key in seen_operations:
             continue
 
-        seen.add(correction_key)
+        seen_operations.add(operation_key)
 
-        old_team = player["team"]
+        new_player = {
+            "name": full_name,
+            "team": destination,
+            "role": role,
+            "officialId": (
+                f"{normalize(destination)}:"
+                f"{normalize(full_name)}"
+            ),
+        }
 
-        if old_team == destination:
-            continue
+        players.append(new_player)
 
-        player["team"] = destination
-        player["officialId"] = (
-            f"{normalize(destination)}:"
-            f"{normalize(player['name'])}"
-        )
-
-        corrections.append(
+        additions.append(
             (
-                player["name"],
-                old_team,
+                full_name,
                 destination,
+                role,
             )
         )
 
@@ -502,16 +764,27 @@ def apply_market_corrections(players):
     print("-------------------------------------")
 
     if not corrections:
-        print("Nessuna correzione necessaria.")
+        print("Nessun trasferimento interno da correggere.")
     else:
         for name, old_team, new_team in corrections:
             print(
                 f"{name}: {old_team} -> {new_team}"
             )
 
-        print(
-            f"Totale correzioni: {len(corrections)}"
-        )
+    if not additions:
+        print("Nessun nuovo giocatore da aggiungere.")
+    else:
+        for name, team, role in additions:
+            print(
+                f"NUOVO: {name} -> {team} ({role})"
+            )
+
+    print(
+        f"Trasferimenti corretti: {len(corrections)}"
+    )
+    print(
+        f"Nuovi giocatori aggiunti: {len(additions)}"
+    )
 
     return players
 
