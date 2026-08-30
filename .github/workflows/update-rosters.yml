@@ -1,0 +1,39 @@
+name: Aggiorna rose Serie A
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-rosters:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Leggi le rose ufficiali
+        run: python scripts/update_rosters.py
+
+      - name: Pubblica eventuali cambiamenti
+        run: |
+          if git diff --quiet -- data/seriea_rosters.json; then
+            echo "Nessuna modifica nelle rose."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/seriea_rosters.json
+          git commit -m "Aggiorna rose Serie A"
+          git push
