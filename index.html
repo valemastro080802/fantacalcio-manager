@@ -1480,15 +1480,42 @@ window.addEventListener("resize",()=>playerPopover.classList.remove("open"));
 function openSubstituteAction(slot,subIndex,anchor){
   const pair=normalizeSubstitutes(substitutes)[slot];
   const subId=pair[subIndex];
+
   if(!subId){
     openPicker(slot,"sub",subIndex);
     return;
   }
 
   const p=byId(subId);
-  if(!p){openPicker(slot,"sub",subIndex);return;}
+  if(!p){
+    openPicker(slot,"sub",subIndex);
+    return;
+  }
 
-  openEdit(subId);
+  popoverSlot=slot;
+  popoverSubIndex=subIndex;
+  playerPopover.dataset.context="sub";
+
+  popAvatar.innerHTML=avatarContent(p);
+  popName.textContent=p.name;
+  popMeta.textContent=`${p.team} · ${roleName(p.role)} · Sostituto ${subIndex+1}`;
+  popQuote.textContent=p.quotation ?? "—";
+  popRating.textContent=p.rating || "—";
+  popTit.textContent=p.budgetRecommended||"—";
+  renderPopoverRadar(p);
+
+  const rect=anchor.getBoundingClientRect();
+  const w=Math.min(360,window.innerWidth-24);
+  let left=Math.min(window.innerWidth-w-12,Math.max(12,rect.left+rect.width/2-w/2));
+  let top=rect.bottom+10;
+
+  if(top+430>window.innerHeight){
+    top=Math.max(12,rect.top-420);
+  }
+
+  playerPopover.classList.add("open");
+  playerPopover.style.left=left+"px";
+  playerPopover.style.top=top+"px";
 }
 
 function openPicker(slot,mode="starter",subIndex=0){
