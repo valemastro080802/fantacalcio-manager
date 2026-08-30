@@ -348,38 +348,192 @@ def scrape_team(team, slug):
 
     return players
 
-def test_market_page():
-    url = "https://www.legaseriea.it/serie-a/news/calciomercato-gli-aggiornamenti-in-serie-a-enilive"
-    page = fetch(url)
+def apply_market_corrections(players):
+    """
+    Usa la pagina ufficiale Calciomercato della Lega Serie A
+    come correttivo delle rose dei club.
 
-    print()
-    print("TEST CALCIOMERCATO LEGA SERIE A")
-    print("--------------------------------")
+    Per sicurezza corregge soltanto trasferimenti tra squadre
+    di Serie A quando il giocatore è già presente nelle rose
+    ufficiali ma risulta ancora assegnato alla vecchia squadra.
+    """
 
-    matches = list(
-        re.finditer(
-            r"pinamonti",
-            page,
-            flags=re.IGNORECASE,
-        )
+    url = (
+        "https://www.legaseriea.it/serie-a/news/"
+        "calciomercato-gli-aggiornamenti-in-serie-a-enilive"
     )
 
-    print(f"Occorrenze PINAMONTI: {len(matches)}")
-
-    for index, match in enumerate(matches, start=1):
-        pos = match.start()
-
+    try:
+        page = fetch(url)
+    except Exception as exc:
         print()
-        print(f"--- PINAMONTI OCCORRENZA {index} ---")
         print(
-            page[
-                max(0, pos - 3000):
-                min(len(page), pos + 5000)
-            ]
+            "ATTENZIONE: impossibile leggere il Calciomercato "
+            f"({exc}). Uso soltanto le rose ufficiali."
         )
-        print(f"--- FINE OCCORRENZA {index} ---")
+        return players
+
+    team_by_normalized = {
+        normalize(team): team
+        for team in TEAMS
+    }
+
+    # Titoli come:
+    # <p><strong>Lazio - Pinamonti è ufficiale!</strong></p>
+    # <p><strong>Lecce - Ilić è giallorosso!</strong></p>
+    heading_pattern = re.compile(
+        r"<p>\s*<strong>\s*"
+        r"([^<]+?)\s*[-–—]\s*([^<]+?)"
+        r"\s*</strong>\s*</p>",
+        flags=re.IGNORECASE,
+    )
+
+    headings = list(heading_pattern.finditer(page))
+
+    if not headings:
+        print()
+        print(
+            "ATTENZIONE: nessun blocco Calciomercato "
+            "riconosciuto. Nessuna correzione applicata."
+        )
+        return players
+
+    corrections = []
+    seen_corrections = set()
+
+    for index, heading in enumerate(headings):
+        destination_raw = heading.group(1).strip()
+        headline = heading.group(2).strip()
+
+        destination = team_by_normalized.get(
+            normalize(destination_raw)
+        )
+
+        # Ci interessano soltanto club dell'attuale Serie A.
+        if not destination:
+            continue
+
+        block_start = heading.end()
+
+        if index + 1 < len(headings):
+            block_end = headings[index + 1].start()
+        else:
+            block_end = min(
+                len(page),
+                block_start + 10000,
+            )
+
+        block = page[block_start:block_end]
+
+        # Rimuoviamo i tag HTML per facilitare il confronto
+        # con i nomi dei giocatori.
+        block_text = re.sub(
+            r"<[^>]+>",
+            " ",
+            block,
+        )
+
+        block_text = (
+            block_text
+            .replace("&nbsp;", " ")
+            .replace("&amp;", "&")
+            .replace("&#39;", "'")
+            .replace("&quot;", '"')
+        )
+
+        normalized_headline = normalize(headline)
+        normalized_block = normalize(block_text)
+
+        candidates = []
+
+        for player in players:
+            # Se è già nella squadra corretta non dobbiamo fare nulla.
+            if normalize(player["team"]) == normalize(destination):
+                continue
+
+            player_name = normalize(player["name"])
+
+            if not player_name:
+                continue
+
+            name_parts = player_name.split()
+
+            if not name_parts:
+                continue
+
+            surname = name_parts[-1]
+
+            # Regola di sicurezza:
+            # 1. il cognome deve comparire nel titolo dell'operazione;
+            # 2. il nome completo deve comparire nel testo del blocco.
+            surname_in_headline = re.search(
+                rf"\b{re.escape(surname)}\b",
+                normalized_headline,
+            )
+
+            full_name_in_block = re.search(
+                rf"\b{re.escape(player_name)}\b",
+                normalized_block,
+            )
+
+            if surname_in_headline and full_name_in_block:
+                candidates.append(player)
+
+        # Applichiamo la correzione soltanto se abbiamo
+        # identificato un singolo giocatore senza ambiguità.
+        if len(candidates) != 1:
+            continue
+
+        player = candidates[0]
+
+        correction_key = (
+            normalize(player["name"]),
+            normalize(destination),
+        )
+
+        # La pagina può contenere lo stesso articolo più volte
+        # nel codice HTML: evitiamo correzioni duplicate.
+        if correction_key in seen_corrections:
+            continue
+
+        seen_corrections.add(correction_key)
+
+        old_team = player["team"]
+        player["team"] = destination
+
+        corrections.append(
+            (
+                player["name"],
+                old_team,
+                destination,
+            )
+        )
+
+    # Ricalcola officialId ed elimina eventuali duplicati nel caso
+    # in cui la nuova squadra abbia già aggiornato la propria rosa
+    # mentre la vecchia squadra non lo abbia ancora fatto.
+    players = dedupe(players)
+
+    print()
+    print("CORREZIONI CALCIOMERCATO LEGA SERIE A")
+    print("-------------------------------------")
+
+    if not corrections:
+        print("Nessuna correzione necessaria.")
+    else:
+        for name, old_team, new_team in corrections:
+            print(
+                f"{name}: {old_team} -> {new_team}"
+            )
+
+        print(
+            f"Totale correzioni: {len(corrections)}"
+        )
+
+    return players
+
+
 def main():
-    test_market_page()
     all_players = []
     errors = []
 
@@ -392,16 +546,9 @@ def main():
         except Exception as exc:
             errors.append(str(exc))
 
-
-    teams_found = {
-        player["team"]
-        for player in all_players
-    }
-
     print()
     print(
-        f"Totale: {len(all_players)} giocatori "
-        f"in {len(teams_found)} squadre"
+        f"Totale iniziale: {len(all_players)} giocatori"
     )
 
     # Se anche UNA SOLA squadra dà un risultato anomalo,
@@ -421,6 +568,10 @@ def main():
 
         sys.exit(1)
 
+    teams_found = {
+        player["team"]
+        for player in all_players
+    }
 
     if len(teams_found) != 20:
         print(
@@ -430,10 +581,6 @@ def main():
         )
         sys.exit(1)
 
-
-    # Range generale abbastanza ampio da consentire
-    # normali variazioni delle rose, ma impedire risultati
-    # evidentemente errati come i precedenti 745/845.
     if len(all_players) < 300:
         print(
             f"ERRORE: soltanto "
@@ -441,7 +588,6 @@ def main():
             file=sys.stderr,
         )
         sys.exit(1)
-
 
     if len(all_players) > 700:
         print(
@@ -451,11 +597,45 @@ def main():
         )
         sys.exit(1)
 
+    # Dopo aver verificato che le rose ufficiali siano sane,
+    # usiamo il Calciomercato Lega Serie A per correggere
+    # eventuali trasferimenti non ancora recepiti dalle rose.
+    all_players = apply_market_corrections(
+        all_players
+    )
+
+    # Nuovo controllo di sicurezza dopo le correzioni.
+    teams_found = {
+        player["team"]
+        for player in all_players
+    }
+
+    if len(teams_found) != 20:
+        print(
+            "ERRORE DOPO CALCIOMERCATO: "
+            f"trovate {len(teams_found)}/20 squadre",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    if not 300 <= len(all_players) <= 700:
+        print(
+            "ERRORE DOPO CALCIOMERCATO: "
+            f"{len(all_players)} giocatori",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    print()
+    print(
+        f"Totale finale: {len(all_players)} giocatori "
+        f"in {len(teams_found)} squadre"
+    )
 
     payload = {
         "source": (
-            "Lega Serie A - "
-            "pagine ufficiali delle rose dei club"
+            "Lega Serie A - rose ufficiali dei club "
+            "+ aggiornamenti ufficiali Calciomercato"
         ),
         "generated_at": datetime.now(
             timezone.utc
@@ -471,7 +651,6 @@ def main():
             )
         ),
     }
-
 
     output = Path(
         "data/seriea_rosters.json"
@@ -490,7 +669,6 @@ def main():
         ),
         encoding="utf-8",
     )
-
 
     print()
     print(
