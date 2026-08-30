@@ -1,21 +1,9 @@
 {
   "source": "Lega Serie A - pagine ufficiali delle rose dei club",
-  "generated_at": "2026-08-30T14:27:38.134368+00:00",
+  "generated_at": "2026-08-30T14:44:59.137700+00:00",
   "teams": 20,
-  "players_count": 845,
+  "players_count": 605,
   "players": [
-    {
-      "name": "ATA",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:ata"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:coppa italia"
-    },
     {
       "name": "Giacomo Raspadori",
       "team": "Atalanta",
@@ -29,18 +17,6 @@
       "officialId": "atalanta:gianluca scamacca"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:italian supercup"
-    },
-    {
       "name": "Kamaldeen Sulemana",
       "team": "Atalanta",
       "role": "A",
@@ -50,43 +26,7 @@
       "name": "Nikola Krstović",
       "team": "Atalanta",
       "role": "A",
-      "officialId": "atalanta:nikola krstović"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Atalanta",
-      "role": "A",
-      "officialId": "atalanta:social section background image"
-    },
-    {
-      "name": "ATA",
-      "team": "Atalanta",
-      "role": "C",
-      "officialId": "atalanta:ata"
+      "officialId": "atalanta:nikola krstovic"
     },
     {
       "name": "Alberto Manzoni",
@@ -134,7 +74,7 @@
       "name": "Lazar Vujadin Samardžić",
       "team": "Atalanta",
       "role": "C",
-      "officialId": "atalanta:lazar vujadin samardžić"
+      "officialId": "atalanta:lazar vujadin samardzic"
     },
     {
       "name": "Lorenzo Bernasconi",
@@ -146,7 +86,7 @@
       "name": "Mario Pašalić",
       "team": "Atalanta",
       "role": "C",
-      "officialId": "atalanta:mario pašalić"
+      "officialId": "atalanta:mario pasalic"
     },
     {
       "name": "Marten Elco De Roon",
@@ -170,13 +110,7 @@
       "name": "Éderson José dos Santos Lourenço da Silva",
       "team": "Atalanta",
       "role": "C",
-      "officialId": "atalanta:éderson josé dos santos lourenço da silva"
-    },
-    {
-      "name": "ATA",
-      "team": "Atalanta",
-      "role": "D",
-      "officialId": "atalanta:ata"
+      "officialId": "atalanta:ederson jose dos santos lourenco da silva"
     },
     {
       "name": "Davide Zappacosta",
@@ -230,19 +164,13 @@
       "name": "Sead Kolašinac",
       "team": "Atalanta",
       "role": "D",
-      "officialId": "atalanta:sead kolašinac"
+      "officialId": "atalanta:sead kolasinac"
     },
     {
       "name": "Thomas Thiesson Kristensen",
       "team": "Atalanta",
       "role": "D",
       "officialId": "atalanta:thomas thiesson kristensen"
-    },
-    {
-      "name": "ATA",
-      "team": "Atalanta",
-      "role": "P",
-      "officialId": "atalanta:ata"
     },
     {
       "name": "Marco Carnesecchi",
@@ -269,30 +197,6 @@
       "officialId": "bologna:artem dovbyk"
     },
     {
-      "name": "BOL",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:bol"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:coppa italia"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:italian supercup"
-    },
-    {
       "name": "Jens Odgaard",
       "team": "Bologna",
       "role": "A",
@@ -308,31 +212,7 @@
       "name": "Nicolò Cambiaghi",
       "team": "Bologna",
       "role": "A",
-      "officialId": "bologna:nicolò cambiaghi"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:official stickers"
+      "officialId": "bologna:nicolo cambiaghi"
     },
     {
       "name": "Riccardo Orsolini",
@@ -345,18 +225,6 @@
       "team": "Bologna",
       "role": "A",
       "officialId": "bologna:roberto piccoli"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Bologna",
-      "role": "A",
-      "officialId": "bologna:social section background image"
-    },
-    {
-      "name": "BOL",
-      "team": "Bologna",
-      "role": "C",
-      "officialId": "bologna:bol"
     },
     {
       "name": "Federico Bernardeschi",
@@ -407,12 +275,6 @@
       "officialId": "bologna:abdel rahim alhassane bonkano"
     },
     {
-      "name": "BOL",
-      "team": "Bologna",
-      "role": "D",
-      "officialId": "bologna:bol"
-    },
-    {
       "name": "Eivind Fauske Helland",
       "team": "Bologna",
       "role": "D",
@@ -452,19 +314,13 @@
       "name": "Nicolò Casale",
       "team": "Bologna",
       "role": "D",
-      "officialId": "bologna:nicolò casale"
+      "officialId": "bologna:nicolo casale"
     },
     {
       "name": "Torbjørn Lysaker Heggem",
       "team": "Bologna",
       "role": "D",
       "officialId": "bologna:torbjørn lysaker heggem"
-    },
-    {
-      "name": "BOL",
-      "team": "Bologna",
-      "role": "P",
-      "officialId": "bologna:bol"
     },
     {
       "name": "Massimo Pessina",
@@ -491,34 +347,10 @@
       "officialId": "cagliari:alieu fadera"
     },
     {
-      "name": "CAG",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:cag"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:coppa italia"
-    },
-    {
       "name": "Gennaro Borrelli",
       "team": "Cagliari",
       "role": "A",
       "officialId": "cagliari:gennaro borrelli"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:italian supercup"
     },
     {
       "name": "Kevin Carlos Omoruyi Benjamin",
@@ -533,40 +365,10 @@
       "officialId": "cagliari:kingstone mutandwa"
     },
     {
-      "name": "Official Ball",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:official stickers"
-    },
-    {
       "name": "Paul Mendy",
       "team": "Cagliari",
       "role": "A",
       "officialId": "cagliari:paul mendy"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "cagliari:social section background image"
     },
     {
       "name": "Yael Fritz Junior Trepy",
@@ -591,12 +393,6 @@
       "team": "Cagliari",
       "role": "C",
       "officialId": "cagliari:alessandro gianni romano"
-    },
-    {
-      "name": "CAG",
-      "team": "Cagliari",
-      "role": "C",
-      "officialId": "cagliari:cag"
     },
     {
       "name": "Daniel Maldini",
@@ -650,7 +446,7 @@
       "name": "Nicolò Cavuoti",
       "team": "Cagliari",
       "role": "C",
-      "officialId": "cagliari:nicolò cavuoti"
+      "officialId": "cagliari:nicolo cavuoti"
     },
     {
       "name": "Riccardo Ciervo",
@@ -665,12 +461,6 @@
       "officialId": "cagliari:adam obert"
     },
     {
-      "name": "CAG",
-      "team": "Cagliari",
-      "role": "D",
-      "officialId": "cagliari:cag"
-    },
-    {
       "name": "Giuseppe Aurelio",
       "team": "Cagliari",
       "role": "D",
@@ -680,13 +470,13 @@
       "name": "José Pedro Da Silva Figueiredo Freitas",
       "team": "Cagliari",
       "role": "D",
-      "officialId": "cagliari:josé pedro da silva figueiredo freitas"
+      "officialId": "cagliari:jose pedro da silva figueiredo freitas"
     },
     {
       "name": "Juan Martin Rodríguez Camejo",
       "team": "Cagliari",
       "role": "D",
-      "officialId": "cagliari:juan martin rodríguez camejo"
+      "officialId": "cagliari:juan martin rodriguez camejo"
     },
     {
       "name": "Raphael Kofler",
@@ -716,13 +506,7 @@
       "name": "Boris Radunović",
       "team": "Cagliari",
       "role": "P",
-      "officialId": "cagliari:boris radunović"
-    },
-    {
-      "name": "CAG",
-      "team": "Cagliari",
-      "role": "P",
-      "officialId": "cagliari:cag"
+      "officialId": "cagliari:boris radunovic"
     },
     {
       "name": "Elia Caprile",
@@ -741,30 +525,6 @@
       "team": "Como",
       "role": "A",
       "officialId": "como:assane diao diaoune"
-    },
-    {
-      "name": "COM",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:com"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:coppa italia"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:italian supercup"
     },
     {
       "name": "Ivan Azon Monzon",
@@ -788,49 +548,13 @@
       "name": "Nicolas Gerrit Kühn",
       "team": "Como",
       "role": "A",
-      "officialId": "como:nicolas gerrit kühn"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Como",
-      "role": "A",
-      "officialId": "como:social section background image"
+      "officialId": "como:nicolas gerrit kuhn"
     },
     {
       "name": "Adrian Adriano Lahdo",
       "team": "Como",
       "role": "C",
       "officialId": "como:adrian adriano lahdo"
-    },
-    {
-      "name": "COM",
-      "team": "Como",
-      "role": "C",
-      "officialId": "como:com"
     },
     {
       "name": "Lucas Da Cunha",
@@ -899,12 +623,6 @@
       "officialId": "como:alex valle gomez"
     },
     {
-      "name": "COM",
-      "team": "Como",
-      "role": "D",
-      "officialId": "como:com"
-    },
-    {
       "name": "Edoardo Goldaniga",
       "team": "Como",
       "role": "D",
@@ -920,7 +638,7 @@
       "name": "Ivan Smolčić",
       "team": "Como",
       "role": "D",
-      "officialId": "como:ivan smolčić"
+      "officialId": "como:ivan smolcic"
     },
     {
       "name": "Jacobo Ramon Naveros",
@@ -959,12 +677,6 @@
       "officialId": "como:yan bueno couto"
     },
     {
-      "name": "COM",
-      "team": "Como",
-      "role": "P",
-      "officialId": "como:com"
-    },
-    {
       "name": "Emil Audero Mulyadi",
       "team": "Como",
       "role": "P",
@@ -986,7 +698,7 @@
       "name": "Noel Max Joachim Törnqvist",
       "team": "Como",
       "role": "P",
-      "officialId": "como:noel max joachim törnqvist"
+      "officialId": "como:noel max joachim tornqvist"
     },
     {
       "name": "Albert Guðmundsson",
@@ -1007,18 +719,6 @@
       "officialId": "fiorentina:brando mazzeo"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:coppa italia"
-    },
-    {
-      "name": "FIO",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:fio"
-    },
-    {
       "name": "Federico Croci",
       "team": "Fiorentina",
       "role": "A",
@@ -1031,52 +731,10 @@
       "officialId": "fiorentina:franco mastantuono"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:italian supercup"
-    },
-    {
       "name": "Mateo Pellegrino Casalanguida",
       "team": "Fiorentina",
       "role": "A",
       "officialId": "fiorentina:mateo pellegrino casalanguida"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Fiorentina",
-      "role": "A",
-      "officialId": "fiorentina:social section background image"
     },
     {
       "name": "Sulayman Jallow",
@@ -1106,13 +764,7 @@
       "name": "Christ Ravynel Inao Oulaï",
       "team": "Fiorentina",
       "role": "C",
-      "officialId": "fiorentina:christ ravynel inao oulaï"
-    },
-    {
-      "name": "FIO",
-      "team": "Fiorentina",
-      "role": "C",
-      "officialId": "fiorentina:fio"
+      "officialId": "fiorentina:christ ravynel inao oulai"
     },
     {
       "name": "Marco Brescianini",
@@ -1124,7 +776,7 @@
       "name": "Nicolò Fagioli",
       "team": "Fiorentina",
       "role": "C",
-      "officialId": "fiorentina:nicolò fagioli"
+      "officialId": "fiorentina:nicolo fagioli"
     },
     {
       "name": "Rolando Mandragora",
@@ -1145,12 +797,6 @@
       "officialId": "fiorentina:domilson cordeiro dos santo"
     },
     {
-      "name": "FIO",
-      "team": "Fiorentina",
-      "role": "D",
-      "officialId": "fiorentina:fio"
-    },
-    {
       "name": "Fabiano Parisi",
       "team": "Fiorentina",
       "role": "D",
@@ -1160,7 +806,7 @@
       "name": "João Mário Neto Lopes",
       "team": "Fiorentina",
       "role": "D",
-      "officialId": "fiorentina:joão mário neto lopes"
+      "officialId": "fiorentina:joao mario neto lopes"
     },
     {
       "name": "Luca Ranieri",
@@ -1172,7 +818,7 @@
       "name": "Marin Pongračić",
       "team": "Fiorentina",
       "role": "D",
-      "officialId": "fiorentina:marin pongračić"
+      "officialId": "fiorentina:marin pongracic"
     },
     {
       "name": "Radu Matei Dragusin",
@@ -1190,19 +836,13 @@
       "name": "Víctor Valdepeñas Talavera",
       "team": "Fiorentina",
       "role": "D",
-      "officialId": "fiorentina:víctor valdepeñas talavera"
+      "officialId": "fiorentina:victor valdepenas talavera"
     },
     {
       "name": "David De Gea Quintana",
       "team": "Fiorentina",
       "role": "P",
       "officialId": "fiorentina:david de gea quintana"
-    },
-    {
-      "name": "FIO",
-      "team": "Fiorentina",
-      "role": "P",
-      "officialId": "fiorentina:fio"
     },
     {
       "name": "Luca Lezzerini",
@@ -1229,28 +869,16 @@
       "officialId": "frosinone:antonio raimondo"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:coppa italia"
-    },
-    {
-      "name": "FRO",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:fro"
-    },
-    {
       "name": "Farès Ghedjemis",
       "team": "Frosinone",
       "role": "A",
-      "officialId": "frosinone:farès ghedjemis"
+      "officialId": "frosinone:fares ghedjemis"
     },
     {
       "name": "George Daniel Bîrligea",
       "team": "Frosinone",
       "role": "A",
-      "officialId": "frosinone:george daniel bîrligea"
+      "officialId": "frosinone:george daniel birligea"
     },
     {
       "name": "Giorgi Kvernadze",
@@ -1259,58 +887,16 @@
       "officialId": "frosinone:giorgi kvernadze"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:italian supercup"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:official stickers"
-    },
-    {
       "name": "Seydou Fini",
       "team": "Frosinone",
       "role": "A",
       "officialId": "frosinone:seydou fini"
     },
     {
-      "name": "Social Section Background Image",
-      "team": "Frosinone",
-      "role": "A",
-      "officialId": "frosinone:social section background image"
-    },
-    {
       "name": "Tomas Bobček",
       "team": "Frosinone",
       "role": "A",
-      "officialId": "frosinone:tomas bobček"
+      "officialId": "frosinone:tomas bobcek"
     },
     {
       "name": "Alessio Zerbin",
@@ -1331,12 +917,6 @@
       "officialId": "frosinone:ben kone"
     },
     {
-      "name": "FRO",
-      "team": "Frosinone",
-      "role": "C",
-      "officialId": "frosinone:fro"
-    },
-    {
       "name": "Florian Grillitsch",
       "team": "Frosinone",
       "role": "C",
@@ -1352,7 +932,7 @@
       "name": "Giacomo Calò",
       "team": "Frosinone",
       "role": "C",
-      "officialId": "frosinone:giacomo calò"
+      "officialId": "frosinone:giacomo calo"
     },
     {
       "name": "Ilias Koutsoupias",
@@ -1394,7 +974,7 @@
       "name": "Aleksa Terzić",
       "team": "Frosinone",
       "role": "D",
-      "officialId": "frosinone:aleksa terzić"
+      "officialId": "frosinone:aleksa terzic"
     },
     {
       "name": "Anthony Henri Oyono Omva Torque",
@@ -1407,12 +987,6 @@
       "team": "Frosinone",
       "role": "D",
       "officialId": "frosinone:enzo gianni tchato mbiayi"
-    },
-    {
-      "name": "FRO",
-      "team": "Frosinone",
-      "role": "D",
-      "officialId": "frosinone:fro"
     },
     {
       "name": "Gabriele Bracaglia",
@@ -1457,12 +1031,6 @@
       "officialId": "frosinone:wisdom amey"
     },
     {
-      "name": "FRO",
-      "team": "Frosinone",
-      "role": "P",
-      "officialId": "frosinone:fro"
-    },
-    {
       "name": "Lorenzo Palmisani",
       "team": "Frosinone",
       "role": "P",
@@ -1484,37 +1052,13 @@
       "name": "Adam Žulevič",
       "team": "Genoa",
       "role": "A",
-      "officialId": "genoa:adam žulevič"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:coppa italia"
+      "officialId": "genoa:adam zulevic"
     },
     {
       "name": "Elias Havel",
       "team": "Genoa",
       "role": "A",
       "officialId": "genoa:elias havel"
-    },
-    {
-      "name": "GEN",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:gen"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:italian supercup"
     },
     {
       "name": "Lorenzo Colombo",
@@ -1532,37 +1076,7 @@
       "name": "Milutin Osmajić",
       "team": "Genoa",
       "role": "A",
-      "officialId": "genoa:milutin osmajić"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Genoa",
-      "role": "A",
-      "officialId": "genoa:social section background image"
+      "officialId": "genoa:milutin osmajic"
     },
     {
       "name": "Tommaso Baldanzi",
@@ -1599,12 +1113,6 @@
       "team": "Genoa",
       "role": "C",
       "officialId": "genoa:franz-ethan meichtry"
-    },
-    {
-      "name": "GEN",
-      "team": "Genoa",
-      "role": "C",
-      "officialId": "genoa:gen"
     },
     {
       "name": "Hamed Traore",
@@ -1659,12 +1167,6 @@
       "team": "Genoa",
       "role": "D",
       "officialId": "genoa:david puczka"
-    },
-    {
-      "name": "GEN",
-      "team": "Genoa",
-      "role": "D",
-      "officialId": "genoa:gen"
     },
     {
       "name": "Johan Felipe Vasquez Ibarra",
@@ -1727,12 +1229,6 @@
       "officialId": "genoa:franz stolz"
     },
     {
-      "name": "GEN",
-      "team": "Genoa",
-      "role": "P",
-      "officialId": "genoa:gen"
-    },
-    {
       "name": "Justin Bijlow",
       "team": "Genoa",
       "role": "P",
@@ -1745,34 +1241,10 @@
       "officialId": "inter:ange-yoan laure bonny"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:coppa italia"
-    },
-    {
       "name": "Francesco Pio Esposito",
       "team": "Inter",
       "role": "A",
       "officialId": "inter:francesco pio esposito"
-    },
-    {
-      "name": "INT",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:int"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:italian supercup"
     },
     {
       "name": "Jamal Iddrissou",
@@ -1799,40 +1271,10 @@
       "officialId": "inter:mattia mosconi"
     },
     {
-      "name": "Official Ball",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Inter",
-      "role": "A",
-      "officialId": "inter:social section background image"
-    },
-    {
       "name": "Aleksandar Stanković",
       "team": "Inter",
       "role": "C",
-      "officialId": "inter:aleksandar stanković"
+      "officialId": "inter:aleksandar stankovic"
     },
     {
       "name": "Andy Diouf",
@@ -1865,12 +1307,6 @@
       "officialId": "inter:henrikh mkhitaryan"
     },
     {
-      "name": "INT",
-      "team": "Inter",
-      "role": "C",
-      "officialId": "inter:int"
-    },
-    {
       "name": "Luis Henrique Tomaz De Lima",
       "team": "Inter",
       "role": "C",
@@ -1880,13 +1316,13 @@
       "name": "Nicolò Barella",
       "team": "Inter",
       "role": "C",
-      "officialId": "inter:nicolò barella"
+      "officialId": "inter:nicolo barella"
     },
     {
       "name": "Petar Sučić",
       "team": "Inter",
       "role": "C",
-      "officialId": "inter:petar sučić"
+      "officialId": "inter:petar sucic"
     },
     {
       "name": "Piotr Sebastian Zielinski",
@@ -1919,12 +1355,6 @@
       "officialId": "inter:diop tehuti djed-hotep spence"
     },
     {
-      "name": "INT",
-      "team": "Inter",
-      "role": "D",
-      "officialId": "inter:int"
-    },
-    {
       "name": "John Stones",
       "team": "Inter",
       "role": "D",
@@ -1947,12 +1377,6 @@
       "team": "Inter",
       "role": "D",
       "officialId": "inter:yann aurel bisseck"
-    },
-    {
-      "name": "INT",
-      "team": "Inter",
-      "role": "P",
-      "officialId": "inter:int"
     },
     {
       "name": "Ivan Provedel",
@@ -1979,12 +1403,6 @@
       "officialId": "juventus:arkadiusz milik"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:coppa italia"
-    },
-    {
       "name": "Edon Zhegrova",
       "team": "Juventus",
       "role": "A",
@@ -1994,25 +1412,7 @@
       "name": "Francisco Fernandes da Conceição",
       "team": "Juventus",
       "role": "A",
-      "officialId": "juventus:francisco fernandes da conceição"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:italian supercup"
-    },
-    {
-      "name": "JUV",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:juv"
+      "officialId": "juventus:francisco fernandes da conceicao"
     },
     {
       "name": "Jeremie Boga",
@@ -2036,37 +1436,13 @@
       "name": "Kerim Alajbegović",
       "team": "Juventus",
       "role": "A",
-      "officialId": "juventus:kerim alajbegović"
+      "officialId": "juventus:kerim alajbegovic"
     },
     {
       "name": "Nicolás Ivan González",
       "team": "Juventus",
       "role": "A",
-      "officialId": "juventus:nicolás ivan gonzález"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:official stickers"
+      "officialId": "juventus:nicolas ivan gonzalez"
     },
     {
       "name": "Osayuki Jeff Ekhator",
@@ -2081,22 +1457,10 @@
       "officialId": "juventus:randal kolo muani"
     },
     {
-      "name": "Social Section Background Image",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "juventus:social section background image"
-    },
-    {
       "name": "Douglas Luiz Soares De Paulo",
       "team": "Juventus",
       "role": "C",
       "officialId": "juventus:douglas luiz soares de paulo"
-    },
-    {
-      "name": "JUV",
-      "team": "Juventus",
-      "role": "C",
-      "officialId": "juventus:juv"
     },
     {
       "name": "Khephren Thuram-ulien",
@@ -2147,12 +1511,6 @@
       "officialId": "juventus:federico gatti"
     },
     {
-      "name": "JUV",
-      "team": "Juventus",
-      "role": "D",
-      "officialId": "juventus:juv"
-    },
-    {
       "name": "Jhon Janer Lucumi' Bonilla",
       "team": "Juventus",
       "role": "D",
@@ -2174,7 +1532,7 @@
       "name": "Mehmet Zeki Çelik",
       "team": "Juventus",
       "role": "D",
-      "officialId": "juventus:mehmet zeki çelik"
+      "officialId": "juventus:mehmet zeki celik"
     },
     {
       "name": "Pierre Kazaye Rommel Kalulu Kyatengwa",
@@ -2195,12 +1553,6 @@
       "officialId": "juventus:guglielmo vicario"
     },
     {
-      "name": "JUV",
-      "team": "Juventus",
-      "role": "P",
-      "officialId": "juventus:juv"
-    },
-    {
       "name": "Kamil Mieczyslaw Grabara",
       "team": "Juventus",
       "role": "P",
@@ -2217,12 +1569,6 @@
       "team": "Lazio",
       "role": "A",
       "officialId": "lazio:boulaye dia"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:coppa italia"
     },
     {
       "name": "Federico Serra",
@@ -2243,24 +1589,6 @@
       "officialId": "lazio:gustav tang isaksen"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:italian supercup"
-    },
-    {
-      "name": "LAZ",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:laz"
-    },
-    {
       "name": "Matteo Cancellieri",
       "team": "Lazio",
       "role": "A",
@@ -2273,40 +1601,10 @@
       "officialId": "lazio:mattia zaccagni"
     },
     {
-      "name": "Official Ball",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:official stickers"
-    },
-    {
       "name": "Petar Ratkov",
       "team": "Lazio",
       "role": "A",
       "officialId": "lazio:petar ratkov"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Lazio",
-      "role": "A",
-      "officialId": "lazio:social section background image"
     },
     {
       "name": "Tijjani Noslin",
@@ -2345,16 +1643,10 @@
       "officialId": "lazio:kenneth ina dorothea taylor"
     },
     {
-      "name": "LAZ",
-      "team": "Lazio",
-      "role": "C",
-      "officialId": "lazio:laz"
-    },
-    {
       "name": "Nicolò Rovella",
       "team": "Lazio",
       "role": "C",
-      "officialId": "lazio:nicolò rovella"
+      "officialId": "lazio:nicolo rovella"
     },
     {
       "name": "Oluwafisayo Faruq Dele-bashiru",
@@ -2378,7 +1670,7 @@
       "name": "Adam Marušić",
       "team": "Lazio",
       "role": "D",
-      "officialId": "lazio:adam marušić"
+      "officialId": "lazio:adam marusic"
     },
     {
       "name": "Alessio Romagnoli",
@@ -2403,12 +1695,6 @@
       "team": "Lazio",
       "role": "D",
       "officialId": "lazio:filipe bordon"
-    },
-    {
-      "name": "LAZ",
-      "team": "Lazio",
-      "role": "D",
-      "officialId": "lazio:laz"
     },
     {
       "name": "Luca Pellegrini",
@@ -2438,7 +1724,7 @@
       "name": "Patricio Gabarrón Gil",
       "team": "Lazio",
       "role": "D",
-      "officialId": "lazio:patricio gabarrón gil"
+      "officialId": "lazio:patricio gabarron gil"
     },
     {
       "name": "Ricardo Bordon",
@@ -2483,22 +1769,10 @@
       "officialId": "lazio:edoardo motta"
     },
     {
-      "name": "LAZ",
-      "team": "Lazio",
-      "role": "P",
-      "officialId": "lazio:laz"
-    },
-    {
       "name": "Amar Abdirahman Ahmed Fatah",
       "team": "Lecce",
       "role": "A",
       "officialId": "lecce:amar abdirahman ahmed fatah"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:coppa italia"
     },
     {
       "name": "Divine Chidiebube Onyemachi",
@@ -2510,7 +1784,7 @@
       "name": "Francisco Esteban Sánchez",
       "team": "Lecce",
       "role": "A",
-      "officialId": "lecce:francisco esteban sánchez"
+      "officialId": "lecce:francisco esteban sanchez"
     },
     {
       "name": "Hjalte Morel Lærke",
@@ -2519,64 +1793,16 @@
       "officialId": "lecce:hjalte morel lærke"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:italian supercup"
-    },
-    {
       "name": "Konan Ignace Jocelyn N'Dri",
       "team": "Lecce",
       "role": "A",
       "officialId": "lecce:konan ignace jocelyn n'dri"
     },
     {
-      "name": "LEC",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:lec"
-    },
-    {
       "name": "Nikola Štulić",
       "team": "Lecce",
       "role": "A",
-      "officialId": "lecce:nikola štulić"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Lecce",
-      "role": "A",
-      "officialId": "lecce:social section background image"
+      "officialId": "lecce:nikola stulic"
     },
     {
       "name": "Willem Davnis Louis Didier Geubbels",
@@ -2588,13 +1814,7 @@
       "name": "Ivan Ilić",
       "team": "Lecce",
       "role": "C",
-      "officialId": "lecce:ivan ilić"
-    },
-    {
-      "name": "LEC",
-      "team": "Lecce",
-      "role": "C",
-      "officialId": "lecce:lec"
+      "officialId": "lecce:ivan ilic"
     },
     {
       "name": "Lassana Coulibaly",
@@ -2612,13 +1832,13 @@
       "name": "Mohamed Dramé",
       "team": "Lecce",
       "role": "C",
-      "officialId": "lecce:mohamed dramé"
+      "officialId": "lecce:mohamed drame"
     },
     {
       "name": "Niko Kovač",
       "team": "Lecce",
       "role": "C",
-      "officialId": "lecce:niko kovač"
+      "officialId": "lecce:niko kovac"
     },
     {
       "name": "Olaf Gooitzen Paul Gorter",
@@ -2705,12 +1925,6 @@
       "officialId": "lecce:kialonda gaspar"
     },
     {
-      "name": "LEC",
-      "team": "Lecce",
-      "role": "D",
-      "officialId": "lecce:lec"
-    },
-    {
       "name": "Marlon Nnamdi Ubani",
       "team": "Lecce",
       "role": "D",
@@ -2727,12 +1941,6 @@
       "team": "Lecce",
       "role": "P",
       "officialId": "lecce:christian lupo"
-    },
-    {
-      "name": "LEC",
-      "team": "Lecce",
-      "role": "P",
-      "officialId": "lecce:lec"
     },
     {
       "name": "Marco Bleve",
@@ -2765,12 +1973,6 @@
       "officialId": "milan:christian mate pulisic"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:coppa italia"
-    },
-    {
       "name": "Francesco Camarda",
       "team": "Milan",
       "role": "A",
@@ -2780,67 +1982,19 @@
       "name": "Gonçalo Matias Ramos",
       "team": "Milan",
       "role": "A",
-      "officialId": "milan:gonçalo matias ramos"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:italian supercup"
-    },
-    {
-      "name": "MIL",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:mil"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:official stickers"
+      "officialId": "milan:goncalo matias ramos"
     },
     {
       "name": "Rafael Alexandre da Conceição Leão",
       "team": "Milan",
       "role": "A",
-      "officialId": "milan:rafael alexandre da conceição leão"
+      "officialId": "milan:rafael alexandre da conceicao leao"
     },
     {
       "name": "Samuel Chimerenka Chukwueze",
       "team": "Milan",
       "role": "A",
       "officialId": "milan:samuel chimerenka chukwueze"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Milan",
-      "role": "A",
-      "officialId": "milan:social section background image"
     },
     {
       "name": "Adrien Rabiot",
@@ -2876,13 +2030,7 @@
       "name": "Luka Modrić",
       "team": "Milan",
       "role": "C",
-      "officialId": "milan:luka modrić"
-    },
-    {
-      "name": "MIL",
-      "team": "Milan",
-      "role": "C",
-      "officialId": "milan:mil"
+      "officialId": "milan:luka modric"
     },
     {
       "name": "Ruben Ira Loftus-cheek",
@@ -2915,12 +2063,6 @@
       "officialId": "milan:koni de winter"
     },
     {
-      "name": "MIL",
-      "team": "Milan",
-      "role": "D",
-      "officialId": "milan:mil"
-    },
-    {
       "name": "Mario Gila Fuentes",
       "team": "Milan",
       "role": "D",
@@ -2948,7 +2090,7 @@
       "name": "Strahinja Pavlović",
       "team": "Milan",
       "role": "D",
-      "officialId": "milan:strahinja pavlović"
+      "officialId": "milan:strahinja pavlovic"
     },
     {
       "name": "Valeri Vladimirov Ivanov",
@@ -2966,13 +2108,7 @@
       "name": "Léo-Paul Andre Jean Bouyer Thiel",
       "team": "Milan",
       "role": "P",
-      "officialId": "milan:léo-paul andre jean bouyer thiel"
-    },
-    {
-      "name": "MIL",
-      "team": "Milan",
-      "role": "P",
-      "officialId": "milan:mil"
+      "officialId": "milan:leo-paul andre jean bouyer thiel"
     },
     {
       "name": "Matteo Pittarella",
@@ -2999,12 +2135,6 @@
       "officialId": "monza:andrea colpani"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:coppa italia"
-    },
-    {
       "name": "Cyril Jean Ngonge",
       "team": "Monza",
       "role": "A",
@@ -3023,18 +2153,6 @@
       "officialId": "monza:gustavo miguel pereira de sousa varela"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:italian supercup"
-    },
-    {
       "name": "Keita Balde Diao",
       "team": "Monza",
       "role": "A",
@@ -3047,36 +2165,6 @@
       "officialId": "monza:kevin maussi martins"
     },
     {
-      "name": "MON",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:mon"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:official stickers"
-    },
-    {
       "name": "Patrick Ciurria",
       "team": "Monza",
       "role": "A",
@@ -3087,12 +2175,6 @@
       "team": "Monza",
       "role": "A",
       "officialId": "monza:patrick cutrone"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Monza",
-      "role": "A",
-      "officialId": "monza:social section background image"
     },
     {
       "name": "Solomon Tekeace Loubao",
@@ -3110,7 +2192,7 @@
       "name": "Idrissa Touré",
       "team": "Monza",
       "role": "C",
-      "officialId": "monza:idrissa touré"
+      "officialId": "monza:idrissa toure"
     },
     {
       "name": "Jay Steven Robinson",
@@ -3123,12 +2205,6 @@
       "team": "Monza",
       "role": "C",
       "officialId": "monza:leonardo colombo"
-    },
-    {
-      "name": "MON",
-      "team": "Monza",
-      "role": "C",
-      "officialId": "monza:mon"
     },
     {
       "name": "Manga Michel Quentin Foe Ondoa",
@@ -3197,12 +2273,6 @@
       "officialId": "monza:lorenzo lucchesi"
     },
     {
-      "name": "MON",
-      "team": "Monza",
-      "role": "D",
-      "officialId": "monza:mon"
-    },
-    {
       "name": "Nda Konan Bienvenu Ange Eddy Kouadio",
       "team": "Monza",
       "role": "D",
@@ -3239,12 +2309,6 @@
       "officialId": "monza:aljaz strajnar"
     },
     {
-      "name": "MON",
-      "team": "Monza",
-      "role": "P",
-      "officialId": "monza:mon"
-    },
-    {
       "name": "Ngagne Demba Thiam",
       "team": "Monza",
       "role": "P",
@@ -3263,12 +2327,6 @@
       "officialId": "napoli:antonio vergara"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:coppa italia"
-    },
-    {
       "name": "David Neres Campos",
       "team": "Napoli",
       "role": "A",
@@ -3278,25 +2336,13 @@
       "name": "Francisco Martin Baridó",
       "team": "Napoli",
       "role": "A",
-      "officialId": "napoli:francisco martin baridó"
+      "officialId": "napoli:francisco martin barido"
     },
     {
       "name": "Giovane Santana Do Nascimento",
       "team": "Napoli",
       "role": "A",
       "officialId": "napoli:giovane santana do nascimento"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:italian supercup"
     },
     {
       "name": "Lorenzo Lucca",
@@ -3311,52 +2357,16 @@
       "officialId": "napoli:matteo politano"
     },
     {
-      "name": "NAP",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:nap"
-    },
-    {
       "name": "Noa Noell Lang",
       "team": "Napoli",
       "role": "A",
       "officialId": "napoli:noa noell lang"
     },
     {
-      "name": "Official Ball",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:official stickers"
-    },
-    {
       "name": "Rasmus Winther Højlund",
       "team": "Napoli",
       "role": "A",
       "officialId": "napoli:rasmus winther højlund"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Napoli",
-      "role": "A",
-      "officialId": "napoli:social section background image"
     },
     {
       "name": "Andre Frank Zambo Anguissa",
@@ -3389,12 +2399,6 @@
       "officialId": "napoli:kevin de bruyne"
     },
     {
-      "name": "NAP",
-      "team": "Napoli",
-      "role": "C",
-      "officialId": "napoli:nap"
-    },
-    {
       "name": "Scott Francis Mctominay",
       "team": "Napoli",
       "role": "C",
@@ -3422,7 +2426,7 @@
       "name": "Benoît Ntambue Badiashile Mukinayi Baya",
       "team": "Napoli",
       "role": "D",
-      "officialId": "napoli:benoît ntambue badiashile mukinayi baya"
+      "officialId": "napoli:benoit ntambue badiashile mukinayi baya"
     },
     {
       "name": "Christian Garofalo",
@@ -3455,12 +2459,6 @@
       "officialId": "napoli:mathias olivera miramontes"
     },
     {
-      "name": "NAP",
-      "team": "Napoli",
-      "role": "D",
-      "officialId": "napoli:nap"
-    },
-    {
       "name": "Pasquale Mazzocchi",
       "team": "Napoli",
       "role": "D",
@@ -3491,12 +2489,6 @@
       "officialId": "napoli:claudio pugliese"
     },
     {
-      "name": "NAP",
-      "team": "Napoli",
-      "role": "P",
-      "officialId": "napoli:nap"
-    },
-    {
       "name": "Nikita Contini Baranovsky",
       "team": "Napoli",
       "role": "P",
@@ -3506,31 +2498,13 @@
       "name": "Vanja Milinković-Savić",
       "team": "Napoli",
       "role": "P",
-      "officialId": "napoli:vanja milinković-savić"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:coppa italia"
+      "officialId": "napoli:vanja milinkovic-savic"
     },
     {
       "name": "El Bilal Toure",
       "team": "Parma",
       "role": "A",
       "officialId": "parma:el bilal toure"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:italian supercup"
     },
     {
       "name": "Jose David Romero",
@@ -3551,40 +2525,10 @@
       "officialId": "parma:nesta elphege"
     },
     {
-      "name": "Official Ball",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:official stickers"
-    },
-    {
       "name": "Ousmane Diallo Thiao",
       "team": "Parma",
       "role": "A",
       "officialId": "parma:ousmane diallo thiao"
-    },
-    {
-      "name": "PAR",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:par"
     },
     {
       "name": "Pontus Skule Erik Almqvist",
@@ -3599,22 +2543,16 @@
       "officialId": "parma:simone lontani"
     },
     {
-      "name": "Social Section Background Image",
-      "team": "Parma",
-      "role": "A",
-      "officialId": "parma:social section background image"
-    },
-    {
       "name": "Thomás De Martis De La Rosa",
       "team": "Parma",
       "role": "A",
-      "officialId": "parma:thomás de martis de la rosa"
+      "officialId": "parma:thomas de martis de la rosa"
     },
     {
       "name": "Abdou-Salam Konaté",
       "team": "Parma",
       "role": "C",
-      "officialId": "parma:abdou-salam konaté"
+      "officialId": "parma:abdou-salam konate"
     },
     {
       "name": "Adrian Bernabe' Garcia",
@@ -3659,12 +2597,6 @@
       "officialId": "parma:oliver sørensen jensen"
     },
     {
-      "name": "PAR",
-      "team": "Parma",
-      "role": "C",
-      "officialId": "parma:par"
-    },
-    {
       "name": "Abdoulaye Niakhate Ndiaye",
       "team": "Parma",
       "role": "D",
@@ -3707,12 +2639,6 @@
       "officialId": "parma:mariano emir troilo"
     },
     {
-      "name": "PAR",
-      "team": "Parma",
-      "role": "D",
-      "officialId": "parma:par"
-    },
-    {
       "name": "Sascha Britschgi",
       "team": "Parma",
       "role": "D",
@@ -3743,22 +2669,10 @@
       "officialId": "parma:manuel zambelli"
     },
     {
-      "name": "PAR",
-      "team": "Parma",
-      "role": "P",
-      "officialId": "parma:par"
-    },
-    {
       "name": "Antonio Arena",
       "team": "Roma",
       "role": "A",
       "officialId": "roma:antonio arena"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:coppa italia"
     },
     {
       "name": "Donyell Malen",
@@ -3767,58 +2681,16 @@
       "officialId": "roma:donyell malen"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:italian supercup"
-    },
-    {
       "name": "Matìas Soule Malvano",
       "team": "Roma",
       "role": "A",
-      "officialId": "roma:matìas soule malvano"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:official stickers"
+      "officialId": "roma:matias soule malvano"
     },
     {
       "name": "Paulo Exequiel Dybala",
       "team": "Roma",
       "role": "A",
       "officialId": "roma:paulo exequiel dybala"
-    },
-    {
-      "name": "ROM",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:rom"
     },
     {
       "name": "Robinio Vaz",
@@ -3831,12 +2703,6 @@
       "team": "Roma",
       "role": "A",
       "officialId": "roma:santiago thomas castro"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "roma:social section background image"
     },
     {
       "name": "Bryan Cristante",
@@ -3866,13 +2732,7 @@
       "name": "Niccolò Pisilli",
       "team": "Roma",
       "role": "C",
-      "officialId": "roma:niccolò pisilli"
-    },
-    {
-      "name": "ROM",
-      "team": "Roma",
-      "role": "C",
-      "officialId": "roma:rom"
+      "officialId": "roma:niccolo pisilli"
     },
     {
       "name": "Rodrigo Mora De Carvalho",
@@ -3914,7 +2774,7 @@
       "name": "Jan Stanislaw Ziółkowski",
       "team": "Roma",
       "role": "D",
-      "officialId": "roma:jan stanislaw ziółkowski"
+      "officialId": "roma:jan stanislaw ziołkowski"
     },
     {
       "name": "Konstantinos Koulierakis",
@@ -3941,16 +2801,10 @@
       "officialId": "roma:obite evan ndicka"
     },
     {
-      "name": "ROM",
-      "team": "Roma",
-      "role": "D",
-      "officialId": "roma:rom"
-    },
-    {
       "name": "Wesley Vinícius França Lima",
       "team": "Roma",
       "role": "D",
-      "officialId": "roma:wesley vinícius frança lima"
+      "officialId": "roma:wesley vinicius franca lima"
     },
     {
       "name": "Alessio Marcaccini",
@@ -3977,28 +2831,16 @@
       "officialId": "roma:pierluigi gollini"
     },
     {
-      "name": "ROM",
-      "team": "Roma",
-      "role": "P",
-      "officialId": "roma:rom"
-    },
-    {
       "name": "Armand Gaetan Laurienté",
       "team": "Sassuolo",
       "role": "A",
-      "officialId": "sassuolo:armand gaetan laurienté"
+      "officialId": "sassuolo:armand gaetan lauriente"
     },
     {
       "name": "Benjamin Dominguez",
       "team": "Sassuolo",
       "role": "A",
       "officialId": "sassuolo:benjamin dominguez"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:coppa italia"
     },
     {
       "name": "Cristian Volpato",
@@ -4019,18 +2861,6 @@
       "officialId": "sassuolo:gabriel kulla"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:italian supercup"
-    },
-    {
       "name": "Kieron Tom Bowie",
       "team": "Sassuolo",
       "role": "A",
@@ -4041,42 +2871,6 @@
       "team": "Sassuolo",
       "role": "A",
       "officialId": "sassuolo:nicholas pierini"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:official stickers"
-    },
-    {
-      "name": "SAS",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:sas"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Sassuolo",
-      "role": "A",
-      "officialId": "sassuolo:social section background image"
     },
     {
       "name": "Andrea Ghion",
@@ -4106,7 +2900,7 @@
       "name": "Ismaël Kenneth Koné",
       "team": "Sassuolo",
       "role": "C",
-      "officialId": "sassuolo:ismaël kenneth koné"
+      "officialId": "sassuolo:ismael kenneth kone"
     },
     {
       "name": "Kristian Thorstvedt",
@@ -4124,7 +2918,7 @@
       "name": "Nemanja Matić",
       "team": "Sassuolo",
       "role": "C",
-      "officialId": "sassuolo:nemanja matić"
+      "officialId": "sassuolo:nemanja matic"
     },
     {
       "name": "Patrick Amoako Nuamah",
@@ -4133,16 +2927,10 @@
       "officialId": "sassuolo:patrick amoako nuamah"
     },
     {
-      "name": "SAS",
-      "team": "Sassuolo",
-      "role": "C",
-      "officialId": "sassuolo:sas"
-    },
-    {
       "name": "Vasilije Adžić",
       "team": "Sassuolo",
       "role": "C",
-      "officialId": "sassuolo:vasilije adžić"
+      "officialId": "sassuolo:vasilije adzic"
     },
     {
       "name": "Alessandro Di Bitonto",
@@ -4205,12 +2993,6 @@
       "officialId": "sassuolo:rafael obrador burguera"
     },
     {
-      "name": "SAS",
-      "team": "Sassuolo",
-      "role": "D",
-      "officialId": "sassuolo:sas"
-    },
-    {
       "name": "Sebastian Walukiewicz",
       "team": "Sassuolo",
       "role": "D",
@@ -4238,7 +3020,7 @@
       "name": "Arijanet Anan Murić",
       "team": "Sassuolo",
       "role": "P",
-      "officialId": "sassuolo:arijanet anan murić"
+      "officialId": "sassuolo:arijanet anan muric"
     },
     {
       "name": "Giacomo Satalino",
@@ -4251,12 +3033,6 @@
       "team": "Sassuolo",
       "role": "P",
       "officialId": "sassuolo:lorenzo nyarko"
-    },
-    {
-      "name": "SAS",
-      "team": "Sassuolo",
-      "role": "P",
-      "officialId": "sassuolo:sas"
     },
     {
       "name": "Stefano Turati",
@@ -4277,12 +3053,6 @@
       "officialId": "torino:che zach everton adams"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:coppa italia"
-    },
-    {
       "name": "Duvan Esteban Zapata Banguero",
       "team": "Torino",
       "role": "A",
@@ -4301,42 +3071,6 @@
       "officialId": "torino:giovanni pablo simeone baldini"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:italian supercup"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:official stickers"
-    },
-    {
       "name": "Pietro Pellegri",
       "team": "Torino",
       "role": "A",
@@ -4346,19 +3080,7 @@
       "name": "Sandro Kulenović",
       "team": "Torino",
       "role": "A",
-      "officialId": "torino:sandro kulenović"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:social section background image"
-    },
-    {
-      "name": "TOR",
-      "team": "Torino",
-      "role": "A",
-      "officialId": "torino:tor"
+      "officialId": "torino:sandro kulenovic"
     },
     {
       "name": "Tommaso Gabellini",
@@ -4424,13 +3146,7 @@
       "name": "Nikola Vlašić",
       "team": "Torino",
       "role": "C",
-      "officialId": "torino:nikola vlašić"
-    },
-    {
-      "name": "TOR",
-      "team": "Torino",
-      "role": "C",
-      "officialId": "torino:tor"
+      "officialId": "torino:nikola vlasic"
     },
     {
       "name": "Zalan Kugyela",
@@ -4466,7 +3182,7 @@
       "name": "Eray Ervin Cömert",
       "team": "Torino",
       "role": "D",
-      "officialId": "torino:eray ervin cömert"
+      "officialId": "torino:eray ervin comert"
     },
     {
       "name": "Manuel Carrascosa Moreno",
@@ -4505,12 +3221,6 @@
       "officialId": "torino:saul basilio coco bassey oubina"
     },
     {
-      "name": "TOR",
-      "team": "Torino",
-      "role": "D",
-      "officialId": "torino:tor"
-    },
-    {
       "name": "Alberto Andrea Paleari",
       "team": "Torino",
       "role": "P",
@@ -4541,18 +3251,6 @@
       "officialId": "torino:lapo siviero"
     },
     {
-      "name": "TOR",
-      "team": "Torino",
-      "role": "P",
-      "officialId": "torino:tor"
-    },
-    {
-      "name": "Coppa Italia",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:coppa italia"
-    },
-    {
       "name": "Giulio Vinciati",
       "team": "Udinese",
       "role": "A",
@@ -4565,18 +3263,6 @@
       "officialId": "udinese:idrissa gueye"
     },
     {
-      "name": "Innovation & Technology Partner",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:italian supercup"
-    },
-    {
       "name": "Keinan Vincent Joseph Davis",
       "team": "Udinese",
       "role": "A",
@@ -4586,43 +3272,7 @@
       "name": "Nicolò Zaniolo",
       "team": "Udinese",
       "role": "A",
-      "officialId": "udinese:nicolò zaniolo"
-    },
-    {
-      "name": "Official Ball",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:official stickers"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:social section background image"
-    },
-    {
-      "name": "UDI",
-      "team": "Udinese",
-      "role": "A",
-      "officialId": "udinese:udi"
+      "officialId": "udinese:nicolo zaniolo"
     },
     {
       "name": "Vakoun Issouf Bayo",
@@ -4634,7 +3284,7 @@
       "name": "David Pejičić",
       "team": "Udinese",
       "role": "C",
-      "officialId": "udinese:david pejičić"
+      "officialId": "udinese:david pejicic"
     },
     {
       "name": "Giorgi Chakvetadze",
@@ -4652,7 +3302,7 @@
       "name": "Jesper Karlström",
       "team": "Udinese",
       "role": "C",
-      "officialId": "udinese:jesper karlström"
+      "officialId": "udinese:jesper karlstrom"
     },
     {
       "name": "Juan David Arizala Micolta",
@@ -4688,19 +3338,13 @@
       "name": "Sandi Lovrić",
       "team": "Udinese",
       "role": "C",
-      "officialId": "udinese:sandi lovrić"
-    },
-    {
-      "name": "UDI",
-      "team": "Udinese",
-      "role": "C",
-      "officialId": "udinese:udi"
+      "officialId": "udinese:sandi lovric"
     },
     {
       "name": "Unai Gómez Etxebarria",
       "team": "Udinese",
       "role": "C",
-      "officialId": "udinese:unai gómez etxebarria"
+      "officialId": "udinese:unai gomez etxebarria"
     },
     {
       "name": "Alessandro Zanoli",
@@ -4712,7 +3356,7 @@
       "name": "Branimir Mlačić",
       "team": "Udinese",
       "role": "D",
-      "officialId": "udinese:branimir mlačić"
+      "officialId": "udinese:branimir mlacic"
     },
     {
       "name": "Christian Kabasele",
@@ -4748,7 +3392,7 @@
       "name": "Nicolò Bertola",
       "team": "Udinese",
       "role": "D",
-      "officialId": "udinese:nicolò bertola"
+      "officialId": "udinese:nicolo bertola"
     },
     {
       "name": "Oumar Mickael Solet Bomawoko",
@@ -4761,12 +3405,6 @@
       "team": "Udinese",
       "role": "D",
       "officialId": "udinese:saba goglichidze"
-    },
-    {
-      "name": "UDI",
-      "team": "Udinese",
-      "role": "D",
-      "officialId": "udinese:udi"
     },
     {
       "name": "Bartosz Mateusz Mrozek",
@@ -4793,12 +3431,6 @@
       "officialId": "udinese:emil maduka okoye"
     },
     {
-      "name": "UDI",
-      "team": "Udinese",
-      "role": "P",
-      "officialId": "udinese:udi"
-    },
-    {
       "name": "Akor Jerome Adams",
       "team": "Venezia",
       "role": "A",
@@ -4817,24 +3449,6 @@
       "officialId": "venezia:andrea adorante"
     },
     {
-      "name": "Coppa Italia",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:coppa italia"
-    },
-    {
-      "name": "Innovation & Technology Partner",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:innovation & technology partner"
-    },
-    {
-      "name": "Italian Supercup",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:italian supercup"
-    },
-    {
       "name": "John Yeboah",
       "team": "Venezia",
       "role": "A",
@@ -4847,46 +3461,10 @@
       "officialId": "venezia:lion lauberbach"
     },
     {
-      "name": "Official Ball",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:official ball"
-    },
-    {
-      "name": "Official Ball Collectibles",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:official ball collectibles"
-    },
-    {
-      "name": "Official Partner",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:official partner"
-    },
-    {
-      "name": "Official Stickers",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:official stickers"
-    },
-    {
       "name": "Saad El Haddad",
       "team": "Venezia",
       "role": "A",
       "officialId": "venezia:saad el haddad"
-    },
-    {
-      "name": "Social Section Background Image",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:social section background image"
-    },
-    {
-      "name": "VEN",
-      "team": "Venezia",
-      "role": "A",
-      "officialId": "venezia:ven"
     },
     {
       "name": "Antoine Hainaut",
@@ -4982,19 +3560,13 @@
       "name": "Thórir Jóhann Helgason",
       "team": "Venezia",
       "role": "C",
-      "officialId": "venezia:thórir jóhann helgason"
+      "officialId": "venezia:thorir johann helgason"
     },
     {
       "name": "Toma Basic",
       "team": "Venezia",
       "role": "C",
       "officialId": "venezia:toma basic"
-    },
-    {
-      "name": "VEN",
-      "team": "Venezia",
-      "role": "C",
-      "officialId": "venezia:ven"
     },
     {
       "name": "Alejandro Gomes Furtado",
@@ -5012,7 +3584,7 @@
       "name": "Bartol Franjić",
       "team": "Venezia",
       "role": "D",
-      "officialId": "venezia:bartol franjić"
+      "officialId": "venezia:bartol franjic"
     },
     {
       "name": "Joel Marcel Schingtienne",
@@ -5039,12 +3611,6 @@
       "officialId": "venezia:redouane halhal"
     },
     {
-      "name": "VEN",
-      "team": "Venezia",
-      "role": "D",
-      "officialId": "venezia:ven"
-    },
-    {
       "name": "Alessio Pozzi",
       "team": "Venezia",
       "role": "P",
@@ -5054,25 +3620,19 @@
       "name": "Filip Stanković",
       "team": "Venezia",
       "role": "P",
-      "officialId": "venezia:filip stanković"
+      "officialId": "venezia:filip stankovic"
     },
     {
       "name": "Lorenzo Montipò",
       "team": "Venezia",
       "role": "P",
-      "officialId": "venezia:lorenzo montipò"
+      "officialId": "venezia:lorenzo montipo"
     },
     {
       "name": "Matteo Grandi",
       "team": "Venezia",
       "role": "P",
       "officialId": "venezia:matteo grandi"
-    },
-    {
-      "name": "VEN",
-      "team": "Venezia",
-      "role": "P",
-      "officialId": "venezia:ven"
     }
   ]
 }
