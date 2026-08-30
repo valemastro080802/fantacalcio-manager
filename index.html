@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v1.4.0</title>
+<title>Fantacalcio Manager Online v1.4.1</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -745,7 +745,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.1</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1057,7 +1057,7 @@ function avatarContent(p){
 
 
 
-/* === v1.4.0 — SINCRONIZZAZIONE ROSE DA SNAPSHOT GITHUB === */
+/* === v1.4.1 — SINCRONIZZAZIONE ROSE DA SNAPSHOT GITHUB === */
 const OFFICIAL_ROSTER_URL="./data/seriea_rosters.json";
 const OFFICIAL_MIN_PLAYERS=300;
 const OFFICIAL_EXPECTED_TEAMS=20;
@@ -1155,7 +1155,7 @@ function syncMergeOfficial(payload){
 
   syncCleanupLineups();
   save();
-  renderDB();
+  renderTable();
   renderFavorites();
   renderLineup();
   return {total:db.length,moved,added,removed};
@@ -1513,9 +1513,7 @@ function openPicker(slot,mode="starter",subIndex=0){
  pickMode=mode;
  pickSubIndex=subIndex;
  pickSearch.value="";
- const starter=lineup[slot]?byId(lineup[slot]):null;
- const roleHint=(mode==="sub" && starter)?` · ruolo ${starter.role}`:"";
- pickTeamHint.textContent=`${mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori del ${currentTeam}${roleHint}`;
+ pickTeamHint.textContent=`${mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori del ${currentTeam}`;
  pickModal.classList.add("open");
  renderPicker();
 }
@@ -1523,9 +1521,7 @@ closePick.addEventListener("click",()=>pickModal.classList.remove("open"));
 pickSearch.addEventListener("input",renderPicker);
 function renderPicker(){
  const q=pickSearch.value.toLowerCase().trim();
- const starter=pickMode==="sub" && lineup[pickSlot]?byId(lineup[pickSlot]):null;
  let arr=db.filter(p=>p.team===currentTeam
-   && (!starter || p.role===starter.role)
    && (!q||p.name.toLowerCase().includes(q)||p.role.toLowerCase().includes(q))
  ).slice(0,80);
  pickResults.innerHTML=arr.map(p=>`<button data-pick="${p.id}"><b>${p.name}</b> · ${p.role} · ${p.team} <span class="small">Qt. ${p.quotation}</span></button>`).join("");
