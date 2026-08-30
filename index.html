@@ -1155,7 +1155,7 @@ function syncMergeOfficial(payload){
 
   syncCleanupLineups();
   save();
-  renderTable();
+  renderDB();
   renderFavorites();
   renderLineup();
   return {total:db.length,moved,added,removed};
