@@ -349,7 +349,7 @@ def scrape_team(team, slug):
     return players
 
 def test_market_page():
-    url = "https://www.legaseriea.it/serie-a"
+    url = "https://www.legaseriea.it/serie-a/news/calciomercato-gli-aggiornamenti-in-serie-a-enilive"
     page = fetch(url)    
     pos = normalize(page).find("calciomercato")
     if pos != -1:
