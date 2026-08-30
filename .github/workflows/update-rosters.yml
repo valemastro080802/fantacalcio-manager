@@ -2,7 +2,7 @@ name: Aggiorna rose Serie A
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
