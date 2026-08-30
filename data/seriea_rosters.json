@@ -1,7 +1,5078 @@
 {
   "source": "Lega Serie A - pagine ufficiali delle rose dei club",
-  "generated_at": "",
-  "teams": 0,
-  "players_count": 0,
-  "players": []
+  "generated_at": "2026-08-30T14:27:38.134368+00:00",
+  "teams": 20,
+  "players_count": 845,
+  "players": [
+    {
+      "name": "ATA",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:ata"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:coppa italia"
+    },
+    {
+      "name": "Giacomo Raspadori",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:giacomo raspadori"
+    },
+    {
+      "name": "Gianluca Scamacca",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:gianluca scamacca"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:italian supercup"
+    },
+    {
+      "name": "Kamaldeen Sulemana",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:kamaldeen sulemana"
+    },
+    {
+      "name": "Nikola Krstović",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:nikola krstović"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Atalanta",
+      "role": "A",
+      "officialId": "atalanta:social section background image"
+    },
+    {
+      "name": "ATA",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:ata"
+    },
+    {
+      "name": "Alberto Manzoni",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:alberto manzoni"
+    },
+    {
+      "name": "Charles De Ketelaere",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:charles de ketelaere"
+    },
+    {
+      "name": "Eljif Elmas",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:eljif elmas"
+    },
+    {
+      "name": "Federico Cassa",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:federico cassa"
+    },
+    {
+      "name": "Federico Steffanoni",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:federico steffanoni"
+    },
+    {
+      "name": "Gianluca Gaetano",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:gianluca gaetano"
+    },
+    {
+      "name": "Ibrahim Sulemana Kakari",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:ibrahim sulemana kakari"
+    },
+    {
+      "name": "Lazar Vujadin Samardžić",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:lazar vujadin samardžić"
+    },
+    {
+      "name": "Lorenzo Bernasconi",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:lorenzo bernasconi"
+    },
+    {
+      "name": "Mario Pašalić",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:mario pašalić"
+    },
+    {
+      "name": "Marten Elco De Roon",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:marten elco de roon"
+    },
+    {
+      "name": "Nicola Zalewski",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:nicola zalewski"
+    },
+    {
+      "name": "Sergej Levak",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:sergej levak"
+    },
+    {
+      "name": "Éderson José dos Santos Lourenço da Silva",
+      "team": "Atalanta",
+      "role": "C",
+      "officialId": "atalanta:éderson josé dos santos lourenço da silva"
+    },
+    {
+      "name": "ATA",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:ata"
+    },
+    {
+      "name": "Davide Zappacosta",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:davide zappacosta"
+    },
+    {
+      "name": "Giorgio Scalvini",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:giorgio scalvini"
+    },
+    {
+      "name": "Honest Ahanor",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:honest ahanor"
+    },
+    {
+      "name": "Isak Malcolm Kwaku Hien",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:isak malcolm kwaku hien"
+    },
+    {
+      "name": "Kouakou Odilon Kossounou",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:kouakou odilon kossounou"
+    },
+    {
+      "name": "Matteo Giuseppe Plaia",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:matteo giuseppe plaia"
+    },
+    {
+      "name": "Raoul Bellanova",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:raoul bellanova"
+    },
+    {
+      "name": "Relja Obric",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:relja obric"
+    },
+    {
+      "name": "Sead Kolašinac",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:sead kolašinac"
+    },
+    {
+      "name": "Thomas Thiesson Kristensen",
+      "team": "Atalanta",
+      "role": "D",
+      "officialId": "atalanta:thomas thiesson kristensen"
+    },
+    {
+      "name": "ATA",
+      "team": "Atalanta",
+      "role": "P",
+      "officialId": "atalanta:ata"
+    },
+    {
+      "name": "Marco Carnesecchi",
+      "team": "Atalanta",
+      "role": "P",
+      "officialId": "atalanta:marco carnesecchi"
+    },
+    {
+      "name": "Marco Sportiello",
+      "team": "Atalanta",
+      "role": "P",
+      "officialId": "atalanta:marco sportiello"
+    },
+    {
+      "name": "Paolo Vismara",
+      "team": "Atalanta",
+      "role": "P",
+      "officialId": "atalanta:paolo vismara"
+    },
+    {
+      "name": "Artem Dovbyk",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:artem dovbyk"
+    },
+    {
+      "name": "BOL",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:bol"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:coppa italia"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:italian supercup"
+    },
+    {
+      "name": "Jens Odgaard",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:jens odgaard"
+    },
+    {
+      "name": "Jonathan David Rowe",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:jonathan david rowe"
+    },
+    {
+      "name": "Nicolò Cambiaghi",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:nicolò cambiaghi"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:official stickers"
+    },
+    {
+      "name": "Riccardo Orsolini",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:riccardo orsolini"
+    },
+    {
+      "name": "Roberto Piccoli",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:roberto piccoli"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "bologna:social section background image"
+    },
+    {
+      "name": "BOL",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:bol"
+    },
+    {
+      "name": "Federico Bernardeschi",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:federico bernardeschi"
+    },
+    {
+      "name": "Lewis Ferguson",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:lewis ferguson"
+    },
+    {
+      "name": "Marco Libra Alvarado",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:marco libra alvarado"
+    },
+    {
+      "name": "Mikel Jesus Amondarain",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:mikel jesus amondarain"
+    },
+    {
+      "name": "Nikola Moro",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:nikola moro"
+    },
+    {
+      "name": "Oussama El Azzouzi",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:oussama el azzouzi"
+    },
+    {
+      "name": "Tommaso Pobega",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "bologna:tommaso pobega"
+    },
+    {
+      "name": "Abdel Rahim Alhassane Bonkano",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:abdel rahim alhassane bonkano"
+    },
+    {
+      "name": "BOL",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:bol"
+    },
+    {
+      "name": "Eivind Fauske Helland",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:eivind fauske helland"
+    },
+    {
+      "name": "Emil Alfons Holm",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:emil alfons holm"
+    },
+    {
+      "name": "Juan Miranda Gonzalez",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:juan miranda gonzalez"
+    },
+    {
+      "name": "Lorenzo De Silvestri",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:lorenzo de silvestri"
+    },
+    {
+      "name": "Martin Vitik",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:martin vitik"
+    },
+    {
+      "name": "Nadir Zortea",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:nadir zortea"
+    },
+    {
+      "name": "Nicolò Casale",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:nicolò casale"
+    },
+    {
+      "name": "Torbjørn Lysaker Heggem",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "bologna:torbjørn lysaker heggem"
+    },
+    {
+      "name": "BOL",
+      "team": "Bologna",
+      "role": "P",
+      "officialId": "bologna:bol"
+    },
+    {
+      "name": "Massimo Pessina",
+      "team": "Bologna",
+      "role": "P",
+      "officialId": "bologna:massimo pessina"
+    },
+    {
+      "name": "Ukko Antti Einari Happonen",
+      "team": "Bologna",
+      "role": "P",
+      "officialId": "bologna:ukko antti einari happonen"
+    },
+    {
+      "name": "Łukasz Skorupski",
+      "team": "Bologna",
+      "role": "P",
+      "officialId": "bologna:łukasz skorupski"
+    },
+    {
+      "name": "Alieu Fadera",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:alieu fadera"
+    },
+    {
+      "name": "CAG",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:cag"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:coppa italia"
+    },
+    {
+      "name": "Gennaro Borrelli",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:gennaro borrelli"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:italian supercup"
+    },
+    {
+      "name": "Kevin Carlos Omoruyi Benjamin",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:kevin carlos omoruyi benjamin"
+    },
+    {
+      "name": "Kingstone Mutandwa",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:kingstone mutandwa"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:official stickers"
+    },
+    {
+      "name": "Paul Mendy",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:paul mendy"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:social section background image"
+    },
+    {
+      "name": "Yael Fritz Junior Trepy",
+      "team": "Cagliari",
+      "role": "A",
+      "officialId": "cagliari:yael fritz junior trepy"
+    },
+    {
+      "name": "Ademide Oreoluwa Abdulganiyu Akarakiri",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:ademide oreoluwa abdulganiyu akarakiri"
+    },
+    {
+      "name": "Alessandro Deiola",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:alessandro deiola"
+    },
+    {
+      "name": "Alessandro Gianni Romano",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:alessandro gianni romano"
+    },
+    {
+      "name": "CAG",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:cag"
+    },
+    {
+      "name": "Daniel Maldini",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:daniel maldini"
+    },
+    {
+      "name": "Harry Billy Winks",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:harry billy winks"
+    },
+    {
+      "name": "Ivan Stoyanov Sulev",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:ivan stoyanov sulev"
+    },
+    {
+      "name": "Jacopo Fazzini",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:jacopo fazzini"
+    },
+    {
+      "name": "Joseph Liteta",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:joseph liteta"
+    },
+    {
+      "name": "Mattia Felici",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:mattia felici"
+    },
+    {
+      "name": "Ndary Michel Adopo",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:ndary michel adopo"
+    },
+    {
+      "name": "Nicola Grandu",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:nicola grandu"
+    },
+    {
+      "name": "Nicolò Cavuoti",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:nicolò cavuoti"
+    },
+    {
+      "name": "Riccardo Ciervo",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "cagliari:riccardo ciervo"
+    },
+    {
+      "name": "Adam Obert",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:adam obert"
+    },
+    {
+      "name": "CAG",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:cag"
+    },
+    {
+      "name": "Giuseppe Aurelio",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:giuseppe aurelio"
+    },
+    {
+      "name": "José Pedro Da Silva Figueiredo Freitas",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:josé pedro da silva figueiredo freitas"
+    },
+    {
+      "name": "Juan Martin Rodríguez Camejo",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:juan martin rodríguez camejo"
+    },
+    {
+      "name": "Raphael Kofler",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:raphael kofler"
+    },
+    {
+      "name": "Riyad Idrissi",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:riyad idrissi"
+    },
+    {
+      "name": "Yerry Fernando Mina Gonzalez",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "cagliari:yerry fernando mina gonzalez"
+    },
+    {
+      "name": "Alen Sherri",
+      "team": "Cagliari",
+      "role": "P",
+      "officialId": "cagliari:alen sherri"
+    },
+    {
+      "name": "Boris Radunović",
+      "team": "Cagliari",
+      "role": "P",
+      "officialId": "cagliari:boris radunović"
+    },
+    {
+      "name": "CAG",
+      "team": "Cagliari",
+      "role": "P",
+      "officialId": "cagliari:cag"
+    },
+    {
+      "name": "Elia Caprile",
+      "team": "Cagliari",
+      "role": "P",
+      "officialId": "cagliari:elia caprile"
+    },
+    {
+      "name": "Anastasios Douvikas",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:anastasios douvikas"
+    },
+    {
+      "name": "Assane Diao Diaoune",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:assane diao diaoune"
+    },
+    {
+      "name": "COM",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:com"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:coppa italia"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:italian supercup"
+    },
+    {
+      "name": "Ivan Azon Monzon",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:ivan azon monzon"
+    },
+    {
+      "name": "Jarden Tutu Addai",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:jarden tutu addai"
+    },
+    {
+      "name": "Jesus Rodriguez Caraballo",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:jesus rodriguez caraballo"
+    },
+    {
+      "name": "Nicolas Gerrit Kühn",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:nicolas gerrit kühn"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Como",
+      "role": "A",
+      "officialId": "como:social section background image"
+    },
+    {
+      "name": "Adrian Adriano Lahdo",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:adrian adriano lahdo"
+    },
+    {
+      "name": "COM",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:com"
+    },
+    {
+      "name": "Lucas Da Cunha",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:lucas da cunha"
+    },
+    {
+      "name": "Luis Milla",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:luis milla"
+    },
+    {
+      "name": "Martin Baturina",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:martin baturina"
+    },
+    {
+      "name": "Mattia Liberali",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:mattia liberali"
+    },
+    {
+      "name": "Maxence Caqueret",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:maxence caqueret"
+    },
+    {
+      "name": "Maximo Perrone Rodriguez",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:maximo perrone rodriguez"
+    },
+    {
+      "name": "Nicolas Paz Martinez",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:nicolas paz martinez"
+    },
+    {
+      "name": "Riccardo Cassano",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:riccardo cassano"
+    },
+    {
+      "name": "Samuele Ricci",
+      "team": "Como",
+      "role": "C",
+      "officialId": "como:samuele ricci"
+    },
+    {
+      "name": "Alberto Dossena",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:alberto dossena"
+    },
+    {
+      "name": "Alex Valle Gomez",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:alex valle gomez"
+    },
+    {
+      "name": "COM",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:com"
+    },
+    {
+      "name": "Edoardo Goldaniga",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:edoardo goldaniga"
+    },
+    {
+      "name": "Ignace Fabienne Van Der Brempt",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:ignace fabienne van der brempt"
+    },
+    {
+      "name": "Ivan Smolčić",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:ivan smolčić"
+    },
+    {
+      "name": "Jacobo Ramon Naveros",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:jacobo ramon naveros"
+    },
+    {
+      "name": "Kaiki Bruno Da Silva",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:kaiki bruno da silva"
+    },
+    {
+      "name": "Marc-Oliver Kempf",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:marc-oliver kempf"
+    },
+    {
+      "name": "Trevoh Tom Chalobah",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:trevoh tom chalobah"
+    },
+    {
+      "name": "Willy Kambwala Ndengushi",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:willy kambwala ndengushi"
+    },
+    {
+      "name": "Yan Bueno Couto",
+      "team": "Como",
+      "role": "D",
+      "officialId": "como:yan bueno couto"
+    },
+    {
+      "name": "COM",
+      "team": "Como",
+      "role": "P",
+      "officialId": "como:com"
+    },
+    {
+      "name": "Emil Audero Mulyadi",
+      "team": "Como",
+      "role": "P",
+      "officialId": "como:emil audero mulyadi"
+    },
+    {
+      "name": "Jean Jules Michel Butez",
+      "team": "Como",
+      "role": "P",
+      "officialId": "como:jean jules michel butez"
+    },
+    {
+      "name": "Mauro Vigorito",
+      "team": "Como",
+      "role": "P",
+      "officialId": "como:mauro vigorito"
+    },
+    {
+      "name": "Noel Max Joachim Törnqvist",
+      "team": "Como",
+      "role": "P",
+      "officialId": "como:noel max joachim törnqvist"
+    },
+    {
+      "name": "Albert Guðmundsson",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:albert guðmundsson"
+    },
+    {
+      "name": "Bioty Moise Kean",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:bioty moise kean"
+    },
+    {
+      "name": "Brando Mazzeo",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:brando mazzeo"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:coppa italia"
+    },
+    {
+      "name": "FIO",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:fio"
+    },
+    {
+      "name": "Federico Croci",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:federico croci"
+    },
+    {
+      "name": "Franco Mastantuono",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:franco mastantuono"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:italian supercup"
+    },
+    {
+      "name": "Mateo Pellegrino Casalanguida",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:mateo pellegrino casalanguida"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:social section background image"
+    },
+    {
+      "name": "Sulayman Jallow",
+      "team": "Fiorentina",
+      "role": "A",
+      "officialId": "fiorentina:sulayman jallow"
+    },
+    {
+      "name": "Antonio Pirro'",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:antonio pirro'"
+    },
+    {
+      "name": "Arthur Eric Atta",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:arthur eric atta"
+    },
+    {
+      "name": "Cher Ndour",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:cher ndour"
+    },
+    {
+      "name": "Christ Ravynel Inao Oulaï",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:christ ravynel inao oulaï"
+    },
+    {
+      "name": "FIO",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:fio"
+    },
+    {
+      "name": "Marco Brescianini",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:marco brescianini"
+    },
+    {
+      "name": "Nicolò Fagioli",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:nicolò fagioli"
+    },
+    {
+      "name": "Rolando Mandragora",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fiorentina:rolando mandragora"
+    },
+    {
+      "name": "Alejandro Jimenez Sanchez",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:alejandro jimenez sanchez"
+    },
+    {
+      "name": "Domilson Cordeiro Dos Santo",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:domilson cordeiro dos santo"
+    },
+    {
+      "name": "FIO",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:fio"
+    },
+    {
+      "name": "Fabiano Parisi",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:fabiano parisi"
+    },
+    {
+      "name": "João Mário Neto Lopes",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:joão mário neto lopes"
+    },
+    {
+      "name": "Luca Ranieri",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:luca ranieri"
+    },
+    {
+      "name": "Marin Pongračić",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:marin pongračić"
+    },
+    {
+      "name": "Radu Matei Dragusin",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:radu matei dragusin"
+    },
+    {
+      "name": "Viery Fernandes Santos Lopes",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:viery fernandes santos lopes"
+    },
+    {
+      "name": "Víctor Valdepeñas Talavera",
+      "team": "Fiorentina",
+      "role": "D",
+      "officialId": "fiorentina:víctor valdepeñas talavera"
+    },
+    {
+      "name": "David De Gea Quintana",
+      "team": "Fiorentina",
+      "role": "P",
+      "officialId": "fiorentina:david de gea quintana"
+    },
+    {
+      "name": "FIO",
+      "team": "Fiorentina",
+      "role": "P",
+      "officialId": "fiorentina:fio"
+    },
+    {
+      "name": "Luca Lezzerini",
+      "team": "Fiorentina",
+      "role": "P",
+      "officialId": "fiorentina:luca lezzerini"
+    },
+    {
+      "name": "Oliver Christensen",
+      "team": "Fiorentina",
+      "role": "P",
+      "officialId": "fiorentina:oliver christensen"
+    },
+    {
+      "name": "Alejandro Gabriel Cichero",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:alejandro gabriel cichero"
+    },
+    {
+      "name": "Antonio Raimondo",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:antonio raimondo"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:coppa italia"
+    },
+    {
+      "name": "FRO",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:fro"
+    },
+    {
+      "name": "Farès Ghedjemis",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:farès ghedjemis"
+    },
+    {
+      "name": "George Daniel Bîrligea",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:george daniel bîrligea"
+    },
+    {
+      "name": "Giorgi Kvernadze",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:giorgi kvernadze"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:italian supercup"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:official stickers"
+    },
+    {
+      "name": "Seydou Fini",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:seydou fini"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:social section background image"
+    },
+    {
+      "name": "Tomas Bobček",
+      "team": "Frosinone",
+      "role": "A",
+      "officialId": "frosinone:tomas bobček"
+    },
+    {
+      "name": "Alessio Zerbin",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:alessio zerbin"
+    },
+    {
+      "name": "Anouar El Azzouzi",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:anouar el azzouzi"
+    },
+    {
+      "name": "Ben Kone",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:ben kone"
+    },
+    {
+      "name": "FRO",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:fro"
+    },
+    {
+      "name": "Florian Grillitsch",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:florian grillitsch"
+    },
+    {
+      "name": "Francesco Gelli",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:francesco gelli"
+    },
+    {
+      "name": "Giacomo Calò",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:giacomo calò"
+    },
+    {
+      "name": "Ilias Koutsoupias",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:ilias koutsoupias"
+    },
+    {
+      "name": "Kevin Barcella",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:kevin barcella"
+    },
+    {
+      "name": "Luis Hasa",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:luis hasa"
+    },
+    {
+      "name": "Matteo Cichella",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:matteo cichella"
+    },
+    {
+      "name": "Patrizio Masini",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:patrizio masini"
+    },
+    {
+      "name": "Romano Christian Schmid",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "frosinone:romano christian schmid"
+    },
+    {
+      "name": "Aleksa Terzić",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:aleksa terzić"
+    },
+    {
+      "name": "Anthony Henri Oyono Omva Torque",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:anthony henri oyono omva torque"
+    },
+    {
+      "name": "Enzo Gianni Tchato Mbiayi",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:enzo gianni tchato mbiayi"
+    },
+    {
+      "name": "FRO",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:fro"
+    },
+    {
+      "name": "Gabriele Bracaglia",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:gabriele bracaglia"
+    },
+    {
+      "name": "Gabriele Calvani",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:gabriele calvani"
+    },
+    {
+      "name": "Giorgio Cittadini",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:giorgio cittadini"
+    },
+    {
+      "name": "Ilario Monterisi",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:ilario monterisi"
+    },
+    {
+      "name": "Kevin John Ufuoma Akpoguma",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:kevin john ufuoma akpoguma"
+    },
+    {
+      "name": "Omar Fayed Abdelwahab Elrakhawy",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:omar fayed abdelwahab elrakhawy"
+    },
+    {
+      "name": "Wisdom Amey",
+      "team": "Frosinone",
+      "role": "D",
+      "officialId": "frosinone:wisdom amey"
+    },
+    {
+      "name": "FRO",
+      "team": "Frosinone",
+      "role": "P",
+      "officialId": "frosinone:fro"
+    },
+    {
+      "name": "Lorenzo Palmisani",
+      "team": "Frosinone",
+      "role": "P",
+      "officialId": "frosinone:lorenzo palmisani"
+    },
+    {
+      "name": "Matteo Pisseri",
+      "team": "Frosinone",
+      "role": "P",
+      "officialId": "frosinone:matteo pisseri"
+    },
+    {
+      "name": "Sebastiano Desplanches",
+      "team": "Frosinone",
+      "role": "P",
+      "officialId": "frosinone:sebastiano desplanches"
+    },
+    {
+      "name": "Adam Žulevič",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:adam žulevič"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:coppa italia"
+    },
+    {
+      "name": "Elias Havel",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:elias havel"
+    },
+    {
+      "name": "GEN",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:gen"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:italian supercup"
+    },
+    {
+      "name": "Lorenzo Colombo",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:lorenzo colombo"
+    },
+    {
+      "name": "Lorenzo Venturino",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:lorenzo venturino"
+    },
+    {
+      "name": "Milutin Osmajić",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:milutin osmajić"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:social section background image"
+    },
+    {
+      "name": "Tommaso Baldanzi",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:tommaso baldanzi"
+    },
+    {
+      "name": "Vitor Manuel Carvalho De Oliveira",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:vitor manuel carvalho de oliveira"
+    },
+    {
+      "name": "Walter Messias Junior",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:walter messias junior"
+    },
+    {
+      "name": "Xheto Joi Nuredini",
+      "team": "Genoa",
+      "role": "A",
+      "officialId": "genoa:xheto joi nuredini"
+    },
+    {
+      "name": "Alexsandro Amorim De Freitas",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:alexsandro amorim de freitas"
+    },
+    {
+      "name": "Franz-Ethan Meichtry",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:franz-ethan meichtry"
+    },
+    {
+      "name": "GEN",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:gen"
+    },
+    {
+      "name": "Hamed Traore",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:hamed traore"
+    },
+    {
+      "name": "Mikael Egill Ellertsson",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:mikael egill ellertsson"
+    },
+    {
+      "name": "Mohameth Djibril Ibrahima Sow",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:mohameth djibril ibrahima sow"
+    },
+    {
+      "name": "Morten Wetche Frendrup",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:morten wetche frendrup"
+    },
+    {
+      "name": "Samuel Wiafe",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "genoa:samuel wiafe"
+    },
+    {
+      "name": "Aaron Martin Caricol",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:aaron martin caricol"
+    },
+    {
+      "name": "Alessandro Marcandalli",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:alessandro marcandalli"
+    },
+    {
+      "name": "Brooke Dion Nelson Norton-Cuffy",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:brooke dion nelson norton-cuffy"
+    },
+    {
+      "name": "David Puczka",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:david puczka"
+    },
+    {
+      "name": "GEN",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:gen"
+    },
+    {
+      "name": "Johan Felipe Vasquez Ibarra",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:johan felipe vasquez ibarra"
+    },
+    {
+      "name": "Leo Skiri Ostigard",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:leo skiri ostigard"
+    },
+    {
+      "name": "Lukas Klisys",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:lukas klisys"
+    },
+    {
+      "name": "Mamedi Doucoure",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:mamedi doucoure"
+    },
+    {
+      "name": "Marcelo Manuel Vaz",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:marcelo manuel vaz"
+    },
+    {
+      "name": "Mario Mitaj",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:mario mitaj"
+    },
+    {
+      "name": "Sebastian Villaume Otoa",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:sebastian villaume otoa"
+    },
+    {
+      "name": "Stefano Sabelli",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "genoa:stefano sabelli"
+    },
+    {
+      "name": "Daniele Sommariva",
+      "team": "Genoa",
+      "role": "P",
+      "officialId": "genoa:daniele sommariva"
+    },
+    {
+      "name": "Franz Stolz",
+      "team": "Genoa",
+      "role": "P",
+      "officialId": "genoa:franz stolz"
+    },
+    {
+      "name": "GEN",
+      "team": "Genoa",
+      "role": "P",
+      "officialId": "genoa:gen"
+    },
+    {
+      "name": "Justin Bijlow",
+      "team": "Genoa",
+      "role": "P",
+      "officialId": "genoa:justin bijlow"
+    },
+    {
+      "name": "Ange-yoan Laure Bonny",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:ange-yoan laure bonny"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:coppa italia"
+    },
+    {
+      "name": "Francesco Pio Esposito",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:francesco pio esposito"
+    },
+    {
+      "name": "INT",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:int"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:italian supercup"
+    },
+    {
+      "name": "Jamal Iddrissou",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:jamal iddrissou"
+    },
+    {
+      "name": "Lautaro Javier Martinez",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:lautaro javier martinez"
+    },
+    {
+      "name": "Marcus Lilian Thuram Ulien",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:marcus lilian thuram ulien"
+    },
+    {
+      "name": "Mattia Mosconi",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:mattia mosconi"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Inter",
+      "role": "A",
+      "officialId": "inter:social section background image"
+    },
+    {
+      "name": "Aleksandar Stanković",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:aleksandar stanković"
+    },
+    {
+      "name": "Andy Diouf",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:andy diouf"
+    },
+    {
+      "name": "Curtis Julian Jones",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:curtis julian jones"
+    },
+    {
+      "name": "Federico Dimarco",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:federico dimarco"
+    },
+    {
+      "name": "Hakan Calhanoglu",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:hakan calhanoglu"
+    },
+    {
+      "name": "Henrikh Mkhitaryan",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:henrikh mkhitaryan"
+    },
+    {
+      "name": "INT",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:int"
+    },
+    {
+      "name": "Luis Henrique Tomaz De Lima",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:luis henrique tomaz de lima"
+    },
+    {
+      "name": "Nicolò Barella",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:nicolò barella"
+    },
+    {
+      "name": "Petar Sučić",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:petar sučić"
+    },
+    {
+      "name": "Piotr Sebastian Zielinski",
+      "team": "Inter",
+      "role": "C",
+      "officialId": "inter:piotr sebastian zielinski"
+    },
+    {
+      "name": "Alessandro Bastoni",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:alessandro bastoni"
+    },
+    {
+      "name": "Benjamin Jacques Pavard",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:benjamin jacques pavard"
+    },
+    {
+      "name": "Carlos Augusto Zopolato Neves",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:carlos augusto zopolato neves"
+    },
+    {
+      "name": "Diop Tehuti Djed-Hotep Spence",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:diop tehuti djed-hotep spence"
+    },
+    {
+      "name": "INT",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:int"
+    },
+    {
+      "name": "John Stones",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:john stones"
+    },
+    {
+      "name": "Leonardo Noah Bovio",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:leonardo noah bovio"
+    },
+    {
+      "name": "Manuel Akanji",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:manuel akanji"
+    },
+    {
+      "name": "Yann Aurel Bisseck",
+      "team": "Inter",
+      "role": "D",
+      "officialId": "inter:yann aurel bisseck"
+    },
+    {
+      "name": "INT",
+      "team": "Inter",
+      "role": "P",
+      "officialId": "inter:int"
+    },
+    {
+      "name": "Ivan Provedel",
+      "team": "Inter",
+      "role": "P",
+      "officialId": "inter:ivan provedel"
+    },
+    {
+      "name": "Josep Martinez Riera",
+      "team": "Inter",
+      "role": "P",
+      "officialId": "inter:josep martinez riera"
+    },
+    {
+      "name": "Raffaele Di Gennaro",
+      "team": "Inter",
+      "role": "P",
+      "officialId": "inter:raffaele di gennaro"
+    },
+    {
+      "name": "Arkadiusz Milik",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:arkadiusz milik"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:coppa italia"
+    },
+    {
+      "name": "Edon Zhegrova",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:edon zhegrova"
+    },
+    {
+      "name": "Francisco Fernandes da Conceição",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:francisco fernandes da conceição"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:italian supercup"
+    },
+    {
+      "name": "JUV",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:juv"
+    },
+    {
+      "name": "Jeremie Boga",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:jeremie boga"
+    },
+    {
+      "name": "Jonathan Christian David",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:jonathan christian david"
+    },
+    {
+      "name": "Kenan Yildiz",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:kenan yildiz"
+    },
+    {
+      "name": "Kerim Alajbegović",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:kerim alajbegović"
+    },
+    {
+      "name": "Nicolás Ivan González",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:nicolás ivan gonzález"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:official stickers"
+    },
+    {
+      "name": "Osayuki Jeff Ekhator",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:osayuki jeff ekhator"
+    },
+    {
+      "name": "Randal Kolo Muani",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:randal kolo muani"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "juventus:social section background image"
+    },
+    {
+      "name": "Douglas Luiz Soares De Paulo",
+      "team": "Juventus",
+      "role": "C",
+      "officialId": "juventus:douglas luiz soares de paulo"
+    },
+    {
+      "name": "JUV",
+      "team": "Juventus",
+      "role": "C",
+      "officialId": "juventus:juv"
+    },
+    {
+      "name": "Khephren Thuram-ulien",
+      "team": "Juventus",
+      "role": "C",
+      "officialId": "juventus:khephren thuram-ulien"
+    },
+    {
+      "name": "Manuel Locatelli",
+      "team": "Juventus",
+      "role": "C",
+      "officialId": "juventus:manuel locatelli"
+    },
+    {
+      "name": "Teun Koopmeiners",
+      "team": "Juventus",
+      "role": "C",
+      "officialId": "juventus:teun koopmeiners"
+    },
+    {
+      "name": "Weston James Earl McKennie",
+      "team": "Juventus",
+      "role": "C",
+      "officialId": "juventus:weston james earl mckennie"
+    },
+    {
+      "name": "Andrea Cambiaso",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:andrea cambiaso"
+    },
+    {
+      "name": "Bremer",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:bremer"
+    },
+    {
+      "name": "Daniele Rugani",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:daniele rugani"
+    },
+    {
+      "name": "Federico Gatti",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:federico gatti"
+    },
+    {
+      "name": "JUV",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:juv"
+    },
+    {
+      "name": "Jhon Janer Lucumi' Bonilla",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:jhon janer lucumi' bonilla"
+    },
+    {
+      "name": "Juan David Cabal Murillo",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:juan david cabal murillo"
+    },
+    {
+      "name": "Lloyd Casius Kelly",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:lloyd casius kelly"
+    },
+    {
+      "name": "Mehmet Zeki Çelik",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:mehmet zeki çelik"
+    },
+    {
+      "name": "Pierre Kazaye Rommel Kalulu Kyatengwa",
+      "team": "Juventus",
+      "role": "D",
+      "officialId": "juventus:pierre kazaye rommel kalulu kyatengwa"
+    },
+    {
+      "name": "Carlo Pinsoglio",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "juventus:carlo pinsoglio"
+    },
+    {
+      "name": "Guglielmo Vicario",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "juventus:guglielmo vicario"
+    },
+    {
+      "name": "JUV",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "juventus:juv"
+    },
+    {
+      "name": "Kamil Mieczyslaw Grabara",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "juventus:kamil mieczyslaw grabara"
+    },
+    {
+      "name": "Riccardo Adrian Radu",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "juventus:riccardo adrian radu"
+    },
+    {
+      "name": "Boulaye Dia",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:boulaye dia"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:coppa italia"
+    },
+    {
+      "name": "Federico Serra",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:federico serra"
+    },
+    {
+      "name": "Gabriele Artistico",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:gabriele artistico"
+    },
+    {
+      "name": "Gustav Tang Isaksen",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:gustav tang isaksen"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:italian supercup"
+    },
+    {
+      "name": "LAZ",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:laz"
+    },
+    {
+      "name": "Matteo Cancellieri",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:matteo cancellieri"
+    },
+    {
+      "name": "Mattia Zaccagni",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:mattia zaccagni"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:official stickers"
+    },
+    {
+      "name": "Petar Ratkov",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:petar ratkov"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:social section background image"
+    },
+    {
+      "name": "Tijjani Noslin",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "lazio:tijjani noslin"
+    },
+    {
+      "name": "Adrian Przyborek",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:adrian przyborek"
+    },
+    {
+      "name": "Bruno Galassi",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:bruno galassi"
+    },
+    {
+      "name": "Danilo Cataldi",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:danilo cataldi"
+    },
+    {
+      "name": "Davide Frattesi",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:davide frattesi"
+    },
+    {
+      "name": "Kenneth Ina Dorothea Taylor",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:kenneth ina dorothea taylor"
+    },
+    {
+      "name": "LAZ",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:laz"
+    },
+    {
+      "name": "Nicolò Rovella",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:nicolò rovella"
+    },
+    {
+      "name": "Oluwafisayo Faruq Dele-bashiru",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:oluwafisayo faruq dele-bashiru"
+    },
+    {
+      "name": "Reda Belahyane",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:reda belahyane"
+    },
+    {
+      "name": "Valerio Farcomeni",
+      "team": "Lazio",
+      "role": "C",
+      "officialId": "lazio:valerio farcomeni"
+    },
+    {
+      "name": "Adam Marušić",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:adam marušić"
+    },
+    {
+      "name": "Alessio Romagnoli",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:alessio romagnoli"
+    },
+    {
+      "name": "Alfonso Pedraza Sag",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:alfonso pedraza sag"
+    },
+    {
+      "name": "Danilho Raimundo Doekhi",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:danilho raimundo doekhi"
+    },
+    {
+      "name": "Filipe Bordon",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:filipe bordon"
+    },
+    {
+      "name": "LAZ",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:laz"
+    },
+    {
+      "name": "Luca Pellegrini",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:luca pellegrini"
+    },
+    {
+      "name": "Manuel Lazzari",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:manuel lazzari"
+    },
+    {
+      "name": "Nuno Albertino Varela Tavares",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:nuno albertino varela tavares"
+    },
+    {
+      "name": "Oliver Provstgaard Nielsen",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:oliver provstgaard nielsen"
+    },
+    {
+      "name": "Patricio Gabarrón Gil",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:patricio gabarrón gil"
+    },
+    {
+      "name": "Ricardo Bordon",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:ricardo bordon"
+    },
+    {
+      "name": "Romano Floriani Mussolini",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:romano floriani mussolini"
+    },
+    {
+      "name": "Samuel Florent Gigot",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "lazio:samuel florent gigot"
+    },
+    {
+      "name": "Alessio Furlanetto",
+      "team": "Lazio",
+      "role": "P",
+      "officialId": "lazio:alessio furlanetto"
+    },
+    {
+      "name": "Christos Mandas",
+      "team": "Lazio",
+      "role": "P",
+      "officialId": "lazio:christos mandas"
+    },
+    {
+      "name": "Davide Renzetti",
+      "team": "Lazio",
+      "role": "P",
+      "officialId": "lazio:davide renzetti"
+    },
+    {
+      "name": "Edoardo Motta",
+      "team": "Lazio",
+      "role": "P",
+      "officialId": "lazio:edoardo motta"
+    },
+    {
+      "name": "LAZ",
+      "team": "Lazio",
+      "role": "P",
+      "officialId": "lazio:laz"
+    },
+    {
+      "name": "Amar Abdirahman Ahmed Fatah",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:amar abdirahman ahmed fatah"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:coppa italia"
+    },
+    {
+      "name": "Divine Chidiebube Onyemachi",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:divine chidiebube onyemachi"
+    },
+    {
+      "name": "Francisco Esteban Sánchez",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:francisco esteban sánchez"
+    },
+    {
+      "name": "Hjalte Morel Lærke",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:hjalte morel lærke"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:italian supercup"
+    },
+    {
+      "name": "Konan Ignace Jocelyn N'Dri",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:konan ignace jocelyn n'dri"
+    },
+    {
+      "name": "LEC",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:lec"
+    },
+    {
+      "name": "Nikola Štulić",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:nikola štulić"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:social section background image"
+    },
+    {
+      "name": "Willem Davnis Louis Didier Geubbels",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "lecce:willem davnis louis didier geubbels"
+    },
+    {
+      "name": "Ivan Ilić",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:ivan ilić"
+    },
+    {
+      "name": "LEC",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:lec"
+    },
+    {
+      "name": "Lassana Coulibaly",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:lassana coulibaly"
+    },
+    {
+      "name": "Medon Berisha",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:medon berisha"
+    },
+    {
+      "name": "Mohamed Dramé",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:mohamed dramé"
+    },
+    {
+      "name": "Niko Kovač",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:niko kovač"
+    },
+    {
+      "name": "Olaf Gooitzen Paul Gorter",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:olaf gooitzen paul gorter"
+    },
+    {
+      "name": "Omri Gandelman",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:omri gandelman"
+    },
+    {
+      "name": "Oumar Jacky Ngom",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:oumar jacky ngom"
+    },
+    {
+      "name": "Sadik Fofana",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:sadik fofana"
+    },
+    {
+      "name": "Santiago Daniel Pierotti",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:santiago daniel pierotti"
+    },
+    {
+      "name": "Youssef Maleh",
+      "team": "Lecce",
+      "role": "C",
+      "officialId": "lecce:youssef maleh"
+    },
+    {
+      "name": "Antonino Gallo",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:antonino gallo"
+    },
+    {
+      "name": "Bathele Christ-Owen Kouassi",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:bathele christ-owen kouassi"
+    },
+    {
+      "name": "Corrie Richard Ndaba",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:corrie richard ndaba"
+    },
+    {
+      "name": "Danilo Filipe De Melo Veiga",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:danilo filipe de melo veiga"
+    },
+    {
+      "name": "Elijah Monte Scott",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:elijah monte scott"
+    },
+    {
+      "name": "Gaby Jean",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:gaby jean"
+    },
+    {
+      "name": "Jamil Siebert",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:jamil siebert"
+    },
+    {
+      "name": "Kialonda Gaspar",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:kialonda gaspar"
+    },
+    {
+      "name": "LEC",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:lec"
+    },
+    {
+      "name": "Marlon Nnamdi Ubani",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:marlon nnamdi ubani"
+    },
+    {
+      "name": "Tiago Gabriel Coelho Oliveira",
+      "team": "Lecce",
+      "role": "D",
+      "officialId": "lecce:tiago gabriel coelho oliveira"
+    },
+    {
+      "name": "Christian Lupo",
+      "team": "Lecce",
+      "role": "P",
+      "officialId": "lecce:christian lupo"
+    },
+    {
+      "name": "LEC",
+      "team": "Lecce",
+      "role": "P",
+      "officialId": "lecce:lec"
+    },
+    {
+      "name": "Marco Bleve",
+      "team": "Lecce",
+      "role": "P",
+      "officialId": "lecce:marco bleve"
+    },
+    {
+      "name": "Plamen Valentin Penev",
+      "team": "Lecce",
+      "role": "P",
+      "officialId": "lecce:plamen valentin penev"
+    },
+    {
+      "name": "Wladimiro Falcone",
+      "team": "Lecce",
+      "role": "P",
+      "officialId": "lecce:wladimiro falcone"
+    },
+    {
+      "name": "Alexis Jesse Saelemaekers",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:alexis jesse saelemaekers"
+    },
+    {
+      "name": "Christian Mate Pulisic",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:christian mate pulisic"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:coppa italia"
+    },
+    {
+      "name": "Francesco Camarda",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:francesco camarda"
+    },
+    {
+      "name": "Gonçalo Matias Ramos",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:gonçalo matias ramos"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:italian supercup"
+    },
+    {
+      "name": "MIL",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:mil"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:official stickers"
+    },
+    {
+      "name": "Rafael Alexandre da Conceição Leão",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:rafael alexandre da conceição leão"
+    },
+    {
+      "name": "Samuel Chimerenka Chukwueze",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:samuel chimerenka chukwueze"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Milan",
+      "role": "A",
+      "officialId": "milan:social section background image"
+    },
+    {
+      "name": "Adrien Rabiot",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:adrien rabiot"
+    },
+    {
+      "name": "Alphadjo Cisse",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:alphadjo cisse"
+    },
+    {
+      "name": "Ardon Jashari",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:ardon jashari"
+    },
+    {
+      "name": "Christian Comotto",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:christian comotto"
+    },
+    {
+      "name": "Diego Manuel Jadon Da Silva Moreira",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:diego manuel jadon da silva moreira"
+    },
+    {
+      "name": "Luka Modrić",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:luka modrić"
+    },
+    {
+      "name": "MIL",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:mil"
+    },
+    {
+      "name": "Ruben Ira Loftus-cheek",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:ruben ira loftus-cheek"
+    },
+    {
+      "name": "Yunus Dimoara Musah",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "milan:yunus dimoara musah"
+    },
+    {
+      "name": "Davide Bartesaghi",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:davide bartesaghi"
+    },
+    {
+      "name": "Filippo Terracciano",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:filippo terracciano"
+    },
+    {
+      "name": "Koni De Winter",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:koni de winter"
+    },
+    {
+      "name": "MIL",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:mil"
+    },
+    {
+      "name": "Mario Gila Fuentes",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:mario gila fuentes"
+    },
+    {
+      "name": "Matteo Gabbia",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:matteo gabbia"
+    },
+    {
+      "name": "Pervis Josue Estupinan Tenorio",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:pervis josue estupinan tenorio"
+    },
+    {
+      "name": "Sankhoun Diawara",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:sankhoun diawara"
+    },
+    {
+      "name": "Strahinja Pavlović",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:strahinja pavlović"
+    },
+    {
+      "name": "Valeri Vladimirov Ivanov",
+      "team": "Milan",
+      "role": "D",
+      "officialId": "milan:valeri vladimirov ivanov"
+    },
+    {
+      "name": "Lorenzo Torriani",
+      "team": "Milan",
+      "role": "P",
+      "officialId": "milan:lorenzo torriani"
+    },
+    {
+      "name": "Léo-Paul Andre Jean Bouyer Thiel",
+      "team": "Milan",
+      "role": "P",
+      "officialId": "milan:léo-paul andre jean bouyer thiel"
+    },
+    {
+      "name": "MIL",
+      "team": "Milan",
+      "role": "P",
+      "officialId": "milan:mil"
+    },
+    {
+      "name": "Matteo Pittarella",
+      "team": "Milan",
+      "role": "P",
+      "officialId": "milan:matteo pittarella"
+    },
+    {
+      "name": "Mike Peterson Maignan",
+      "team": "Milan",
+      "role": "P",
+      "officialId": "milan:mike peterson maignan"
+    },
+    {
+      "name": "Pietro Terracciano",
+      "team": "Milan",
+      "role": "P",
+      "officialId": "milan:pietro terracciano"
+    },
+    {
+      "name": "Andrea Colpani",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:andrea colpani"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:coppa italia"
+    },
+    {
+      "name": "Cyril Jean Ngonge",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:cyril jean ngonge"
+    },
+    {
+      "name": "Dany Mota",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:dany mota"
+    },
+    {
+      "name": "Gustavo Miguel Pereira De Sousa Varela",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:gustavo miguel pereira de sousa varela"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:italian supercup"
+    },
+    {
+      "name": "Keita Balde Diao",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:keita balde diao"
+    },
+    {
+      "name": "Kevin Maussi Martins",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:kevin maussi martins"
+    },
+    {
+      "name": "MON",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:mon"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:official stickers"
+    },
+    {
+      "name": "Patrick Ciurria",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:patrick ciurria"
+    },
+    {
+      "name": "Patrick Cutrone",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:patrick cutrone"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:social section background image"
+    },
+    {
+      "name": "Solomon Tekeace Loubao",
+      "team": "Monza",
+      "role": "A",
+      "officialId": "monza:solomon tekeace loubao"
+    },
+    {
+      "name": "Ebenezer Ajodun Akinsanmiro",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:ebenezer ajodun akinsanmiro"
+    },
+    {
+      "name": "Idrissa Touré",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:idrissa touré"
+    },
+    {
+      "name": "Jay Steven Robinson",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:jay steven robinson"
+    },
+    {
+      "name": "Leonardo Colombo",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:leonardo colombo"
+    },
+    {
+      "name": "MON",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:mon"
+    },
+    {
+      "name": "Manga Michel Quentin Foe Ondoa",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:manga michel quentin foe ondoa"
+    },
+    {
+      "name": "Mathis Mout",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:mathis mout"
+    },
+    {
+      "name": "Matteo Pessina",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:matteo pessina"
+    },
+    {
+      "name": "Michael Folorunsho Ijiemuan",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:michael folorunsho ijiemuan"
+    },
+    {
+      "name": "Nicolas Galazzi",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:nicolas galazzi"
+    },
+    {
+      "name": "Omari Nathan Forson",
+      "team": "Monza",
+      "role": "C",
+      "officialId": "monza:omari nathan forson"
+    },
+    {
+      "name": "Adam Bakoune",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:adam bakoune"
+    },
+    {
+      "name": "Andrea Carboni",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:andrea carboni"
+    },
+    {
+      "name": "Filippo Delli Carri",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:filippo delli carri"
+    },
+    {
+      "name": "Kouadio Yvan Ezekiel Maye",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:kouadio yvan ezekiel maye"
+    },
+    {
+      "name": "Lorenzo Lucchesi",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:lorenzo lucchesi"
+    },
+    {
+      "name": "MON",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:mon"
+    },
+    {
+      "name": "Nda Konan Bienvenu Ange Eddy Kouadio",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:nda konan bienvenu ange eddy kouadio"
+    },
+    {
+      "name": "Ricardo Luis Chaby Mangas",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:ricardo luis chaby mangas"
+    },
+    {
+      "name": "Samuele Birindelli",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:samuele birindelli"
+    },
+    {
+      "name": "Valentin Antov",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "monza:valentin antov"
+    },
+    {
+      "name": "Aleksandr Ballabio",
+      "team": "Monza",
+      "role": "P",
+      "officialId": "monza:aleksandr ballabio"
+    },
+    {
+      "name": "Aljaz Strajnar",
+      "team": "Monza",
+      "role": "P",
+      "officialId": "monza:aljaz strajnar"
+    },
+    {
+      "name": "MON",
+      "team": "Monza",
+      "role": "P",
+      "officialId": "monza:mon"
+    },
+    {
+      "name": "Ngagne Demba Thiam",
+      "team": "Monza",
+      "role": "P",
+      "officialId": "monza:ngagne demba thiam"
+    },
+    {
+      "name": "Alisson De Almeida Santos",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:alisson de almeida santos"
+    },
+    {
+      "name": "Antonio Vergara",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:antonio vergara"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:coppa italia"
+    },
+    {
+      "name": "David Neres Campos",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:david neres campos"
+    },
+    {
+      "name": "Francisco Martin Baridó",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:francisco martin baridó"
+    },
+    {
+      "name": "Giovane Santana Do Nascimento",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:giovane santana do nascimento"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:italian supercup"
+    },
+    {
+      "name": "Lorenzo Lucca",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:lorenzo lucca"
+    },
+    {
+      "name": "Matteo Politano",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:matteo politano"
+    },
+    {
+      "name": "NAP",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:nap"
+    },
+    {
+      "name": "Noa Noell Lang",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:noa noell lang"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:official stickers"
+    },
+    {
+      "name": "Rasmus Winther Højlund",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:rasmus winther højlund"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Napoli",
+      "role": "A",
+      "officialId": "napoli:social section background image"
+    },
+    {
+      "name": "Andre Frank Zambo Anguissa",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:andre frank zambo anguissa"
+    },
+    {
+      "name": "Billy Clifford Gilmour",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:billy clifford gilmour"
+    },
+    {
+      "name": "Costantino Favasuli",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:costantino favasuli"
+    },
+    {
+      "name": "Jesper Graenge Lindstrom",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:jesper graenge lindstrom"
+    },
+    {
+      "name": "Kevin De Bruyne",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:kevin de bruyne"
+    },
+    {
+      "name": "NAP",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:nap"
+    },
+    {
+      "name": "Scott Francis Mctominay",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:scott francis mctominay"
+    },
+    {
+      "name": "Stanislav Lobotka",
+      "team": "Napoli",
+      "role": "C",
+      "officialId": "napoli:stanislav lobotka"
+    },
+    {
+      "name": "Alessandro Buongiorno",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:alessandro buongiorno"
+    },
+    {
+      "name": "Amir Rrahmani",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:amir rrahmani"
+    },
+    {
+      "name": "Benoît Ntambue Badiashile Mukinayi Baya",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:benoît ntambue badiashile mukinayi baya"
+    },
+    {
+      "name": "Christian Garofalo",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:christian garofalo"
+    },
+    {
+      "name": "Giovanni Di Lorenzo",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:giovanni di lorenzo"
+    },
+    {
+      "name": "Leonardo Spinazzola",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:leonardo spinazzola"
+    },
+    {
+      "name": "Luca Marianucci",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:luca marianucci"
+    },
+    {
+      "name": "Mathias Olivera Miramontes",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:mathias olivera miramontes"
+    },
+    {
+      "name": "NAP",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:nap"
+    },
+    {
+      "name": "Pasquale Mazzocchi",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:pasquale mazzocchi"
+    },
+    {
+      "name": "Rafael Marin Zamora",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:rafael marin zamora"
+    },
+    {
+      "name": "Sam Beukema",
+      "team": "Napoli",
+      "role": "D",
+      "officialId": "napoli:sam beukema"
+    },
+    {
+      "name": "Alex Meret",
+      "team": "Napoli",
+      "role": "P",
+      "officialId": "napoli:alex meret"
+    },
+    {
+      "name": "Claudio Pugliese",
+      "team": "Napoli",
+      "role": "P",
+      "officialId": "napoli:claudio pugliese"
+    },
+    {
+      "name": "NAP",
+      "team": "Napoli",
+      "role": "P",
+      "officialId": "napoli:nap"
+    },
+    {
+      "name": "Nikita Contini Baranovsky",
+      "team": "Napoli",
+      "role": "P",
+      "officialId": "napoli:nikita contini baranovsky"
+    },
+    {
+      "name": "Vanja Milinković-Savić",
+      "team": "Napoli",
+      "role": "P",
+      "officialId": "napoli:vanja milinković-savić"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:coppa italia"
+    },
+    {
+      "name": "El Bilal Toure",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:el bilal toure"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:italian supercup"
+    },
+    {
+      "name": "Jose David Romero",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:jose david romero"
+    },
+    {
+      "name": "Matija Frigan",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:matija frigan"
+    },
+    {
+      "name": "Nesta Elphege",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:nesta elphege"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:official stickers"
+    },
+    {
+      "name": "Ousmane Diallo Thiao",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:ousmane diallo thiao"
+    },
+    {
+      "name": "PAR",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:par"
+    },
+    {
+      "name": "Pontus Skule Erik Almqvist",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:pontus skule erik almqvist"
+    },
+    {
+      "name": "Simone Lontani",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:simone lontani"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:social section background image"
+    },
+    {
+      "name": "Thomás De Martis De La Rosa",
+      "team": "Parma",
+      "role": "A",
+      "officialId": "parma:thomás de martis de la rosa"
+    },
+    {
+      "name": "Abdou-Salam Konaté",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:abdou-salam konaté"
+    },
+    {
+      "name": "Adrian Bernabe' Garcia",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:adrian bernabe' garcia"
+    },
+    {
+      "name": "Benjamin Cremaschi",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:benjamin cremaschi"
+    },
+    {
+      "name": "Christian Nahuel Ordonez",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:christian nahuel ordonez"
+    },
+    {
+      "name": "Giovanni Fabbian",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:giovanni fabbian"
+    },
+    {
+      "name": "Hans Nicolussi Caviglia",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:hans nicolussi caviglia"
+    },
+    {
+      "name": "Lamine Mandela Keita",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:lamine mandela keita"
+    },
+    {
+      "name": "Oliver Sørensen Jensen",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:oliver sørensen jensen"
+    },
+    {
+      "name": "PAR",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "parma:par"
+    },
+    {
+      "name": "Abdoulaye Niakhate Ndiaye",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:abdoulaye niakhate ndiaye"
+    },
+    {
+      "name": "Dominik Drobnic",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:dominik drobnic"
+    },
+    {
+      "name": "Emanuele Valeri",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:emanuele valeri"
+    },
+    {
+      "name": "Enrico Delprato",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:enrico delprato"
+    },
+    {
+      "name": "Franco Ezequiel Carboni",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:franco ezequiel carboni"
+    },
+    {
+      "name": "Lautaro Rodrigo Valenti",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:lautaro rodrigo valenti"
+    },
+    {
+      "name": "Mariano Emir Troilo",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:mariano emir troilo"
+    },
+    {
+      "name": "PAR",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:par"
+    },
+    {
+      "name": "Sascha Britschgi",
+      "team": "Parma",
+      "role": "D",
+      "officialId": "parma:sascha britschgi"
+    },
+    {
+      "name": "Alessandro Mazzocchi",
+      "team": "Parma",
+      "role": "P",
+      "officialId": "parma:alessandro mazzocchi"
+    },
+    {
+      "name": "Edoardo Corvi",
+      "team": "Parma",
+      "role": "P",
+      "officialId": "parma:edoardo corvi"
+    },
+    {
+      "name": "Giovanni Daffara",
+      "team": "Parma",
+      "role": "P",
+      "officialId": "parma:giovanni daffara"
+    },
+    {
+      "name": "Manuel Zambelli",
+      "team": "Parma",
+      "role": "P",
+      "officialId": "parma:manuel zambelli"
+    },
+    {
+      "name": "PAR",
+      "team": "Parma",
+      "role": "P",
+      "officialId": "parma:par"
+    },
+    {
+      "name": "Antonio Arena",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:antonio arena"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:coppa italia"
+    },
+    {
+      "name": "Donyell Malen",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:donyell malen"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:italian supercup"
+    },
+    {
+      "name": "Matìas Soule Malvano",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:matìas soule malvano"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:official stickers"
+    },
+    {
+      "name": "Paulo Exequiel Dybala",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:paulo exequiel dybala"
+    },
+    {
+      "name": "ROM",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:rom"
+    },
+    {
+      "name": "Robinio Vaz",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:robinio vaz"
+    },
+    {
+      "name": "Santiago Thomas Castro",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:santiago thomas castro"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "roma:social section background image"
+    },
+    {
+      "name": "Bryan Cristante",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:bryan cristante"
+    },
+    {
+      "name": "Kouadio Emmanuel Boris Kone",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:kouadio emmanuel boris kone"
+    },
+    {
+      "name": "Lorenzo Pellegrini",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:lorenzo pellegrini"
+    },
+    {
+      "name": "Neil Yoni El Aynaoui",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:neil yoni el aynaoui"
+    },
+    {
+      "name": "Niccolò Pisilli",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:niccolò pisilli"
+    },
+    {
+      "name": "ROM",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:rom"
+    },
+    {
+      "name": "Rodrigo Mora De Carvalho",
+      "team": "Roma",
+      "role": "C",
+      "officialId": "roma:rodrigo mora de carvalho"
+    },
+    {
+      "name": "Anass Salah-Eddine",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:anass salah-eddine"
+    },
+    {
+      "name": "Daniele Ghilardi",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:daniele ghilardi"
+    },
+    {
+      "name": "Devyne Fabian Jairo Rensch",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:devyne fabian jairo rensch"
+    },
+    {
+      "name": "Emanuele Lulli",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:emanuele lulli"
+    },
+    {
+      "name": "Gianluca Mancini",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:gianluca mancini"
+    },
+    {
+      "name": "Jan Stanislaw Ziółkowski",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:jan stanislaw ziółkowski"
+    },
+    {
+      "name": "Konstantinos Koulierakis",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:konstantinos koulierakis"
+    },
+    {
+      "name": "Mario Hermoso Canseco",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:mario hermoso canseco"
+    },
+    {
+      "name": "Nahuel Molina Lucero",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:nahuel molina lucero"
+    },
+    {
+      "name": "Obite Evan Ndicka",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:obite evan ndicka"
+    },
+    {
+      "name": "ROM",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:rom"
+    },
+    {
+      "name": "Wesley Vinícius França Lima",
+      "team": "Roma",
+      "role": "D",
+      "officialId": "roma:wesley vinícius frança lima"
+    },
+    {
+      "name": "Alessio Marcaccini",
+      "team": "Roma",
+      "role": "P",
+      "officialId": "roma:alessio marcaccini"
+    },
+    {
+      "name": "Giorgio De Marzi",
+      "team": "Roma",
+      "role": "P",
+      "officialId": "roma:giorgio de marzi"
+    },
+    {
+      "name": "Mile Svilar",
+      "team": "Roma",
+      "role": "P",
+      "officialId": "roma:mile svilar"
+    },
+    {
+      "name": "Pierluigi Gollini",
+      "team": "Roma",
+      "role": "P",
+      "officialId": "roma:pierluigi gollini"
+    },
+    {
+      "name": "ROM",
+      "team": "Roma",
+      "role": "P",
+      "officialId": "roma:rom"
+    },
+    {
+      "name": "Armand Gaetan Laurienté",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:armand gaetan laurienté"
+    },
+    {
+      "name": "Benjamin Dominguez",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:benjamin dominguez"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:coppa italia"
+    },
+    {
+      "name": "Cristian Volpato",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:cristian volpato"
+    },
+    {
+      "name": "Domenico Berardi",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:domenico berardi"
+    },
+    {
+      "name": "Gabriel Kulla",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:gabriel kulla"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:italian supercup"
+    },
+    {
+      "name": "Kieron Tom Bowie",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:kieron tom bowie"
+    },
+    {
+      "name": "Nicholas Pierini",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:nicholas pierini"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:official stickers"
+    },
+    {
+      "name": "SAS",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:sas"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Sassuolo",
+      "role": "A",
+      "officialId": "sassuolo:social section background image"
+    },
+    {
+      "name": "Andrea Ghion",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:andrea ghion"
+    },
+    {
+      "name": "Daniel Boloca",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:daniel boloca"
+    },
+    {
+      "name": "Darryl Georges Bakola",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:darryl georges bakola"
+    },
+    {
+      "name": "Edoardo Iannoni",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:edoardo iannoni"
+    },
+    {
+      "name": "Ismaël Kenneth Koné",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:ismaël kenneth koné"
+    },
+    {
+      "name": "Kristian Thorstvedt",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:kristian thorstvedt"
+    },
+    {
+      "name": "Luca Lipani",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:luca lipani"
+    },
+    {
+      "name": "Nemanja Matić",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:nemanja matić"
+    },
+    {
+      "name": "Patrick Amoako Nuamah",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:patrick amoako nuamah"
+    },
+    {
+      "name": "SAS",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:sas"
+    },
+    {
+      "name": "Vasilije Adžić",
+      "team": "Sassuolo",
+      "role": "C",
+      "officialId": "sassuolo:vasilije adžić"
+    },
+    {
+      "name": "Alessandro Di Bitonto",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:alessandro di bitonto"
+    },
+    {
+      "name": "Cas Ruben Odenthal",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:cas ruben odenthal"
+    },
+    {
+      "name": "Edoardo Pieragnolo",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:edoardo pieragnolo"
+    },
+    {
+      "name": "Fali Cande",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:fali cande"
+    },
+    {
+      "name": "Fedde Leysen",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:fedde leysen"
+    },
+    {
+      "name": "Filippo Missori",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:filippo missori"
+    },
+    {
+      "name": "Giorgio Vezzosi",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:giorgio vezzosi"
+    },
+    {
+      "name": "Jay Noah Idzes",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:jay noah idzes"
+    },
+    {
+      "name": "Josh Thomas Doig",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:josh thomas doig"
+    },
+    {
+      "name": "Rafael Obrador Burguera",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:rafael obrador burguera"
+    },
+    {
+      "name": "SAS",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:sas"
+    },
+    {
+      "name": "Sebastian Walukiewicz",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:sebastian walukiewicz"
+    },
+    {
+      "name": "Simone Cinquegrano",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:simone cinquegrano"
+    },
+    {
+      "name": "Tommaso Macchioni",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:tommaso macchioni"
+    },
+    {
+      "name": "Yeferson Paz Blandon",
+      "team": "Sassuolo",
+      "role": "D",
+      "officialId": "sassuolo:yeferson paz blandon"
+    },
+    {
+      "name": "Arijanet Anan Murić",
+      "team": "Sassuolo",
+      "role": "P",
+      "officialId": "sassuolo:arijanet anan murić"
+    },
+    {
+      "name": "Giacomo Satalino",
+      "team": "Sassuolo",
+      "role": "P",
+      "officialId": "sassuolo:giacomo satalino"
+    },
+    {
+      "name": "Lorenzo Nyarko",
+      "team": "Sassuolo",
+      "role": "P",
+      "officialId": "sassuolo:lorenzo nyarko"
+    },
+    {
+      "name": "SAS",
+      "team": "Sassuolo",
+      "role": "P",
+      "officialId": "sassuolo:sas"
+    },
+    {
+      "name": "Stefano Turati",
+      "team": "Sassuolo",
+      "role": "P",
+      "officialId": "sassuolo:stefano turati"
+    },
+    {
+      "name": "Alieu Badara Njie",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:alieu badara njie"
+    },
+    {
+      "name": "Che Zach Everton Adams",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:che zach everton adams"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:coppa italia"
+    },
+    {
+      "name": "Duvan Esteban Zapata Banguero",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:duvan esteban zapata banguero"
+    },
+    {
+      "name": "Gaetano Pio Oristanio",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:gaetano pio oristanio"
+    },
+    {
+      "name": "Giovanni Pablo Simeone Baldini",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:giovanni pablo simeone baldini"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:italian supercup"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:official stickers"
+    },
+    {
+      "name": "Pietro Pellegri",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:pietro pellegri"
+    },
+    {
+      "name": "Sandro Kulenović",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:sandro kulenović"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:social section background image"
+    },
+    {
+      "name": "TOR",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:tor"
+    },
+    {
+      "name": "Tommaso Gabellini",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:tommaso gabellini"
+    },
+    {
+      "name": "Zakaria Aboukhlal",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "torino:zakaria aboukhlal"
+    },
+    {
+      "name": "Alessio Cacciamani",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:alessio cacciamani"
+    },
+    {
+      "name": "Andrea Ballanti",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:andrea ballanti"
+    },
+    {
+      "name": "Andrea Luongo",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:andrea luongo"
+    },
+    {
+      "name": "Cesare Casadei",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:cesare casadei"
+    },
+    {
+      "name": "Emirhan Ilkhan",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:emirhan ilkhan"
+    },
+    {
+      "name": "Faustino Adebola Anjorin",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:faustino adebola anjorin"
+    },
+    {
+      "name": "Gvidas Gineitis",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:gvidas gineitis"
+    },
+    {
+      "name": "Kian Franklin Fitz-Jim",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:kian franklin fitz-jim"
+    },
+    {
+      "name": "Nikola Vlašić",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:nikola vlašić"
+    },
+    {
+      "name": "TOR",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:tor"
+    },
+    {
+      "name": "Zalan Kugyela",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "torino:zalan kugyela"
+    },
+    {
+      "name": "Ali Bina Dembele'",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:ali bina dembele'"
+    },
+    {
+      "name": "Ardian Ismajli",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:ardian ismajli"
+    },
+    {
+      "name": "Come Gerard Bianay Balcot",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:come gerard bianay balcot"
+    },
+    {
+      "name": "Cristiano Biraghi",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:cristiano biraghi"
+    },
+    {
+      "name": "Eray Ervin Cömert",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:eray ervin cömert"
+    },
+    {
+      "name": "Manuel Carrascosa Moreno",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:manuel carrascosa moreno"
+    },
+    {
+      "name": "Marcus Holmgren Pedersen",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:marcus holmgren pedersen"
+    },
+    {
+      "name": "Mattia Pellini",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:mattia pellini"
+    },
+    {
+      "name": "Niccolo’ Fortini",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:niccolo’ fortini"
+    },
+    {
+      "name": "Pietro Comuzzo",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:pietro comuzzo"
+    },
+    {
+      "name": "Saul Basilio Coco Bassey Oubina",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:saul basilio coco bassey oubina"
+    },
+    {
+      "name": "TOR",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "torino:tor"
+    },
+    {
+      "name": "Alberto Andrea Paleari",
+      "team": "Torino",
+      "role": "P",
+      "officialId": "torino:alberto andrea paleari"
+    },
+    {
+      "name": "Diego Mascardi",
+      "team": "Torino",
+      "role": "P",
+      "officialId": "torino:diego mascardi"
+    },
+    {
+      "name": "Francesco Cereser",
+      "team": "Torino",
+      "role": "P",
+      "officialId": "torino:francesco cereser"
+    },
+    {
+      "name": "Franco Israel Wibmer",
+      "team": "Torino",
+      "role": "P",
+      "officialId": "torino:franco israel wibmer"
+    },
+    {
+      "name": "Lapo Siviero",
+      "team": "Torino",
+      "role": "P",
+      "officialId": "torino:lapo siviero"
+    },
+    {
+      "name": "TOR",
+      "team": "Torino",
+      "role": "P",
+      "officialId": "torino:tor"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:coppa italia"
+    },
+    {
+      "name": "Giulio Vinciati",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:giulio vinciati"
+    },
+    {
+      "name": "Idrissa Gueye",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:idrissa gueye"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:italian supercup"
+    },
+    {
+      "name": "Keinan Vincent Joseph Davis",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:keinan vincent joseph davis"
+    },
+    {
+      "name": "Nicolò Zaniolo",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:nicolò zaniolo"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:official stickers"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:social section background image"
+    },
+    {
+      "name": "UDI",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:udi"
+    },
+    {
+      "name": "Vakoun Issouf Bayo",
+      "team": "Udinese",
+      "role": "A",
+      "officialId": "udinese:vakoun issouf bayo"
+    },
+    {
+      "name": "David Pejičić",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:david pejičić"
+    },
+    {
+      "name": "Giorgi Chakvetadze",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:giorgi chakvetadze"
+    },
+    {
+      "name": "Jakub Piotrowski",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:jakub piotrowski"
+    },
+    {
+      "name": "Jesper Karlström",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:jesper karlström"
+    },
+    {
+      "name": "Juan David Arizala Micolta",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:juan david arizala micolta"
+    },
+    {
+      "name": "Jurgen Ekkelenkamp",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:jurgen ekkelenkamp"
+    },
+    {
+      "name": "Lennon Miller",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:lennon miller"
+    },
+    {
+      "name": "Mergim Vojvoda",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:mergim vojvoda"
+    },
+    {
+      "name": "Oier Zarraga Egana",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:oier zarraga egana"
+    },
+    {
+      "name": "Sandi Lovrić",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:sandi lovrić"
+    },
+    {
+      "name": "UDI",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:udi"
+    },
+    {
+      "name": "Unai Gómez Etxebarria",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "udinese:unai gómez etxebarria"
+    },
+    {
+      "name": "Alessandro Zanoli",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:alessandro zanoli"
+    },
+    {
+      "name": "Branimir Mlačić",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:branimir mlačić"
+    },
+    {
+      "name": "Christian Kabasele",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:christian kabasele"
+    },
+    {
+      "name": "Enzo Jacques Rodolphe Ebosse",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:enzo jacques rodolphe ebosse"
+    },
+    {
+      "name": "Hassane Kamara",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:hassane kamara"
+    },
+    {
+      "name": "James Bright Adusei Abankwah",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:james bright adusei abankwah"
+    },
+    {
+      "name": "Matteo Palma",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:matteo palma"
+    },
+    {
+      "name": "Nicolò Bertola",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:nicolò bertola"
+    },
+    {
+      "name": "Oumar Mickael Solet Bomawoko",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:oumar mickael solet bomawoko"
+    },
+    {
+      "name": "Saba Goglichidze",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:saba goglichidze"
+    },
+    {
+      "name": "UDI",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "udinese:udi"
+    },
+    {
+      "name": "Bartosz Mateusz Mrozek",
+      "team": "Udinese",
+      "role": "P",
+      "officialId": "udinese:bartosz mateusz mrozek"
+    },
+    {
+      "name": "Daniele Padelli",
+      "team": "Udinese",
+      "role": "P",
+      "officialId": "udinese:daniele padelli"
+    },
+    {
+      "name": "Edoardo Piana",
+      "team": "Udinese",
+      "role": "P",
+      "officialId": "udinese:edoardo piana"
+    },
+    {
+      "name": "Emil Maduka Okoye",
+      "team": "Udinese",
+      "role": "P",
+      "officialId": "udinese:emil maduka okoye"
+    },
+    {
+      "name": "UDI",
+      "team": "Udinese",
+      "role": "P",
+      "officialId": "udinese:udi"
+    },
+    {
+      "name": "Akor Jerome Adams",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:akor jerome adams"
+    },
+    {
+      "name": "Albion Rrahmani",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:albion rrahmani"
+    },
+    {
+      "name": "Andrea Adorante",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:andrea adorante"
+    },
+    {
+      "name": "Coppa Italia",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:coppa italia"
+    },
+    {
+      "name": "Innovation & Technology Partner",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:innovation & technology partner"
+    },
+    {
+      "name": "Italian Supercup",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:italian supercup"
+    },
+    {
+      "name": "John Yeboah",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:john yeboah"
+    },
+    {
+      "name": "Lion Lauberbach",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:lion lauberbach"
+    },
+    {
+      "name": "Official Ball",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:official ball"
+    },
+    {
+      "name": "Official Ball Collectibles",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:official ball collectibles"
+    },
+    {
+      "name": "Official Partner",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:official partner"
+    },
+    {
+      "name": "Official Stickers",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:official stickers"
+    },
+    {
+      "name": "Saad El Haddad",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:saad el haddad"
+    },
+    {
+      "name": "Social Section Background Image",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:social section background image"
+    },
+    {
+      "name": "VEN",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "venezia:ven"
+    },
+    {
+      "name": "Antoine Hainaut",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:antoine hainaut"
+    },
+    {
+      "name": "Calixte Paul Ligue",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:calixte paul ligue"
+    },
+    {
+      "name": "Enrique Perez Munoz",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:enrique perez munoz"
+    },
+    {
+      "name": "Gianluca Cristiano Busio",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:gianluca cristiano busio"
+    },
+    {
+      "name": "Joseph Alfred Duncan",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:joseph alfred duncan"
+    },
+    {
+      "name": "Kornel Gracjan Lisman",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:kornel gracjan lisman"
+    },
+    {
+      "name": "Lorenzo Berardi",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:lorenzo berardi"
+    },
+    {
+      "name": "Marko Hussein Farji",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:marko hussein farji"
+    },
+    {
+      "name": "Matteo Dagasso",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:matteo dagasso"
+    },
+    {
+      "name": "Mouhamed Lamine Fanne Dabo",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:mouhamed lamine fanne dabo"
+    },
+    {
+      "name": "Richie Sagrado Sebastiao",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:richie sagrado sebastiao"
+    },
+    {
+      "name": "Ridgeciano Delano Haps",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:ridgeciano delano haps"
+    },
+    {
+      "name": "Simon Solomon Junior Sohm",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:simon solomon junior sohm"
+    },
+    {
+      "name": "Simone Panada",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:simone panada"
+    },
+    {
+      "name": "Thierry Rendall Correia",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:thierry rendall correia"
+    },
+    {
+      "name": "Thórir Jóhann Helgason",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:thórir jóhann helgason"
+    },
+    {
+      "name": "Toma Basic",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:toma basic"
+    },
+    {
+      "name": "VEN",
+      "team": "Venezia",
+      "role": "C",
+      "officialId": "venezia:ven"
+    },
+    {
+      "name": "Alejandro Gomes Furtado",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:alejandro gomes furtado"
+    },
+    {
+      "name": "Armel Bella Kotchap",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:armel bella kotchap"
+    },
+    {
+      "name": "Bartol Franjić",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:bartol franjić"
+    },
+    {
+      "name": "Joel Marcel Schingtienne",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:joel marcel schingtienne"
+    },
+    {
+      "name": "Marin Sverko",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:marin sverko"
+    },
+    {
+      "name": "Matias Agustin Moreno",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:matias agustin moreno"
+    },
+    {
+      "name": "Redouane Halhal",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:redouane halhal"
+    },
+    {
+      "name": "VEN",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "venezia:ven"
+    },
+    {
+      "name": "Alessio Pozzi",
+      "team": "Venezia",
+      "role": "P",
+      "officialId": "venezia:alessio pozzi"
+    },
+    {
+      "name": "Filip Stanković",
+      "team": "Venezia",
+      "role": "P",
+      "officialId": "venezia:filip stanković"
+    },
+    {
+      "name": "Lorenzo Montipò",
+      "team": "Venezia",
+      "role": "P",
+      "officialId": "venezia:lorenzo montipò"
+    },
+    {
+      "name": "Matteo Grandi",
+      "team": "Venezia",
+      "role": "P",
+      "officialId": "venezia:matteo grandi"
+    },
+    {
+      "name": "VEN",
+      "team": "Venezia",
+      "role": "P",
+      "officialId": "venezia:ven"
+    }
+  ]
 }
