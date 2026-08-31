@@ -920,7 +920,7 @@ tbody tr:hover{
 .summary-rate.rate-67{background:rgba(245,208,83,.12);border-color:rgba(245,208,83,.34);color:#ffe99b}
 .summary-rate.rate-33{background:rgba(255,145,79,.12);border-color:rgba(255,145,79,.34);color:#ffc39d}
 .summary-empty{padding:60px 15px;text-align:center;color:#aa96b0;font-size:12px}
-/* v1.8.0 — Sintesi su campo + sostituti personali */
+/* v1.9.0 — Sintesi su campo + sostituti personali */
 .summary-pitch-wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:14px;align-items:start;margin:12px 0 14px}
 .summary-pitch{position:relative;width:100%;aspect-ratio:68/86;max-height:620px;min-height:480px;border-radius:14px;overflow:hidden;background:linear-gradient(90deg,rgba(28,105,39,.96),rgba(41,126,48,.96),rgba(28,105,39,.96));border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 0 34px rgba(0,0,0,.22)}
 .summary-pitch .summary-field-lines{position:absolute;inset:2.5%;width:95%;height:95%;pointer-events:none;opacity:.8}.summary-pitch .summary-field-lines *{fill:none;stroke:rgba(255,255,255,.82);stroke-width:3}.summary-pitch .summary-field-lines .spot{fill:rgba(255,255,255,.82);stroke:none}
@@ -946,7 +946,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.8.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.9.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1245,6 +1245,7 @@ let matchdaySubstitutes=JSON.parse(localStorage.getItem("fantaMatchdaySubstitute
 let matchdayFormations=JSON.parse(localStorage.getItem("fantaMatchdayFormations")||"null")||{};
 let matchdayCustomized=JSON.parse(localStorage.getItem("fantaMatchdayCustomized")||"null")||{};
 let summarySubstitutes=JSON.parse(localStorage.getItem("fantaSummarySubstitutes")||"null")||{};
+let officialSubstitutions=JSON.parse(localStorage.getItem("fantaOfficialSubstitutions")||"null")||{};
 let currentTeam=localStorage.getItem("fantaCurrentTeam")||TEAMS[0];
 let currentMatchday=Math.min(3,Math.max(1,Number(localStorage.getItem("fantaCurrentMatchday")||1)||1));
 let currentFormationView=localStorage.getItem("fantaFormationView")||String(currentMatchday);
@@ -1301,6 +1302,7 @@ function persistFormationState(){
  localStorage.setItem("fantaMatchdayFormations",JSON.stringify(matchdayFormations));
  localStorage.setItem("fantaMatchdayCustomized",JSON.stringify(matchdayCustomized));
  localStorage.setItem("fantaSummarySubstitutes",JSON.stringify(summarySubstitutes));
+ localStorage.setItem("fantaOfficialSubstitutions",JSON.stringify(officialSubstitutions));
  localStorage.setItem("fantaCurrentTeam",currentTeam);
  localStorage.setItem("fantaCurrentMatchday",String(currentMatchday));
  localStorage.setItem("fantaFormationView",currentFormationView);
@@ -1548,6 +1550,8 @@ function formationMergeOfficial(payload){
      matchdayLineups[team][String(day)]=orientImportedTacticalLineup(ids);
      matchdaySubstitutes[team][String(day)]=normalizeSubstitutes([]);
      if(src.formation && formations[src.formation])matchdayFormations[team][String(day)]=src.formation;
+     if(!officialSubstitutions[team])officialSubstitutions[team]={};
+     officialSubstitutions[team][String(day)]=Array.isArray(src.substitutions)?src.substitutions:[];
      if(day===2||day===3)matchdayCustomized[team][String(day)]=true;
      imported++;
    });
@@ -1788,6 +1792,14 @@ function summaryFieldSvg(){
  return `<svg class="summary-field-lines" viewBox="0 0 680 860" preserveAspectRatio="none" aria-hidden="true"><rect x="18" y="18" width="644" height="824"/><line x1="18" y1="430" x2="662" y2="430"/><circle cx="340" cy="430" r="78"/><circle class="spot" cx="340" cy="430" r="4"/><rect x="140" y="18" width="400" height="132"/><rect x="250" y="18" width="180" height="45"/><circle class="spot" cx="340" cy="112" r="4"/><rect x="140" y="710" width="400" height="132"/><rect x="250" y="797" width="180" height="45"/><circle class="spot" cx="340" cy="748" r="4"/></svg>`;
 }
 function summaryDayCell(row,day){return row.days.includes(day)?`<span class="summary-check">✓</span>`:`<span class="summary-dash">—</span>`;}
+function summaryRealChangeText(playerName,subs){
+ const rows=Array.isArray(subs)?subs:[];
+ const out=rows.find(x=>x&&x.out===playerName);
+ if(out)return `Sostituito da ${out.in}`;
+ const incoming=rows.find(x=>x&&x.in===playerName);
+ if(incoming)return `Subentrato al posto di ${incoming.out}`;
+ return "";
+}
 function renderSummaryDetail(id){
  const rows=buildStarterSummary(currentTeam);
  const row=rows.find(x=>String(x.id)===String(id));
@@ -1805,7 +1817,12 @@ function renderSummaryDetail(id){
  const predictedId=summarySubstitutes[currentTeam]?.[String(row.id)]||null;
  const predicted=predictedId?byId(predictedId):null;
  const predictedHtml=`<div class="summary-detail-day"><b>ALT</b><div>${predicted?`Tuo sostituto previsto: <b>${predicted.name}</b> (${predicted.role})`:`Nessun sostituto previsto inserito`}</div></div>`;
- detail.innerHTML=`<h4>${row.player.name} <span class="formation-role-badge">${row.player.role}</span></h4><div class="summary-detail-sub">${row.starts}/3 titolarità · ${row.rate}%</div>${predictedHtml}${days}`;
+ const realRows=[1,2,3].map(d=>{
+   const txt=summaryRealChangeText(row.player.name,officialSubstitutions[currentTeam]?.[String(d)]||[]);
+   return txt?`<div><b>G${d}:</b> ${txt}</div>`:"";
+ }).filter(Boolean).join("");
+ const realHtml=`<div class="summary-detail-day"><b>REAL</b><div>${realRows||"Nessun cambio registrato nelle giornate disponibili"}</div></div>`;
+ detail.innerHTML=`<h4>${row.player.name} <span class="formation-role-badge">${row.player.role}</span></h4><div class="summary-detail-sub">${row.starts}/3 titolarità · ${row.rate}%</div>${predictedHtml}${realHtml}${days}`;
 }
 function renderStarterSummary(){
  const rows=buildStarterSummary(currentTeam);
