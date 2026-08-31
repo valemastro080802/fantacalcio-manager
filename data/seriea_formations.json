@@ -1,9 +1,9 @@
 {
   "source": "Fantacalcio.it",
   "season": "2026-27",
-  "generated_at": "2026-08-31T14:12:41.126243+00:00",
+  "generated_at": "2026-08-31T14:27:41.172032+00:00",
   "available_matchdays": [
-    "G1 19/20",
+    "G1 20/20",
     "G2 16/20"
   ],
   "teams": {
@@ -47,7 +47,7 @@
     },
     "Cagliari": {
       "1": {
-        "formation": "4-3-3",
+        "formation": "4-3-2-1",
         "starters": [
           "Mendy P.",
           "Maldini",
@@ -477,6 +477,23 @@
           "Corvi"
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/juventus-parma/17968"
+      },
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Corvi",
+          "Delprato",
+          "Troilo",
+          "Ndiaye",
+          "Valeri",
+          "Keita M.",
+          "Almqvist",
+          "Ordonez C.",
+          "Bernabè",
+          "Tourè E.",
+          "Lontani"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960"
       }
     },
     "Roma": {
@@ -644,7 +661,6 @@
     }
   },
   "errors": [
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960: formazione incompleta (1/2 squadre)",
     "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lecce-roma/17970: formazione incompleta (0/2 squadre)",
     "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/atalanta-bologna/17965: formazione incompleta (0/2 squadre)",
     "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/genoa-como/17979: formazione incompleta (0/2 squadre)",
@@ -658,7 +674,7 @@
     "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/cagliari-lecce/17976: formazione incompleta (0/2 squadre)",
     "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/udinese-lazio/17984: formazione incompleta (0/2 squadre)"
   ],
-  "updated_lineups_this_run": 35,
+  "updated_lineups_this_run": 36,
   "discovered_match_urls": {
     "1": [
       "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/roma-fiorentina/17961",
