@@ -1774,6 +1774,49 @@ function buildStarterSummary(team){
  const roleOrder={P:0,D:1,C:2,A:3};
  return [...map.values()].map(x=>({...x,rate:Math.round(x.starts/3*100)})).sort((a,b)=>(b.starts-a.starts)||roleOrder[a.player.role]-roleOrder[b.player.role]||a.player.name.localeCompare(b.player.name));
 }
+function summaryRepresentativeFormation(team){
+ ensureTeamMatchdays(team);
+ const counts=new Map();
+ for(let d=1;d<=3;d++){
+   const k=String(d);
+   if((matchdayLineups[team][k]||[]).filter(Boolean).length!==11)continue;
+   const f=matchdayFormations[team][k]||"3-5-2";
+   counts.set(f,(counts.get(f)||0)+1);
+ }
+ let best="3-5-2",bestCount=-1;
+ counts.forEach((count,f)=>{if(count>bestCount){best=f;bestCount=count;}});
+ return formations[best]?best:"3-5-2";
+}
+function assignSummaryTacticalSlots(chosen,team){
+ const formation=summaryRepresentativeFormation(team);
+ const slots=(formations[formation]||formations["3-5-2"]).map((coord,index)=>({index,coord}));
+ const rows=chosen.map(x=>{
+   const sum=x.appearances.reduce((a,v)=>[a[0]+v.coord[0],a[1]+v.coord[1]],[0,0]);
+   const n=Math.max(1,x.appearances.length);
+   return {...x,meanCoord:[sum[0]/n,sum[1]/n]};
+ });
+ const assigned=new Map(),available=new Set(slots.map(s=>s.index));
+ const keeper=rows.find(x=>x.player.role==="P");
+ if(keeper&&available.has(0)){assigned.set(keeper.id,0);available.delete(0);}
+ const pending=rows.filter(x=>!assigned.has(x.id));
+ // Assegna iterativamente la coppia giocatore/slot piu' vicina: ogni slot puo' essere usato una sola volta.
+ // Cosi' conserviamo quanto possibile la posizione media senza mai sovrapporre due giocatori.
+ while(pending.length&&available.size){
+   let best=null;
+   pending.forEach((row,ri)=>available.forEach(si=>{
+     const c=slots[si].coord,dx=row.meanCoord[0]-c[0],dy=row.meanCoord[1]-c[1];
+     const distance=dx*dx+dy*dy;
+     if(!best||distance<best.distance)best={ri,si,distance};
+   }));
+   if(!best)break;
+   const row=pending.splice(best.ri,1)[0];
+   assigned.set(row.id,best.si);available.delete(best.si);
+ }
+ return rows.map(x=>{
+   const slot=assigned.get(x.id);
+   return {...x,summaryFormation:formation,summarySlot:slot,plotCoord:slots[slot]?.coord||x.meanCoord};
+ });
+}
 function buildSummaryPitchData(team){
  const rows=buildStarterSummary(team);
  const goalkeepers=rows.filter(x=>x.player.role==="P");
@@ -1782,11 +1825,7 @@ function buildSummaryPitchData(team){
  if(goalkeepers.length)chosen.push(goalkeepers[0]);
  chosen.push(...outfield.slice(0,11-chosen.length));
  if(chosen.length<11)chosen.push(...rows.filter(x=>!chosen.some(c=>c.id===x.id)).slice(0,11-chosen.length));
- return chosen.map(x=>{
-   const avg=x.appearances.reduce((a,v)=>[a[0]+v.coord[0],a[1]+v.coord[1]],[0,0]);
-   const n=Math.max(1,x.appearances.length);
-   return {...x,avgCoord:[avg[0]/n,avg[1]/n]};
- });
+ return assignSummaryTacticalSlots(chosen,team);
 }
 function summaryFieldSvg(){
  return `<svg class="summary-field-lines" viewBox="0 0 680 860" preserveAspectRatio="none" aria-hidden="true"><rect x="18" y="18" width="644" height="824"/><line x1="18" y1="430" x2="662" y2="430"/><circle cx="340" cy="430" r="78"/><circle class="spot" cx="340" cy="430" r="4"/><rect x="140" y="18" width="400" height="132"/><rect x="250" y="18" width="180" height="45"/><circle class="spot" cx="340" cy="112" r="4"/><rect x="140" y="710" width="400" height="132"/><rect x="250" y="797" width="180" height="45"/><circle class="spot" cx="340" cy="748" r="4"/></svg>`;
@@ -1834,13 +1873,13 @@ function renderStarterSummary(){
  const once=rows.filter(x=>x.starts===1).length;
  const pitchPlayers=pitchRows.map(x=>{
    const cls=x.starts===3?"rate-100":x.starts===2?"rate-67":"rate-33";
-   const [left,top]=x.avgCoord;
+   const [left,top]=x.plotCoord;
    const subId=summarySubstitutes[currentTeam]?.[String(x.id)]||null;
    const subP=subId?byId(subId):null;
    return `<div class="summary-player-wrap" style="left:${left}%;top:${top}%"><button type="button" class="summary-pitch-player ${cls}" data-summary-player="${x.id}" title="${x.player.name}: ${x.starts}/3"><span class="summary-avatar">${avatarContent(x.player)}</span><span class="summary-pname">${x.player.name}</span><span class="summary-prate">${x.starts}/3 · ${x.rate}%</span></button><div class="summary-sub-row"><button type="button" class="summary-sub-btn ${subP?"":"empty"}" data-summary-sub="${x.id}" title="${subP?`Cambia sostituto: ${subP.name}`:"Aggiungi il tuo sostituto previsto"}">${subP?`↳ ${subP.name}`:"+ sostituto"}</button>${subP?`<button type="button" class="summary-sub-clear" data-summary-sub-clear="${x.id}" title="Rimuovi sostituto">×</button>`:""}</div></div>`;
  }).join("");
  const tableRows=rows.map(x=>`<tr data-summary-player="${x.id}"><td><b>${x.player.name}</b> <span class="formation-role-badge">${x.player.role}</span></td><td>${summaryDayCell(x,1)}</td><td>${summaryDayCell(x,2)}</td><td>${summaryDayCell(x,3)}</td><td class="summary-table-rate">${x.starts}/3 · ${x.rate}%</td></tr>`).join("");
- starterSummary.innerHTML=`<div class="summary-title"><div><h3>${currentTeam} · Formazione media</h3><p>Il campo mostra gli 11 più utilizzati. La posizione è la media delle posizioni realmente occupate in G1, G2 e G3.</p></div></div><div class="summary-kpis"><div class="summary-kpi"><b>${always}</b><small>Sempre titolari · 3/3</small></div><div class="summary-kpi"><b>${twice}</b><small>Titolari · 2/3</small></div><div class="summary-kpi"><b>${once}</b><small>Una titolarità · 1/3</small></div></div>${complete?"":`<div class="summary-warning">Formazioni non ancora complete: G1 ${filled[0]}/11 · G2 ${filled[1]}/11 · G3 ${filled[2]}/11. Le percentuali restano calcolate su 3 giornate.</div>`}${rows.length?`<div class="summary-pitch-wrap"><div class="summary-pitch" data-team="${currentTeam}">${summaryFieldSvg()}${pitchPlayers}</div><aside class="summary-detail" id="summaryDetail"><div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere G1, G2, G3 e la posizione tattica occupata.</div></aside></div><div class="summary-section-label">Tutti i giocatori utilizzati</div><div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>Giocatore</th><th>G1</th><th>G2</th><th>G3</th><th>Titolarità</th></tr></thead><tbody>${tableRows}</tbody></table></div>`:`<div class="summary-empty">Inserisci almeno una formazione nelle giornate G1, G2 o G3 per vedere la sintesi.</div>`}`;
+ starterSummary.innerHTML=`<div class="summary-title"><div><h3>${currentTeam} · Formazione media</h3><p>Il campo mostra gli 11 più utilizzati. Gli 11 più utilizzati sono disposti negli slot della formazione tipo, senza sovrapposizioni; le posizioni reali di G1, G2 e G3 restano visibili nel dettaglio.</p></div></div><div class="summary-kpis"><div class="summary-kpi"><b>${always}</b><small>Sempre titolari · 3/3</small></div><div class="summary-kpi"><b>${twice}</b><small>Titolari · 2/3</small></div><div class="summary-kpi"><b>${once}</b><small>Una titolarità · 1/3</small></div></div>${complete?"":`<div class="summary-warning">Formazioni non ancora complete: G1 ${filled[0]}/11 · G2 ${filled[1]}/11 · G3 ${filled[2]}/11. Le percentuali restano calcolate su 3 giornate.</div>`}${rows.length?`<div class="summary-pitch-wrap"><div class="summary-pitch" data-team="${currentTeam}">${summaryFieldSvg()}${pitchPlayers}</div><aside class="summary-detail" id="summaryDetail"><div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere G1, G2, G3 e la posizione tattica occupata.</div></aside></div><div class="summary-section-label">Tutti i giocatori utilizzati</div><div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>Giocatore</th><th>G1</th><th>G2</th><th>G3</th><th>Titolarità</th></tr></thead><tbody>${tableRows}</tbody></table></div>`:`<div class="summary-empty">Inserisci almeno una formazione nelle giornate G1, G2 o G3 per vedere la sintesi.</div>`}`;
  starterSummary.querySelectorAll("[data-summary-player]").forEach(el=>el.addEventListener("click",()=>{
    summarySelectedPlayerId=el.dataset.summaryPlayer;
    renderSummaryDetail(summarySelectedPlayerId);
