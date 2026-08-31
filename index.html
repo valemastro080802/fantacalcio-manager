@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v1.4.3</title>
+<title>Fantacalcio Manager Online v1.4.4</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -738,7 +738,7 @@ tbody tr:hover{
   }
 }
 
-/* v1.4.3 — badge ruolo accanto al nome in formazione */
+/* v1.4.4 — badge ruolo a destra per titolari e sostituti */
 .formation-name-row{
   display:flex;
   align-items:center;
@@ -771,6 +771,26 @@ tbody tr:hover{
   font-weight:900;
   box-shadow:0 2px 7px rgba(0,0,0,.28);
 }
+
+.sub-slot button:not(.empty-sub){
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:4px!important;
+}
+.sub-player-label{
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.sub-role-badge{
+  min-width:15px!important;
+  height:15px!important;
+  padding:0 3px!important;
+  border-radius:4px!important;
+  font-size:7.5px!important;
+  text-shadow:none!important;
+}
+
 @media(max-width:900px){
   .formation-name-row{width:128px;max-width:128px;gap:4px}
   .formation-name-row .formation-player-name{max-width:104px!important}
@@ -814,7 +834,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.3</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.4</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1437,13 +1457,13 @@ function renderLineup(){
    const subP2=pair[1]?byId(pair[1]):null;
    slot.innerHTML=p?`
    <button type="button" class="avatar" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
-   <div class="formation-name-row"><span class="formation-role-badge">${p.role}</span><div class="formation-player-name">${p.name}</div></div>
+   <div class="formation-name-row"><div class="formation-player-name">${p.name}</div><span class="formation-role-badge">${p.role}</span></div>
    <div class="sub-slot">
      <button type="button" data-sub-slot="${i}" data-sub-index="0" class="${subP1?"":"empty-sub"}" title="${subP1?"Apri sostituto 1":"Aggiungi sostituto 1"}">
-       ${subP1?"↳ "+subP1.name:"+ sostituto 1"}
+       ${subP1?`<span class="sub-player-label">↳ ${subP1.name}</span><span class="formation-role-badge sub-role-badge">${subP1.role}</span>`:"+ sostituto 1"}
      </button>
      <button type="button" data-sub-slot="${i}" data-sub-index="1" class="${subP2?"":"empty-sub"}" title="${subP2?"Apri sostituto 2":"Aggiungi sostituto 2"}">
-       ${subP2?"↳ "+subP2.name:"+ sostituto 2"}
+       ${subP2?`<span class="sub-player-label">↳ ${subP2.name}</span><span class="formation-role-badge sub-role-badge">${subP2.role}</span>`:"+ sostituto 2"}
      </button>
    </div>`:
    `<button type="button" class="avatar" data-slot="${i}">+</button>
