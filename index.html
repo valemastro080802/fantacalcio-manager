@@ -1114,7 +1114,7 @@ tbody tr:hover{
    <div class="metrics-layout">
     <div>
      <div class="metrics-grid" id="metricsGrid"></div>
-     <div class="metric-help">1 = molto basso / molto raro · 10 = molto alto / molto frequente. Per <b>infortuni</b> e <b>ammonizioni</b>, un valore alto indica maggiore rischio/frequenza. Il <b>modificatore</b> è una scelta SÌ/NO.</div>
+     <div class="metric-help">1 = molto basso / molto raro · 10 = molto alto / molto frequente. Per <b>infortuni</b>, 1 indica rischio minimo e 10 rischio massimo: nel radar e nella media il valore viene valutato al contrario, quindi meno infortuni = meglio. Per <b>ammonizioni</b>, un valore alto indica maggiore frequenza. Il <b>modificatore</b> è una scelta SÌ/NO.</div>
     </div>
     <div class="radar-card">
      <h4>Profilo del giocatore</h4>
@@ -1144,6 +1144,7 @@ const ROLE_METRICS={
 function hasModificatore(role){return role==="D"||role==="P";}
 function modificatoreLabel(p){return p.modificatore===true?"SÌ":"NO";}
 function clampMetric(v){const n=Number(v);return Number.isFinite(n)?Math.min(10,Math.max(1,Math.round(n))):5;}
+function metricScore(key,value){const v=clampMetric(value);return key==="infortuni"?11-v:v;}
 function ensureMetrics(p){
  if(!p.metrics)p.metrics={};
  const defs=ROLE_METRICS[p.role]||[];
@@ -1195,7 +1196,7 @@ function renderRadar(p){
  let svg=`<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Diagramma radar delle caratteristiche del giocatore">`;
  for(let level=2;level<=10;level+=2)svg+=`<polygon class="radar-grid" points="${poly(maxR*level/10)}"></polygon>`;
  defs.forEach((_,i)=>{const [x,y]=pt(maxR,i);svg+=`<line class="radar-axis" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"></line>`;});
- const valuePoints=defs.map(([k],i)=>pt(maxR*clampMetric(p.metrics[k])/10,i));
+ const valuePoints=defs.map(([k],i)=>pt(maxR*metricScore(k,p.metrics[k])/10,i));
  svg+=`<polygon class="radar-shape" points="${valuePoints.map(v=>v.join(",")).join(" ")}"></polygon>`;
  valuePoints.forEach(([x,y])=>svg+=`<circle class="radar-dot" cx="${x}" cy="${y}" r="3"></circle>`);
  defs.forEach(([,label],i)=>{const [x,y]=pt(maxR+25,i);svg+=`<text class="radar-label" x="${x}" y="${y}">${label}</text>`;});
@@ -1453,7 +1454,7 @@ function metricAverage(p){
  ensureMetrics(p);
  const defs=ROLE_METRICS[p.role]||[];
  if(!defs.length)return "—";
- const avg=defs.reduce((s,[k])=>s+clampMetric(p.metrics[k]),0)/defs.length;
+ const avg=defs.reduce((s,[k])=>s+metricScore(k,p.metrics[k]),0)/defs.length;
  return avg.toFixed(1);
 }
 
@@ -1720,7 +1721,7 @@ function renderPopoverRadar(p){
  let svg=`<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Diagramma radar">`;
  for(let level=2;level<=10;level+=2)svg+=`<polygon class="radar-grid" points="${poly(maxR*level/10)}"></polygon>`;
  defs.forEach((_,i)=>{const [x,y]=pt(maxR,i);svg+=`<line class="radar-axis" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"></line>`;});
- const vals=defs.map(([k],i)=>pt(maxR*clampMetric(p.metrics[k])/10,i));
+ const vals=defs.map(([k],i)=>pt(maxR*metricScore(k,p.metrics[k])/10,i));
  svg+=`<polygon class="radar-shape" points="${vals.map(v=>v.join(",")).join(" ")}"></polygon>`;
  vals.forEach(([x,y])=>svg+=`<circle class="radar-dot" cx="${x}" cy="${y}" r="2.5"></circle>`);
  defs.forEach(([,label],i)=>{const [x,y]=pt(maxR+19,i);svg+=`<text class="radar-label" x="${x}" y="${y}" style="font-size:7px">${label}</text>`;});
