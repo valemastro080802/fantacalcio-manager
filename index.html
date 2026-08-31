@@ -920,7 +920,18 @@ tbody tr:hover{
 .summary-rate.rate-67{background:rgba(245,208,83,.12);border-color:rgba(245,208,83,.34);color:#ffe99b}
 .summary-rate.rate-33{background:rgba(255,145,79,.12);border-color:rgba(255,145,79,.34);color:#ffc39d}
 .summary-empty{padding:60px 15px;text-align:center;color:#aa96b0;font-size:12px}
-@media(max-width:760px){.summary-groups{grid-template-columns:1fr}.summary-kpis{grid-template-columns:1fr}.matchday-toolbar{width:98%}.starter-summary{width:98%}}
+/* v1.7.0 — Sintesi su campo */
+.summary-pitch-wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:14px;align-items:start;margin:12px 0 14px}
+.summary-pitch{position:relative;width:100%;aspect-ratio:68/86;max-height:620px;min-height:480px;border-radius:14px;overflow:hidden;background:linear-gradient(90deg,rgba(28,105,39,.96),rgba(41,126,48,.96),rgba(28,105,39,.96));border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 0 34px rgba(0,0,0,.22)}
+.summary-pitch .summary-field-lines{position:absolute;inset:2.5%;width:95%;height:95%;pointer-events:none;opacity:.8}.summary-pitch .summary-field-lines *{fill:none;stroke:rgba(255,255,255,.82);stroke-width:3}.summary-pitch .summary-field-lines .spot{fill:rgba(255,255,255,.82);stroke:none}
+.summary-pitch-player{position:absolute;transform:translate(-50%,-50%);appearance:none;background:none;border:0;color:#fff;padding:0;cursor:pointer;text-align:center;z-index:2;width:104px}
+.summary-pitch-player .summary-avatar{width:48px;height:48px;margin:0 auto 4px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5b2877,#bd4aa8);border:2px solid rgba(255,255,255,.72);box-shadow:0 4px 14px rgba(0,0,0,.28);font-size:11px;font-weight:900;overflow:hidden}
+.summary-pitch-player .summary-avatar img{width:100%;height:100%;object-fit:cover}.summary-pitch-player .summary-pname{display:inline-block;max-width:100px;padding:2px 5px;border-radius:6px;background:rgba(12,12,18,.72);font-size:10px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}.summary-pitch-player .summary-prate{display:block;width:max-content;margin:3px auto 0;padding:2px 5px;border-radius:999px;background:rgba(12,12,18,.78);font-size:9px;font-weight:900}
+.summary-pitch-player.rate-100 .summary-avatar{border-color:#9ff0be}.summary-pitch-player.rate-67 .summary-avatar{border-color:#ffe47d}.summary-pitch-player.rate-33 .summary-avatar{border-color:#ffad7c}.summary-pitch-player.active .summary-avatar{outline:3px solid rgba(255,255,255,.9);outline-offset:2px;transform:scale(1.06)}
+.summary-detail{min-height:180px;border:1px solid rgba(208,92,255,.16);border-radius:12px;background:rgba(255,255,255,.025);padding:12px;position:sticky;top:12px}.summary-detail h4{margin:0 0 4px;font-size:14px}.summary-detail-sub{font-size:10px;color:#bda9c3;margin-bottom:10px}.summary-detail-day{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:8px 0;border-top:1px solid rgba(208,92,255,.09);font-size:10px}.summary-detail-day b{color:#ebd7ef}.summary-detail-empty{color:#aa96b0;font-size:11px;line-height:1.5;padding:10px 0}
+.summary-table-wrap{overflow:auto;border:1px solid rgba(208,92,255,.12);border-radius:11px}.summary-table{width:100%;border-collapse:collapse;font-size:10px}.summary-table th,.summary-table td{padding:8px 9px;border-bottom:1px solid rgba(208,92,255,.08);text-align:center}.summary-table th:first-child,.summary-table td:first-child{text-align:left}.summary-table th{color:#c9b4cf;background:rgba(255,255,255,.025);font-size:9px}.summary-table tr:last-child td{border-bottom:0}.summary-table tbody tr{cursor:pointer}.summary-table tbody tr:hover,.summary-table tbody tr.active{background:rgba(208,92,255,.07)}.summary-check{font-weight:900;color:#baf3d1}.summary-dash{color:#74677a}.summary-table-rate{font-weight:900}
+.summary-section-label{font-size:12px;font-weight:900;color:#e7c9ef;margin:14px 0 8px}
+@media(max-width:760px){.summary-groups{grid-template-columns:1fr}.summary-kpis{grid-template-columns:1fr}.matchday-toolbar{width:98%}.starter-summary{width:98%}.summary-pitch-wrap{grid-template-columns:1fr}.summary-pitch{min-height:520px}.summary-detail{position:static}.summary-pitch-player{width:86px}.summary-pitch-player .summary-pname{max-width:82px;font-size:9px}.summary-pitch-player .summary-avatar{width:42px;height:42px}}
 
 
 /* v1.6.0 — sync formazioni ufficiali */
@@ -935,7 +946,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.6.4</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.7.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1725,40 +1736,92 @@ function renderTeamLogo(){
  }
 }
 
+let summarySelectedPlayerId=null;
+function summaryZoneLabel(coord){
+ const x=Number(coord?.[0]??50),y=Number(coord?.[1]??50);
+ const side=x<34?"sinistra":x>66?"destra":"centrale";
+ if(y>=82)return "Portiere";
+ if(y>=64)return `Difesa ${side}`;
+ if(y>=43)return `Centrocampo ${side}`;
+ if(y>=23)return `Trequarti ${side}`;
+ return side==="centrale"?"Punta centrale":`Attacco ${side}`;
+}
 function buildStarterSummary(team){
  ensureTeamMatchdays(team);
  const map=new Map();
  for(let d=1;d<=3;d++){
+   const k=String(d);
+   const formation=matchdayFormations[team][k]||"3-5-2";
+   const coords=formations[formation]||formations["3-5-2"];
    const seen=new Set();
-   (matchdayLineups[team][String(d)]||[]).forEach(id=>{
+   (matchdayLineups[team][k]||[]).forEach((id,slot)=>{
      if(!id||seen.has(id))return;
      const p=byId(id);
      if(!p||p.team!==team)return;
      seen.add(id);
-     if(!map.has(id))map.set(id,{id,player:p,starts:0,days:[]});
-     const row=map.get(id);row.starts++;row.days.push(d);
+     if(!map.has(id))map.set(id,{id,player:p,starts:0,days:[],appearances:[]});
+     const row=map.get(id);
+     row.starts++;row.days.push(d);
+     row.appearances.push({day:d,formation,slot,coord:coords[slot]||[50,50]});
    });
  }
  const roleOrder={P:0,D:1,C:2,A:3};
  return [...map.values()].map(x=>({...x,rate:Math.round(x.starts/3*100)})).sort((a,b)=>(b.starts-a.starts)||roleOrder[a.player.role]-roleOrder[b.player.role]||a.player.name.localeCompare(b.player.name));
 }
+function buildSummaryPitchData(team){
+ const rows=buildStarterSummary(team);
+ const goalkeepers=rows.filter(x=>x.player.role==="P");
+ const outfield=rows.filter(x=>x.player.role!=="P");
+ const chosen=[];
+ if(goalkeepers.length)chosen.push(goalkeepers[0]);
+ chosen.push(...outfield.slice(0,11-chosen.length));
+ if(chosen.length<11)chosen.push(...rows.filter(x=>!chosen.some(c=>c.id===x.id)).slice(0,11-chosen.length));
+ return chosen.map(x=>{
+   const avg=x.appearances.reduce((a,v)=>[a[0]+v.coord[0],a[1]+v.coord[1]],[0,0]);
+   const n=Math.max(1,x.appearances.length);
+   return {...x,avgCoord:[avg[0]/n,avg[1]/n]};
+ });
+}
+function summaryFieldSvg(){
+ return `<svg class="summary-field-lines" viewBox="0 0 680 860" preserveAspectRatio="none" aria-hidden="true"><rect x="18" y="18" width="644" height="824"/><line x1="18" y1="430" x2="662" y2="430"/><circle cx="340" cy="430" r="78"/><circle class="spot" cx="340" cy="430" r="4"/><rect x="140" y="18" width="400" height="132"/><rect x="250" y="18" width="180" height="45"/><circle class="spot" cx="340" cy="112" r="4"/><rect x="140" y="710" width="400" height="132"/><rect x="250" y="797" width="180" height="45"/><circle class="spot" cx="340" cy="748" r="4"/></svg>`;
+}
+function summaryDayCell(row,day){return row.days.includes(day)?`<span class="summary-check">✓</span>`:`<span class="summary-dash">—</span>`;}
+function renderSummaryDetail(id){
+ const rows=buildStarterSummary(currentTeam);
+ const row=rows.find(x=>String(x.id)===String(id));
+ const detail=document.getElementById("summaryDetail");
+ if(!detail)return;
+ document.querySelectorAll("[data-summary-player]").forEach(el=>el.classList.toggle("active",String(el.dataset.summaryPlayer)===String(id)));
+ if(!row){
+   detail.innerHTML=`<div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere in quali giornate è partito titolare e in quale posizione tattica.</div>`;
+   return;
+ }
+ const days=[1,2,3].map(d=>{
+   const a=row.appearances.find(x=>x.day===d);
+   return `<div class="summary-detail-day"><b>G${d}</b><div>${a?`Titolare · ${a.formation}<br><span class="small">${summaryZoneLabel(a.coord)}</span>`:`Non titolare`}</div></div>`;
+ }).join("");
+ detail.innerHTML=`<h4>${row.player.name} <span class="formation-role-badge">${row.player.role}</span></h4><div class="summary-detail-sub">${row.starts}/3 titolarità · ${row.rate}%</div>${days}`;
+}
 function renderStarterSummary(){
  const rows=buildStarterSummary(currentTeam);
+ const pitchRows=buildSummaryPitchData(currentTeam);
  const filled=[1,2,3].map(d=>(matchdayLineups[currentTeam][String(d)]||[]).filter(Boolean).length);
  const complete=filled.every(n=>n===11);
  const always=rows.filter(x=>x.starts===3).length;
  const twice=rows.filter(x=>x.starts===2).length;
  const once=rows.filter(x=>x.starts===1).length;
- const groups=["P","D","C","A"].map(role=>{
-   const items=rows.filter(x=>x.player.role===role);
-   if(!items.length)return "";
-   const title=({P:"Portieri",D:"Difensori",C:"Centrocampisti",A:"Attaccanti"})[role];
-   return `<section class="summary-group"><h4>${title}</h4>${items.map(x=>{
-     const cls=x.starts===3?"rate-100":x.starts===2?"rate-67":"rate-33";
-     return `<div class="summary-player"><div class="summary-player-main"><div class="summary-player-name">${x.player.name} <span class="formation-role-badge">${x.player.role}</span></div><div class="summary-player-days">Titolare: ${x.days.map(d=>"G"+d).join(" · ")}</div></div><span class="summary-rate ${cls}">${x.rate}%</span></div>`;
-   }).join("")}</section>`;
+ const pitchPlayers=pitchRows.map(x=>{
+   const cls=x.starts===3?"rate-100":x.starts===2?"rate-67":"rate-33";
+   const [left,top]=x.avgCoord;
+   return `<button type="button" class="summary-pitch-player ${cls}" data-summary-player="${x.id}" style="left:${left}%;top:${top}%" title="${x.player.name}: ${x.starts}/3"><span class="summary-avatar">${avatarContent(x.player)}</span><span class="summary-pname">${x.player.name}</span><span class="summary-prate">${x.starts}/3 · ${x.rate}%</span></button>`;
  }).join("");
- starterSummary.innerHTML=`<div class="summary-title"><div><h3>${currentTeam} · Titolarità prime 3 giornate</h3><p>Percentuale calcolata sulle tre formazioni inserite: 3/3 = 100%, 2/3 = 67%, 1/3 = 33%.</p></div></div><div class="summary-kpis"><div class="summary-kpi"><b>${always}</b><small>Sempre titolari · 3/3</small></div><div class="summary-kpi"><b>${twice}</b><small>Titolari · 2/3</small></div><div class="summary-kpi"><b>${once}</b><small>Una titolarità · 1/3</small></div></div>${complete?"":`<div class="summary-warning">Formazioni non ancora complete: G1 ${filled[0]}/11 · G2 ${filled[1]}/11 · G3 ${filled[2]}/11. Le percentuali restano calcolate su 3 giornate.</div>`}${rows.length?`<div class="summary-groups">${groups}</div>`:`<div class="summary-empty">Inserisci almeno una formazione nelle giornate G1, G2 o G3 per vedere la sintesi.</div>`}`;
+ const tableRows=rows.map(x=>`<tr data-summary-player="${x.id}"><td><b>${x.player.name}</b> <span class="formation-role-badge">${x.player.role}</span></td><td>${summaryDayCell(x,1)}</td><td>${summaryDayCell(x,2)}</td><td>${summaryDayCell(x,3)}</td><td class="summary-table-rate">${x.starts}/3 · ${x.rate}%</td></tr>`).join("");
+ starterSummary.innerHTML=`<div class="summary-title"><div><h3>${currentTeam} · Formazione media</h3><p>Il campo mostra gli 11 più utilizzati. La posizione è la media delle posizioni realmente occupate in G1, G2 e G3.</p></div></div><div class="summary-kpis"><div class="summary-kpi"><b>${always}</b><small>Sempre titolari · 3/3</small></div><div class="summary-kpi"><b>${twice}</b><small>Titolari · 2/3</small></div><div class="summary-kpi"><b>${once}</b><small>Una titolarità · 1/3</small></div></div>${complete?"":`<div class="summary-warning">Formazioni non ancora complete: G1 ${filled[0]}/11 · G2 ${filled[1]}/11 · G3 ${filled[2]}/11. Le percentuali restano calcolate su 3 giornate.</div>`}${rows.length?`<div class="summary-pitch-wrap"><div class="summary-pitch" data-team="${currentTeam}">${summaryFieldSvg()}${pitchPlayers}</div><aside class="summary-detail" id="summaryDetail"><div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere G1, G2, G3 e la posizione tattica occupata.</div></aside></div><div class="summary-section-label">Tutti i giocatori utilizzati</div><div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>Giocatore</th><th>G1</th><th>G2</th><th>G3</th><th>Titolarità</th></tr></thead><tbody>${tableRows}</tbody></table></div>`:`<div class="summary-empty">Inserisci almeno una formazione nelle giornate G1, G2 o G3 per vedere la sintesi.</div>`}`;
+ starterSummary.querySelectorAll("[data-summary-player]").forEach(el=>el.addEventListener("click",()=>{
+   summarySelectedPlayerId=el.dataset.summaryPlayer;
+   renderSummaryDetail(summarySelectedPlayerId);
+ }));
+ if(summarySelectedPlayerId && rows.some(x=>String(x.id)===String(summarySelectedPlayerId)))renderSummaryDetail(summarySelectedPlayerId);
 }
 function updateFormationView(){
  document.querySelectorAll("[data-matchday]").forEach(btn=>btn.classList.toggle("active",btn.dataset.matchday===currentFormationView));
