@@ -246,13 +246,14 @@ def fetch_substitutions(day, match_url, names_by_team, starters_by_team=None, ht
 
 
 
-def backfill_substitutions(teams, names_by_team, fetcher=fetch_substitutions, errors=None):
+def backfill_substitutions(teams, names_by_team, fetcher=None, errors=None):
     """Aggiorna i cambi anche quando il parser della formazione non riesce a rileggere il match.
 
     Usa le righe gia' presenti nello snapshot (con 11 titolari e source URL) come base,
     cosi' i cambi possono essere recuperati indipendentemente dal nuovo parsing della formazione.
     """
     errors = errors if errors is not None else []
+    if fetcher is None: fetcher=fetch_substitutions_hybrid
     seen=set()
     for team,days in (teams or {}).items():
         if not isinstance(days,dict):
@@ -286,6 +287,105 @@ def backfill_substitutions(teams, names_by_team, fetcher=fetch_substitutions, er
                     r["substitutions"]=subs.get(t,[]) if isinstance(subs.get(t,[]),list) else []
     return teams
 
+ESPN_BASE="https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1"
+ESPN_MATCHDAY_DATES={1:"20260821-20260824",2:"20260828-20260831",3:"20260904-20260907"}
+ESPN_TEAM_ALIASES={
+    "Inter":["Inter Milan","Internazionale"], "Milan":["AC Milan"],
+    "Roma":["AS Roma"], "Como":["Como 1907"], "Parma":["Parma Calcio 1913"],
+}
+
+def fetch_json(url):
+    return json.loads(fetch(url))
+
+def _all_text_values(obj):
+    if isinstance(obj,dict):
+        for k,v in obj.items():
+            if k in {"text","shortText","description"} and isinstance(v,str):
+                yield v
+            yield from _all_text_values(v)
+    elif isinstance(obj,list):
+        for v in obj: yield from _all_text_values(v)
+
+def espn_name_match(text,names):
+    found=name_match(text,names)
+    if found:return found
+    q=set(norm(text).split())
+    # Fallback per abbreviazioni Fantacalcio tipo "Rodriguez Je.":
+    # richiede un token di almeno 4 lettere condiviso e un match univoco nella rosa.
+    cand=[]
+    for x in names:
+        shared={t for t in q.intersection(norm(x).split()) if len(t)>=4}
+        if shared:cand.append(x)
+    return cand[0] if len(cand)==1 else None
+
+def parse_espn_substitutions(summary,names_by_team):
+    """Legge le sostituzioni dal JSON ESPN. Restituisce nomi canonici del listone."""
+    out={team:[] for team in names_by_team}
+    seen_text=set()
+    patterns=[
+        r"Substitution,\s*[^.]+\.\s*(.+?)\s+replaces\s+(.+?)(?:\.|$)",
+        r"Sostituzione,\s*[^.]+\.\s*(.+?)\s+sostituisce\s+(.+?)(?:\.|$)",
+    ]
+    for text in _all_text_values(summary):
+        if text in seen_text: continue
+        seen_text.add(text)
+        for pat in patterns:
+            m=re.search(pat,text,re.I)
+            if not m: continue
+            incoming_raw,outgoing_raw=m.group(1).strip(),m.group(2).strip()
+            for team,names in names_by_team.items():
+                incoming=espn_name_match(incoming_raw,names); outgoing=espn_name_match(outgoing_raw,names)
+                if incoming and outgoing and incoming!=outgoing:
+                    row={"out":outgoing,"in":incoming}
+                    if row not in out[team]: out[team].append(row)
+                    break
+            break
+    return out
+
+def _espn_event_teams(event):
+    comps=event.get("competitions") or []
+    if not comps:return []
+    vals=[]
+    for c in comps[0].get("competitors") or []:
+        t=c.get("team") or {}
+        vals.extend([t.get("displayName"),t.get("shortDisplayName"),t.get("name")])
+    return [x for x in vals if x]
+
+def _team_matches_espn(team,labels):
+    wanted=[team]+ESPN_TEAM_ALIASES.get(team,[])
+    nl=[norm(x) for x in labels]
+    return any(norm(w)==x or norm(w) in x or x in norm(w) for w in wanted for x in nl)
+
+def espn_event_id(day,home,away,scoreboard=None):
+    if scoreboard is None:
+        dates=ESPN_MATCHDAY_DATES.get(int(day))
+        if not dates:return None
+        scoreboard=fetch_json(f"{ESPN_BASE}/scoreboard?dates={dates}&limit=100")
+    for event in scoreboard.get("events") or []:
+        labels=_espn_event_teams(event)
+        if _team_matches_espn(home,labels) and _team_matches_espn(away,labels):
+            return str(event.get("id")) if event.get("id") is not None else None
+    return None
+
+def fetch_substitutions_espn(day,match_url,names_by_team,starters_by_team=None,scoreboard=None,summary=None):
+    pair=teams_from_url(match_url)
+    if not pair:return {}
+    home,away=pair
+    event_id=espn_event_id(day,home,away,scoreboard)
+    if not event_id:return {home:[],away:[]}
+    if summary is None: summary=fetch_json(f"{ESPN_BASE}/summary?event={event_id}")
+    parsed=parse_espn_substitutions(summary,{home:names_by_team.get(home,[]),away:names_by_team.get(away,[])})
+    return parsed
+
+def fetch_substitutions_hybrid(day,match_url,names_by_team,starters_by_team=None):
+    """ESPN e' la fonte primaria; Sky resta fallback solo se ESPN non produce cambi."""
+    try:
+        espn=fetch_substitutions_espn(day,match_url,names_by_team,starters_by_team)
+        if any(espn.get(t) for t in espn): return espn
+    except Exception:
+        pass
+    return fetch_substitutions(day,match_url,names_by_team,starters_by_team)
+
 def main():
     names=roster_names()
     previous={"teams":{}}
@@ -305,7 +405,7 @@ def main():
             try:
                 parsed=parse_match(url,names)
                 try:
-                    subs=fetch_substitutions(day,url,names,{t:r.get("starters",[]) for t,r in parsed.items()})
+                    subs=fetch_substitutions_hybrid(day,url,names,{t:r.get("starters",[]) for t,r in parsed.items()})
                 except Exception as sub_err:
                     subs={}
                     errors.append(f"G{day} cambi {url}: {sub_err}")
@@ -327,7 +427,7 @@ def main():
         if count: available.append(f"G{d} {count}/20")
     payload={
         "source":"Fantacalcio.it",
-        "substitutions_source":"Sky Sport",
+        "substitutions_source":"ESPN (fallback Sky Sport)",
         "season":SEASON,
         "generated_at":datetime.now(timezone.utc).isoformat(),
         "available_matchdays":available,
