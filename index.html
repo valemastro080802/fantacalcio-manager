@@ -935,7 +935,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.6.3</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.6.4</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1468,7 +1468,7 @@ function initOfficialRosterSync(){
 }
 
 
-/* === v1.6.3 — FORMAZIONI UFFICIALI + ORDINE RUOLI P/D/C/A === */
+/* === v1.6.4 — FORMAZIONI UFFICIALI + ORDINE TATTICO REALE === */
 const OFFICIAL_FORMATIONS_URL="./data/seriea_formations.json";
 function formationSyncSetStatus(text,state=""){
  const el=document.getElementById("formationSyncStatus");
@@ -1492,10 +1492,20 @@ function formationFindPlayer(team,officialName){
  });
  return candidates.length===1?candidates[0]:null;
 }
-function orderImportedLineupByRole(ids){
- // Le coordinate di ogni modulo procedono dalla porta verso l'attacco.
- // Ordiniamo quindi stabilmente gli 11 ufficiali per ruolo Fantacalcio:
- // P -> D -> C -> A, mantenendo l'ordine originale all'interno dello stesso ruolo.
+function orientImportedTacticalLineup(ids){
+ // Fantacalcio restituisce gli 11 nell'ordine tattico della formazione.
+ // Non riordiniamo quindi per ruolo P/D/C/A: un C può giocare trequartista
+ // e un A può giocare esterno dietro la punta. Usiamo il portiere solo per
+ // capire l'orientamento: se è in fondo, invertiamo l'intero undici.
+ const keeperIndexes=ids
+   .map((id,index)=>({index,p:byId(id)}))
+   .filter(x=>x.p&&x.p.role==="P")
+   .map(x=>x.index);
+ if(keeperIndexes.length===1){
+   if(keeperIndexes[0]===0)return [...ids];
+   if(keeperIndexes[0]===ids.length-1)return [...ids].reverse();
+ }
+ // Fallback prudente per snapshot anomali: non perdiamo l'importazione.
  const weight={P:0,D:1,C:2,A:3};
  return ids
    .map((id,index)=>({id,index,p:byId(id)}))
@@ -1522,7 +1532,7 @@ function formationMergeOfficial(payload){
        return p?p.id:null;
      });
      if(ids.some(id=>!id))return; // mai sovrascrivere con una formazione incompleta
-     matchdayLineups[team][String(day)]=orderImportedLineupByRole(ids);
+     matchdayLineups[team][String(day)]=orientImportedTacticalLineup(ids);
      matchdaySubstitutes[team][String(day)]=normalizeSubstitutes([]);
      if(src.formation && formations[src.formation])matchdayFormations[team][String(day)]=src.formation;
      if(day===2||day===3)matchdayCustomized[team][String(day)]=true;
