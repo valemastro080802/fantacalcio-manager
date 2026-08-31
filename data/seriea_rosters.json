@@ -1,9 +1,9 @@
 {
   "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
-  "generated_at": "2026-08-31T20:17:59.594934+00:00",
+  "generated_at": "2026-08-31T21:17:45.178736+00:00",
   "teams": 20,
-  "players_count": 563,
+  "players_count": 565,
   "players": [
     {
       "name": "De Ketelaere",
@@ -900,14 +900,6 @@
       "officialId": "fantacalcio:6966",
       "fantacalcioId": 6966,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/butez/6966"
-    },
-    {
-      "name": "Tornqvist",
-      "team": "Como",
-      "role": "P",
-      "officialId": "fantacalcio:7301",
-      "fantacalcioId": 7301,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/tornqvist/7301"
     },
     {
       "name": "Vigorito",
@@ -2270,6 +2262,14 @@
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/laerke/7571"
     },
     {
+      "name": "Monteiro J.",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "fantacalcio:7619",
+      "fantacalcioId": 7619,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/monteiro-j/7619"
+    },
+    {
       "name": "N'Dri",
       "team": "Lecce",
       "role": "A",
@@ -2948,6 +2948,14 @@
       "officialId": "fantacalcio:4485",
       "fantacalcioId": 4485,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/thiam/4485"
+    },
+    {
+      "name": "Tornqvist",
+      "team": "Monza",
+      "role": "P",
+      "officialId": "fantacalcio:7301",
+      "fantacalcioId": 7301,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/tornqvist/7301"
     },
     {
       "name": "Giovane",
@@ -4444,6 +4452,14 @@
       "officialId": "fantacalcio:5695",
       "fantacalcioId": 5695,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/haps/5695"
+    },
+    {
+      "name": "Juan Jesus",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "fantacalcio:256",
+      "fantacalcioId": 256,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/juan-jesus/256"
     },
     {
       "name": "Moreno M.",
