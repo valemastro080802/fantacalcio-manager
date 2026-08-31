@@ -1,19 +1,230 @@
 {
   "source": "Fantacalcio.it",
   "season": "2026-27",
-  "generated_at": "2026-08-31T14:06:19.860158+00:00",
+  "generated_at": "2026-08-31T14:12:41.126243+00:00",
   "available_matchdays": [
-    "G1 2/20",
-    "G2 2/20"
+    "G1 19/20",
+    "G2 16/20"
   ],
   "teams": {
-    "Atalanta": {},
-    "Bologna": {},
-    "Cagliari": {},
-    "Como": {},
-    "Fiorentina": {},
-    "Frosinone": {},
-    "Genoa": {},
+    "Atalanta": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Carnesecchi",
+          "Zappacosta",
+          "Kossounou",
+          "Scalvini",
+          "Bernasconi",
+          "Pasalic",
+          "Gaetano",
+          "Ederson D.S.",
+          "Zalewski",
+          "Scamacca",
+          "Raspadori"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/atalanta-sassuolo/17955"
+      }
+    },
+    "Bologna": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Skorupski",
+          "Zortea",
+          "Heggem",
+          "Helland",
+          "Miranda J.",
+          "Odgaard",
+          "El Azzouzi O.",
+          "Ferguson",
+          "Orsolini",
+          "Piccoli",
+          "Cambiaghi"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/bologna-lazio/17956"
+      }
+    },
+    "Cagliari": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Mendy P.",
+          "Maldini",
+          "Fazzini",
+          "Romano",
+          "Winks",
+          "Adopo",
+          "Obert",
+          "Rodriguez Ju.",
+          "Deiola",
+          "Zè Pedro",
+          "Caprile"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960"
+      },
+      "2": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Caprile",
+          "Zè Pedro",
+          "Deiola",
+          "Rodriguez Ju.",
+          "Obert",
+          "Romano",
+          "Winks",
+          "Adopo",
+          "Fazzini",
+          "Maldini",
+          "Mendy P."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/cagliari-inter/17966"
+      }
+    },
+    "Como": {
+      "1": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Douvikas",
+          "Baturina",
+          "Paz N.",
+          "Rodriguez Je.",
+          "Milla",
+          "Perrone",
+          "Valle",
+          "Chalobah T.",
+          "Ramon",
+          "Couto",
+          "Butez"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/udinese-como/17963"
+      },
+      "2": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Douvikas",
+          "Baturina",
+          "Paz N.",
+          "Diao",
+          "Milla",
+          "Da Cunha",
+          "Valle",
+          "Chalobah T.",
+          "Ramon",
+          "Couto",
+          "Butez"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/napoli-como/17973"
+      }
+    },
+    "Fiorentina": {
+      "1": {
+        "formation": "4-3-2-1",
+        "starters": [
+          "Pellegrino M.",
+          "Atta",
+          "Mastantuono",
+          "Brescianini",
+          "Fagioli",
+          "Ndour",
+          "Joao Mario",
+          "Ranieri L.",
+          "Dragusin",
+          "Dodò",
+          "De Gea"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/roma-fiorentina/17961"
+      },
+      "2": {
+        "formation": "4-3-3",
+        "starters": [
+          "De Gea",
+          "Jimenez A.",
+          "Dragusin",
+          "Pongracic",
+          "Valdepenas",
+          "Ndour",
+          "Oulai",
+          "Atta",
+          "Mastantuono",
+          "Gudmundsson A.",
+          "Pellegrino M."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/fiorentina-frosinone/17967"
+      }
+    },
+    "Frosinone": {
+      "1": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Palmisani",
+          "Calvani",
+          "Cittadini",
+          "Monterisi",
+          "Bracaglia",
+          "Cichella",
+          "Calò",
+          "Kvernadze",
+          "Schmid",
+          "Fini",
+          "Raimondo"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/frosinone-juventus/17957"
+      },
+      "2": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Raimondo",
+          "Kvernadze",
+          "Schmid",
+          "Fini",
+          "Masini",
+          "Calò",
+          "Bracaglia",
+          "Monterisi",
+          "Calvani",
+          "Oyono A.",
+          "Palmisani"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/fiorentina-frosinone/17967"
+      }
+    },
+    "Genoa": {
+      "1": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Bijlow",
+          "Marcandalli",
+          "Ostigard",
+          "Vasquez",
+          "Norton-Cuffy",
+          "Frendrup",
+          "Amorim",
+          "Ellertsson",
+          "Baldanzi",
+          "Vitinha O.",
+          "Colombo"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/genoa-napoli/17958"
+      },
+      "2": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Colombo",
+          "Vitinha O.",
+          "Baldanzi",
+          "Norton-Cuffy",
+          "Sow",
+          "Frendrup",
+          "Ellertsson",
+          "Vasquez",
+          "Ostigard",
+          "Marcandalli",
+          "Bijlow"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lazio-genoa/17969"
+      }
+    },
     "Inter": {
       "1": {
         "formation": "3-5-2",
@@ -31,11 +242,116 @@
           "Martinez L."
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959"
+      },
+      "2": {
+        "formation": "3-5-2",
+        "starters": [
+          "Esposito F.P.",
+          "Martinez L.",
+          "Dimarco",
+          "Sucic P.",
+          "Calhanoglu",
+          "Barella",
+          "Luis Henrique",
+          "Bastoni",
+          "Akanji",
+          "Pavard",
+          "Martinez Jo."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/cagliari-inter/17966"
       }
     },
-    "Juventus": {},
-    "Lazio": {},
-    "Lecce": {},
+    "Juventus": {
+      "1": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Kolo Muani",
+          "Yildiz",
+          "McKennie",
+          "Conceicao",
+          "Locatelli",
+          "Douglas Luiz",
+          "Celik",
+          "Kelly L.",
+          "Bremer",
+          "Kalulu",
+          "Vicario"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/frosinone-juventus/17957"
+      },
+      "2": {
+        "formation": "4-2-3-1",
+        "starters": [
+          "Vicario",
+          "Kalulu",
+          "Bremer",
+          "Lucumì",
+          "Celik",
+          "Locatelli",
+          "Douglas Luiz",
+          "Conceicao",
+          "David",
+          "Boga",
+          "Kolo Muani"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/juventus-parma/17968"
+      }
+    },
+    "Lazio": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Zaccagni",
+          "Dia",
+          "Cancellieri",
+          "Taylor K.",
+          "Rovella",
+          "Dele-Bashiru",
+          "Pedraza",
+          "Provstgaard",
+          "Doekhi",
+          "Marusic",
+          "Mandas"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/bologna-lazio/17956"
+      },
+      "2": {
+        "formation": "4-3-3",
+        "starters": [
+          "Mandas",
+          "Floriani Mussolini",
+          "Doekhi",
+          "Provstgaard",
+          "Tavares N.",
+          "Frattesi",
+          "Rovella",
+          "Taylor K.",
+          "Cancellieri",
+          "Dia",
+          "Zaccagni"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lazio-genoa/17969"
+      }
+    },
+    "Lecce": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "N'Dri",
+          "Geubbels",
+          "Pierotti",
+          "Ngom",
+          "Coulibaly L.",
+          "Gorter",
+          "Gallo",
+          "Siebert",
+          "Gaspar K.",
+          "Veiga D.",
+          "Falcone"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/venezia-lecce/17964"
+      }
+    },
     "Milan": {
       "2": {
         "formation": "3-4-2-1",
@@ -53,6 +369,23 @@
           "Ramos G."
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971"
+      },
+      "1": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Ramos G.",
+          "Cissè A.",
+          "Loftus-Cheek",
+          "Estupinan",
+          "Jashari",
+          "Musah",
+          "Chukwueze",
+          "Pavlovic",
+          "De Winter",
+          "Gila",
+          "Maignan"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/torino-milan/17962"
       }
     },
     "Monza": {
@@ -72,14 +405,207 @@
           "Pizzignacco"
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959"
+      },
+      "2": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Thiam",
+          "Kouadio",
+          "Lucchesi",
+          "Carboni A.",
+          "Mangas",
+          "Foe Ondoa",
+          "Mout",
+          "Birindelli",
+          "Colpani",
+          "Cutrone",
+          "Varela G."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/monza-udinese/17972"
       }
     },
-    "Napoli": {},
-    "Parma": {},
-    "Roma": {},
-    "Sassuolo": {},
-    "Torino": {},
-    "Udinese": {},
+    "Napoli": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Santos A.",
+          "Hojlund",
+          "Politano",
+          "McTominay",
+          "Lobotka",
+          "Zambo Anguissa",
+          "Spinazzola",
+          "Marin R.",
+          "Rrahmani",
+          "Di Lorenzo",
+          "Meret"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/genoa-napoli/17958"
+      },
+      "2": {
+        "formation": "4-3-3",
+        "starters": [
+          "Meret",
+          "Di Lorenzo",
+          "Marin R.",
+          "Rrahmani",
+          "Olivera",
+          "Zambo Anguissa",
+          "Lobotka",
+          "McTominay",
+          "Politano",
+          "Hojlund",
+          "Lang"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/napoli-como/17973"
+      }
+    },
+    "Parma": {
+      "2": {
+        "formation": "3-5-2",
+        "starters": [
+          "Lontani",
+          "Tourè E.",
+          "Valeri",
+          "Keita M.",
+          "Ordonez C.",
+          "Bernabè",
+          "Britschgi",
+          "Drobnic",
+          "Troilo",
+          "Delprato",
+          "Corvi"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/juventus-parma/17968"
+      }
+    },
+    "Roma": {
+      "1": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Svilar",
+          "Mancini",
+          "N'Dicka",
+          "Hermoso",
+          "Lulli",
+          "Wesley",
+          "Konè M.",
+          "Cristante",
+          "Mora",
+          "Dybala",
+          "Malen"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/roma-fiorentina/17961"
+      }
+    },
+    "Sassuolo": {
+      "1": {
+        "formation": "4-3-3",
+        "starters": [
+          "Laurientè",
+          "Bowie",
+          "Volpato",
+          "Bakola",
+          "Matic",
+          "Adzic",
+          "Doig",
+          "Macchioni",
+          "Odenthal",
+          "Cinquegrano",
+          "Muric"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/atalanta-sassuolo/17955"
+      },
+      "2": {
+        "formation": "4-3-3",
+        "starters": [
+          "Muric",
+          "Cinquegrano",
+          "Idzes",
+          "Leysen F.",
+          "Doig",
+          "Adzic",
+          "Matic",
+          "Bakola",
+          "Volpato",
+          "Bowie",
+          "Laurientè"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/sassuolo-torino/17974"
+      }
+    },
+    "Torino": {
+      "1": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Mascardi",
+          "Coco",
+          "Ismajli",
+          "Comuzzo",
+          "Pedersen",
+          "Gineitis",
+          "Fitz-Jim",
+          "Cacciamani",
+          "Vlasic",
+          "Casadei",
+          "Simeone"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/torino-milan/17962"
+      },
+      "2": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Simeone",
+          "Adams C.",
+          "Vlasic",
+          "Cacciamani",
+          "Fitz-Jim",
+          "Gineitis",
+          "Fortini",
+          "Comert",
+          "Coco",
+          "Comuzzo",
+          "Mascardi"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/sassuolo-torino/17974"
+      }
+    },
+    "Udinese": {
+      "1": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Okoye",
+          "Abankwah",
+          "Palma",
+          "Solet",
+          "Vojvoda",
+          "Karlstrom",
+          "Piotrowski",
+          "Kamara H.",
+          "Zaniolo",
+          "Ekkelenkamp",
+          "Gueye"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/udinese-como/17963"
+      },
+      "2": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Davis K.",
+          "Unai Gomez",
+          "Ekkelenkamp",
+          "Kamara H.",
+          "Piotrowski",
+          "Karlstrom",
+          "Vojvoda",
+          "Ebosse",
+          "Solet",
+          "Abankwah",
+          "Okoye"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/monza-udinese/17972"
+      }
+    },
     "Venezia": {
       "2": {
         "formation": "3-5-2",
@@ -97,9 +623,78 @@
           "Stankovic F."
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971"
+      },
+      "1": {
+        "formation": "3-5-2",
+        "starters": [
+          "Stankovic F.",
+          "Schingtienne",
+          "Bella-Kotchap",
+          "Franjic",
+          "Hainaut",
+          "Basic",
+          "Busio",
+          "Perez K.",
+          "Correia T.",
+          "Yeboah J.",
+          "Adams A."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/venezia-lecce/17964"
       }
     }
   },
-  "errors": [],
-  "updated_lineups_this_run": 4
+  "errors": [
+    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960: formazione incompleta (1/2 squadre)",
+    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lecce-roma/17970: formazione incompleta (0/2 squadre)",
+    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/atalanta-bologna/17965: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/genoa-como/17979: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/fiorentina-torino/17977: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/inter-napoli/17980: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/roma-atalanta/17983: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/frosinone-venezia/17978: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/parma-monza/17982: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/bologna-sassuolo/17975: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/juventus-milan/17981: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/cagliari-lecce/17976: formazione incompleta (0/2 squadre)",
+    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/udinese-lazio/17984: formazione incompleta (0/2 squadre)"
+  ],
+  "updated_lineups_this_run": 35,
+  "discovered_match_urls": {
+    "1": [
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/roma-fiorentina/17961",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/udinese-como/17963",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/genoa-napoli/17958",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/frosinone-juventus/17957",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/venezia-lecce/17964",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/atalanta-sassuolo/17955",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/torino-milan/17962",
+      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/bologna-lazio/17956"
+    ],
+    "2": [
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/fiorentina-frosinone/17967",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/monza-udinese/17972",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/sassuolo-torino/17974",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/juventus-parma/17968",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/napoli-como/17973",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/cagliari-inter/17966",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lazio-genoa/17969",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lecce-roma/17970",
+      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/atalanta-bologna/17965"
+    ],
+    "3": [
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/genoa-como/17979",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/fiorentina-torino/17977",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/inter-napoli/17980",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/roma-atalanta/17983",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/frosinone-venezia/17978",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/parma-monza/17982",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/bologna-sassuolo/17975",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/juventus-milan/17981",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/cagliari-lecce/17976",
+      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/udinese-lazio/17984"
+    ]
+  }
 }
