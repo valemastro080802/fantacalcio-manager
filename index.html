@@ -935,7 +935,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.6.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.6.3</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1468,7 +1468,7 @@ function initOfficialRosterSync(){
 }
 
 
-/* === v1.6.0 — FORMAZIONI UFFICIALI G1/G2/G3 DA SNAPSHOT GITHUB === */
+/* === v1.6.3 — FORMAZIONI UFFICIALI + ORDINE RUOLI P/D/C/A === */
 const OFFICIAL_FORMATIONS_URL="./data/seriea_formations.json";
 function formationSyncSetStatus(text,state=""){
  const el=document.getElementById("formationSyncStatus");
@@ -1492,6 +1492,20 @@ function formationFindPlayer(team,officialName){
  });
  return candidates.length===1?candidates[0]:null;
 }
+function orderImportedLineupByRole(ids){
+ // Le coordinate di ogni modulo procedono dalla porta verso l'attacco.
+ // Ordiniamo quindi stabilmente gli 11 ufficiali per ruolo Fantacalcio:
+ // P -> D -> C -> A, mantenendo l'ordine originale all'interno dello stesso ruolo.
+ const weight={P:0,D:1,C:2,A:3};
+ return ids
+   .map((id,index)=>({id,index,p:byId(id)}))
+   .sort((a,b)=>{
+     const wa=a.p&&weight[a.p.role]!==undefined?weight[a.p.role]:99;
+     const wb=b.p&&weight[b.p.role]!==undefined?weight[b.p.role]:99;
+     return wa-wb || a.index-b.index;
+   })
+   .map(x=>x.id);
+}
 function formationMergeOfficial(payload){
  if(!payload||typeof payload!=="object"||!payload.teams)throw new Error("snapshot formazioni non valido");
  let imported=0,unmatched=[];
@@ -1508,7 +1522,7 @@ function formationMergeOfficial(payload){
        return p?p.id:null;
      });
      if(ids.some(id=>!id))return; // mai sovrascrivere con una formazione incompleta
-     matchdayLineups[team][String(day)]=ids;
+     matchdayLineups[team][String(day)]=orderImportedLineupByRole(ids);
      matchdaySubstitutes[team][String(day)]=normalizeSubstitutes([]);
      if(src.formation && formations[src.formation])matchdayFormations[team][String(day)]=src.formation;
      if(day===2||day===3)matchdayCustomized[team][String(day)]=true;
