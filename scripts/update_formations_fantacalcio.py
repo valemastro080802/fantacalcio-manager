@@ -81,12 +81,25 @@ def name_match(text, names):
     if not n:return None
     exact=[x for x in names if norm(x)==n]
     if len(exact)==1:return exact[0]
-    # Fantacalcio usa talvolta iniziali/punti: accetta solo un match univoco per token.
+
+    # Le cronache Sky usano spesso "Cognome I." (es. "González N."),
+    # mentre il listone contiene il nome completo (es. "Nico Gonzalez").
+    # Un token di una sola lettera vale quindi come iniziale di uno dei token
+    # del nome completo. Manteniamo comunque il requisito di match univoco.
     toks=n.split()
+    def token_fits(t, full_tokens):
+        if t in full_tokens:
+            return True
+        return len(t)==1 and any(ft.startswith(t) for ft in full_tokens)
+
     cand=[]
     for x in names:
         xt=norm(x).split()
-        if toks and (all(t in xt for t in toks) or all(t in toks for t in xt)):
+        if not toks or not xt:
+            continue
+        query_in_player=all(token_fits(t,xt) for t in toks)
+        player_in_query=all(token_fits(t,toks) for t in xt)
+        if query_in_player or player_in_query:
             cand.append(x)
     return cand[0] if len(cand)==1 else None
 
@@ -137,7 +150,7 @@ def parse_substitution_text(text, names_by_team, starters_by_team=None):
     out={team:[] for team in names_by_team}
     starters_by_team=starters_by_team or {}
     source=text or ""
-    name_pat=r"[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'’-]*(?:\s+[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'’-]*){0,3}"
+    name_pat=r"[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'’-]*\.?(?:\s+[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'’-]*\.?){0,3}"
 
     def add_pair(in_raw,out_raw):
         in_raw=(in_raw or "").strip(" .,:;!-–—")
@@ -150,6 +163,35 @@ def parse_substitution_text(text, names_by_team, starters_by_team=None):
                 if row not in out[team]: out[team].append(row)
                 return True
         return False
+
+    def edge_name(fragment,names,side):
+        # Le pagine Sky concatenano gli eventi: dopo il nome puo' iniziare subito
+        # la frase dell'evento successivo. Cerchiamo quindi solo 1-4 token sul
+        # bordo vicino alla formula del cambio, invece di far diventare il regex
+        # del nome troppo avido.
+        toks=re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ'’-]+\.?",fragment or "")
+        if side=="left":
+            spans=(" ".join(toks[-n:]) for n in range(1,min(4,len(toks))+1))
+        else:
+            spans=(" ".join(toks[:n]) for n in range(1,min(4,len(toks))+1))
+        for candidate in spans:
+            m=name_match(candidate,names)
+            if m:return m
+        return None
+
+    # Caso principale Sky: segmentiamo su "Sostituzione!". In questo modo una
+    # sostituzione adiacente non viene inglobata nel nome del giocatore uscente.
+    chunks=re.split(r"(?i)\bSostituzione!\s*",source)
+    for chunk in chunks[1:]:
+        m=re.search(r"(?i)(.*?)\s+prende\s+il\s+posto\s+di\s+(.*)",chunk,re.S)
+        if not m:continue
+        for team,names in names_by_team.items():
+            incoming=edge_name(m.group(1),names,"left")
+            outgoing=edge_name(m.group(2),names,"right")
+            if incoming and outgoing and incoming!=outgoing:
+                row={"out":outgoing,"in":incoming}
+                if row not in out[team]:out[team].append(row)
+                break
 
     # Formule esplicite uno-a-uno.
     patterns=[
@@ -202,6 +244,48 @@ def fetch_substitutions(day, match_url, names_by_team, starters_by_team=None, ht
     text=soup.get_text(" ",strip=True)
     return parse_substitution_text(text,names_by_team,starters_by_team)
 
+
+
+def backfill_substitutions(teams, names_by_team, fetcher=fetch_substitutions, errors=None):
+    """Aggiorna i cambi anche quando il parser della formazione non riesce a rileggere il match.
+
+    Usa le righe gia' presenti nello snapshot (con 11 titolari e source URL) come base,
+    cosi' i cambi possono essere recuperati indipendentemente dal nuovo parsing della formazione.
+    """
+    errors = errors if errors is not None else []
+    seen=set()
+    for team,days in (teams or {}).items():
+        if not isinstance(days,dict):
+            continue
+        for day,row in days.items():
+            if day not in {"1","2","3"} or not isinstance(row,dict):
+                continue
+            url=row.get("source")
+            if not url or len(row.get("starters",[]) or [])!=11:
+                continue
+            key=(day,url)
+            if key in seen:
+                continue
+            seen.add(key)
+            pair=teams_from_url(url)
+            if not pair:
+                continue
+            home,away=pair
+            starters={}
+            for t in (home,away):
+                r=(teams.get(t,{}) or {}).get(day,{})
+                starters[t]=r.get("starters",[]) if isinstance(r,dict) else []
+            try:
+                subs=fetcher(int(day),url,names_by_team,starters) or {}
+            except Exception as e:
+                errors.append(f"G{day} cambi {url}: {e}")
+                continue
+            for t in (home,away):
+                r=(teams.get(t,{}) or {}).get(day)
+                if isinstance(r,dict) and len(r.get("starters",[]) or [])==11:
+                    r["substitutions"]=subs.get(t,[]) if isinstance(subs.get(t,[]),list) else []
+    return teams
+
 def main():
     names=roster_names()
     previous={"teams":{}}
@@ -231,6 +315,12 @@ def main():
             except Exception as e:
                 errors.append(f"G{day} {url}: {e}")
             time.sleep(.25)
+
+    # Recupera i cambi anche per le formazioni conservate dallo snapshot precedente.
+    # Questo rende i cambi indipendenti dal fatto che Fantacalcio renda ancora leggibile
+    # il markup degli 11 titolari nelle pagine gia' giocate.
+    backfill_substitutions(teams,names,errors=errors)
+
     available=[]
     for d in (1,2,3):
         count=sum(1 for t in TEAMS if isinstance(teams[t].get(str(d)),dict) and len(teams[t][str(d)].get("starters",[]))==11)
