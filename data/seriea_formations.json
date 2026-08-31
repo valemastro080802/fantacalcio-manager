@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it",
   "substitutions_source": "Sky Sport",
   "season": "2026-27",
-  "generated_at": "2026-08-31T19:54:38.708139+00:00",
+  "generated_at": "2026-08-31T20:05:30.256072+00:00",
   "available_matchdays": [
     "G1 20/20",
     "G2 16/20"
@@ -243,7 +243,16 @@
           "Martinez L."
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959",
-        "substitutions": []
+        "substitutions": [
+          {
+            "out": "Diouf",
+            "in": "Luis Henrique"
+          },
+          {
+            "out": "Calhanoglu",
+            "in": "Sucic P."
+          }
+        ]
       },
       "2": {
         "formation": "3-5-2",
@@ -371,7 +380,16 @@
           "Ramos G."
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971",
-        "substitutions": []
+        "substitutions": [
+          {
+            "out": "Jashari",
+            "in": "Musah"
+          },
+          {
+            "out": "Ramos G.",
+            "in": "Saelemaekers"
+          }
+        ]
       },
       "1": {
         "formation": "3-4-2-1",
@@ -408,7 +426,12 @@
           "Pizzignacco"
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959",
-        "substitutions": []
+        "substitutions": [
+          {
+            "out": "Lucchesi",
+            "in": "Delli Carri"
+          }
+        ]
       },
       "2": {
         "formation": "3-4-2-1",
@@ -644,7 +667,12 @@
           "Stankovic F."
         ],
         "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971",
-        "substitutions": []
+        "substitutions": [
+          {
+            "out": "Haps",
+            "in": "Sohm"
+          }
+        ]
       },
       "1": {
         "formation": "3-5-2",
