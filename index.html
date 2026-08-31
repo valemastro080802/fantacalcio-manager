@@ -920,18 +920,18 @@ tbody tr:hover{
 .summary-rate.rate-67{background:rgba(245,208,83,.12);border-color:rgba(245,208,83,.34);color:#ffe99b}
 .summary-rate.rate-33{background:rgba(255,145,79,.12);border-color:rgba(255,145,79,.34);color:#ffc39d}
 .summary-empty{padding:60px 15px;text-align:center;color:#aa96b0;font-size:12px}
-/* v1.7.0 — Sintesi su campo */
+/* v1.8.0 — Sintesi su campo + sostituti personali */
 .summary-pitch-wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:14px;align-items:start;margin:12px 0 14px}
 .summary-pitch{position:relative;width:100%;aspect-ratio:68/86;max-height:620px;min-height:480px;border-radius:14px;overflow:hidden;background:linear-gradient(90deg,rgba(28,105,39,.96),rgba(41,126,48,.96),rgba(28,105,39,.96));border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 0 34px rgba(0,0,0,.22)}
 .summary-pitch .summary-field-lines{position:absolute;inset:2.5%;width:95%;height:95%;pointer-events:none;opacity:.8}.summary-pitch .summary-field-lines *{fill:none;stroke:rgba(255,255,255,.82);stroke-width:3}.summary-pitch .summary-field-lines .spot{fill:rgba(255,255,255,.82);stroke:none}
 .summary-pitch-player{position:absolute;transform:translate(-50%,-50%);appearance:none;background:none;border:0;color:#fff;padding:0;cursor:pointer;text-align:center;z-index:2;width:104px}
-.summary-pitch-player .summary-avatar{width:48px;height:48px;margin:0 auto 4px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5b2877,#bd4aa8);border:2px solid rgba(255,255,255,.72);box-shadow:0 4px 14px rgba(0,0,0,.28);font-size:11px;font-weight:900;overflow:hidden}
+.summary-player-wrap{position:absolute;transform:translate(-50%,-50%);z-index:2;width:112px;text-align:center}.summary-player-wrap .summary-pitch-player{position:static;transform:none;width:100%}.summary-sub-row{display:flex;justify-content:center;align-items:center;gap:3px;margin-top:3px}.summary-sub-btn{max-width:94px;border:1px solid rgba(255,255,255,.24);border-radius:6px;background:rgba(12,12,18,.78);color:#e9d9ed;padding:2px 5px;font-size:8px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}.summary-sub-btn.empty{color:#c9b4cf;border-style:dashed}.summary-sub-clear{border:0;background:rgba(12,12,18,.78);color:#ffb0c7;border-radius:50%;width:17px;height:17px;padding:0;cursor:pointer;font-size:10px}.summary-pitch-player .summary-avatar{width:48px;height:48px;margin:0 auto 4px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5b2877,#bd4aa8);border:2px solid rgba(255,255,255,.72);box-shadow:0 4px 14px rgba(0,0,0,.28);font-size:11px;font-weight:900;overflow:hidden}
 .summary-pitch-player .summary-avatar img{width:100%;height:100%;object-fit:cover}.summary-pitch-player .summary-pname{display:inline-block;max-width:100px;padding:2px 5px;border-radius:6px;background:rgba(12,12,18,.72);font-size:10px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}.summary-pitch-player .summary-prate{display:block;width:max-content;margin:3px auto 0;padding:2px 5px;border-radius:999px;background:rgba(12,12,18,.78);font-size:9px;font-weight:900}
 .summary-pitch-player.rate-100 .summary-avatar{border-color:#9ff0be}.summary-pitch-player.rate-67 .summary-avatar{border-color:#ffe47d}.summary-pitch-player.rate-33 .summary-avatar{border-color:#ffad7c}.summary-pitch-player.active .summary-avatar{outline:3px solid rgba(255,255,255,.9);outline-offset:2px;transform:scale(1.06)}
 .summary-detail{min-height:180px;border:1px solid rgba(208,92,255,.16);border-radius:12px;background:rgba(255,255,255,.025);padding:12px;position:sticky;top:12px}.summary-detail h4{margin:0 0 4px;font-size:14px}.summary-detail-sub{font-size:10px;color:#bda9c3;margin-bottom:10px}.summary-detail-day{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:8px 0;border-top:1px solid rgba(208,92,255,.09);font-size:10px}.summary-detail-day b{color:#ebd7ef}.summary-detail-empty{color:#aa96b0;font-size:11px;line-height:1.5;padding:10px 0}
 .summary-table-wrap{overflow:auto;border:1px solid rgba(208,92,255,.12);border-radius:11px}.summary-table{width:100%;border-collapse:collapse;font-size:10px}.summary-table th,.summary-table td{padding:8px 9px;border-bottom:1px solid rgba(208,92,255,.08);text-align:center}.summary-table th:first-child,.summary-table td:first-child{text-align:left}.summary-table th{color:#c9b4cf;background:rgba(255,255,255,.025);font-size:9px}.summary-table tr:last-child td{border-bottom:0}.summary-table tbody tr{cursor:pointer}.summary-table tbody tr:hover,.summary-table tbody tr.active{background:rgba(208,92,255,.07)}.summary-check{font-weight:900;color:#baf3d1}.summary-dash{color:#74677a}.summary-table-rate{font-weight:900}
 .summary-section-label{font-size:12px;font-weight:900;color:#e7c9ef;margin:14px 0 8px}
-@media(max-width:760px){.summary-groups{grid-template-columns:1fr}.summary-kpis{grid-template-columns:1fr}.matchday-toolbar{width:98%}.starter-summary{width:98%}.summary-pitch-wrap{grid-template-columns:1fr}.summary-pitch{min-height:520px}.summary-detail{position:static}.summary-pitch-player{width:86px}.summary-pitch-player .summary-pname{max-width:82px;font-size:9px}.summary-pitch-player .summary-avatar{width:42px;height:42px}}
+@media(max-width:760px){.summary-groups{grid-template-columns:1fr}.summary-kpis{grid-template-columns:1fr}.matchday-toolbar{width:98%}.starter-summary{width:98%}.summary-pitch-wrap{grid-template-columns:1fr}.summary-pitch{min-height:520px}.summary-detail{position:static}.summary-pitch-player{width:86px}.summary-pitch-player .summary-pname{max-width:82px;font-size:9px}.summary-player-wrap{position:absolute;transform:translate(-50%,-50%);z-index:2;width:112px;text-align:center}.summary-player-wrap .summary-pitch-player{position:static;transform:none;width:100%}.summary-sub-row{display:flex;justify-content:center;align-items:center;gap:3px;margin-top:3px}.summary-sub-btn{max-width:94px;border:1px solid rgba(255,255,255,.24);border-radius:6px;background:rgba(12,12,18,.78);color:#e9d9ed;padding:2px 5px;font-size:8px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}.summary-sub-btn.empty{color:#c9b4cf;border-style:dashed}.summary-sub-clear{border:0;background:rgba(12,12,18,.78);color:#ffb0c7;border-radius:50%;width:17px;height:17px;padding:0;cursor:pointer;font-size:10px}.summary-pitch-player .summary-avatar{width:42px;height:42px}}
 
 
 /* v1.6.0 — sync formazioni ufficiali */
@@ -946,7 +946,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.7.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.8.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1244,6 +1244,7 @@ let matchdayLineups=JSON.parse(localStorage.getItem("fantaMatchdayLineups")||"nu
 let matchdaySubstitutes=JSON.parse(localStorage.getItem("fantaMatchdaySubstitutes")||"null")||{};
 let matchdayFormations=JSON.parse(localStorage.getItem("fantaMatchdayFormations")||"null")||{};
 let matchdayCustomized=JSON.parse(localStorage.getItem("fantaMatchdayCustomized")||"null")||{};
+let summarySubstitutes=JSON.parse(localStorage.getItem("fantaSummarySubstitutes")||"null")||{};
 let currentTeam=localStorage.getItem("fantaCurrentTeam")||TEAMS[0];
 let currentMatchday=Math.min(3,Math.max(1,Number(localStorage.getItem("fantaCurrentMatchday")||1)||1));
 let currentFormationView=localStorage.getItem("fantaFormationView")||String(currentMatchday);
@@ -1299,6 +1300,7 @@ function persistFormationState(){
  localStorage.setItem("fantaMatchdaySubstitutes",JSON.stringify(matchdaySubstitutes));
  localStorage.setItem("fantaMatchdayFormations",JSON.stringify(matchdayFormations));
  localStorage.setItem("fantaMatchdayCustomized",JSON.stringify(matchdayCustomized));
+ localStorage.setItem("fantaSummarySubstitutes",JSON.stringify(summarySubstitutes));
  localStorage.setItem("fantaCurrentTeam",currentTeam);
  localStorage.setItem("fantaCurrentMatchday",String(currentMatchday));
  localStorage.setItem("fantaFormationView",currentFormationView);
@@ -1800,7 +1802,10 @@ function renderSummaryDetail(id){
    const a=row.appearances.find(x=>x.day===d);
    return `<div class="summary-detail-day"><b>G${d}</b><div>${a?`Titolare · ${a.formation}<br><span class="small">${summaryZoneLabel(a.coord)}</span>`:`Non titolare`}</div></div>`;
  }).join("");
- detail.innerHTML=`<h4>${row.player.name} <span class="formation-role-badge">${row.player.role}</span></h4><div class="summary-detail-sub">${row.starts}/3 titolarità · ${row.rate}%</div>${days}`;
+ const predictedId=summarySubstitutes[currentTeam]?.[String(row.id)]||null;
+ const predicted=predictedId?byId(predictedId):null;
+ const predictedHtml=`<div class="summary-detail-day"><b>ALT</b><div>${predicted?`Tuo sostituto previsto: <b>${predicted.name}</b> (${predicted.role})`:`Nessun sostituto previsto inserito`}</div></div>`;
+ detail.innerHTML=`<h4>${row.player.name} <span class="formation-role-badge">${row.player.role}</span></h4><div class="summary-detail-sub">${row.starts}/3 titolarità · ${row.rate}%</div>${predictedHtml}${days}`;
 }
 function renderStarterSummary(){
  const rows=buildStarterSummary(currentTeam);
@@ -1813,13 +1818,21 @@ function renderStarterSummary(){
  const pitchPlayers=pitchRows.map(x=>{
    const cls=x.starts===3?"rate-100":x.starts===2?"rate-67":"rate-33";
    const [left,top]=x.avgCoord;
-   return `<button type="button" class="summary-pitch-player ${cls}" data-summary-player="${x.id}" style="left:${left}%;top:${top}%" title="${x.player.name}: ${x.starts}/3"><span class="summary-avatar">${avatarContent(x.player)}</span><span class="summary-pname">${x.player.name}</span><span class="summary-prate">${x.starts}/3 · ${x.rate}%</span></button>`;
+   const subId=summarySubstitutes[currentTeam]?.[String(x.id)]||null;
+   const subP=subId?byId(subId):null;
+   return `<div class="summary-player-wrap" style="left:${left}%;top:${top}%"><button type="button" class="summary-pitch-player ${cls}" data-summary-player="${x.id}" title="${x.player.name}: ${x.starts}/3"><span class="summary-avatar">${avatarContent(x.player)}</span><span class="summary-pname">${x.player.name}</span><span class="summary-prate">${x.starts}/3 · ${x.rate}%</span></button><div class="summary-sub-row"><button type="button" class="summary-sub-btn ${subP?"":"empty"}" data-summary-sub="${x.id}" title="${subP?`Cambia sostituto: ${subP.name}`:"Aggiungi il tuo sostituto previsto"}">${subP?`↳ ${subP.name}`:"+ sostituto"}</button>${subP?`<button type="button" class="summary-sub-clear" data-summary-sub-clear="${x.id}" title="Rimuovi sostituto">×</button>`:""}</div></div>`;
  }).join("");
  const tableRows=rows.map(x=>`<tr data-summary-player="${x.id}"><td><b>${x.player.name}</b> <span class="formation-role-badge">${x.player.role}</span></td><td>${summaryDayCell(x,1)}</td><td>${summaryDayCell(x,2)}</td><td>${summaryDayCell(x,3)}</td><td class="summary-table-rate">${x.starts}/3 · ${x.rate}%</td></tr>`).join("");
  starterSummary.innerHTML=`<div class="summary-title"><div><h3>${currentTeam} · Formazione media</h3><p>Il campo mostra gli 11 più utilizzati. La posizione è la media delle posizioni realmente occupate in G1, G2 e G3.</p></div></div><div class="summary-kpis"><div class="summary-kpi"><b>${always}</b><small>Sempre titolari · 3/3</small></div><div class="summary-kpi"><b>${twice}</b><small>Titolari · 2/3</small></div><div class="summary-kpi"><b>${once}</b><small>Una titolarità · 1/3</small></div></div>${complete?"":`<div class="summary-warning">Formazioni non ancora complete: G1 ${filled[0]}/11 · G2 ${filled[1]}/11 · G3 ${filled[2]}/11. Le percentuali restano calcolate su 3 giornate.</div>`}${rows.length?`<div class="summary-pitch-wrap"><div class="summary-pitch" data-team="${currentTeam}">${summaryFieldSvg()}${pitchPlayers}</div><aside class="summary-detail" id="summaryDetail"><div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere G1, G2, G3 e la posizione tattica occupata.</div></aside></div><div class="summary-section-label">Tutti i giocatori utilizzati</div><div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>Giocatore</th><th>G1</th><th>G2</th><th>G3</th><th>Titolarità</th></tr></thead><tbody>${tableRows}</tbody></table></div>`:`<div class="summary-empty">Inserisci almeno una formazione nelle giornate G1, G2 o G3 per vedere la sintesi.</div>`}`;
  starterSummary.querySelectorAll("[data-summary-player]").forEach(el=>el.addEventListener("click",()=>{
    summarySelectedPlayerId=el.dataset.summaryPlayer;
    renderSummaryDetail(summarySelectedPlayerId);
+ }));
+ starterSummary.querySelectorAll("[data-summary-sub]").forEach(el=>el.addEventListener("click",()=>openPicker(+el.dataset.summarySub,"summarySub",0)));
+ starterSummary.querySelectorAll("[data-summary-sub-clear]").forEach(el=>el.addEventListener("click",()=>{
+   const starterId=String(el.dataset.summarySubClear);
+   if(summarySubstitutes[currentTeam])delete summarySubstitutes[currentTeam][starterId];
+   persistFormationState();renderStarterSummary();
  }));
  if(summarySelectedPlayerId && rows.some(x=>String(x.id)===String(summarySelectedPlayerId)))renderSummaryDetail(summarySelectedPlayerId);
 }
@@ -2054,7 +2067,7 @@ function openPicker(slot,mode="starter",subIndex=0){
  pickMode=mode;
  pickSubIndex=subIndex;
  pickSearch.value="";
- pickTeamHint.textContent=`${mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori del ${currentTeam}`;
+ pickTeamHint.textContent=`${mode==="summarySub"?"Sostituto previsto":mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori del ${currentTeam}`;
  pickModal.classList.add("open");
  renderPicker();
 }
@@ -2067,6 +2080,13 @@ function renderPicker(){
  ).slice(0,80);
  pickResults.innerHTML=arr.map(p=>`<button data-pick="${p.id}"><b>${p.name}</b> · ${p.role} · ${p.team} <span class="small">Qt. ${p.quotation}</span></button>`).join("");
  pickResults.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
+   if(pickMode==="summarySub"){
+     if(!summarySubstitutes[currentTeam])summarySubstitutes[currentTeam]={};
+     summarySubstitutes[currentTeam][String(pickSlot)]=+b.dataset.pick;
+     persistFormationState();
+     pickModal.classList.remove("open");renderStarterSummary();
+     return;
+   }
    if(pickMode==="sub"){
      substitutes=normalizeSubstitutes(substitutes);
      substitutes[pickSlot][pickSubIndex]=+b.dataset.pick;
