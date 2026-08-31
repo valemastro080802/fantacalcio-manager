@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v1.4.6</title>
+<title>Fantacalcio Manager Online v2.0.0</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -817,7 +817,7 @@ tbody tr:hover{
 }
 
 
-/* v1.4.6 — colori squadra su tutti gli avatar + nomi stabili */
+/* v2.0.0 — colori squadra su tutti gli avatar + nomi stabili */
 #formation .formation-name-row{
   display:inline-flex!important;
   align-items:center!important;
@@ -896,57 +896,12 @@ tbody tr:hover{
 .sync-status.ok{border-color:rgba(102,220,154,.35)!important;color:#c9f5d9!important}
 .sync-status.warn{border-color:rgba(255,181,92,.42)!important;color:#ffd7a8!important}
 .sync-status.error{border-color:rgba(255,102,130,.42)!important;color:#ffc1cd!important}
-
-/* v1.6.0 — import automatico formazioni ufficiali G1/G2/G3 */
-.matchday-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 auto 12px;width:94%}
-.matchday-tabs{display:flex;gap:6px;flex-wrap:wrap}
-.matchday-btn{background:rgba(25,13,31,.88)!important;color:#d9c6df!important;border:1px solid rgba(208,92,255,.24)!important;border-radius:9px;padding:8px 13px;font-weight:850;cursor:pointer}
-.matchday-btn.active{background:linear-gradient(135deg,#7d2aa3,#c946ba)!important;color:#fff!important;border-color:rgba(239,120,255,.66)!important;box-shadow:0 0 16px rgba(181,76,255,.18)!important}
-.matchday-btn.summary-btn.active{background:linear-gradient(135deg,#b02a76,#e24a9d)!important}
-.matchday-hint{font-size:11px;color:#c9b4cf;font-weight:750}
-.starter-summary{width:94%;margin:0 auto;min-height:520px;border:1px solid rgba(208,92,255,.20);border-radius:13px;padding:16px;background:linear-gradient(180deg,rgba(20,11,24,.72),rgba(11,8,16,.88))}
-.starter-summary[hidden]{display:none!important}
-.summary-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.summary-title h3{margin:0;font-size:18px}.summary-title p{margin:4px 0 0;color:#bda9c3;font-size:11px}
-.summary-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:14px}
-.summary-kpi{background:rgba(181,76,255,.07);border:1px solid rgba(208,92,255,.18);border-radius:10px;padding:10px}.summary-kpi b{display:block;font-size:20px}.summary-kpi small{color:#bda9c3;font-size:9px}
-.summary-warning{margin-bottom:12px;padding:9px 11px;border-radius:9px;background:rgba(255,181,92,.09);border:1px solid rgba(255,181,92,.28);color:#ffd7a8;font-size:10px}
-.summary-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.summary-group{background:rgba(255,255,255,.025);border:1px solid rgba(208,92,255,.12);border-radius:11px;padding:10px}.summary-group h4{margin:0 0 8px;font-size:12px;color:#e7c9ef}
-.summary-player{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(208,92,255,.09)}.summary-player:last-child{border-bottom:0}
-.summary-player-main{min-width:0}.summary-player-name{font-size:12px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.summary-player-days{font-size:9px;color:#a995af;margin-top:3px}
-.summary-rate{min-width:48px;text-align:center;border-radius:999px;padding:5px 7px;font-size:10px;font-weight:900;border:1px solid transparent}
-.summary-rate.rate-100{background:rgba(82,214,142,.14);border-color:rgba(82,214,142,.38);color:#baf3d1}
-.summary-rate.rate-67{background:rgba(245,208,83,.12);border-color:rgba(245,208,83,.34);color:#ffe99b}
-.summary-rate.rate-33{background:rgba(255,145,79,.12);border-color:rgba(255,145,79,.34);color:#ffc39d}
-.summary-empty{padding:60px 15px;text-align:center;color:#aa96b0;font-size:12px}
-/* v1.9.0 — Sintesi su campo + sostituti personali */
-.summary-pitch-wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:14px;align-items:start;margin:12px 0 14px}
-.summary-pitch{position:relative;width:100%;aspect-ratio:68/86;max-height:620px;min-height:480px;border-radius:14px;overflow:hidden;background:linear-gradient(90deg,rgba(28,105,39,.96),rgba(41,126,48,.96),rgba(28,105,39,.96));border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 0 34px rgba(0,0,0,.22)}
-.summary-pitch .summary-field-lines{position:absolute;inset:2.5%;width:95%;height:95%;pointer-events:none;opacity:.8}.summary-pitch .summary-field-lines *{fill:none;stroke:rgba(255,255,255,.82);stroke-width:3}.summary-pitch .summary-field-lines .spot{fill:rgba(255,255,255,.82);stroke:none}
-.summary-pitch-player{position:absolute;transform:translate(-50%,-50%);appearance:none;background:none;border:0;color:#fff;padding:0;cursor:pointer;text-align:center;z-index:2;width:104px}
-.summary-player-wrap{position:absolute;transform:translate(-50%,-50%);z-index:2;width:112px;text-align:center}.summary-player-wrap .summary-pitch-player{position:static;transform:none;width:100%}.summary-sub-row{display:flex;justify-content:center;align-items:center;gap:3px;margin-top:3px}.summary-sub-btn{max-width:94px;border:1px solid rgba(255,255,255,.24);border-radius:6px;background:rgba(12,12,18,.78);color:#e9d9ed;padding:2px 5px;font-size:8px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}.summary-sub-btn.empty{color:#c9b4cf;border-style:dashed}.summary-sub-clear{border:0;background:rgba(12,12,18,.78);color:#ffb0c7;border-radius:50%;width:17px;height:17px;padding:0;cursor:pointer;font-size:10px}.summary-pitch-player .summary-avatar{width:48px;height:48px;margin:0 auto 4px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5b2877,#bd4aa8);border:2px solid rgba(255,255,255,.72);box-shadow:0 4px 14px rgba(0,0,0,.28);font-size:11px;font-weight:900;overflow:hidden}
-.summary-pitch-player .summary-avatar img{width:100%;height:100%;object-fit:cover}.summary-pitch-player .summary-pname{display:inline-block;max-width:100px;padding:2px 5px;border-radius:6px;background:rgba(12,12,18,.72);font-size:10px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}.summary-pitch-player .summary-prate{display:block;width:max-content;margin:3px auto 0;padding:2px 5px;border-radius:999px;background:rgba(12,12,18,.78);font-size:9px;font-weight:900}
-.summary-pitch-player.rate-100 .summary-avatar{border-color:#9ff0be}.summary-pitch-player.rate-67 .summary-avatar{border-color:#ffe47d}.summary-pitch-player.rate-33 .summary-avatar{border-color:#ffad7c}.summary-pitch-player.active .summary-avatar{outline:3px solid rgba(255,255,255,.9);outline-offset:2px;transform:scale(1.06)}
-.summary-detail{min-height:180px;border:1px solid rgba(208,92,255,.16);border-radius:12px;background:rgba(255,255,255,.025);padding:12px;position:sticky;top:12px}.summary-detail h4{margin:0 0 4px;font-size:14px}.summary-detail-sub{font-size:10px;color:#bda9c3;margin-bottom:10px}.summary-detail-day{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:8px 0;border-top:1px solid rgba(208,92,255,.09);font-size:10px}.summary-detail-day b{color:#ebd7ef}.summary-detail-empty{color:#aa96b0;font-size:11px;line-height:1.5;padding:10px 0}
-.summary-table-wrap{overflow:auto;border:1px solid rgba(208,92,255,.12);border-radius:11px}.summary-table{width:100%;border-collapse:collapse;font-size:10px}.summary-table th,.summary-table td{padding:8px 9px;border-bottom:1px solid rgba(208,92,255,.08);text-align:center}.summary-table th:first-child,.summary-table td:first-child{text-align:left}.summary-table th{color:#c9b4cf;background:rgba(255,255,255,.025);font-size:9px}.summary-table tr:last-child td{border-bottom:0}.summary-table tbody tr{cursor:pointer}.summary-table tbody tr:hover,.summary-table tbody tr.active{background:rgba(208,92,255,.07)}.summary-check{font-weight:900;color:#baf3d1}.summary-dash{color:#74677a}.summary-table-rate{font-weight:900}
-.summary-section-label{font-size:12px;font-weight:900;color:#e7c9ef;margin:14px 0 8px}
-@media(max-width:760px){.summary-groups{grid-template-columns:1fr}.summary-kpis{grid-template-columns:1fr}.matchday-toolbar{width:98%}.starter-summary{width:98%}.summary-pitch-wrap{grid-template-columns:1fr}.summary-pitch{min-height:520px}.summary-detail{position:static}.summary-pitch-player{width:86px}.summary-pitch-player .summary-pname{max-width:82px;font-size:9px}.summary-player-wrap{position:absolute;transform:translate(-50%,-50%);z-index:2;width:112px;text-align:center}.summary-player-wrap .summary-pitch-player{position:static;transform:none;width:100%}.summary-sub-row{display:flex;justify-content:center;align-items:center;gap:3px;margin-top:3px}.summary-sub-btn{max-width:94px;border:1px solid rgba(255,255,255,.24);border-radius:6px;background:rgba(12,12,18,.78);color:#e9d9ed;padding:2px 5px;font-size:8px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}.summary-sub-btn.empty{color:#c9b4cf;border-style:dashed}.summary-sub-clear{border:0;background:rgba(12,12,18,.78);color:#ffb0c7;border-radius:50%;width:17px;height:17px;padding:0;cursor:pointer;font-size:10px}.summary-pitch-player .summary-avatar{width:42px;height:42px}}
-
-
-/* v1.6.0 — sync formazioni ufficiali */
-.sync-formations{border-color:rgba(72,201,176,.45)!important;color:#d7fff6!important}
-.sync-formations:hover{border-color:rgba(72,201,176,.85)!important;box-shadow:0 0 15px rgba(72,201,176,.13)}
-.sync-formations.syncing{opacity:.68;cursor:wait}
-#formationSyncStatus.ok{color:#bdf4d5!important}
-#formationSyncStatus.warn{color:#ffd59b!important}
-#formationSyncStatus.error{color:#ffb5c2!important}
 </style>
 
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.9.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.0.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -959,7 +914,7 @@ tbody tr:hover{
         <div class="team-crest-wrap" id="teamCrestWrap"><span id="teamCrestFallback">FC</span><img id="teamCrest" alt=""></div>
         <b id="teamFormationTitle">Formazione squadra</b>
       </div>
-      <div class="small">Inserisci le formazioni reali delle prime 3 giornate e usa la Sintesi per valutare la titolarità.</div>
+      <div class="small">Crea manualmente la tua formazione tipo per ogni squadra di Serie A. Ogni squadra viene salvata separatamente.</div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <select id="formationTeamSelect" class="ghost"></select>
@@ -980,23 +935,9 @@ tbody tr:hover{
 <option>5-4-1</option>
 <option>5-2-1-2</option>
 </select>
-      <button id="syncFormations" class="ghost sync-formations" type="button" title="Importa G1, G2 e G3 dal file ufficiale aggiornato automaticamente">↻ Aggiorna formazioni</button>
-      <button id="resetLineup" class="ghost reset-lineup-btn" type="button" title="Svuota la giornata selezionata">Reset giornata</button>
+      <button id="resetLineup" class="ghost reset-lineup-btn" type="button" title="Svuota la formazione della squadra selezionata">Reset formazione</button>
     </div>
    </div>
-   <div class="matchday-toolbar" id="matchdayToolbar">
-    <div class="matchday-tabs" role="tablist" aria-label="Giornate formazione">
-      <button type="button" class="matchday-btn active" data-matchday="1">G1</button>
-      <button type="button" class="matchday-btn" data-matchday="2">G2</button>
-      <button type="button" class="matchday-btn" data-matchday="3">G3</button>
-      <button type="button" class="matchday-btn summary-btn" data-matchday="summary">Sintesi</button>
-    </div>
-    <div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap">
-      <span class="matchday-hint" id="formationSyncStatus">Formazioni ufficiali: pronte per l’aggiornamento</span>
-      <div class="matchday-hint" id="matchdayHint">Giornata 1</div>
-    </div>
-   </div>
-   <div class="starter-summary" id="starterSummary" hidden></div>
    <div class="pitch" id="pitch">
 <img id="pitchTeamCrest" class="pitch-team-crest" alt="" aria-hidden="true">
 <svg class="real-field-lines" viewBox="0 0 680 1050" preserveAspectRatio="none" aria-hidden="true">
@@ -1236,21 +1177,22 @@ const formations={
 "5-4-1":[[50,91],[10,73],[30,76],[50,76],[70,76],[90,73],[16,49],[39,52],[61,52],[84,49],[50,11]],
 "5-2-1-2":[[50,91],[10,73],[30,76],[50,76],[70,76],[90,73],[38,53],[62,53],[50,31],[36,11],[64,11]]
 };
-let db=JSON.parse(localStorage.getItem("fantaFullDB")||"null")||DEFAULT_DB;
-const legacyTeamLineups=JSON.parse(localStorage.getItem("fantaTeamLineups")||"null")||{};
-const legacyTeamSubstitutes=JSON.parse(localStorage.getItem("fantaTeamSubstitutes")||"null")||{};
-const legacyTeamFormations=JSON.parse(localStorage.getItem("fantaTeamFormations")||"null")||{};
-let matchdayLineups=JSON.parse(localStorage.getItem("fantaMatchdayLineups")||"null")||{};
-let matchdaySubstitutes=JSON.parse(localStorage.getItem("fantaMatchdaySubstitutes")||"null")||{};
-let matchdayFormations=JSON.parse(localStorage.getItem("fantaMatchdayFormations")||"null")||{};
-let matchdayCustomized=JSON.parse(localStorage.getItem("fantaMatchdayCustomized")||"null")||{};
-let summarySubstitutes=JSON.parse(localStorage.getItem("fantaSummarySubstitutes")||"null")||{};
-let officialSubstitutions=JSON.parse(localStorage.getItem("fantaOfficialSubstitutions")||"null")||{};
-let currentTeam=localStorage.getItem("fantaCurrentTeam")||TEAMS[0];
-let currentMatchday=Math.min(3,Math.max(1,Number(localStorage.getItem("fantaCurrentMatchday")||1)||1));
-let currentFormationView=localStorage.getItem("fantaFormationView")||String(currentMatchday);
-if(!["1","2","3","summary"].includes(currentFormationView))currentFormationView=String(currentMatchday);
+// v2.0.0: rimuove i dati della sperimentazione G1/G2/G3 e Sintesi.
+[
+ "fantaMatchdayLineups",
+ "fantaMatchdaySubstitutes",
+ "fantaMatchdayFormations",
+ "fantaMatchdayCustomized",
+ "fantaCurrentMatchday",
+ "fantaFormationView"
+].forEach(key=>localStorage.removeItem(key));
 
+let db=JSON.parse(localStorage.getItem("fantaFullDB")||"null")||DEFAULT_DB;
+let teamLineups=JSON.parse(localStorage.getItem("fantaTeamLineups")||"null")||{};
+let teamSubstitutes=JSON.parse(localStorage.getItem("fantaTeamSubstitutes")||"null")||{};
+let teamFormations=JSON.parse(localStorage.getItem("fantaTeamFormations")||"null")||{};
+let currentTeam=localStorage.getItem("fantaCurrentTeam")||TEAMS[0];
+let lineup=teamLineups[currentTeam]||[null,null,null,null,null,null,null,null,null,null,null];
 function normalizeSubstitutes(raw){
  const base=Array.from({length:11},()=>[null,null]);
  if(!Array.isArray(raw))return base;
@@ -1260,79 +1202,18 @@ function normalizeSubstitutes(raw){
    return [v||null,null];
  });
 }
-function ensureTeamMatchdays(team){
- if(!matchdayLineups[team])matchdayLineups[team]={};
- if(!matchdaySubstitutes[team])matchdaySubstitutes[team]={};
- if(!matchdayFormations[team])matchdayFormations[team]={};
- if(!matchdayCustomized[team])matchdayCustomized[team]={"2":false,"3":false};
- if(matchdayCustomized[team]["2"]==null)matchdayCustomized[team]["2"]=false;
- if(matchdayCustomized[team]["3"]==null)matchdayCustomized[team]["3"]=false;
- for(let d=1;d<=3;d++){
-   const k=String(d);
-   if(!Array.isArray(matchdayLineups[team][k]))matchdayLineups[team][k]=Array(11).fill(null);
-   matchdayLineups[team][k]=Array.from({length:11},(_,i)=>matchdayLineups[team][k][i]||null);
-   matchdaySubstitutes[team][k]=normalizeSubstitutes(matchdaySubstitutes[team][k]);
-   if(!matchdayFormations[team][k])matchdayFormations[team][k]="3-5-2";
- }
-}
-// Migrazione: la vecchia formazione singola diventa automaticamente G1.
-if(!localStorage.getItem("fantaMatchdayLineups")){
- Object.keys(legacyTeamLineups).forEach(team=>{
-   ensureTeamMatchdays(team);
-   matchdayLineups[team]["1"]=Array.from({length:11},(_,i)=>(legacyTeamLineups[team]||[])[i]||null);
-   matchdaySubstitutes[team]["1"]=normalizeSubstitutes(legacyTeamSubstitutes[team]);
-   matchdayFormations[team]["1"]=legacyTeamFormations[team]||"3-5-2";
-   ["2","3"].forEach(k=>{
-     matchdayLineups[team][k]=Array.from({length:11},(_,i)=>matchdayLineups[team]["1"][i]||null);
-     matchdaySubstitutes[team][k]=normalizeSubstitutes(matchdaySubstitutes[team]["1"]);
-     matchdayFormations[team][k]=matchdayFormations[team]["1"];
-     matchdayCustomized[team][k]=false;
-   });
- });
-}
-ensureTeamMatchdays(currentTeam);
-let lineup=matchdayLineups[currentTeam][String(currentMatchday)];
-let substitutes=normalizeSubstitutes(matchdaySubstitutes[currentTeam][String(currentMatchday)]);
+let substitutes=normalizeSubstitutes(teamSubstitutes[currentTeam]);
 let editId=null,pickSlot=null,pickMode="starter",pickSubIndex=0;
 
-function persistFormationState(){
- localStorage.setItem("fantaFullDB",JSON.stringify(db));
- localStorage.setItem("fantaMatchdayLineups",JSON.stringify(matchdayLineups));
- localStorage.setItem("fantaMatchdaySubstitutes",JSON.stringify(matchdaySubstitutes));
- localStorage.setItem("fantaMatchdayFormations",JSON.stringify(matchdayFormations));
- localStorage.setItem("fantaMatchdayCustomized",JSON.stringify(matchdayCustomized));
- localStorage.setItem("fantaSummarySubstitutes",JSON.stringify(summarySubstitutes));
- localStorage.setItem("fantaOfficialSubstitutions",JSON.stringify(officialSubstitutions));
- localStorage.setItem("fantaCurrentTeam",currentTeam);
- localStorage.setItem("fantaCurrentMatchday",String(currentMatchday));
- localStorage.setItem("fantaFormationView",currentFormationView);
-}
-function saveCurrentMatchday(){
- ensureTeamMatchdays(currentTeam);
- const k=String(currentMatchday);
- matchdayLineups[currentTeam][k]=Array.from({length:11},(_,i)=>lineup[i]||null);
- matchdaySubstitutes[currentTeam][k]=normalizeSubstitutes(substitutes);
- matchdayFormations[currentTeam][k]=formationSelect.value||matchdayFormations[currentTeam][k]||"3-5-2";
-}
-function propagateG1ToInheritedMatchdays(team){
- ensureTeamMatchdays(team);
- ["2","3"].forEach(k=>{
-   if(matchdayCustomized[team][k])return;
-   matchdayLineups[team][k]=Array.from({length:11},(_,i)=>matchdayLineups[team]["1"][i]||null);
-   matchdaySubstitutes[team][k]=normalizeSubstitutes(matchdaySubstitutes[team]["1"]);
-   matchdayFormations[team][k]=matchdayFormations[team]["1"]||"3-5-2";
- });
-}
-function markCurrentMatchdayCustomized(){
- if(currentMatchday===2||currentMatchday===3){
-   ensureTeamMatchdays(currentTeam);
-   matchdayCustomized[currentTeam][String(currentMatchday)]=true;
- }
-}
 function save(){
- saveCurrentMatchday();
- if(currentMatchday===1)propagateG1ToInheritedMatchdays(currentTeam);
- persistFormationState();
+ localStorage.setItem("fantaFullDB",JSON.stringify(db));
+ teamLineups[currentTeam]=lineup;
+ teamSubstitutes[currentTeam]=substitutes;
+ teamFormations[currentTeam]=formationSelect.value;
+ localStorage.setItem("fantaTeamLineups",JSON.stringify(teamLineups));
+ localStorage.setItem("fantaTeamSubstitutes",JSON.stringify(teamSubstitutes));
+ localStorage.setItem("fantaTeamFormations",JSON.stringify(teamFormations));
+ localStorage.setItem("fantaCurrentTeam",currentTeam);
 }
 function byId(id){return db.find(p=>p.id===id)}
 function initials(name){return name.split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase()}
@@ -1379,20 +1260,19 @@ function syncMakePlayer(op,nextId){
 }
 function syncCleanupLineups(){
   const valid=new Map(db.map(p=>[p.id,p.team]));
-  Object.keys(matchdayLineups).forEach(team=>{
-    ensureTeamMatchdays(team);
-    for(let d=1;d<=3;d++){
-      const k=String(d);
-      matchdayLineups[team][k]=Array.from({length:11},(_,i)=>{
-        const id=(matchdayLineups[team][k]||[])[i]||null;
-        return id && valid.get(id)===team ? id : null;
-      });
-      matchdaySubstitutes[team][k]=normalizeSubstitutes(matchdaySubstitutes[team][k]).map(pair=>pair.map(id=>id&&valid.get(id)===team?id:null));
-    }
+  Object.keys(teamLineups).forEach(team=>{
+    const arr=Array.isArray(teamLineups[team])?teamLineups[team]:[];
+    teamLineups[team]=Array.from({length:11},(_,i)=>{
+      const id=arr[i]||null;
+      return id && valid.get(id)===team ? id : null;
+    });
   });
-  ensureTeamMatchdays(currentTeam);
-  lineup=matchdayLineups[currentTeam][String(currentMatchday)];
-  substitutes=normalizeSubstitutes(matchdaySubstitutes[currentTeam][String(currentMatchday)]);
+  Object.keys(teamSubstitutes).forEach(team=>{
+    const norm=normalizeSubstitutes(teamSubstitutes[team]);
+    teamSubstitutes[team]=norm.map(pair=>pair.map(id=>id&&valid.get(id)===team?id:null));
+  });
+  lineup=teamLineups[currentTeam]||Array(11).fill(null);
+  substitutes=normalizeSubstitutes(teamSubstitutes[currentTeam]);
 }
 function syncMergeOfficial(payload){
   const officialRows=Array.isArray(payload.players)?payload.players:[];
@@ -1482,118 +1362,6 @@ function initOfficialRosterSync(){
   setTimeout(()=>syncOfficialRosters(false),900);
 }
 
-
-/* === v1.6.4 — FORMAZIONI UFFICIALI + ORDINE TATTICO REALE === */
-const OFFICIAL_FORMATIONS_URL="./data/seriea_formations.json";
-function formationSyncSetStatus(text,state=""){
- const el=document.getElementById("formationSyncStatus");
- if(!el)return;
- el.textContent=text;
- el.classList.remove("ok","warn","error");
- if(state)el.classList.add(state);
-}
-function formationFindPlayer(team,officialName){
- const pool=db.filter(p=>p.team===team);
- const norm=syncNormName(officialName);
- let found=pool.find(p=>syncNormName(p.name)===norm);
- if(found)return found;
- const sig=syncNameSignature(officialName);
- const sigMatches=pool.filter(p=>syncNameSignature(p.name)===sig);
- if(sigMatches.length===1)return sigMatches[0];
- const parts=norm.split(" ").filter(Boolean);
- const candidates=pool.filter(p=>{
-   const pn=syncNormName(p.name);
-   return parts.every(x=>pn.split(" ").includes(x)) || pn.split(" ").every(x=>parts.includes(x));
- });
- return candidates.length===1?candidates[0]:null;
-}
-function orientImportedTacticalLineup(ids){
- // Fantacalcio restituisce gli 11 nell'ordine tattico della formazione.
- // Non riordiniamo quindi per ruolo P/D/C/A: un C può giocare trequartista
- // e un A può giocare esterno dietro la punta. Usiamo il portiere solo per
- // capire l'orientamento: se è in fondo, invertiamo l'intero undici.
- const keeperIndexes=ids
-   .map((id,index)=>({index,p:byId(id)}))
-   .filter(x=>x.p&&x.p.role==="P")
-   .map(x=>x.index);
- if(keeperIndexes.length===1){
-   if(keeperIndexes[0]===0)return [...ids];
-   if(keeperIndexes[0]===ids.length-1)return [...ids].reverse();
- }
- // Fallback prudente per snapshot anomali: non perdiamo l'importazione.
- const weight={P:0,D:1,C:2,A:3};
- return ids
-   .map((id,index)=>({id,index,p:byId(id)}))
-   .sort((a,b)=>{
-     const wa=a.p&&weight[a.p.role]!==undefined?weight[a.p.role]:99;
-     const wb=b.p&&weight[b.p.role]!==undefined?weight[b.p.role]:99;
-     return wa-wb || a.index-b.index;
-   })
-   .map(x=>x.id);
-}
-function formationMergeOfficial(payload){
- if(!payload||typeof payload!=="object"||!payload.teams)throw new Error("snapshot formazioni non valido");
- let imported=0,unmatched=[];
- TEAMS.forEach(team=>{
-   const days=payload.teams[team];
-   if(!days)return;
-   ensureTeamMatchdays(team);
-   [1,2,3].forEach(day=>{
-     const src=days[String(day)];
-     if(!src||!Array.isArray(src.starters)||src.starters.length!==11)return;
-     const ids=src.starters.map(name=>{
-       const p=formationFindPlayer(team,name);
-       if(!p)unmatched.push(`${team} G${day}: ${name}`);
-       return p?p.id:null;
-     });
-     if(ids.some(id=>!id))return; // mai sovrascrivere con una formazione incompleta
-     matchdayLineups[team][String(day)]=orientImportedTacticalLineup(ids);
-     matchdaySubstitutes[team][String(day)]=normalizeSubstitutes([]);
-     if(src.formation && formations[src.formation])matchdayFormations[team][String(day)]=src.formation;
-     if(!officialSubstitutions[team])officialSubstitutions[team]={};
-     officialSubstitutions[team][String(day)]=Array.isArray(src.substitutions)?src.substitutions:[];
-     if(day===2||day===3)matchdayCustomized[team][String(day)]=true;
-     imported++;
-   });
-   // Se G2/G3 non sono ancora pubblicate, G1 resta la base automatica già prevista dal sito.
-   propagateG1ToInheritedMatchdays(team);
- });
- persistFormationState();
- loadCurrentMatchday();
- updateFormationView();
- return {imported,unmatched:[...new Set(unmatched)]};
-}
-async function syncOfficialFormations(manual=true){
- const btn=document.getElementById("syncFormations");
- if(btn&&btn.disabled)return;
- if(btn){btn.disabled=true;btn.classList.add("syncing");btn.textContent="↻ Importazione…";}
- formationSyncSetStatus("Controllo formazioni ufficiali…");
- try{
-   const r=await fetch(OFFICIAL_FORMATIONS_URL+"?t="+Date.now(),{cache:"no-store"});
-   if(!r.ok)throw new Error("snapshot non ancora disponibile");
-   const payload=await r.json();
-   const result=formationMergeOfficial(payload);
-   const available=(payload.available_matchdays||[]).join(", ");
-   const stamp=payload.generated_at?new Date(payload.generated_at):null;
-   const when=stamp&&!isNaN(stamp)?stamp.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"ora";
-   if(result.unmatched.length){
-     console.warn("Giocatori non riconosciuti:",result.unmatched);
-     formationSyncSetStatus(`Importate ${result.imported} formazioni · ${result.unmatched.length} nomi da controllare · ${when}`,"warn");
-   }else{
-     formationSyncSetStatus(`Importate ${result.imported} formazioni${available?` · ${available}`:""} · ${when}`,"ok");
-   }
- }catch(err){
-   console.warn("Sync formazioni:",err);
-   formationSyncSetStatus("Aggiornamento formazioni non disponibile: "+err.message+". Nessun dato è stato cancellato.","error");
- }finally{
-   if(btn){btn.disabled=false;btn.classList.remove("syncing");btn.textContent="↻ Aggiorna formazioni";}
- }
-}
-function initOfficialFormationSync(){
- const btn=document.getElementById("syncFormations");
- if(btn)btn.addEventListener("click",()=>syncOfficialFormations(true));
-}
-
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{
  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
  b.classList.add("active");document.getElementById(b.dataset.page).classList.add("active");
@@ -1606,8 +1374,7 @@ TEAMS.forEach(t=>{
 });
 TEAMS.forEach(t=>favTeamFilter.insertAdjacentHTML("beforeend",`<option>${t}</option>`));
 formationTeamSelect.value=currentTeam;
-ensureTeamMatchdays(currentTeam);
-formationSelect.value=matchdayFormations[currentTeam][String(currentMatchday)]||"3-5-2";
+formationSelect.value=teamFormations[currentTeam]||"3-5-2";
 
 function filtered(){
  const q=search.value.trim().toLowerCase(),team=teamFilter.value,role=roleFilter.value,status=statusFilter.value;
@@ -1691,7 +1458,7 @@ removePhoto.addEventListener("click",()=>{
 eRole.addEventListener("change",()=>{const p=byId(editId); if(!p)return; p.role=eRole.value; ensureMetrics(p); renderMetricsEditor(p);});
 editForm.addEventListener("submit",e=>{e.preventDefault();const p=byId(editId);p.name=eName.value.trim()||p.name;p.team=eTeam.value;p.role=eRole.value;p.quotation=Math.max(0,+eQuote.value||0);
  p.rating=eRating.value;p.budgetRecommended=+eBudgetRecommended.value||0;p.fascia=eFascia.value.trim();p.budgetMax=eBudget.value;p.status=eStatus.value;p.rigorista=eRig.checked;p.piazzati=ePiaz.checked;p.preferito=eFav.checked;p.notes=eNotes.value;
- p.initials=initials(p.name);save();editModal.classList.remove("open");renderDB();updateFormationView();
+ p.initials=initials(p.name);save();editModal.classList.remove("open");renderDB();renderLineup();
 });
 
 
@@ -1742,188 +1509,13 @@ function renderTeamLogo(){
  }
 }
 
-let summarySelectedPlayerId=null;
-function summaryZoneLabel(coord){
- const x=Number(coord?.[0]??50),y=Number(coord?.[1]??50);
- const side=x<34?"sinistra":x>66?"destra":"centrale";
- if(y>=82)return "Portiere";
- if(y>=64)return `Difesa ${side}`;
- if(y>=43)return `Centrocampo ${side}`;
- if(y>=23)return `Trequarti ${side}`;
- return side==="centrale"?"Punta centrale":`Attacco ${side}`;
-}
-function buildStarterSummary(team){
- ensureTeamMatchdays(team);
- const map=new Map();
- for(let d=1;d<=3;d++){
-   const k=String(d);
-   const formation=matchdayFormations[team][k]||"3-5-2";
-   const coords=formations[formation]||formations["3-5-2"];
-   const seen=new Set();
-   (matchdayLineups[team][k]||[]).forEach((id,slot)=>{
-     if(!id||seen.has(id))return;
-     const p=byId(id);
-     if(!p||p.team!==team)return;
-     seen.add(id);
-     if(!map.has(id))map.set(id,{id,player:p,starts:0,days:[],appearances:[]});
-     const row=map.get(id);
-     row.starts++;row.days.push(d);
-     row.appearances.push({day:d,formation,slot,coord:coords[slot]||[50,50]});
-   });
- }
- const roleOrder={P:0,D:1,C:2,A:3};
- return [...map.values()].map(x=>({...x,rate:Math.round(x.starts/3*100)})).sort((a,b)=>(b.starts-a.starts)||roleOrder[a.player.role]-roleOrder[b.player.role]||a.player.name.localeCompare(b.player.name));
-}
-function summaryRepresentativeFormation(team){
- ensureTeamMatchdays(team);
- const counts=new Map();
- for(let d=1;d<=3;d++){
-   const k=String(d);
-   if((matchdayLineups[team][k]||[]).filter(Boolean).length!==11)continue;
-   const f=matchdayFormations[team][k]||"3-5-2";
-   counts.set(f,(counts.get(f)||0)+1);
- }
- let best="3-5-2",bestCount=-1;
- counts.forEach((count,f)=>{if(count>bestCount){best=f;bestCount=count;}});
- return formations[best]?best:"3-5-2";
-}
-function assignSummaryTacticalSlots(chosen,team){
- const formation=summaryRepresentativeFormation(team);
- const slots=(formations[formation]||formations["3-5-2"]).map((coord,index)=>({index,coord}));
- const rows=chosen.map(x=>{
-   const sum=x.appearances.reduce((a,v)=>[a[0]+v.coord[0],a[1]+v.coord[1]],[0,0]);
-   const n=Math.max(1,x.appearances.length);
-   return {...x,meanCoord:[sum[0]/n,sum[1]/n]};
- });
- const assigned=new Map(),available=new Set(slots.map(s=>s.index));
- const keeper=rows.find(x=>x.player.role==="P");
- if(keeper&&available.has(0)){assigned.set(keeper.id,0);available.delete(0);}
- const pending=rows.filter(x=>!assigned.has(x.id));
- // Assegna iterativamente la coppia giocatore/slot piu' vicina: ogni slot puo' essere usato una sola volta.
- // Cosi' conserviamo quanto possibile la posizione media senza mai sovrapporre due giocatori.
- while(pending.length&&available.size){
-   let best=null;
-   pending.forEach((row,ri)=>available.forEach(si=>{
-     const c=slots[si].coord,dx=row.meanCoord[0]-c[0],dy=row.meanCoord[1]-c[1];
-     const distance=dx*dx+dy*dy;
-     if(!best||distance<best.distance)best={ri,si,distance};
-   }));
-   if(!best)break;
-   const row=pending.splice(best.ri,1)[0];
-   assigned.set(row.id,best.si);available.delete(best.si);
- }
- return rows.map(x=>{
-   const slot=assigned.get(x.id);
-   return {...x,summaryFormation:formation,summarySlot:slot,plotCoord:slots[slot]?.coord||x.meanCoord};
- });
-}
-function buildSummaryPitchData(team){
- const rows=buildStarterSummary(team);
- const goalkeepers=rows.filter(x=>x.player.role==="P");
- const outfield=rows.filter(x=>x.player.role!=="P");
- const chosen=[];
- if(goalkeepers.length)chosen.push(goalkeepers[0]);
- chosen.push(...outfield.slice(0,11-chosen.length));
- if(chosen.length<11)chosen.push(...rows.filter(x=>!chosen.some(c=>c.id===x.id)).slice(0,11-chosen.length));
- return assignSummaryTacticalSlots(chosen,team);
-}
-function summaryFieldSvg(){
- return `<svg class="summary-field-lines" viewBox="0 0 680 860" preserveAspectRatio="none" aria-hidden="true"><rect x="18" y="18" width="644" height="824"/><line x1="18" y1="430" x2="662" y2="430"/><circle cx="340" cy="430" r="78"/><circle class="spot" cx="340" cy="430" r="4"/><rect x="140" y="18" width="400" height="132"/><rect x="250" y="18" width="180" height="45"/><circle class="spot" cx="340" cy="112" r="4"/><rect x="140" y="710" width="400" height="132"/><rect x="250" y="797" width="180" height="45"/><circle class="spot" cx="340" cy="748" r="4"/></svg>`;
-}
-function summaryDayCell(row,day){return row.days.includes(day)?`<span class="summary-check">✓</span>`:`<span class="summary-dash">—</span>`;}
-function summaryRealChangeText(playerName,subs){
- const rows=Array.isArray(subs)?subs:[];
- const out=rows.find(x=>x&&x.out===playerName);
- if(out)return `Sostituito da ${out.in}`;
- const incoming=rows.find(x=>x&&x.in===playerName);
- if(incoming)return `Subentrato al posto di ${incoming.out}`;
- return "";
-}
-function renderSummaryDetail(id){
- const rows=buildStarterSummary(currentTeam);
- const row=rows.find(x=>String(x.id)===String(id));
- const detail=document.getElementById("summaryDetail");
- if(!detail)return;
- document.querySelectorAll("[data-summary-player]").forEach(el=>el.classList.toggle("active",String(el.dataset.summaryPlayer)===String(id)));
- if(!row){
-   detail.innerHTML=`<div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere in quali giornate è partito titolare e in quale posizione tattica.</div>`;
-   return;
- }
- const days=[1,2,3].map(d=>{
-   const a=row.appearances.find(x=>x.day===d);
-   return `<div class="summary-detail-day"><b>G${d}</b><div>${a?`Titolare · ${a.formation}<br><span class="small">${summaryZoneLabel(a.coord)}</span>`:`Non titolare`}</div></div>`;
- }).join("");
- const predictedId=summarySubstitutes[currentTeam]?.[String(row.id)]||null;
- const predicted=predictedId?byId(predictedId):null;
- const predictedHtml=`<div class="summary-detail-day"><b>ALT</b><div>${predicted?`Tuo sostituto previsto: <b>${predicted.name}</b> (${predicted.role})`:`Nessun sostituto previsto inserito`}</div></div>`;
- const realRows=[1,2,3].map(d=>{
-   const txt=summaryRealChangeText(row.player.name,officialSubstitutions[currentTeam]?.[String(d)]||[]);
-   return txt?`<div><b>G${d}:</b> ${txt}</div>`:"";
- }).filter(Boolean).join("");
- const realHtml=`<div class="summary-detail-day"><b>REAL</b><div>${realRows||"Nessun cambio registrato nelle giornate disponibili"}</div></div>`;
- detail.innerHTML=`<h4>${row.player.name} <span class="formation-role-badge">${row.player.role}</span></h4><div class="summary-detail-sub">${row.starts}/3 titolarità · ${row.rate}%</div>${predictedHtml}${realHtml}${days}`;
-}
-function renderStarterSummary(){
- const rows=buildStarterSummary(currentTeam);
- const pitchRows=buildSummaryPitchData(currentTeam);
- const filled=[1,2,3].map(d=>(matchdayLineups[currentTeam][String(d)]||[]).filter(Boolean).length);
- const complete=filled.every(n=>n===11);
- const always=rows.filter(x=>x.starts===3).length;
- const twice=rows.filter(x=>x.starts===2).length;
- const once=rows.filter(x=>x.starts===1).length;
- const pitchPlayers=pitchRows.map(x=>{
-   const cls=x.starts===3?"rate-100":x.starts===2?"rate-67":"rate-33";
-   const [left,top]=x.plotCoord;
-   const subId=summarySubstitutes[currentTeam]?.[String(x.id)]||null;
-   const subP=subId?byId(subId):null;
-   return `<div class="summary-player-wrap" style="left:${left}%;top:${top}%"><button type="button" class="summary-pitch-player ${cls}" data-summary-player="${x.id}" title="${x.player.name}: ${x.starts}/3"><span class="summary-avatar">${avatarContent(x.player)}</span><span class="summary-pname">${x.player.name}</span><span class="summary-prate">${x.starts}/3 · ${x.rate}%</span></button><div class="summary-sub-row"><button type="button" class="summary-sub-btn ${subP?"":"empty"}" data-summary-sub="${x.id}" title="${subP?`Cambia sostituto: ${subP.name}`:"Aggiungi il tuo sostituto previsto"}">${subP?`↳ ${subP.name}`:"+ sostituto"}</button>${subP?`<button type="button" class="summary-sub-clear" data-summary-sub-clear="${x.id}" title="Rimuovi sostituto">×</button>`:""}</div></div>`;
- }).join("");
- const tableRows=rows.map(x=>`<tr data-summary-player="${x.id}"><td><b>${x.player.name}</b> <span class="formation-role-badge">${x.player.role}</span></td><td>${summaryDayCell(x,1)}</td><td>${summaryDayCell(x,2)}</td><td>${summaryDayCell(x,3)}</td><td class="summary-table-rate">${x.starts}/3 · ${x.rate}%</td></tr>`).join("");
- starterSummary.innerHTML=`<div class="summary-title"><div><h3>${currentTeam} · Formazione media</h3><p>Il campo mostra gli 11 più utilizzati. Gli 11 più utilizzati sono disposti negli slot della formazione tipo, senza sovrapposizioni; le posizioni reali di G1, G2 e G3 restano visibili nel dettaglio.</p></div></div><div class="summary-kpis"><div class="summary-kpi"><b>${always}</b><small>Sempre titolari · 3/3</small></div><div class="summary-kpi"><b>${twice}</b><small>Titolari · 2/3</small></div><div class="summary-kpi"><b>${once}</b><small>Una titolarità · 1/3</small></div></div>${complete?"":`<div class="summary-warning">Formazioni non ancora complete: G1 ${filled[0]}/11 · G2 ${filled[1]}/11 · G3 ${filled[2]}/11. Le percentuali restano calcolate su 3 giornate.</div>`}${rows.length?`<div class="summary-pitch-wrap"><div class="summary-pitch" data-team="${currentTeam}">${summaryFieldSvg()}${pitchPlayers}</div><aside class="summary-detail" id="summaryDetail"><div class="summary-detail-empty">Clicca un giocatore sul campo o nella tabella per vedere G1, G2, G3 e la posizione tattica occupata.</div></aside></div><div class="summary-section-label">Tutti i giocatori utilizzati</div><div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>Giocatore</th><th>G1</th><th>G2</th><th>G3</th><th>Titolarità</th></tr></thead><tbody>${tableRows}</tbody></table></div>`:`<div class="summary-empty">Inserisci almeno una formazione nelle giornate G1, G2 o G3 per vedere la sintesi.</div>`}`;
- starterSummary.querySelectorAll("[data-summary-player]").forEach(el=>el.addEventListener("click",()=>{
-   summarySelectedPlayerId=el.dataset.summaryPlayer;
-   renderSummaryDetail(summarySelectedPlayerId);
- }));
- starterSummary.querySelectorAll("[data-summary-sub]").forEach(el=>el.addEventListener("click",()=>openPicker(+el.dataset.summarySub,"summarySub",0)));
- starterSummary.querySelectorAll("[data-summary-sub-clear]").forEach(el=>el.addEventListener("click",()=>{
-   const starterId=String(el.dataset.summarySubClear);
-   if(summarySubstitutes[currentTeam])delete summarySubstitutes[currentTeam][starterId];
-   persistFormationState();renderStarterSummary();
- }));
- if(summarySelectedPlayerId && rows.some(x=>String(x.id)===String(summarySelectedPlayerId)))renderSummaryDetail(summarySelectedPlayerId);
-}
-function updateFormationView(){
- document.querySelectorAll("[data-matchday]").forEach(btn=>btn.classList.toggle("active",btn.dataset.matchday===currentFormationView));
- const isSummary=currentFormationView==="summary";
- pitch.style.display=isSummary?"none":"block";
- starterSummary.hidden=!isSummary;
- formationSelect.style.display=isSummary?"none":"";
- resetLineup.style.display=isSummary?"none":"";
- matchdayHint.textContent=isSummary?"Sintesi titolarità":`Giornata ${currentMatchday}`;
- if(isSummary){
-   teamFormationTitle.textContent=`${currentTeam} · Sintesi`;
-   selectedTeamLabel.textContent=`Sintesi ${currentTeam}`;
-   renderTeamLogo();
-   renderStarterSummary();
- }else{
-   renderLineup();
- }
-}
-function loadCurrentMatchday(){
- ensureTeamMatchdays(currentTeam);
- const k=String(currentMatchday);
- lineup=Array.from({length:11},(_,i)=>matchdayLineups[currentTeam][k][i]||null);
- substitutes=normalizeSubstitutes(matchdaySubstitutes[currentTeam][k]);
- formationSelect.value=matchdayFormations[currentTeam][k]||"3-5-2";
-}
-
 function renderLineup(){
  renderTeamLogo();
  pitch.dataset.team=currentTeam;
  const coords=formations[formationSelect.value];
  pitch.querySelectorAll(".slot").forEach(x=>x.remove());
- teamFormationTitle.textContent=`${currentTeam} · Giornata ${currentMatchday}`;
- selectedTeamLabel.textContent=`G${currentMatchday} · ${currentTeam}`;
+ teamFormationTitle.textContent=`${currentTeam} · Formazione`;
+ selectedTeamLabel.textContent=`Undici ${currentTeam}`;
 
  // Rimuove automaticamente dalla formazione eventuali giocatori che non appartengono più alla squadra.
  lineup=lineup.map(id=>{
@@ -1975,40 +1567,28 @@ function renderLineup(){
  save();
 }
 function renderTeamRoster(){}
-formationSelect.addEventListener("change",()=>{markCurrentMatchdayCustomized();save();renderLineup();});
+formationSelect.addEventListener("change",()=>{teamFormations[currentTeam]=formationSelect.value;save();renderLineup();});
 resetLineup.addEventListener("click",()=>{
  const hasPlayers=lineup.some(Boolean)||normalizeSubstitutes(substitutes).some(pair=>pair.some(Boolean));
  if(!hasPlayers)return;
- const ok=confirm(`Vuoi svuotare la Giornata ${currentMatchday} del ${currentTeam}? Verranno rimossi titolari e sostituti di questa giornata, ma le altre due resteranno invariate.`);
+ const ok=confirm(`Vuoi svuotare completamente la formazione del ${currentTeam}? Verranno rimossi titolari e sostituti, ma il modulo resterà invariato.`);
  if(!ok)return;
  lineup=Array(11).fill(null);
  substitutes=Array.from({length:11},()=>[null,null]);
- markCurrentMatchdayCustomized();
+ teamLineups[currentTeam]=lineup;
+ teamSubstitutes[currentTeam]=substitutes;
  save();
  renderLineup();
 });
-document.querySelectorAll("[data-matchday]").forEach(btn=>btn.addEventListener("click",()=>{
- const next=btn.dataset.matchday;
- if(currentFormationView!=="summary")saveCurrentMatchday();
- if(next==="summary"){
-   currentFormationView="summary";
-   persistFormationState();
-   updateFormationView();
-   return;
- }
- currentMatchday=Number(next);
- currentFormationView=next;
- loadCurrentMatchday();
- persistFormationState();
- updateFormationView();
-}));
 formationTeamSelect.addEventListener("change",()=>{
- if(currentFormationView!=="summary")saveCurrentMatchday();
+ teamLineups[currentTeam]=lineup;
+ teamSubstitutes[currentTeam]=substitutes;
+ teamFormations[currentTeam]=formationSelect.value;
  currentTeam=formationTeamSelect.value;
- ensureTeamMatchdays(currentTeam);
- if(currentFormationView!=="summary")loadCurrentMatchday();
- persistFormationState();
- updateFormationView();
+ lineup=teamLineups[currentTeam]||[null,null,null,null,null,null,null,null,null,null,null];
+ substitutes=normalizeSubstitutes(teamSubstitutes[currentTeam]);
+ formationSelect.value=teamFormations[currentTeam]||"3-5-2";
+ save();renderLineup();
 });
 let popoverSlot=null;
 let popoverSubIndex=0;
@@ -2123,7 +1703,7 @@ function openPicker(slot,mode="starter",subIndex=0){
  pickMode=mode;
  pickSubIndex=subIndex;
  pickSearch.value="";
- pickTeamHint.textContent=`${mode==="summarySub"?"Sostituto previsto":mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori del ${currentTeam}`;
+ pickTeamHint.textContent=`${mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori del ${currentTeam}`;
  pickModal.classList.add("open");
  renderPicker();
 }
@@ -2136,20 +1716,12 @@ function renderPicker(){
  ).slice(0,80);
  pickResults.innerHTML=arr.map(p=>`<button data-pick="${p.id}"><b>${p.name}</b> · ${p.role} · ${p.team} <span class="small">Qt. ${p.quotation}</span></button>`).join("");
  pickResults.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
-   if(pickMode==="summarySub"){
-     if(!summarySubstitutes[currentTeam])summarySubstitutes[currentTeam]={};
-     summarySubstitutes[currentTeam][String(pickSlot)]=+b.dataset.pick;
-     persistFormationState();
-     pickModal.classList.remove("open");renderStarterSummary();
-     return;
-   }
    if(pickMode==="sub"){
      substitutes=normalizeSubstitutes(substitutes);
      substitutes[pickSlot][pickSubIndex]=+b.dataset.pick;
    } else {
      lineup[pickSlot]=+b.dataset.pick;
    }
-   markCurrentMatchdayCustomized();
    save();pickModal.classList.remove("open");renderLineup();
  }));
 }
@@ -2161,6 +1733,5 @@ renderFavorites();
 
 
 initOfficialRosterSync();
-initOfficialFormationSync();
 </script>
 </body></html>
