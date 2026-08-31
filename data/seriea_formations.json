@@ -1,7 +1,8 @@
 {
   "source": "Fantacalcio.it",
+  "substitutions_source": "Sky Sport",
   "season": "2026-27",
-  "generated_at": "2026-08-31T18:24:54.450550+00:00",
+  "generated_at": "2026-08-31T19:54:38.708139+00:00",
   "available_matchdays": [
     "G1 20/20",
     "G2 16/20"
@@ -241,7 +242,8 @@
           "Esposito F.P.",
           "Martinez L."
         ],
-        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959"
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959",
+        "substitutions": []
       },
       "2": {
         "formation": "3-5-2",
@@ -368,7 +370,8 @@
           "Cissè A.",
           "Ramos G."
         ],
-        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971"
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971",
+        "substitutions": []
       },
       "1": {
         "formation": "3-4-2-1",
@@ -404,7 +407,8 @@
           "Kouadio",
           "Pizzignacco"
         ],
-        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959"
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959",
+        "substitutions": []
       },
       "2": {
         "formation": "3-4-2-1",
@@ -639,7 +643,8 @@
           "Schingtienne",
           "Stankovic F."
         ],
-        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971"
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971",
+        "substitutions": []
       },
       "1": {
         "formation": "3-5-2",
@@ -661,70 +666,7 @@
     }
   },
   "errors": [
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/roma-fiorentina/17961: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/udinese-como/17963: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/genoa-napoli/17958: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/frosinone-juventus/17957: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/venezia-lecce/17964: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/atalanta-sassuolo/17955: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/torino-milan/17962: HTTP Error 500: Internal Server Error",
-    "G1 https://www.fantacalcio.it/serie-a/calendario/1/2026-27/bologna-lazio/17956: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/fiorentina-frosinone/17967: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/monza-udinese/17972: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/sassuolo-torino/17974: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/juventus-parma/17968: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/cagliari-inter/17966: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lecce-roma/17970: HTTP Error 500: Internal Server Error",
-    "G2 https://www.fantacalcio.it/serie-a/calendario/2/2026-27/atalanta-bologna/17965: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/genoa-como/17979: formazione incompleta (0/2 squadre)",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/fiorentina-torino/17977: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/inter-napoli/17980: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/roma-atalanta/17983: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/frosinone-venezia/17978: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/parma-monza/17982: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/bologna-sassuolo/17975: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/juventus-milan/17981: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/cagliari-lecce/17976: HTTP Error 500: Internal Server Error",
-    "G3 https://www.fantacalcio.it/serie-a/calendario/3/2026-27/udinese-lazio/17984: HTTP Error 500: Internal Server Error"
+    "G3 cambi https://www.fantacalcio.it/serie-a/calendario/3/2026-27/genoa-como/17979: HTTP Error 404: Not Found"
   ],
-  "updated_lineups_this_run": 8,
-  "discovered_match_urls": {
-    "1": [
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/roma-fiorentina/17961",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/udinese-como/17963",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/genoa-napoli/17958",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/parma-cagliari/17960",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/frosinone-juventus/17957",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/venezia-lecce/17964",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/atalanta-sassuolo/17955",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/torino-milan/17962",
-      "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/bologna-lazio/17956"
-    ],
-    "2": [
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/fiorentina-frosinone/17967",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/monza-udinese/17972",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/sassuolo-torino/17974",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/juventus-parma/17968",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/napoli-como/17973",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/cagliari-inter/17966",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lazio-genoa/17969",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/lecce-roma/17970",
-      "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/atalanta-bologna/17965"
-    ],
-    "3": [
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/genoa-como/17979",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/fiorentina-torino/17977",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/inter-napoli/17980",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/roma-atalanta/17983",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/frosinone-venezia/17978",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/parma-monza/17982",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/bologna-sassuolo/17975",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/juventus-milan/17981",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/cagliari-lecce/17976",
-      "https://www.fantacalcio.it/serie-a/calendario/3/2026-27/udinese-lazio/17984"
-    ]
-  }
+  "updated_lineups_this_run": 4
 }
