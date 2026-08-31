@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v2.0.0</title>
+<title>Fantacalcio Manager Online v2.1.0</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -901,7 +901,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.0.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.1.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1001,7 +1001,7 @@ tbody tr:hover{
   <span class="pill sync-status" id="syncStatus">Rose ufficiali: controllo automatico</span>
  </div>
  <div class="db-wrap"><div class="table-scroll">
-  <table><thead><tr><th>★</th><th>Giocatore</th><th>Squadra</th><th>R</th><th>Quot.</th><th>Valutazione</th><th>Budget consigliato</th><th>Fascia</th><th>Budget max</th><th>Profilo</th><th>Status</th></tr></thead><tbody id="tbody"></tbody></table>
+  <table><thead><tr><th>★</th><th>Giocatore</th><th>Squadra</th><th>R</th><th>Quot.</th><th>FVM</th><th>Valutazione</th><th>Budget consigliato</th><th>Fascia</th><th>Budget max</th><th>Profilo</th><th>Status</th></tr></thead><tbody id="tbody"></tbody></table>
  </div></div>
 </section>
 
@@ -1025,7 +1025,7 @@ tbody tr:hover{
   <div id="favoritesEmpty" class="small" style="padding:25px 4px;display:none">Non hai ancora aggiunto giocatori ai preferiti. Puoi farlo dalla scheda di ogni giocatore selezionando “Preferito ★”.</div>
   <div class="tablewrap" id="favoritesTableWrap">
    <table>
-    <thead><tr><th>Giocatore</th><th>Squadra</th><th>Ruolo</th><th>Quotazione</th><th>Valutazione</th><th>Budget consigliato</th><th>Budget massimo</th><th></th></tr></thead>
+    <thead><tr><th>Giocatore</th><th>Squadra</th><th>Ruolo</th><th>Quotazione</th><th>FVM</th><th>Valutazione</th><th>Budget consigliato</th><th>Budget massimo</th><th></th></tr></thead>
     <tbody id="favoritesBody"></tbody>
    </table>
   </div>
@@ -1040,6 +1040,7 @@ tbody tr:hover{
  </div>
  <div class="pop-stats">
   <div class="pop-stat"><b id="popQuote">—</b><small>Quotazione</small></div>
+  <div class="pop-stat"><b id="popFvm">—</b><small>FVM / 1000</small></div>
   <div class="pop-stat"><b id="popRating">—</b><small>Tua valutazione</small></div>
   <div class="pop-stat"><b id="popTit">—</b><small>Budget consigliato</small></div>
  </div>
@@ -1063,6 +1064,7 @@ tbody tr:hover{
    <div class="field"><label>Squadra</label><select id="eTeam"></select></div>
    <div class="field"><label>Ruolo</label><select id="eRole"><option>P</option><option>D</option><option>C</option><option>A</option></select></div>
    <div class="field"><label>Quotazione</label><input id="eQuote" type="number" min="0"></div>
+   <div class="field"><label>FVM / 1000 (ufficiale)</label><input id="eFvm" type="number" min="0" readonly></div>
    <div class="field"><label>Mia valutazione (1-10)</label><input id="eRating" type="number" min="1" max="10" step=".1" placeholder="es. 8.5"></div>
    <div class="field"><label>Budget consigliato</label><input id="eBudgetRecommended" type="number" min="0" step="1" placeholder="es. 15"></div>
    <div class="field"><label>Fascia</label><input id="eFascia" placeholder="es. 1ª fascia"></div>
@@ -1251,7 +1253,7 @@ function syncNameSignature(s){
 function syncMakePlayer(op,nextId){
   const name=op.name;
   return {
-    id:nextId,name,team:op.team,role:op.role,quotation:1,
+    id:nextId,name,team:op.team,role:op.role,quotation:Number(op.quotation)||0,fvm:Number(op.fvm)||0,
     initials:initials(name),rating:"",titolarita:"",fascia:"",
     budgetMax:"",budgetRecommended:"",rigorista:false,piazzati:false,
     preferito:false,status:"Da valutare",notes:"",metrics:{},photo:"",
@@ -1309,6 +1311,8 @@ function syncMergeOfficial(payload){
       if(local.team!==o.team)moved++;
       local.team=o.team;
       local.role=o.role;
+      if(Number.isFinite(Number(o.quotation)))local.quotation=Number(o.quotation);
+      if(Number.isFinite(Number(o.fvm)))local.fvm=Number(o.fvm);
       if(o.officialId)local.officialId=String(o.officialId);
     }else{
       const p=syncMakePlayer(o,nextId++);
@@ -1348,7 +1352,7 @@ async function syncOfficialRosters(manual=false){
     if(snapshotId)localStorage.setItem("fantaOfficialSnapshotId",snapshotId);
     const dt=new Date(snapshotId);
     const label=snapshotId?(isNaN(dt)?snapshotId:dt.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})):"ora";
-    syncSetStatus(`Rose aggiornate · ${label} · ${result.moved} trasferiti · ${result.added} nuovi · ${result.removed} usciti dalla Serie A`,"ok");
+    syncSetStatus(`Rose, quotazioni e FVM aggiornati · ${label} · ${result.moved} trasferiti · ${result.added} nuovi · ${result.removed} usciti dalla Serie A`,"ok");
   }catch(err){
     console.warn("Sync rose:",err);
     syncSetStatus("Aggiornamento rose non disponibile: "+err.message+". I tuoi dati non sono stati modificati.","error");
@@ -1399,7 +1403,7 @@ function renderFavorites(){
  favoritesTableWrap.style.display=favs.length?"block":"none";
  favoritesBody.innerHTML=favs.map(p=>`<tr>
   <td><button class="player-btn" data-fav-edit="${p.id}" style="display:flex;align-items:center;gap:7px"><span class="mini" style="width:28px;height:28px;overflow:hidden">${avatarContent(p)}</span>${p.name}</button></td>
-  <td>${p.team}</td><td>${p.role}</td><td>${p.quotation}</td><td>${p.rating||"—"}</td>
+  <td>${p.team}</td><td>${p.role}</td><td>${p.quotation}</td><td>${p.fvm ?? "—"}</td><td>${p.rating||"—"}</td>
   <td>${p.budgetRecommended||"—"}</td><td>${p.budgetMax||"—"}</td>
   <td><button class="ghost" data-unfav="${p.id}" title="Rimuovi dai preferiti">★</button></td>
  </tr>`).join("");
@@ -1415,7 +1419,7 @@ function renderDB(){
  const arr=filtered();countPill.textContent=`${arr.length} giocatori visualizzati / ${db.length} totali`;
  tbody.innerHTML=arr.map(p=>`<tr>
  <td><button class="star ${p.preferito?"on":""}" data-star="${p.id}">${p.preferito?"★":"☆"}</button></td>
- <td><button class="player-btn" data-edit="${p.id}" style="display:flex;align-items:center;gap:7px"><span class="mini" style="width:28px;height:28px;overflow:hidden">${avatarContent(p)}</span>${p.name}</button></td><td>${p.team}</td><td><span class="tag">${p.role}</span></td><td>${p.quotation}</td>
+ <td><button class="player-btn" data-edit="${p.id}" style="display:flex;align-items:center;gap:7px"><span class="mini" style="width:28px;height:28px;overflow:hidden">${avatarContent(p)}</span>${p.name}</button></td><td>${p.team}</td><td><span class="tag">${p.role}</span></td><td>${p.quotation}</td><td>${p.fvm ?? "—"}</td>
  <td>${p.rating||"—"}</td><td>${p.titolarita!==""?p.titolarita+"%":"—"}</td><td>${p.fascia||"—"}</td><td>${p.budgetMax||"—"}</td><td>${metricAverage(p)}</td><td>${p.status}</td></tr>`).join("");
  tbody.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>openEdit(+b.dataset.edit)));
  tbody.querySelectorAll("[data-star]").forEach(b=>b.addEventListener("click",()=>{const p=byId(+b.dataset.star);p.preferito=!p.preferito;save();renderDB();}));
@@ -1424,7 +1428,7 @@ function renderDB(){
 resetFilters.addEventListener("click",()=>{search.value="";teamFilter.value="";roleFilter.value="";statusFilter.value="";renderDB();});
 
 function openEdit(id){
- editId=id;const p=byId(id);modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;
+ editId=id;const p=byId(id);modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;eFvm.value=p.fvm ?? "";
  eRating.value=p.rating;eBudgetRecommended.value=p.budgetRecommended||0;eFascia.value=p.fascia;eBudget.value=p.budgetMax;eStatus.value=p.status;eRig.checked=p.rigorista;ePiaz.checked=p.piazzati;eFav.checked=p.preferito;eNotes.value=p.notes;renderMetricsEditor(p);editModal.classList.add("open");
 }
 closeModal.addEventListener("click",()=>editModal.classList.remove("open"));
@@ -1602,6 +1606,7 @@ function openPlayerPopover(slot,anchor){
  popName.textContent=p.name;
  popMeta.textContent=`${p.team} · ${roleName(p.role)} · ${p.status||"Da valutare"}`;
  popQuote.textContent=p.quotation ?? "—";
+ popFvm.textContent=p.fvm ?? "—";
  popRating.textContent=p.rating || "—";
  popTit.textContent=p.budgetRecommended||"—";
  renderPopoverRadar(p);
@@ -1680,6 +1685,7 @@ function openSubstituteAction(slot,subIndex,anchor){
   popName.textContent=p.name;
   popMeta.textContent=`${p.team} · ${roleName(p.role)} · Sostituto ${subIndex+1}`;
   popQuote.textContent=p.quotation ?? "—";
+  popFvm.textContent=p.fvm ?? "—";
   popRating.textContent=p.rating || "—";
   popTit.textContent=p.budgetRecommended||"—";
   renderPopoverRadar(p);
@@ -1714,7 +1720,7 @@ function renderPicker(){
  let arr=db.filter(p=>p.team===currentTeam
    && (!q||p.name.toLowerCase().includes(q)||p.role.toLowerCase().includes(q))
  ).slice(0,80);
- pickResults.innerHTML=arr.map(p=>`<button data-pick="${p.id}"><b>${p.name}</b> · ${p.role} · ${p.team} <span class="small">Qt. ${p.quotation}</span></button>`).join("");
+ pickResults.innerHTML=arr.map(p=>`<button data-pick="${p.id}"><b>${p.name}</b> · ${p.role} · ${p.team} <span class="small">Qt. ${p.quotation} · FVM ${p.fvm ?? "—"}</span></button>`).join("");
  pickResults.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
    if(pickMode==="sub"){
      substitutes=normalizeSubstitutes(substitutes);
