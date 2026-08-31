@@ -829,6 +829,21 @@ tbody tr:hover{
 .sync-status.ok{border-color:rgba(102,220,154,.35)!important;color:#c9f5d9!important}
 .sync-status.warn{border-color:rgba(255,181,92,.42)!important;color:#ffd7a8!important}
 .sync-status.error{border-color:rgba(255,102,130,.42)!important;color:#ffc1cd!important}
+.reset-formation{
+  background:linear-gradient(135deg,#ff4fa3,#d936a8)!important;
+  border:1px solid rgba(255,130,210,.75)!important;
+  color:#fff!important;
+  border-radius:9px;
+  padding:10px 13px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 0 16px rgba(255,79,163,.18);
+}
+
+.reset-formation:hover{
+  background:linear-gradient(135deg,#ff69b4,#e044b6)!important;
+  border-color:#ff9bd5!important;
+}
 </style>
 
 </head>
@@ -868,6 +883,7 @@ tbody tr:hover{
 <option>5-4-1</option>
 <option>5-2-1-2</option>
 </select>
+<button id="resetFormation" type="button" class="reset-formation">Reset formazione</button>
     </div>
    </div>
    <div class="pitch" id="pitch">
@@ -1488,6 +1504,22 @@ function renderLineup(){
  save();
 }
 function renderTeamRoster(){}
+resetFormation.addEventListener("click",()=>{
+  const ok=confirm(`Vuoi davvero svuotare completamente la formazione del ${currentTeam}?`);
+  if(!ok)return;
+
+  lineup=[null,null,null,null,null,null,null,null,null,null,null];
+
+  substitutes=Array.from({length:11},()=>[null,null]);
+
+  teamLineups[currentTeam]=lineup;
+  teamSubstitutes[currentTeam]=substitutes;
+
+  playerPopover.classList.remove("open");
+
+  save();
+  renderLineup();
+});
 formationSelect.addEventListener("change",()=>{teamFormations[currentTeam]=formationSelect.value;save();renderLineup();});
 formationTeamSelect.addEventListener("change",()=>{
  teamLineups[currentTeam]=lineup;
