@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v1.4.2</title>
+<title>Fantacalcio Manager Online v1.4.3</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -738,6 +738,50 @@ tbody tr:hover{
   }
 }
 
+/* v1.4.3 — badge ruolo accanto al nome in formazione */
+.formation-name-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:150px;
+  max-width:150px;
+  margin:4px auto 0;
+}
+.formation-name-row .formation-player-name{
+  width:auto!important;
+  max-width:122px!important;
+  min-height:0!important;
+  margin:0!important;
+}
+.formation-role-badge{
+  flex:0 0 auto;
+  min-width:18px;
+  height:18px;
+  padding:0 4px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:5px;
+  border:1px solid rgba(239,170,255,.48);
+  background:rgba(30,12,38,.78);
+  color:#f6dcff;
+  font-size:9px;
+  line-height:1;
+  font-weight:900;
+  box-shadow:0 2px 7px rgba(0,0,0,.28);
+}
+@media(max-width:900px){
+  .formation-name-row{width:128px;max-width:128px;gap:4px}
+  .formation-name-row .formation-player-name{max-width:104px!important}
+  .formation-role-badge{min-width:17px;height:17px;font-size:8.5px}
+}
+@media(max-width:560px){
+  .formation-name-row{width:104px;max-width:104px;gap:3px}
+  .formation-name-row .formation-player-name{max-width:84px!important}
+  .formation-role-badge{min-width:16px;height:16px;padding:0 3px;font-size:8px}
+}
+
 </style>
 
 <style>
@@ -770,7 +814,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.2</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.3</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1393,7 +1437,7 @@ function renderLineup(){
    const subP2=pair[1]?byId(pair[1]):null;
    slot.innerHTML=p?`
    <button type="button" class="avatar" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
-   <div class="formation-player-name">${p.name}</div>
+   <div class="formation-name-row"><span class="formation-role-badge">${p.role}</span><div class="formation-player-name">${p.name}</div></div>
    <div class="sub-slot">
      <button type="button" data-sub-slot="${i}" data-sub-index="0" class="${subP1?"":"empty-sub"}" title="${subP1?"Apri sostituto 1":"Aggiungi sostituto 1"}">
        ${subP1?"↳ "+subP1.name:"+ sostituto 1"}
