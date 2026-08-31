@@ -1,9 +1,9 @@
 {
   "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
-  "generated_at": "2026-08-31T18:17:52.596673+00:00",
+  "generated_at": "2026-08-31T19:17:47.434202+00:00",
   "teams": 20,
-  "players_count": 562,
+  "players_count": 563,
   "players": [
     {
       "name": "De Ketelaere",
@@ -532,6 +532,14 @@
       "officialId": "fantacalcio:6640",
       "fantacalcioId": 6640,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/felici/6640"
+    },
+    {
+      "name": "Gagliardini",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "fantacalcio:801",
+      "fantacalcioId": 801,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/gagliardini/801"
     },
     {
       "name": "Liteta",
