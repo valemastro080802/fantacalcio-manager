@@ -1,7 +1,7 @@
 {
   "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
-  "generated_at": "2026-08-31T08:17:58.125251+00:00",
+  "generated_at": "2026-08-31T09:17:55.111609+00:00",
   "teams": 20,
   "players_count": 561,
   "players": [
@@ -2902,6 +2902,14 @@
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/maye/7604"
     },
     {
+      "name": "Ziolkowski",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "fantacalcio:7260",
+      "fantacalcioId": 7260,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/ziolkowski/7260"
+    },
+    {
       "name": "Pizzignacco",
       "team": "Monza",
       "role": "P",
@@ -3564,14 +3572,6 @@
       "officialId": "fantacalcio:7181",
       "fantacalcioId": 7181,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/wesley/7181"
-    },
-    {
-      "name": "Ziolkowski",
-      "team": "Roma",
-      "role": "D",
-      "officialId": "fantacalcio:7260",
-      "fantacalcioId": 7260,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/ziolkowski/7260"
     },
     {
       "name": "De Marzi",
