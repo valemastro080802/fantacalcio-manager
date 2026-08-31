@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v2.1.3</title>
+<title>Fantacalcio Manager Online v2.1.4</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -926,7 +926,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.1.3</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.1.4</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1018,6 +1018,13 @@ tbody tr:hover{
   <select id="teamFilter"><option value="">Tutte le squadre</option></select>
   <select id="roleFilter"><option value="">Tutti i ruoli</option><option>P</option><option>D</option><option>C</option><option>A</option></select>
   <select id="statusFilter"><option value="">Tutti gli status</option><option>Da valutare</option><option>Titolare low cost</option><option>Top</option><option>Buono</option><option>Scommessa</option><option>Evita</option></select>
+  <select id="sortFilter" aria-label="Ordina database">
+   <option value="">Ordine predefinito</option>
+   <option value="fvm-desc">FVM: alto → basso</option>
+   <option value="fvm-asc">FVM: basso → alto</option>
+   <option value="fascia-asc">Fascia: 1 → 4</option>
+   <option value="fascia-desc">Fascia: 4 → 1</option>
+  </select>
   <button id="resetFilters" class="ghost">Azzera</button>
   <button id="syncSerieA" class="sync-seriea" type="button">↻ Aggiorna rose</button>
  </div>
@@ -1088,7 +1095,7 @@ tbody tr:hover{
    <div class="field"><label>Ruolo</label><select id="eRole"><option>P</option><option>D</option><option>C</option><option>A</option></select></div>
    <div class="field"><label>Quotazione</label><input id="eQuote" type="number" min="0"></div>
    <div class="field"><label>FVM / 500 (ufficiale)</label><input id="eFvm" type="number" min="0" readonly></div>
-   <div class="field"><label>Fascia</label><input id="eFascia" placeholder="es. 1ª fascia"></div>
+   <div class="field"><label>Fascia</label><select id="eFascia" class="fascia-select fascia-" aria-label="Fascia giocatore"><option value="">—</option><option value="1">1ª fascia</option><option value="2">2ª fascia</option><option value="3">3ª fascia</option><option value="4">4ª fascia</option></select></div>
    <div class="field"><label>Budget massimo</label><input id="eBudget" type="number" min="0" placeholder="crediti"></div>
    <div class="field"><label>Status</label><select id="eStatus"><option>Da valutare</option><option>Titolare low cost</option><option>Top</option><option>Buono</option><option>Scommessa</option><option>Evita</option></select></div>
    <div class="wide checks"><label><input id="eRig" type="checkbox"> Rigorista</label><label><input id="ePiaz" type="checkbox"> Piazzati</label><label><input id="eFav" type="checkbox"> Preferito ★</label></div>
@@ -1403,7 +1410,19 @@ formationSelect.value=teamFormations[currentTeam]||"3-5-2";
 
 function filtered(){
  const q=search.value.trim().toLowerCase(),team=teamFilter.value,role=roleFilter.value,status=statusFilter.value;
- return db.filter(p=>(!q||p.name.toLowerCase().includes(q))&&(!team||p.team===team)&&(!role||p.role===role)&&(!status||p.status===status));
+ const sort=sortFilter.value;
+ const arr=db.filter(p=>(!q||p.name.toLowerCase().includes(q))&&(!team||p.team===team)&&(!role||p.role===role)&&(!status||p.status===status));
+ const byName=(a,b)=>a.name.localeCompare(b.name,"it",{sensitivity:"base"});
+ if(sort==="fvm-desc")arr.sort((a,b)=>(Number(b.fvm)||0)-(Number(a.fvm)||0)||byName(a,b));
+ else if(sort==="fvm-asc")arr.sort((a,b)=>(Number(a.fvm)||0)-(Number(b.fvm)||0)||byName(a,b));
+ else if(sort==="fascia-asc"||sort==="fascia-desc")arr.sort((a,b)=>{
+   const fa=Number(fasciaNum(a.fascia))||99, fb=Number(fasciaNum(b.fascia))||99;
+   if(fa===99&&fb!==99)return 1;
+   if(fb===99&&fa!==99)return -1;
+   if(fa===99&&fb===99)return byName(a,b);
+   return (sort==="fascia-asc"?fa-fb:fb-fa)||byName(a,b);
+ });
+ return arr;
 }
 function fvm500Value(value){
  const n=Number(value);
@@ -1478,12 +1497,12 @@ function renderDB(){
    renderDB();
  }));
 }
-[search,teamFilter,roleFilter,statusFilter].forEach(el=>el.addEventListener("input",renderDB));
-resetFilters.addEventListener("click",()=>{search.value="";teamFilter.value="";roleFilter.value="";statusFilter.value="";renderDB();});
+[search,teamFilter,roleFilter,statusFilter,sortFilter].forEach(el=>el.addEventListener("input",renderDB));
+resetFilters.addEventListener("click",()=>{search.value="";teamFilter.value="";roleFilter.value="";statusFilter.value="";sortFilter.value="";renderDB();});
 
 function openEdit(id){
  editId=id;const p=byId(id);modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;eFvm.value=fvm500Value(p.fvm) ?? "";
- eFascia.value=p.fascia;eBudget.value=p.budgetMax;eStatus.value=p.status;eRig.checked=p.rigorista;ePiaz.checked=p.piazzati;eFav.checked=p.preferito;eNotes.value=p.notes;renderMetricsEditor(p);editModal.classList.add("open");
+ eFascia.value=fasciaNum(p.fascia);eFascia.className=`fascia-select fascia-${fasciaNum(p.fascia)}`;eBudget.value=p.budgetMax;eStatus.value=p.status;eRig.checked=p.rigorista;ePiaz.checked=p.piazzati;eFav.checked=p.preferito;eNotes.value=p.notes;renderMetricsEditor(p);editModal.classList.add("open");
 }
 closeModal.addEventListener("click",()=>editModal.classList.remove("open"));
 
@@ -1513,9 +1532,10 @@ removePhoto.addEventListener("click",()=>{
  renderLineup();
 });
 
+eFascia.addEventListener("change",()=>{eFascia.className=`fascia-select fascia-${eFascia.value}`;});
 eRole.addEventListener("change",()=>{const p=byId(editId); if(!p)return; p.role=eRole.value; ensureMetrics(p); renderMetricsEditor(p);});
 editForm.addEventListener("submit",e=>{e.preventDefault();const p=byId(editId);p.name=eName.value.trim()||p.name;p.team=eTeam.value;p.role=eRole.value;p.quotation=Math.max(0,+eQuote.value||0);
- p.fascia=eFascia.value.trim();p.budgetMax=eBudget.value;p.status=eStatus.value;p.rigorista=eRig.checked;p.piazzati=ePiaz.checked;p.preferito=eFav.checked;p.notes=eNotes.value;
+ p.fascia=fasciaLabel(eFascia.value);p.budgetMax=eBudget.value;p.status=eStatus.value;p.rigorista=eRig.checked;p.piazzati=ePiaz.checked;p.preferito=eFav.checked;p.notes=eNotes.value;
  p.initials=initials(p.name);save();editModal.classList.remove("open");renderDB();renderLineup();
 });
 
