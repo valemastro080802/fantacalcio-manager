@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: pip install beautifulsoup4 requests
+
       - name: Update formations snapshot
         run: python scripts/update_formations_fantacalcio.py
 
