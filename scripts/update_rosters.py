@@ -217,22 +217,19 @@ def role_from_row(row):
     return None
 
 
-def best_name_from_row(row, links, player_slug):
-    """Sceglie il nome fantacalcistico della riga, evitando link/etichette di posizione."""
-
+def best_name_from_row(row, link):
     candidates = []
 
-    # In una stessa riga Fantacalcio può avere più link allo stesso profilo
-    # (es. ruolo/posizione + nome). Li valutiamo tutti prima di scegliere.
-    for link in links:
-        link_text = clean_text(" ".join(link.get("text") or []))
-        if plausible_name(link_text):
-            candidates.append(link_text)
+    # Il testo del link è il candidato base.
+    link_text = clean_text(" ".join(link.get("text") or []))
+    if plausible_name(link_text):
+        candidates.append(link_text)
 
-        for key, value in link.get("attrs") or []:
-            if key.lower() in {"title", "aria-label", "data-name", "data-player-name"}:
-                if plausible_name(value):
-                    candidates.append(clean_text(value))
+    # Fantacalcio spesso mette il nome esteso in title/aria-label/alt.
+    for key, value in link.get("attrs") or []:
+        if key.lower() in {"title", "aria-label", "data-name", "data-player-name"}:
+            if plausible_name(value):
+                candidates.append(clean_text(value))
 
     for key, value in row["attrs"]:
         if key.lower() in {"title", "aria-label", "alt", "data-name", "data-player-name"}:
@@ -242,62 +239,29 @@ def best_name_from_row(row, links, player_slug):
     if not candidates:
         return None
 
-    # Rimuoviamo duplicati e descrizioni tattiche che talvolta sono anch'esse
-    # cliccabili verso il profilo del calciatore.
-    position_terms = {
-        "portiere", "estremo difensore",
-        "difensore", "difensore centrale", "centrale difensivo",
-        "terzino destro", "terzino sinistro", "terzino",
-        "braccetto destro", "braccetto sinistro",
-        "centrocampista", "centrocampista centrale", "mediano",
-        "mezzala", "regista", "trequartista",
-        "esterno destro", "esterno sinistro", "esterno di centrocampo",
-        "attaccante", "punta centrale", "seconda punta",
-        "ala destra", "ala sinistra", "esterno offensivo",
-    }
-
+    # Preferiamo il candidato più informativo, evitando etichette generiche.
     unique = []
     seen = set()
     for candidate in candidates:
         key = normalize(candidate)
-        if not key or key in seen:
-            continue
-        seen.add(key)
-        if key in position_terms:
-            continue
-        unique.append(candidate)
+        if key not in seen:
+            seen.add(key)
+            unique.append(candidate)
 
-    if not unique:
+    return max(unique, key=lambda value: (len(value.split()), len(value)))
+
+
+def market_values_from_row(row):
+    """Return current Classic quotation (QA) and FVM/1000 from a quotes table row."""
+    numbers = []
+    for value in row.get("text") or []:
+        value = clean_text(value)
+        if re.fullmatch(r"\d+", value):
+            numbers.append(int(value))
+    # Fantacalcio table order is Classic QI, QA, FVM, then Mantra QI, QA, FVM.
+    if len(numbers) < 3:
         return None
-
-    slug_norm = normalize(player_slug.replace("-", " "))
-    slug_tokens = set(slug_norm.split())
-
-    def score(candidate):
-        cand_norm = normalize(candidate)
-        # Tolgo la sola punteggiatura, così "Martinez L." combacia con
-        # lo slug "martinez-l".
-        cand_compact = normalize(re.sub(r"[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+", " ", candidate))
-        cand_tokens = set(cand_compact.split())
-
-        exact_slug = 1 if cand_compact == slug_norm else 0
-        overlap = len(cand_tokens & slug_tokens)
-        extra = len(cand_tokens - slug_tokens)
-
-        # Prima il candidato che rappresenta davvero lo slug del giocatore;
-        # a parità preferiamo il nome mostrato in tabella, non descrizioni lunghe.
-        return (exact_slug, overlap, -extra, -len(candidate.split()), -len(candidate))
-
-    best = max(unique, key=score)
-
-    # Se nessun candidato ha alcun legame con lo slug, meglio non inventare.
-    best_tokens = set(
-        normalize(re.sub(r"[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+", " ", best)).split()
-    )
-    if slug_tokens and not (best_tokens & slug_tokens):
-        return None
-
-    return best
+    return {"quotation": numbers[1], "fvm": numbers[2]}
 
 
 def load_previous_players():
@@ -355,19 +319,7 @@ def scrape_fantacalcio():
             if player_id in seen_ids:
                 continue
 
-            same_player_links = []
-            for candidate_link in row["links"]:
-                candidate_match = QuotesParser.PROFILE_RE.search(
-                    candidate_link.get("href") or ""
-                )
-                if candidate_match and candidate_match.group(3) == player_id:
-                    same_player_links.append(candidate_link)
-
-            name = best_name_from_row(
-                row,
-                same_player_links,
-                _player_slug,
-            )
+            name = best_name_from_row(row, link)
             if not name:
                 continue
 
@@ -379,11 +331,17 @@ def scrape_fantacalcio():
                 unresolved_roles.append((name, team, player_id))
                 continue
 
+            values = market_values_from_row(row)
+            if values is None:
+                continue
+
             seen_ids.add(player_id)
             players.append({
                 "name": name,
                 "team": team,
                 "role": role,
+                "quotation": values["quotation"],
+                "fvm": values["fvm"],
                 # ID stabile Fantacalcio: non cambia quando il giocatore cambia club.
                 "officialId": f"fantacalcio:{player_id}",
                 "fantacalcioId": int(player_id),
@@ -424,6 +382,10 @@ def safety_checks(players, unresolved_roles):
     for role, count in roles.items():
         if count < 20:
             raise RuntimeError(f"ruolo {role}: soltanto {count} giocatori")
+
+    missing_market = [p for p in players if not isinstance(p.get("quotation"), int) or not isinstance(p.get("fvm"), int)]
+    if missing_market:
+        raise RuntimeError(f"quotazione/FVM mancanti per {len(missing_market)} giocatori")
 
     return teams, roles
 
