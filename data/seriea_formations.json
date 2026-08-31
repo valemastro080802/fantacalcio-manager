@@ -1,8 +1,8 @@
 {
   "source": "Fantacalcio.it",
-  "substitutions_source": "Sky Sport",
+  "substitutions_source": "ESPN (fallback Sky Sport)",
   "season": "2026-27",
-  "generated_at": "2026-08-31T20:22:06.954113+00:00",
+  "generated_at": "2026-08-31T20:52:10.117706+00:00",
   "available_matchdays": [
     "G1 20/20",
     "G2 16/20"
