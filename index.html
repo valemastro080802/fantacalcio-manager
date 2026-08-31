@@ -897,7 +897,7 @@ tbody tr:hover{
 .sync-status.warn{border-color:rgba(255,181,92,.42)!important;color:#ffd7a8!important}
 .sync-status.error{border-color:rgba(255,102,130,.42)!important;color:#ffc1cd!important}
 
-/* v1.5.1 — prime 3 giornate + sintesi titolarità */
+/* v1.6.0 — import automatico formazioni ufficiali G1/G2/G3 */
 .matchday-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 auto 12px;width:94%}
 .matchday-tabs{display:flex;gap:6px;flex-wrap:wrap}
 .matchday-btn{background:rgba(25,13,31,.88)!important;color:#d9c6df!important;border:1px solid rgba(208,92,255,.24)!important;border-radius:9px;padding:8px 13px;font-weight:850;cursor:pointer}
@@ -922,12 +922,20 @@ tbody tr:hover{
 .summary-empty{padding:60px 15px;text-align:center;color:#aa96b0;font-size:12px}
 @media(max-width:760px){.summary-groups{grid-template-columns:1fr}.summary-kpis{grid-template-columns:1fr}.matchday-toolbar{width:98%}.starter-summary{width:98%}}
 
+
+/* v1.6.0 — sync formazioni ufficiali */
+.sync-formations{border-color:rgba(72,201,176,.45)!important;color:#d7fff6!important}
+.sync-formations:hover{border-color:rgba(72,201,176,.85)!important;box-shadow:0 0 15px rgba(72,201,176,.13)}
+.sync-formations.syncing{opacity:.68;cursor:wait}
+#formationSyncStatus.ok{color:#bdf4d5!important}
+#formationSyncStatus.warn{color:#ffd59b!important}
+#formationSyncStatus.error{color:#ffb5c2!important}
 </style>
 
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.5.1</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.6.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -961,6 +969,7 @@ tbody tr:hover{
 <option>5-4-1</option>
 <option>5-2-1-2</option>
 </select>
+      <button id="syncFormations" class="ghost sync-formations" type="button" title="Importa G1, G2 e G3 dal file ufficiale aggiornato automaticamente">↻ Aggiorna formazioni</button>
       <button id="resetLineup" class="ghost reset-lineup-btn" type="button" title="Svuota la giornata selezionata">Reset giornata</button>
     </div>
    </div>
@@ -971,7 +980,10 @@ tbody tr:hover{
       <button type="button" class="matchday-btn" data-matchday="3">G3</button>
       <button type="button" class="matchday-btn summary-btn" data-matchday="summary">Sintesi</button>
     </div>
-    <div class="matchday-hint" id="matchdayHint">Giornata 1</div>
+    <div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap">
+      <span class="matchday-hint" id="formationSyncStatus">Formazioni ufficiali: pronte per l’aggiornamento</span>
+      <div class="matchday-hint" id="matchdayHint">Giornata 1</div>
+    </div>
    </div>
    <div class="starter-summary" id="starterSummary" hidden></div>
    <div class="pitch" id="pitch">
@@ -1455,6 +1467,92 @@ function initOfficialRosterSync(){
   setTimeout(()=>syncOfficialRosters(false),900);
 }
 
+
+/* === v1.6.0 — FORMAZIONI UFFICIALI G1/G2/G3 DA SNAPSHOT GITHUB === */
+const OFFICIAL_FORMATIONS_URL="./data/seriea_formations.json";
+function formationSyncSetStatus(text,state=""){
+ const el=document.getElementById("formationSyncStatus");
+ if(!el)return;
+ el.textContent=text;
+ el.classList.remove("ok","warn","error");
+ if(state)el.classList.add(state);
+}
+function formationFindPlayer(team,officialName){
+ const pool=db.filter(p=>p.team===team);
+ const norm=syncNormName(officialName);
+ let found=pool.find(p=>syncNormName(p.name)===norm);
+ if(found)return found;
+ const sig=syncNameSignature(officialName);
+ const sigMatches=pool.filter(p=>syncNameSignature(p.name)===sig);
+ if(sigMatches.length===1)return sigMatches[0];
+ const parts=norm.split(" ").filter(Boolean);
+ const candidates=pool.filter(p=>{
+   const pn=syncNormName(p.name);
+   return parts.every(x=>pn.split(" ").includes(x)) || pn.split(" ").every(x=>parts.includes(x));
+ });
+ return candidates.length===1?candidates[0]:null;
+}
+function formationMergeOfficial(payload){
+ if(!payload||typeof payload!=="object"||!payload.teams)throw new Error("snapshot formazioni non valido");
+ let imported=0,unmatched=[];
+ TEAMS.forEach(team=>{
+   const days=payload.teams[team];
+   if(!days)return;
+   ensureTeamMatchdays(team);
+   [1,2,3].forEach(day=>{
+     const src=days[String(day)];
+     if(!src||!Array.isArray(src.starters)||src.starters.length!==11)return;
+     const ids=src.starters.map(name=>{
+       const p=formationFindPlayer(team,name);
+       if(!p)unmatched.push(`${team} G${day}: ${name}`);
+       return p?p.id:null;
+     });
+     if(ids.some(id=>!id))return; // mai sovrascrivere con una formazione incompleta
+     matchdayLineups[team][String(day)]=ids;
+     matchdaySubstitutes[team][String(day)]=normalizeSubstitutes([]);
+     if(src.formation && formations[src.formation])matchdayFormations[team][String(day)]=src.formation;
+     if(day===2||day===3)matchdayCustomized[team][String(day)]=true;
+     imported++;
+   });
+   // Se G2/G3 non sono ancora pubblicate, G1 resta la base automatica già prevista dal sito.
+   propagateG1ToInheritedMatchdays(team);
+ });
+ persistFormationState();
+ loadCurrentMatchday();
+ updateFormationView();
+ return {imported,unmatched:[...new Set(unmatched)]};
+}
+async function syncOfficialFormations(manual=true){
+ const btn=document.getElementById("syncFormations");
+ if(btn&&btn.disabled)return;
+ if(btn){btn.disabled=true;btn.classList.add("syncing");btn.textContent="↻ Importazione…";}
+ formationSyncSetStatus("Controllo formazioni ufficiali…");
+ try{
+   const r=await fetch(OFFICIAL_FORMATIONS_URL+"?t="+Date.now(),{cache:"no-store"});
+   if(!r.ok)throw new Error("snapshot non ancora disponibile");
+   const payload=await r.json();
+   const result=formationMergeOfficial(payload);
+   const available=(payload.available_matchdays||[]).join(", ");
+   const stamp=payload.generated_at?new Date(payload.generated_at):null;
+   const when=stamp&&!isNaN(stamp)?stamp.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"ora";
+   if(result.unmatched.length){
+     console.warn("Giocatori non riconosciuti:",result.unmatched);
+     formationSyncSetStatus(`Importate ${result.imported} formazioni · ${result.unmatched.length} nomi da controllare · ${when}`,"warn");
+   }else{
+     formationSyncSetStatus(`Importate ${result.imported} formazioni${available?` · ${available}`:""} · ${when}`,"ok");
+   }
+ }catch(err){
+   console.warn("Sync formazioni:",err);
+   formationSyncSetStatus("Aggiornamento formazioni non disponibile: "+err.message+". Nessun dato è stato cancellato.","error");
+ }finally{
+   if(btn){btn.disabled=false;btn.classList.remove("syncing");btn.textContent="↻ Aggiorna formazioni";}
+ }
+}
+function initOfficialFormationSync(){
+ const btn=document.getElementById("syncFormations");
+ if(btn)btn.addEventListener("click",()=>syncOfficialFormations(true));
+}
+
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{
  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
  b.classList.add("active");document.getElementById(b.dataset.page).classList.add("active");
@@ -1900,5 +1998,6 @@ renderFavorites();
 
 
 initOfficialRosterSync();
+initOfficialFormationSync();
 </script>
 </body></html>
