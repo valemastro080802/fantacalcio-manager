@@ -127,19 +127,65 @@ def parse_match(url, names_by_team, html=None):
 
 
 
-def parse_substitution_text(text, names_by_team):
+def parse_substitution_text(text, names_by_team, starters_by_team=None):
+    """Estrae coppie out/in dalla cronaca Sky senza dipendere da una sola frase fissa.
+
+    Sky usa formule diverse ("prende il posto di", "sostituisce", "X per Y",
+    doppi cambi, "staffetta tra..."). Per la staffetta, che non esplicita la
+    direzione, usiamo gli 11 titolari: il titolare e' l'uscente.
+    """
     out={team:[] for team in names_by_team}
-    pattern=re.compile(r"Sostituzione!\s*(.+?)\s+prende il posto di\s+(.+?)(?=\.\s*(?:\d+['’]|$)|$)", re.I)
-    for incoming_raw,outgoing_raw in pattern.findall(text or ""):
-        incoming_raw=incoming_raw.strip(" .")
-        outgoing_raw=outgoing_raw.strip(" .")
+    starters_by_team=starters_by_team or {}
+    source=text or ""
+    name_pat=r"[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'’-]*(?:\s+[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'’-]*){0,3}"
+
+    def add_pair(in_raw,out_raw):
+        in_raw=(in_raw or "").strip(" .,:;!-–—")
+        out_raw=(out_raw or "").strip(" .,:;!-–—")
         for team,names in names_by_team.items():
-            incoming=name_match(incoming_raw,names)
-            outgoing=name_match(outgoing_raw,names)
-            if incoming and outgoing:
+            incoming=name_match(in_raw,names)
+            outgoing=name_match(out_raw,names)
+            if incoming and outgoing and incoming!=outgoing:
                 row={"out":outgoing,"in":incoming}
                 if row not in out[team]: out[team].append(row)
-                break
+                return True
+        return False
+
+    # Formule esplicite uno-a-uno.
+    patterns=[
+        rf"({name_pat})\s+prende\s+il\s+posto\s+di\s+({name_pat})",
+        rf"({name_pat})\s+sostituisce\s+({name_pat})",
+        rf"({name_pat})\s+al\s+posto\s+di\s+({name_pat})",
+        rf"(?:c['’][eè]\s+anche|dentro|entra)\s+({name_pat})\s+per\s+({name_pat})",
+    ]
+    for pat in patterns:
+        for m in re.finditer(pat,source,re.I):
+            add_pair(m.group(1),m.group(2))
+
+    # Doppi cambi: entranti prima, uscenti dopo (es. "Adzic e Kostic ... escono Yildiz e Cambiaso").
+    double_patterns=[
+        rf"({name_pat})\s+e\s+({name_pat}).{{0,90}}?\bescono\s+({name_pat})\s+e\s+({name_pat})",
+        rf"({name_pat})\s+e\s+({name_pat}).{{0,90}}?\bfuori\s+({name_pat})\s+e\s+({name_pat})",
+        rf"(?:dentro|entrano)\s+({name_pat})\s+e\s+({name_pat}).{{0,50}}?\bper\s+({name_pat})\s+e\s+({name_pat})",
+    ]
+    for pat in double_patterns:
+        for m in re.finditer(pat,source,re.I|re.S):
+            add_pair(m.group(1),m.group(3))
+            add_pair(m.group(2),m.group(4))
+
+    # "Staffetta tra X e Y": determina la direzione solo se uno dei due era titolare e l'altro no.
+    staffetta_pat=rf"staffetta\s+tra\s+({name_pat})\s+e\s+({name_pat})"
+    for m in re.finditer(staffetta_pat,source,re.I):
+        a_raw,b_raw=m.group(1),m.group(2)
+        for team,names in names_by_team.items():
+            a=name_match(a_raw,names); b=name_match(b_raw,names)
+            if not a or not b: continue
+            starters=set(starters_by_team.get(team,[]) or [])
+            if a in starters and b not in starters:
+                add_pair(b,a)
+            elif b in starters and a not in starters:
+                add_pair(a,b)
+            break
     return out
 
 def sky_match_url(day, match_url):
@@ -149,12 +195,12 @@ def sky_match_url(day, match_url):
     def slug(t):return re.sub(r"[^a-z0-9]+","-",norm(t)).strip("-")
     return f"https://sport.sky.it/calcio/serie-a/partite/2026/giornata-{day}/{slug(home)}-{slug(away)}/risultato-gol"
 
-def fetch_substitutions(day, match_url, names_by_team, html=None):
+def fetch_substitutions(day, match_url, names_by_team, starters_by_team=None, html=None):
     url=sky_match_url(day,match_url)
     if not url:return {}
     soup=BeautifulSoup(html if html is not None else fetch(url),"html.parser")
     text=soup.get_text(" ",strip=True)
-    return parse_substitution_text(text,names_by_team)
+    return parse_substitution_text(text,names_by_team,starters_by_team)
 
 def main():
     names=roster_names()
@@ -175,7 +221,7 @@ def main():
             try:
                 parsed=parse_match(url,names)
                 try:
-                    subs=fetch_substitutions(day,url,names)
+                    subs=fetch_substitutions(day,url,names,{t:r.get("starters",[]) for t,r in parsed.items()})
                 except Exception as sub_err:
                     subs={}
                     errors.append(f"G{day} cambi {url}: {sub_err}")
