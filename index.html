@@ -897,7 +897,7 @@ tbody tr:hover{
 .sync-status.warn{border-color:rgba(255,181,92,.42)!important;color:#ffd7a8!important}
 .sync-status.error{border-color:rgba(255,102,130,.42)!important;color:#ffc1cd!important}
 
-/* v1.5.0 — prime 3 giornate + sintesi titolarità */
+/* v1.5.1 — prime 3 giornate + sintesi titolarità */
 .matchday-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 auto 12px;width:94%}
 .matchday-tabs{display:flex;gap:6px;flex-wrap:wrap}
 .matchday-btn{background:rgba(25,13,31,.88)!important;color:#d9c6df!important;border:1px solid rgba(208,92,255,.24)!important;border-radius:9px;padding:8px 13px;font-weight:850;cursor:pointer}
@@ -927,7 +927,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.5.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.5.1</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1220,6 +1220,7 @@ const legacyTeamFormations=JSON.parse(localStorage.getItem("fantaTeamFormations"
 let matchdayLineups=JSON.parse(localStorage.getItem("fantaMatchdayLineups")||"null")||{};
 let matchdaySubstitutes=JSON.parse(localStorage.getItem("fantaMatchdaySubstitutes")||"null")||{};
 let matchdayFormations=JSON.parse(localStorage.getItem("fantaMatchdayFormations")||"null")||{};
+let matchdayCustomized=JSON.parse(localStorage.getItem("fantaMatchdayCustomized")||"null")||{};
 let currentTeam=localStorage.getItem("fantaCurrentTeam")||TEAMS[0];
 let currentMatchday=Math.min(3,Math.max(1,Number(localStorage.getItem("fantaCurrentMatchday")||1)||1));
 let currentFormationView=localStorage.getItem("fantaFormationView")||String(currentMatchday);
@@ -1238,6 +1239,9 @@ function ensureTeamMatchdays(team){
  if(!matchdayLineups[team])matchdayLineups[team]={};
  if(!matchdaySubstitutes[team])matchdaySubstitutes[team]={};
  if(!matchdayFormations[team])matchdayFormations[team]={};
+ if(!matchdayCustomized[team])matchdayCustomized[team]={"2":false,"3":false};
+ if(matchdayCustomized[team]["2"]==null)matchdayCustomized[team]["2"]=false;
+ if(matchdayCustomized[team]["3"]==null)matchdayCustomized[team]["3"]=false;
  for(let d=1;d<=3;d++){
    const k=String(d);
    if(!Array.isArray(matchdayLineups[team][k]))matchdayLineups[team][k]=Array(11).fill(null);
@@ -1253,6 +1257,12 @@ if(!localStorage.getItem("fantaMatchdayLineups")){
    matchdayLineups[team]["1"]=Array.from({length:11},(_,i)=>(legacyTeamLineups[team]||[])[i]||null);
    matchdaySubstitutes[team]["1"]=normalizeSubstitutes(legacyTeamSubstitutes[team]);
    matchdayFormations[team]["1"]=legacyTeamFormations[team]||"3-5-2";
+   ["2","3"].forEach(k=>{
+     matchdayLineups[team][k]=Array.from({length:11},(_,i)=>matchdayLineups[team]["1"][i]||null);
+     matchdaySubstitutes[team][k]=normalizeSubstitutes(matchdaySubstitutes[team]["1"]);
+     matchdayFormations[team][k]=matchdayFormations[team]["1"];
+     matchdayCustomized[team][k]=false;
+   });
  });
 }
 ensureTeamMatchdays(currentTeam);
@@ -1265,6 +1275,7 @@ function persistFormationState(){
  localStorage.setItem("fantaMatchdayLineups",JSON.stringify(matchdayLineups));
  localStorage.setItem("fantaMatchdaySubstitutes",JSON.stringify(matchdaySubstitutes));
  localStorage.setItem("fantaMatchdayFormations",JSON.stringify(matchdayFormations));
+ localStorage.setItem("fantaMatchdayCustomized",JSON.stringify(matchdayCustomized));
  localStorage.setItem("fantaCurrentTeam",currentTeam);
  localStorage.setItem("fantaCurrentMatchday",String(currentMatchday));
  localStorage.setItem("fantaFormationView",currentFormationView);
@@ -1276,8 +1287,24 @@ function saveCurrentMatchday(){
  matchdaySubstitutes[currentTeam][k]=normalizeSubstitutes(substitutes);
  matchdayFormations[currentTeam][k]=formationSelect.value||matchdayFormations[currentTeam][k]||"3-5-2";
 }
+function propagateG1ToInheritedMatchdays(team){
+ ensureTeamMatchdays(team);
+ ["2","3"].forEach(k=>{
+   if(matchdayCustomized[team][k])return;
+   matchdayLineups[team][k]=Array.from({length:11},(_,i)=>matchdayLineups[team]["1"][i]||null);
+   matchdaySubstitutes[team][k]=normalizeSubstitutes(matchdaySubstitutes[team]["1"]);
+   matchdayFormations[team][k]=matchdayFormations[team]["1"]||"3-5-2";
+ });
+}
+function markCurrentMatchdayCustomized(){
+ if(currentMatchday===2||currentMatchday===3){
+   ensureTeamMatchdays(currentTeam);
+   matchdayCustomized[currentTeam][String(currentMatchday)]=true;
+ }
+}
 function save(){
  saveCurrentMatchday();
+ if(currentMatchday===1)propagateG1ToInheritedMatchdays(currentTeam);
  persistFormationState();
 }
 function byId(id){return db.find(p=>p.id===id)}
@@ -1694,7 +1721,7 @@ function renderLineup(){
  save();
 }
 function renderTeamRoster(){}
-formationSelect.addEventListener("change",()=>{save();renderLineup();});
+formationSelect.addEventListener("change",()=>{markCurrentMatchdayCustomized();save();renderLineup();});
 resetLineup.addEventListener("click",()=>{
  const hasPlayers=lineup.some(Boolean)||normalizeSubstitutes(substitutes).some(pair=>pair.some(Boolean));
  if(!hasPlayers)return;
@@ -1702,6 +1729,7 @@ resetLineup.addEventListener("click",()=>{
  if(!ok)return;
  lineup=Array(11).fill(null);
  substitutes=Array.from({length:11},()=>[null,null]);
+ markCurrentMatchdayCustomized();
  save();
  renderLineup();
 });
@@ -1860,6 +1888,7 @@ function renderPicker(){
    } else {
      lineup[pickSlot]=+b.dataset.pick;
    }
+   markCurrentMatchdayCustomized();
    save();pickModal.classList.remove("open");renderLineup();
  }));
 }
