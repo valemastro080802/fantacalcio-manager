@@ -1,7 +1,7 @@
 {
   "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
-  "generated_at": "2026-08-31T21:17:45.178736+00:00",
+  "generated_at": "2026-08-31T22:17:44.913779+00:00",
   "teams": 20,
   "players_count": 565,
   "players": [
@@ -3134,14 +3134,6 @@
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/marin-r/6638"
     },
     {
-      "name": "Mazzocchi",
-      "team": "Napoli",
-      "role": "D",
-      "officialId": "fantacalcio:5481",
-      "fantacalcioId": 5481,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/mazzocchi/5481"
-    },
-    {
       "name": "Olivera",
       "team": "Napoli",
       "role": "D",
@@ -4460,6 +4452,14 @@
       "officialId": "fantacalcio:256",
       "fantacalcioId": 256,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/juan-jesus/256"
+    },
+    {
+      "name": "Mazzocchi",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "fantacalcio:5481",
+      "fantacalcioId": 5481,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/mazzocchi/5481"
     },
     {
       "name": "Moreno M.",
