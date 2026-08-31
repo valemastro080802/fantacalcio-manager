@@ -854,6 +854,107 @@ tbody tr:hover{
   background:linear-gradient(135deg,#ff69b4,#e044b6)!important;
   border-color:#ff9bd5!important;
 }
+/* Colori avatar in base alla squadra */
+
+#formation .avatar[data-team="Atalanta"]{
+  background:linear-gradient(135deg,#111,#1775c1)!important;
+  border-color:#39a0ff!important;
+}
+
+#formation .avatar[data-team="Bologna"]{
+  background:linear-gradient(135deg,#b51f2e,#163c70)!important;
+  border-color:#e34a58!important;
+}
+
+#formation .avatar[data-team="Cagliari"]{
+  background:linear-gradient(135deg,#c52233,#163c70)!important;
+  border-color:#e84b59!important;
+}
+
+#formation .avatar[data-team="Como"]{
+  background:linear-gradient(135deg,#1759a6,#2f8bd3)!important;
+  border-color:#7bc4ff!important;
+}
+
+#formation .avatar[data-team="Fiorentina"]{
+  background:linear-gradient(135deg,#55258b,#8b55c7)!important;
+  border-color:#b98aff!important;
+}
+
+#formation .avatar[data-team="Frosinone"]{
+  background:linear-gradient(135deg,#f0c400,#1f63a8)!important;
+  border-color:#ffe35c!important;
+}
+
+#formation .avatar[data-team="Genoa"]{
+  background:linear-gradient(135deg,#b32032,#183d75)!important;
+  border-color:#e94b5e!important;
+}
+
+#formation .avatar[data-team="Inter"]{
+  background:linear-gradient(135deg,#050505,#0057b8)!important;
+  border-color:#3388e5!important;
+}
+
+#formation .avatar[data-team="Juventus"]{
+  background:linear-gradient(135deg,#111 0 50%,#f2f2f2 50% 100%)!important;
+  border-color:#fff!important;
+}
+
+#formation .avatar[data-team="Lazio"]{
+  background:linear-gradient(135deg,#7ac8ef,#eaf8ff)!important;
+  border-color:#bdeaff!important;
+}
+
+#formation .avatar[data-team="Lecce"]{
+  background:linear-gradient(135deg,#e3bd00,#c8292e)!important;
+  border-color:#ffe03c!important;
+}
+
+#formation .avatar[data-team="Milan"]{
+  background:linear-gradient(135deg,#c8202f,#111)!important;
+  border-color:#ec4654!important;
+}
+
+#formation .avatar[data-team="Monza"]{
+  background:linear-gradient(135deg,#d71938,#fff)!important;
+  border-color:#ff6a7e!important;
+}
+
+#formation .avatar[data-team="Napoli"]{
+  background:linear-gradient(135deg,#168fd2,#65c5ef)!important;
+  border-color:#9de3ff!important;
+}
+
+#formation .avatar[data-team="Parma"]{
+  background:linear-gradient(135deg,#f4c900,#244a9b)!important;
+  border-color:#ffe058!important;
+}
+
+#formation .avatar[data-team="Roma"]{
+  background:linear-gradient(135deg,#7b1525,#d49b2a)!important;
+  border-color:#f0b83f!important;
+}
+
+#formation .avatar[data-team="Sassuolo"]{
+  background:linear-gradient(135deg,#159447,#111)!important;
+  border-color:#49cf78!important;
+}
+
+#formation .avatar[data-team="Torino"]{
+  background:linear-gradient(135deg,#681c27,#9f3343)!important;
+  border-color:#c96776!important;
+}
+
+#formation .avatar[data-team="Udinese"]{
+  background:linear-gradient(135deg,#111,#eee)!important;
+  border-color:#fff!important;
+}
+
+#formation .avatar[data-team="Venezia"]{
+  background:linear-gradient(135deg,#111 20%,#f06b24 55%,#159455 100%)!important;
+  border-color:#f69a58!important;
+}
 </style>
 
 </head>
@@ -1482,7 +1583,7 @@ function renderLineup(){
    const subP1=pair[0]?byId(pair[0]):null;
    const subP2=pair[1]?byId(pair[1]):null;
    slot.innerHTML=p?`
-   <button type="button" class="avatar" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
+   <butt<button type="button" class="avatar" data-team="${p.team}" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
    <div class="formation-name-row"><div class="formation-player-name">${p.name}</div><span class="formation-role-badge">${p.role}</span></div>
    <div class="sub-slot">
      <button type="button" data-sub-slot="${i}" data-sub-index="0" class="${subP1?"":"empty-sub"}" title="${subP1?"Apri sostituto 1":"Aggiungi sostituto 1"}">
