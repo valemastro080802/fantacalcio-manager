@@ -1,9 +1,9 @@
 {
   "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
-  "generated_at": "2026-08-31T11:17:54.995756+00:00",
+  "generated_at": "2026-08-31T12:18:15.362817+00:00",
   "teams": 20,
-  "players_count": 561,
+  "players_count": 562,
   "players": [
     {
       "name": "De Ketelaere",
@@ -540,6 +540,14 @@
       "officialId": "fantacalcio:7165",
       "fantacalcioId": 7165,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/liteta/7165"
+    },
+    {
+      "name": "Massolin",
+      "team": "Cagliari",
+      "role": "C",
+      "officialId": "fantacalcio:7579",
+      "fantacalcioId": 7579,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/massolin/7579"
     },
     {
       "name": "Prati",
