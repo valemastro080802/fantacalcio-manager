@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v2.1.4</title>
+<title>Fantacalcio Manager Online v2.1.5</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -34,6 +34,7 @@
 .metric-top label{font-size:12px;color:#cfd7ea;font-weight:700}
 .metric-value{min-width:30px;text-align:center;background:#202a47;border:1px solid #34415f;border-radius:7px;padding:3px 5px;font-size:12px;font-weight:850}
 .metric input[type=range]{width:100%;accent-color:#7180ff}
+.metric select{width:100%;background:#10192e;color:#fff;border:1px solid #34415f;border-radius:8px;padding:9px;font-weight:800}
 .radar-card{background:#10192e;border:1px solid #2b3858;border-radius:12px;padding:10px}
 .radar-card h4{margin:0 0 5px;font-size:12px;color:#d8def0;text-align:center}
 .radar-wrap{aspect-ratio:1;display:flex;align-items:center;justify-content:center}
@@ -926,7 +927,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.1.4</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.1.5</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1113,7 +1114,7 @@ tbody tr:hover{
    <div class="metrics-layout">
     <div>
      <div class="metrics-grid" id="metricsGrid"></div>
-     <div class="metric-help">1 = molto basso / molto raro · 10 = molto alto / molto frequente. Per <b>infortuni</b> e <b>ammonizioni</b>, un valore alto indica maggiore rischio/frequenza.</div>
+     <div class="metric-help">1 = molto basso / molto raro · 10 = molto alto / molto frequente. Per <b>infortuni</b> e <b>ammonizioni</b>, un valore alto indica maggiore rischio/frequenza. Il <b>modificatore</b> è una scelta SÌ/NO.</div>
     </div>
     <div class="radar-card">
      <h4>Profilo del giocatore</h4>
@@ -1135,11 +1136,13 @@ tbody tr:hover{
 <script>
 
 const ROLE_METRICS={
- "A":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]],
+ "A":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"]],
  "C":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"],["difensivita","Difensività"]],
- "D":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"],["difensivita","Difensività"]],
- "P":[["cleanSheet","Clean sheet"],["usciteAlte","Uscite alte"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]]
+ "D":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]],
+ "P":[["cleanSheet","Clean sheet"],["usciteAlte","Uscite alte"],["titolaritaScore","Titolarità"],["infortuni","Infortuni"]]
 };
+function hasModificatore(role){return role==="D"||role==="P";}
+function modificatoreLabel(p){return p.modificatore===true?"SÌ":"NO";}
 function clampMetric(v){const n=Number(v);return Number.isFinite(n)?Math.min(10,Math.max(1,Math.round(n))):5;}
 function ensureMetrics(p){
  if(!p.metrics)p.metrics={};
@@ -1157,15 +1160,27 @@ function renderMetricsEditor(p){
   <div class="metric">
    <div class="metric-top"><label for="metric_${k}">${label}</label><span class="metric-value" id="val_${k}">${clampMetric(p.metrics[k])}</span></div>
    <input id="metric_${k}" data-metric="${k}" type="range" min="1" max="10" step="1" value="${clampMetric(p.metrics[k])}">
-  </div>`).join("");
- summary.innerHTML=defs.map(([k,label])=>`<span>${label}: <b>${clampMetric(p.metrics[k])}</b></span>`).join("");
+  </div>`).join("")+(hasModificatore(p.role)?`
+  <div class="metric">
+   <div class="metric-top"><label for="metric_modificatore">Modificatore</label><span class="metric-value" id="val_modificatore">${modificatoreLabel(p)}</span></div>
+   <select id="metric_modificatore" data-modificatore><option value="no" ${p.modificatore===true?"":"selected"}>NO</option><option value="si" ${p.modificatore===true?"selected":""}>SÌ</option></select>
+  </div>`:"");
+ const refreshSummary=()=>{summary.innerHTML=defs.map(([k,label])=>`<span>${label}: <b>${clampMetric(p.metrics[k])}</b></span>`).join("")+(hasModificatore(p.role)?`<span>Modificatore: <b>${modificatoreLabel(p)}</b></span>`:"");};
+ refreshSummary();
  grid.querySelectorAll("[data-metric]").forEach(inp=>inp.addEventListener("input",()=>{
    const key=inp.dataset.metric;
    p.metrics[key]=clampMetric(inp.value);
    document.getElementById("val_"+key).textContent=p.metrics[key];
    renderRadar(p);
-   summary.innerHTML=defs.map(([k,label])=>`<span>${label}: <b>${clampMetric(p.metrics[k])}</b></span>`).join("");
+   refreshSummary();
  }));
+ const modSelect=grid.querySelector("[data-modificatore]");
+ if(modSelect)modSelect.addEventListener("change",()=>{
+   p.modificatore=modSelect.value==="si";
+   document.getElementById("val_modificatore").textContent=modificatoreLabel(p);
+   save();
+   refreshSummary();
+ });
  renderRadar(p);
 }
 function renderRadar(p){
