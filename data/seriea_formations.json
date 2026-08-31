@@ -1,11 +1,105 @@
 {
-  "version": 1,
   "source": "Fantacalcio.it",
   "season": "2026-27",
-  "updatedAt": null,
-  "matchdays": {
-    "1": {},
-    "2": {},
-    "3": {}
-  }
+  "generated_at": "2026-08-31T13:54:54.675732+00:00",
+  "available_matchdays": [
+    "G1 2/20",
+    "G2 2/20"
+  ],
+  "teams": {
+    "Atalanta": {},
+    "Bologna": {},
+    "Cagliari": {},
+    "Como": {},
+    "Fiorentina": {},
+    "Frosinone": {},
+    "Genoa": {},
+    "Inter": {
+      "1": {
+        "formation": "3-5-2",
+        "starters": [
+          "Martinez Jo.",
+          "Bisseck",
+          "Akanji",
+          "Bastoni",
+          "Diouf",
+          "Barella",
+          "Calhanoglu",
+          "Zielinski",
+          "Dimarco",
+          "Esposito F.P.",
+          "Martinez L."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959"
+      }
+    },
+    "Juventus": {},
+    "Lazio": {},
+    "Lecce": {},
+    "Milan": {
+      "2": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Maignan",
+          "Gila",
+          "De Winter",
+          "Pavlovic",
+          "Chukwueze",
+          "Musah",
+          "Modric",
+          "Bartesaghi",
+          "Loftus-Cheek",
+          "Cissè A.",
+          "Ramos G."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971"
+      }
+    },
+    "Monza": {
+      "1": {
+        "formation": "3-4-2-1",
+        "starters": [
+          "Varela G.",
+          "Bakoune",
+          "Colpani",
+          "Mangas",
+          "Mout",
+          "Foe Ondoa",
+          "Birindelli",
+          "Carboni A.",
+          "Lucchesi",
+          "Kouadio",
+          "Pizzignacco"
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/1/2026-27/inter-monza/17959"
+      }
+    },
+    "Napoli": {},
+    "Parma": {},
+    "Roma": {},
+    "Sassuolo": {},
+    "Torino": {},
+    "Udinese": {},
+    "Venezia": {
+      "2": {
+        "formation": "3-5-2",
+        "starters": [
+          "Yeboah J.",
+          "Adams A.",
+          "Haps",
+          "Basic",
+          "Busio",
+          "Perez K.",
+          "Hainaut",
+          "Franjic",
+          "Bella-Kotchap",
+          "Schingtienne",
+          "Stankovic F."
+        ],
+        "source": "https://www.fantacalcio.it/serie-a/calendario/2/2026-27/milan-venezia/17971"
+      }
+    }
+  },
+  "errors": [],
+  "updated_lineups_this_run": 4
 }
