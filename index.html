@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v1.4.4</title>
+<title>Fantacalcio Manager Online v1.4.6</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -731,16 +731,6 @@ tbody tr:hover{
     font-size:12px!important;line-height:1.12!important;
     min-height:22px!important;margin-top:4px!important;
   }
-  #formation .formation-name-row .formation-player-name{
-  width:auto!important;
-  max-width:122px!important;
-  min-height:0!important;
-  margin:0!important;
-}
-
-#formation .formation-name-row{
-  gap:2px!important;
-}
   #formation .sub-slot{margin-top:3px!important;gap:2px!important;min-height:18px!important}
   #formation .sub-slot button{
     width:138px!important;max-width:138px!important;
@@ -753,7 +743,7 @@ tbody tr:hover{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:2px;
+  gap:5px;
   width:150px;
   max-width:150px;
   margin:4px auto 0;
@@ -812,6 +802,73 @@ tbody tr:hover{
   .formation-role-badge{min-width:16px;height:16px;padding:0 3px;font-size:8px}
 }
 
+
+/* v1.4.5 — reset della singola formazione */
+.reset-lineup-btn{
+  background:linear-gradient(135deg,#ff4fb8 0%,#e93a9e 100%)!important;
+  border:1px solid rgba(255,155,220,.72)!important;
+  color:#fff!important;
+  font-weight:850!important;
+  box-shadow:0 0 16px rgba(255,79,184,.18)!important;
+}
+.reset-lineup-btn:hover{
+  border-color:#ffc0e8!important;
+  box-shadow:0 0 22px rgba(255,79,184,.32)!important;
+}
+
+
+/* v1.4.6 — colori squadra su tutti gli avatar + nomi stabili */
+#formation .formation-name-row{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  width:auto!important;
+  max-width:150px!important;
+  margin:4px auto 0!important;
+}
+#formation .formation-name-row .formation-player-name{
+  display:block!important;
+  width:auto!important;
+  max-width:124px!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+#formation .sub-player-label{
+  min-width:0!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+
+#formation .pitch[data-team="Atalanta"] .avatar{background:linear-gradient(135deg,#111,#1775c1)!important;border-color:#39a0ff!important}
+#formation .pitch[data-team="Bologna"] .avatar{background:linear-gradient(135deg,#b51f2e,#163c70)!important;border-color:#e34a58!important}
+#formation .pitch[data-team="Cagliari"] .avatar{background:linear-gradient(135deg,#c52233,#163c70)!important;border-color:#e84b59!important}
+#formation .pitch[data-team="Como"] .avatar{background:linear-gradient(135deg,#1759a6,#2f8bd3)!important;border-color:#7bc4ff!important}
+#formation .pitch[data-team="Fiorentina"] .avatar{background:linear-gradient(135deg,#55258b,#8b55c7)!important;border-color:#b98aff!important}
+#formation .pitch[data-team="Frosinone"] .avatar{background:linear-gradient(135deg,#f0c400,#1f63a8)!important;border-color:#ffe35c!important}
+#formation .pitch[data-team="Genoa"] .avatar{background:linear-gradient(135deg,#b32032,#183d75)!important;border-color:#e94b5e!important}
+#formation .pitch[data-team="Inter"] .avatar{background:linear-gradient(135deg,#050505,#0057b8)!important;border-color:#3388e5!important}
+#formation .pitch[data-team="Juventus"] .avatar{background:linear-gradient(135deg,#111 0 50%,#f2f2f2 50% 100%)!important;border-color:#fff!important}
+#formation .pitch[data-team="Lazio"] .avatar{background:linear-gradient(135deg,#7ac8ef,#eaf8ff)!important;border-color:#bdeaff!important}
+#formation .pitch[data-team="Lecce"] .avatar{background:linear-gradient(135deg,#e3bd00,#c8292e)!important;border-color:#ffe03c!important}
+#formation .pitch[data-team="Milan"] .avatar{background:linear-gradient(135deg,#c8202f,#111)!important;border-color:#ec4654!important}
+#formation .pitch[data-team="Monza"] .avatar{background:linear-gradient(135deg,#d71938,#fff)!important;border-color:#ff6a7e!important}
+#formation .pitch[data-team="Napoli"] .avatar{background:linear-gradient(135deg,#168fd2,#65c5ef)!important;border-color:#9de3ff!important}
+#formation .pitch[data-team="Parma"] .avatar{background:linear-gradient(135deg,#f4c900,#244a9b)!important;border-color:#ffe058!important}
+#formation .pitch[data-team="Roma"] .avatar{background:linear-gradient(135deg,#7b1525,#d49b2a)!important;border-color:#f0b83f!important}
+#formation .pitch[data-team="Sassuolo"] .avatar{background:linear-gradient(135deg,#159447,#111)!important;border-color:#49cf78!important}
+#formation .pitch[data-team="Torino"] .avatar{background:linear-gradient(135deg,#681c27,#9f3343)!important;border-color:#c96776!important}
+#formation .pitch[data-team="Udinese"] .avatar{background:linear-gradient(135deg,#111,#eee)!important;border-color:#fff!important}
+#formation .pitch[data-team="Venezia"] .avatar{background:linear-gradient(135deg,#111 20%,#f06b24 55%,#159455 100%)!important;border-color:#f69a58!important}
 </style>
 
 <style>
@@ -839,128 +896,12 @@ tbody tr:hover{
 .sync-status.ok{border-color:rgba(102,220,154,.35)!important;color:#c9f5d9!important}
 .sync-status.warn{border-color:rgba(255,181,92,.42)!important;color:#ffd7a8!important}
 .sync-status.error{border-color:rgba(255,102,130,.42)!important;color:#ffc1cd!important}
-.reset-formation{
-  background:linear-gradient(135deg,#ff4fa3,#d936a8)!important;
-  border:1px solid rgba(255,130,210,.75)!important;
-  color:#fff!important;
-  border-radius:9px;
-  padding:10px 13px;
-  font-weight:800;
-  cursor:pointer;
-  box-shadow:0 0 16px rgba(255,79,163,.18);
-}
-
-.reset-formation:hover{
-  background:linear-gradient(135deg,#ff69b4,#e044b6)!important;
-  border-color:#ff9bd5!important;
-}
-/* Colori avatar in base alla squadra */
-
-#formation .avatar[data-team="Atalanta"]{
-  background:linear-gradient(135deg,#111,#1775c1)!important;
-  border-color:#39a0ff!important;
-}
-
-#formation .avatar[data-team="Bologna"]{
-  background:linear-gradient(135deg,#b51f2e,#163c70)!important;
-  border-color:#e34a58!important;
-}
-
-#formation .avatar[data-team="Cagliari"]{
-  background:linear-gradient(135deg,#c52233,#163c70)!important;
-  border-color:#e84b59!important;
-}
-
-#formation .avatar[data-team="Como"]{
-  background:linear-gradient(135deg,#1759a6,#2f8bd3)!important;
-  border-color:#7bc4ff!important;
-}
-
-#formation .avatar[data-team="Fiorentina"]{
-  background:linear-gradient(135deg,#55258b,#8b55c7)!important;
-  border-color:#b98aff!important;
-}
-
-#formation .avatar[data-team="Frosinone"]{
-  background:linear-gradient(135deg,#f0c400,#1f63a8)!important;
-  border-color:#ffe35c!important;
-}
-
-#formation .avatar[data-team="Genoa"]{
-  background:linear-gradient(135deg,#b32032,#183d75)!important;
-  border-color:#e94b5e!important;
-}
-
-#formation .avatar[data-team="Inter"]{
-  background:linear-gradient(135deg,#050505,#0057b8)!important;
-  border-color:#3388e5!important;
-}
-
-#formation .avatar[data-team="Juventus"]{
-  background:linear-gradient(135deg,#111 0 50%,#f2f2f2 50% 100%)!important;
-  border-color:#fff!important;
-}
-
-#formation .avatar[data-team="Lazio"]{
-  background:linear-gradient(135deg,#7ac8ef,#eaf8ff)!important;
-  border-color:#bdeaff!important;
-}
-
-#formation .avatar[data-team="Lecce"]{
-  background:linear-gradient(135deg,#e3bd00,#c8292e)!important;
-  border-color:#ffe03c!important;
-}
-
-#formation .avatar[data-team="Milan"]{
-  background:linear-gradient(135deg,#c8202f,#111)!important;
-  border-color:#ec4654!important;
-}
-
-#formation .avatar[data-team="Monza"]{
-  background:linear-gradient(135deg,#d71938,#fff)!important;
-  border-color:#ff6a7e!important;
-}
-
-#formation .avatar[data-team="Napoli"]{
-  background:linear-gradient(135deg,#168fd2,#65c5ef)!important;
-  border-color:#9de3ff!important;
-}
-
-#formation .avatar[data-team="Parma"]{
-  background:linear-gradient(135deg,#f4c900,#244a9b)!important;
-  border-color:#ffe058!important;
-}
-
-#formation .avatar[data-team="Roma"]{
-  background:linear-gradient(135deg,#7b1525,#d49b2a)!important;
-  border-color:#f0b83f!important;
-}
-
-#formation .avatar[data-team="Sassuolo"]{
-  background:linear-gradient(135deg,#159447,#111)!important;
-  border-color:#49cf78!important;
-}
-
-#formation .avatar[data-team="Torino"]{
-  background:linear-gradient(135deg,#681c27,#9f3343)!important;
-  border-color:#c96776!important;
-}
-
-#formation .avatar[data-team="Udinese"]{
-  background:linear-gradient(135deg,#111,#eee)!important;
-  border-color:#fff!important;
-}
-
-#formation .avatar[data-team="Venezia"]{
-  background:linear-gradient(135deg,#111 20%,#f06b24 55%,#159455 100%)!important;
-  border-color:#f69a58!important;
-}
 </style>
 
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.4</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v1.4.6</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -994,7 +935,7 @@ tbody tr:hover{
 <option>5-4-1</option>
 <option>5-2-1-2</option>
 </select>
-<button id="resetFormation" type="button" class="reset-formation">Reset formazione</button>
+      <button id="resetLineup" class="ghost reset-lineup-btn" type="button" title="Svuota la formazione della squadra selezionata">Reset formazione</button>
     </div>
    </div>
    <div class="pitch" id="pitch">
@@ -1560,6 +1501,7 @@ function renderTeamLogo(){
 
 function renderLineup(){
  renderTeamLogo();
+ pitch.dataset.team=currentTeam;
  const coords=formations[formationSelect.value];
  pitch.querySelectorAll(".slot").forEach(x=>x.remove());
  teamFormationTitle.textContent=`${currentTeam} · Formazione`;
@@ -1583,7 +1525,7 @@ function renderLineup(){
    const subP1=pair[0]?byId(pair[0]):null;
    const subP2=pair[1]?byId(pair[1]):null;
    slot.innerHTML=p?`
-   <butt<button type="button" class="avatar" data-team="${p.team}" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
+   <button type="button" class="avatar" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
    <div class="formation-name-row"><div class="formation-player-name">${p.name}</div><span class="formation-role-badge">${p.role}</span></div>
    <div class="sub-slot">
      <button type="button" data-sub-slot="${i}" data-sub-index="0" class="${subP1?"":"empty-sub"}" title="${subP1?"Apri sostituto 1":"Aggiungi sostituto 1"}">
@@ -1615,23 +1557,19 @@ function renderLineup(){
  save();
 }
 function renderTeamRoster(){}
-resetFormation.addEventListener("click",()=>{
-  const ok=confirm(`Vuoi davvero svuotare completamente la formazione del ${currentTeam}?`);
-  if(!ok)return;
-
-  lineup=[null,null,null,null,null,null,null,null,null,null,null];
-
-  substitutes=Array.from({length:11},()=>[null,null]);
-
-  teamLineups[currentTeam]=lineup;
-  teamSubstitutes[currentTeam]=substitutes;
-
-  playerPopover.classList.remove("open");
-
-  save();
-  renderLineup();
-});
 formationSelect.addEventListener("change",()=>{teamFormations[currentTeam]=formationSelect.value;save();renderLineup();});
+resetLineup.addEventListener("click",()=>{
+ const hasPlayers=lineup.some(Boolean)||normalizeSubstitutes(substitutes).some(pair=>pair.some(Boolean));
+ if(!hasPlayers)return;
+ const ok=confirm(`Vuoi svuotare completamente la formazione del ${currentTeam}? Verranno rimossi titolari e sostituti, ma il modulo resterà invariato.`);
+ if(!ok)return;
+ lineup=Array(11).fill(null);
+ substitutes=Array.from({length:11},()=>[null,null]);
+ teamLineups[currentTeam]=lineup;
+ teamSubstitutes[currentTeam]=substitutes;
+ save();
+ renderLineup();
+});
 formationTeamSelect.addEventListener("change",()=>{
  teamLineups[currentTeam]=lineup;
  teamSubstitutes[currentTeam]=substitutes;
