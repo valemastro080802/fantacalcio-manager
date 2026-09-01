@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T18:27:33.081762+00:00",
+  "generated_at": "2026-09-01T19:21:11.504283+00:00",
   "teams": 20,
   "players_count": 587,
   "players": [
@@ -2104,6 +2104,15 @@
       "fantamedia": 0.0
     },
     {
+      "name": "Non gioca più in Serie A",
+      "team": "Juventus",
+      "role": "A",
+      "officialId": "fantacalcio:5544",
+      "fantacalcioId": 5544,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/david/5544",
+      "fantamedia": 5.0
+    },
+    {
       "name": "Punta centrale",
       "team": "Juventus",
       "role": "A",
@@ -2111,15 +2120,6 @@
       "fantacalcioId": 5951,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/kolo-muani/5951",
       "fantamedia": 5.5
-    },
-    {
-      "name": "Punta centrale",
-      "team": "Juventus",
-      "role": "A",
-      "officialId": "fantacalcio:5544",
-      "fantacalcioId": 5544,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/david/5544",
-      "fantamedia": 5.0
     },
     {
       "name": "Punta centrale",
@@ -4048,7 +4048,7 @@
       "fantamedia": 0.0
     },
     {
-      "name": "Centrocampista centrale",
+      "name": "Non gioca più in Serie A",
       "team": "Roma",
       "role": "C",
       "officialId": "fantacalcio:6271",
