@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T13:24:46.234134+00:00",
+  "generated_at": "2026-09-01T14:25:16.013464+00:00",
   "teams": 20,
   "players_count": 571,
   "players": [
@@ -5032,15 +5032,6 @@
       "name": "Difensore Destro",
       "team": "Venezia",
       "role": "D",
-      "officialId": "fantacalcio:4845",
-      "fantacalcioId": 4845,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/correia-t/4845",
-      "fantamedia": 5.75
-    },
-    {
-      "name": "Difensore Destro",
-      "team": "Venezia",
-      "role": "D",
       "officialId": "fantacalcio:6821",
       "fantacalcioId": 6821,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/hainaut/6821",
@@ -5054,6 +5045,15 @@
       "fantacalcioId": 6681,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/sagrado/6681",
       "fantamedia": 0.0
+    },
+    {
+      "name": "Difensore Sinistro",
+      "team": "Venezia",
+      "role": "D",
+      "officialId": "fantacalcio:4845",
+      "fantacalcioId": 4845,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/correia-t/4845",
+      "fantamedia": 5.75
     },
     {
       "name": "Difensore Sinistro",
