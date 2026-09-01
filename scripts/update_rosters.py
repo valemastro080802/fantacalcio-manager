@@ -285,7 +285,14 @@ def scrape_fantamedia():
     for row in parser.rows:
         if not row["links"]:
             continue
-        cells = [cell["text"] for cell in row["cells"] if cell["tag"] == "td"]
+        # Allinea anche le celle dati alla griglia logica della tabella.
+        # Fantacalcio usa colspan=4 nella cella del calciatore: senza espanderlo,
+        # l'indice di FM finisce su una colonna successiva (spesso Gol = 0).
+        cells = []
+        for cell in row["cells"]:
+            if cell["tag"] != "td":
+                continue
+            cells.extend([cell["text"]] * int(cell.get("colspan") or 1))
         if fm_index >= len(cells):
             continue
         href = row["links"][0].get("href") or ""
@@ -299,6 +306,15 @@ def scrape_fantamedia():
     if recognized_rows < 250:
         raise RuntimeError(
             f"soltanto {recognized_rows} righe statistiche riconosciute: probabile cambio HTML"
+        )
+
+    # Evita falsi positivi silenziosi: se una colonna sbagliata venisse letta come FM
+    # (per esempio Gol), potremmo ottenere centinaia di zeri apparentemente validi.
+    positive_fm = [value for value in by_id.values() if value is not None and value > 0]
+    if len(positive_fm) < 10:
+        raise RuntimeError(
+            f"Fantamedia sospette: soltanto {len(positive_fm)} valori positivi; "
+            "probabile disallineamento delle colonne"
         )
 
     return by_id, recognized_rows
