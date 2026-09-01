@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T19:21:11.504283+00:00",
+  "generated_at": "2026-09-01T20:22:55.860774+00:00",
   "teams": 20,
   "players_count": 587,
   "players": [
@@ -2359,15 +2359,6 @@
       "name": "Attaccante di raccordo",
       "team": "Lazio",
       "role": "A",
-      "officialId": "fantacalcio:5672",
-      "fantacalcioId": 5672,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/dia/5672",
-      "fantamedia": 6.25
-    },
-    {
-      "name": "Attaccante di raccordo",
-      "team": "Lazio",
-      "role": "A",
       "officialId": "fantacalcio:5500",
       "fantacalcioId": 5500,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/cancellieri/5500",
@@ -2390,6 +2381,15 @@
       "fantacalcioId": 6556,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/noslin/6556",
       "fantamedia": 0.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "fantacalcio:5672",
+      "fantacalcioId": 5672,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/dia/5672",
+      "fantamedia": 6.25
     },
     {
       "name": "Punta centrale",
