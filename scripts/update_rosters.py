@@ -210,6 +210,7 @@ class StatsTableParser(HTMLParser):
         if tag in {"th", "td"}:
             self.in_cell = True
             self.cell_tag = tag
+            self.cell_colspan = max(1, int(attrs_dict.get("colspan") or 1))
             self.cell_text = []
         if tag == "a":
             href = attrs_dict.get("href") or ""
@@ -230,6 +231,7 @@ class StatsTableParser(HTMLParser):
             self.cells.append({
                 "tag": self.cell_tag,
                 "text": clean_text(" ".join(self.cell_text)),
+                "colspan": self.cell_colspan,
             })
             self.in_cell = False
             self.cell_tag = None
@@ -261,7 +263,11 @@ def scrape_fantamedia():
 
     fm_index = None
     for row in parser.rows:
-        headers = [normalize(cell["text"]) for cell in row["cells"] if cell["tag"] == "th"]
+        headers = []
+        for cell in row["cells"]:
+            if cell["tag"] != "th":
+                continue
+            headers.extend([normalize(cell["text"])] * int(cell.get("colspan") or 1))
         if not headers:
             continue
         for index, header in enumerate(headers):
