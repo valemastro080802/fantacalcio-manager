@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T14:25:16.013464+00:00",
+  "generated_at": "2026-09-01T15:43:17.460769+00:00",
   "teams": 20,
-  "players_count": 571,
+  "players_count": 574,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -223,7 +223,7 @@
       "fantamedia": 0.0
     },
     {
-      "name": "Portiere",
+      "name": "Non gioca più in Serie A",
       "team": "Atalanta",
       "role": "P",
       "officialId": "fantacalcio:7545",
@@ -671,6 +671,15 @@
       "fantacalcioId": 7274,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/zè-pedro/7274",
       "fantamedia": 5.5
+    },
+    {
+      "name": "Difensore Destro",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "fantacalcio:7621",
+      "fantacalcioId": 7621,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/sugawara/7621",
+      "fantamedia": 0.0
     },
     {
       "name": "Difensore Sinistro",
@@ -3070,6 +3079,15 @@
       "name": "Attaccante di raccordo",
       "team": "Monza",
       "role": "A",
+      "officialId": "fantacalcio:7620",
+      "fantacalcioId": 7620,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/zeballos/7620",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Attaccante di raccordo",
+      "team": "Monza",
+      "role": "A",
       "officialId": "fantacalcio:6145",
       "fantacalcioId": 6145,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/ngonge/6145",
@@ -3214,15 +3232,6 @@
       "name": "Difensore Centrale",
       "team": "Monza",
       "role": "D",
-      "officialId": "fantacalcio:2115",
-      "fantacalcioId": 2115,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/delli-carri/2115",
-      "fantamedia": 6.0
-    },
-    {
-      "name": "Difensore Centrale",
-      "team": "Monza",
-      "role": "D",
       "officialId": "fantacalcio:6659",
       "fantacalcioId": 6659,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/lucchesi/6659",
@@ -3299,6 +3308,15 @@
       "fantacalcioId": 7604,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/maye/7604",
       "fantamedia": 0.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "fantacalcio:2115",
+      "fantacalcioId": 2115,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/delli-carri/2115",
+      "fantamedia": 6.0
     },
     {
       "name": "Non gioca più in Serie A",
@@ -3823,6 +3841,15 @@
       "fantamedia": 0.0
     },
     {
+      "name": "Ghidotti",
+      "team": "Parma",
+      "role": "P",
+      "officialId": "fantacalcio:2874",
+      "fantacalcioId": 2874,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/ghidotti/2874",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Non gioca più in Serie A",
       "team": "Parma",
       "role": "P",
@@ -4210,7 +4237,7 @@
       "fantamedia": 0.0
     },
     {
-      "name": "Centrocampista centrale",
+      "name": "Non gioca più in Serie A",
       "team": "Sassuolo",
       "role": "C",
       "officialId": "fantacalcio:7157",
@@ -4768,15 +4795,6 @@
       "fantamedia": 6.0
     },
     {
-      "name": "Difensore Centrale",
-      "team": "Udinese",
-      "role": "D",
-      "officialId": "fantacalcio:7356",
-      "fantacalcioId": 7356,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/mlacic/7356",
-      "fantamedia": 0.0
-    },
-    {
       "name": "Difensore Destro",
       "team": "Udinese",
       "role": "D",
@@ -4829,6 +4847,15 @@
       "fantacalcioId": 5994,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/ebosse/5994",
       "fantamedia": 5.75
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "fantacalcio:7356",
+      "fantacalcioId": 7356,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/mlacic/7356",
+      "fantamedia": 0.0
     },
     {
       "name": "Portiere",
