@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T15:43:17.460769+00:00",
+  "generated_at": "2026-09-01T16:41:44.497413+00:00",
   "teams": 20,
-  "players_count": 574,
+  "players_count": 575,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -829,6 +829,15 @@
       "name": "Punta centrale",
       "team": "Como",
       "role": "A",
+      "officialId": "fantacalcio:2097",
+      "fantacalcioId": 2097,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/kean/2097",
+      "fantamedia": 6.0
+    },
+    {
+      "name": "Punta centrale",
+      "team": "Como",
+      "role": "A",
       "officialId": "fantacalcio:7017",
       "fantacalcioId": 7017,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/douvikas/7017",
@@ -1045,19 +1054,19 @@
       "name": "Punta centrale",
       "team": "Fiorentina",
       "role": "A",
-      "officialId": "fantacalcio:2097",
-      "fantacalcioId": 2097,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/kean/2097",
-      "fantamedia": 6.0
+      "officialId": "fantacalcio:7023",
+      "fantacalcioId": 7023,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/pellegrino-m/7023",
+      "fantamedia": 4.5
     },
     {
       "name": "Punta centrale",
       "team": "Fiorentina",
       "role": "A",
-      "officialId": "fantacalcio:7023",
-      "fantacalcioId": 7023,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/pellegrino-m/7023",
-      "fantamedia": 4.5
+      "officialId": "fantacalcio:5694",
+      "fantacalcioId": 5694,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/beto/5694",
+      "fantamedia": 0.0
     },
     {
       "name": "Centrocampista centrale",
@@ -3736,19 +3745,19 @@
       "name": "Centrocampista centrale",
       "team": "Parma",
       "role": "C",
-      "officialId": "fantacalcio:7209",
-      "fantacalcioId": 7209,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/sorensen-o/7209",
-      "fantamedia": 0.0
-    },
-    {
-      "name": "Centrocampista centrale",
-      "team": "Parma",
-      "role": "C",
       "officialId": "fantacalcio:7276",
       "fantacalcioId": 7276,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/cremaschi/7276",
       "fantamedia": 5.5
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "fantacalcio:7209",
+      "fantacalcioId": 7209,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/sorensen-o/7209",
+      "fantamedia": 0.0
     },
     {
       "name": "Difensore Centrale",
