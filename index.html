@@ -1037,6 +1037,8 @@ tbody tr:hover{
    <option value="">Ordine predefinito</option>
    <option value="fvm-desc">FVM: alto → basso</option>
    <option value="fvm-asc">FVM: basso → alto</option>
+   <option value="fm-desc">Fantamedia: alta → bassa</option>
+   <option value="fm-asc">Fantamedia: bassa → alta</option>
    <option value="fascia-asc">Fascia: 1 → 4</option>
    <option value="fascia-desc">Fascia: 4 → 1</option>
   </select>
@@ -1456,6 +1458,8 @@ function filtered(){
  const byName=(a,b)=>a.name.localeCompare(b.name,"it",{sensitivity:"base"});
  if(sort==="fvm-desc")arr.sort((a,b)=>(Number(b.fvm)||0)-(Number(a.fvm)||0)||byName(a,b));
  else if(sort==="fvm-asc")arr.sort((a,b)=>(Number(a.fvm)||0)-(Number(b.fvm)||0)||byName(a,b));
+ else if(sort==="fm-desc")arr.sort((a,b)=>(Number(b.fantamedia)||0)-(Number(a.fantamedia)||0)||byName(a,b));
+ else if(sort==="fm-asc")arr.sort((a,b)=>(Number(a.fantamedia)||0)-(Number(b.fantamedia)||0)||byName(a,b));
  else if(sort==="fascia-asc"||sort==="fascia-desc")arr.sort((a,b)=>{
    const fa=Number(fasciaNum(a.fascia))||99, fb=Number(fasciaNum(b.fascia))||99;
    if(fa===99&&fb!==99)return 1;
