@@ -1,16 +1,16 @@
 {
   "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
-  "generated_at": "2026-09-01T08:26:40.453781+00:00",
+  "generated_at": "2026-09-01T09:24:49.806931+00:00",
   "teams": 20,
-  "players_count": 565,
+  "players_count": 568,
   "players": [
     {
       "name": "Attaccante di raccordo",
       "team": "Atalanta",
       "role": "A",
       "quotation": 17,
-      "fvm": 98,
+      "fvm": 95,
       "officialId": "fantacalcio:5995",
       "fantacalcioId": 5995,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/de-ketelaere/5995"
@@ -20,7 +20,7 @@
       "team": "Atalanta",
       "role": "A",
       "quotation": 14,
-      "fvm": 76,
+      "fvm": 73,
       "officialId": "fantacalcio:4371",
       "fantacalcioId": 4371,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/raspadori/4371"
@@ -30,7 +30,7 @@
       "team": "Atalanta",
       "role": "A",
       "quotation": 6,
-      "fvm": 10,
+      "fvm": 8,
       "officialId": "fantacalcio:5918",
       "fantacalcioId": 5918,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/sulemana-k/5918"
@@ -40,7 +40,7 @@
       "team": "Atalanta",
       "role": "A",
       "quotation": 19,
-      "fvm": 123,
+      "fvm": 110,
       "officialId": "fantacalcio:2137",
       "fantacalcioId": 2137,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/scamacca/2137"
@@ -50,7 +50,7 @@
       "team": "Atalanta",
       "role": "A",
       "quotation": 18,
-      "fvm": 100,
+      "fvm": 98,
       "officialId": "fantacalcio:6435",
       "fantacalcioId": 6435,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/krstovic/6435"
@@ -60,7 +60,7 @@
       "team": "Atalanta",
       "role": "C",
       "quotation": 13,
-      "fvm": 41,
+      "fvm": 44,
       "officialId": "fantacalcio:5119",
       "fantacalcioId": 5119,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/samardzic/5119"
@@ -70,7 +70,7 @@
       "team": "Atalanta",
       "role": "C",
       "quotation": 12,
-      "fvm": 49,
+      "fvm": 46,
       "officialId": "fantacalcio:5792",
       "fantacalcioId": 5792,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/ederson-d-s/5792"
@@ -90,7 +90,7 @@
       "team": "Atalanta",
       "role": "C",
       "quotation": 8,
-      "fvm": 24,
+      "fvm": 22,
       "officialId": "fantacalcio:2077",
       "fantacalcioId": 2077,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/pasalic/2077"
@@ -120,7 +120,7 @@
       "team": "Atalanta",
       "role": "C",
       "quotation": 7,
-      "fvm": 28,
+      "fvm": 22,
       "officialId": "fantacalcio:4479",
       "fantacalcioId": 4479,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/elmas/4479"
@@ -130,7 +130,7 @@
       "team": "Atalanta",
       "role": "C",
       "quotation": 7,
-      "fvm": 20,
+      "fvm": 18,
       "officialId": "fantacalcio:5422",
       "fantacalcioId": 5422,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/zalewski/5422"
@@ -210,7 +210,7 @@
       "team": "Atalanta",
       "role": "D",
       "quotation": 6,
-      "fvm": 14,
+      "fvm": 13,
       "officialId": "fantacalcio:6916",
       "fantacalcioId": 6916,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/ahanor/6916"
@@ -240,7 +240,7 @@
       "team": "Atalanta",
       "role": "P",
       "quotation": 17,
-      "fvm": 52,
+      "fvm": 55,
       "officialId": "fantacalcio:4431",
       "fantacalcioId": 4431,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/carnesecchi/4431"
@@ -280,7 +280,7 @@
       "team": "Bologna",
       "role": "A",
       "quotation": 25,
-      "fvm": 192,
+      "fvm": 177,
       "officialId": "fantacalcio:2167",
       "fantacalcioId": 2167,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/orsolini/2167"
@@ -290,7 +290,7 @@
       "team": "Bologna",
       "role": "A",
       "quotation": 8,
-      "fvm": 21,
+      "fvm": 25,
       "officialId": "fantacalcio:4436",
       "fantacalcioId": 4436,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/cambiaghi/4436"
@@ -310,7 +310,7 @@
       "team": "Bologna",
       "role": "A",
       "quotation": 15,
-      "fvm": 58,
+      "fvm": 51,
       "officialId": "fantacalcio:6675",
       "fantacalcioId": 6675,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/dovbyk/6675"
@@ -320,7 +320,7 @@
       "team": "Bologna",
       "role": "A",
       "quotation": 8,
-      "fvm": 37,
+      "fvm": 29,
       "officialId": "fantacalcio:4359",
       "fantacalcioId": 4359,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/piccoli/4359"
@@ -330,7 +330,7 @@
       "team": "Bologna",
       "role": "C",
       "quotation": 10,
-      "fvm": 30,
+      "fvm": 27,
       "officialId": "fantacalcio:184",
       "fantacalcioId": 184,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/bernardeschi/184"
@@ -350,7 +350,7 @@
       "team": "Bologna",
       "role": "C",
       "quotation": 6,
-      "fvm": 13,
+      "fvm": 12,
       "officialId": "fantacalcio:5298",
       "fantacalcioId": 5298,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/pobega/5298"
@@ -360,7 +360,7 @@
       "team": "Bologna",
       "role": "C",
       "quotation": 5,
-      "fvm": 12,
+      "fvm": 10,
       "officialId": "fantacalcio:7528",
       "fantacalcioId": 7528,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/amondarain/7528"
@@ -390,7 +390,7 @@
       "team": "Bologna",
       "role": "C",
       "quotation": 10,
-      "fvm": 44,
+      "fvm": 40,
       "officialId": "fantacalcio:6844",
       "fantacalcioId": 6844,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/rowe/6844"
@@ -470,7 +470,7 @@
       "team": "Bologna",
       "role": "D",
       "quotation": 8,
-      "fvm": 24,
+      "fvm": 23,
       "officialId": "fantacalcio:4734",
       "fantacalcioId": 4734,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/miranda-j/4734"
@@ -530,7 +530,7 @@
       "team": "Bologna",
       "role": "P",
       "quotation": 10,
-      "fvm": 36,
+      "fvm": 32,
       "officialId": "fantacalcio:133",
       "fantacalcioId": 133,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/skorupski/133"
@@ -560,7 +560,7 @@
       "team": "Cagliari",
       "role": "A",
       "quotation": 12,
-      "fvm": 37,
+      "fvm": 36,
       "officialId": "fantacalcio:7547",
       "fantacalcioId": 7547,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/kevin-carlos/7547"
@@ -570,7 +570,7 @@
       "team": "Cagliari",
       "role": "A",
       "quotation": 6,
-      "fvm": 10,
+      "fvm": 7,
       "officialId": "fantacalcio:6598",
       "fantacalcioId": 6598,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mutandwa/6598"
@@ -590,7 +590,7 @@
       "team": "Cagliari",
       "role": "A",
       "quotation": 4,
-      "fvm": 14,
+      "fvm": 12,
       "officialId": "fantacalcio:7374",
       "fantacalcioId": 7374,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mendy-p/7374"
@@ -620,7 +620,7 @@
       "team": "Cagliari",
       "role": "C",
       "quotation": 7,
-      "fvm": 20,
+      "fvm": 21,
       "officialId": "fantacalcio:7311",
       "fantacalcioId": 7311,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/romano/7311"
@@ -640,7 +640,7 @@
       "team": "Cagliari",
       "role": "C",
       "quotation": 6,
-      "fvm": 24,
+      "fvm": 23,
       "officialId": "fantacalcio:6010",
       "fantacalcioId": 6010,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/fazzini/6010"
@@ -710,7 +710,7 @@
       "team": "Cagliari",
       "role": "C",
       "quotation": 5,
-      "fvm": 8,
+      "fvm": 7,
       "officialId": "fantacalcio:6640",
       "fantacalcioId": 6640,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/felici/6640"
@@ -830,7 +830,7 @@
       "team": "Cagliari",
       "role": "P",
       "quotation": 10,
-      "fvm": 28,
+      "fvm": 25,
       "officialId": "fantacalcio:4360",
       "fantacalcioId": 4360,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/caprile/4360"
@@ -860,7 +860,7 @@
       "team": "Como",
       "role": "A",
       "quotation": 29,
-      "fvm": 247,
+      "fvm": 245,
       "officialId": "fantacalcio:6875",
       "fantacalcioId": 6875,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/paz-n/6875"
@@ -870,7 +870,7 @@
       "team": "Como",
       "role": "A",
       "quotation": 12,
-      "fvm": 47,
+      "fvm": 50,
       "officialId": "fantacalcio:6967",
       "fantacalcioId": 6967,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/diao/6967"
@@ -920,7 +920,7 @@
       "team": "Como",
       "role": "A",
       "quotation": 22,
-      "fvm": 170,
+      "fvm": 185,
       "officialId": "fantacalcio:7017",
       "fantacalcioId": 7017,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/douvikas/7017"
@@ -950,7 +950,7 @@
       "team": "Como",
       "role": "C",
       "quotation": 10,
-      "fvm": 37,
+      "fvm": 34,
       "officialId": "fantacalcio:6151",
       "fantacalcioId": 6151,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/perrone/6151"
@@ -960,7 +960,7 @@
       "team": "Como",
       "role": "C",
       "quotation": 6,
-      "fvm": 20,
+      "fvm": 30,
       "officialId": "fantacalcio:7412",
       "fantacalcioId": 7412,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/milla/7412"
@@ -980,7 +980,7 @@
       "team": "Como",
       "role": "C",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 12,
       "officialId": "fantacalcio:5453",
       "fantacalcioId": 5453,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/ricci-s/5453"
@@ -1000,7 +1000,7 @@
       "team": "Como",
       "role": "C",
       "quotation": 20,
-      "fvm": 97,
+      "fvm": 105,
       "officialId": "fantacalcio:7126",
       "fantacalcioId": 7126,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/baturina/7126"
@@ -1020,7 +1020,7 @@
       "team": "Como",
       "role": "D",
       "quotation": 10,
-      "fvm": 32,
+      "fvm": 31,
       "officialId": "fantacalcio:6869",
       "fantacalcioId": 6869,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/ramon/6869"
@@ -1030,7 +1030,7 @@
       "team": "Como",
       "role": "D",
       "quotation": 10,
-      "fvm": 30,
+      "fvm": 32,
       "officialId": "fantacalcio:5641",
       "fantacalcioId": 5641,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/chalobah-t/5641"
@@ -1070,7 +1070,7 @@
       "team": "Como",
       "role": "D",
       "quotation": 8,
-      "fvm": 26,
+      "fvm": 25,
       "officialId": "fantacalcio:6727",
       "fantacalcioId": 6727,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/couto/6727"
@@ -1090,7 +1090,7 @@
       "team": "Como",
       "role": "D",
       "quotation": 6,
-      "fvm": 16,
+      "fvm": 13,
       "officialId": "fantacalcio:7414",
       "fantacalcioId": 7414,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/kaiki/7414"
@@ -1120,7 +1120,7 @@
       "team": "Como",
       "role": "P",
       "quotation": 15,
-      "fvm": 54,
+      "fvm": 50,
       "officialId": "fantacalcio:6966",
       "fantacalcioId": 6966,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/butez/6966"
@@ -1150,7 +1150,7 @@
       "team": "Fiorentina",
       "role": "A",
       "quotation": 4,
-      "fvm": 23,
+      "fvm": 28,
       "officialId": "fantacalcio:6827",
       "fantacalcioId": 6827,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/njie/6827"
@@ -1160,7 +1160,7 @@
       "team": "Fiorentina",
       "role": "A",
       "quotation": 24,
-      "fvm": 187,
+      "fvm": 183,
       "officialId": "fantacalcio:2097",
       "fantacalcioId": 2097,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/kean/2097"
@@ -1170,7 +1170,7 @@
       "team": "Fiorentina",
       "role": "A",
       "quotation": 14,
-      "fvm": 50,
+      "fvm": 40,
       "officialId": "fantacalcio:7023",
       "fantacalcioId": 7023,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/pellegrino-m/7023"
@@ -1180,7 +1180,7 @@
       "team": "Fiorentina",
       "role": "C",
       "quotation": 15,
-      "fvm": 86,
+      "fvm": 78,
       "officialId": "fantacalcio:6908",
       "fantacalcioId": 6908,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/atta/6908"
@@ -1200,7 +1200,7 @@
       "team": "Fiorentina",
       "role": "C",
       "quotation": 7,
-      "fvm": 22,
+      "fvm": 20,
       "officialId": "fantacalcio:4465",
       "fantacalcioId": 4465,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/fagioli/4465"
@@ -1210,7 +1210,7 @@
       "team": "Fiorentina",
       "role": "C",
       "quotation": 7,
-      "fvm": 25,
+      "fvm": 22,
       "officialId": "fantacalcio:6294",
       "fantacalcioId": 6294,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/ndour/6294"
@@ -1220,7 +1220,7 @@
       "team": "Fiorentina",
       "role": "C",
       "quotation": 6,
-      "fvm": 20,
+      "fvm": 18,
       "officialId": "fantacalcio:7464",
       "fantacalcioId": 7464,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/oulai/7464"
@@ -1230,7 +1230,7 @@
       "team": "Fiorentina",
       "role": "C",
       "quotation": 3,
-      "fvm": 12,
+      "fvm": 11,
       "officialId": "fantacalcio:4947",
       "fantacalcioId": 4947,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/brescianini/4947"
@@ -1240,7 +1240,7 @@
       "team": "Fiorentina",
       "role": "C",
       "quotation": 11,
-      "fvm": 54,
+      "fvm": 50,
       "officialId": "fantacalcio:7078",
       "fantacalcioId": 7078,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/mastantuono/7078"
@@ -1250,7 +1250,7 @@
       "team": "Fiorentina",
       "role": "D",
       "quotation": 7,
-      "fvm": 27,
+      "fvm": 20,
       "officialId": "fantacalcio:5365",
       "fantacalcioId": 5365,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/dragusin/5365"
@@ -1290,7 +1290,7 @@
       "team": "Fiorentina",
       "role": "D",
       "quotation": 7,
-      "fvm": 23,
+      "fvm": 18,
       "officialId": "fantacalcio:6531",
       "fantacalcioId": 6531,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/jimenez-a/6531"
@@ -1300,7 +1300,7 @@
       "team": "Fiorentina",
       "role": "D",
       "quotation": 6,
-      "fvm": 17,
+      "fvm": 12,
       "officialId": "fantacalcio:7410",
       "fantacalcioId": 7410,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/viery/7410"
@@ -1310,7 +1310,7 @@
       "team": "Fiorentina",
       "role": "D",
       "quotation": 5,
-      "fvm": 18,
+      "fvm": 16,
       "officialId": "fantacalcio:7294",
       "fantacalcioId": 7294,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/valdepenas/7294"
@@ -1350,7 +1350,7 @@
       "team": "Fiorentina",
       "role": "P",
       "quotation": 11,
-      "fvm": 40,
+      "fvm": 30,
       "officialId": "fantacalcio:2521",
       "fantacalcioId": 2521,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/de-gea/2521"
@@ -1380,7 +1380,7 @@
       "team": "Frosinone",
       "role": "A",
       "quotation": 6,
-      "fvm": 17,
+      "fvm": 24,
       "officialId": "fantacalcio:6204",
       "fantacalcioId": 6204,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/kvernadze/6204"
@@ -1390,7 +1390,7 @@
       "team": "Frosinone",
       "role": "A",
       "quotation": 9,
-      "fvm": 15,
+      "fvm": 27,
       "officialId": "fantacalcio:5436",
       "fantacalcioId": 5436,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/raimondo/5436"
@@ -1400,7 +1400,7 @@
       "team": "Frosinone",
       "role": "A",
       "quotation": 9,
-      "fvm": 38,
+      "fvm": 31,
       "officialId": "fantacalcio:7612",
       "fantacalcioId": 7612,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/bobcek/7612"
@@ -1410,7 +1410,7 @@
       "team": "Frosinone",
       "role": "A",
       "quotation": 5,
-      "fvm": 14,
+      "fvm": 11,
       "officialId": "fantacalcio:7610",
       "fantacalcioId": 7610,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/birligea/7610"
@@ -1420,7 +1420,7 @@
       "team": "Frosinone",
       "role": "C",
       "quotation": 8,
-      "fvm": 25,
+      "fvm": 27,
       "officialId": "fantacalcio:7472",
       "fantacalcioId": 7472,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/calò/7472"
@@ -1460,7 +1460,7 @@
       "team": "Frosinone",
       "role": "C",
       "quotation": 3,
-      "fvm": 8,
+      "fvm": 6,
       "officialId": "fantacalcio:6241",
       "fantacalcioId": 6241,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/gelli-f/6241"
@@ -1520,7 +1520,7 @@
       "team": "Frosinone",
       "role": "C",
       "quotation": 8,
-      "fvm": 28,
+      "fvm": 25,
       "officialId": "fantacalcio:7551",
       "fantacalcioId": 7551,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/schmid/7551"
@@ -1550,7 +1550,7 @@
       "team": "Frosinone",
       "role": "D",
       "quotation": 5,
-      "fvm": 12,
+      "fvm": 13,
       "officialId": "fantacalcio:7467",
       "fantacalcioId": 7467,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/calvani/7467"
@@ -1620,7 +1620,7 @@
       "team": "Frosinone",
       "role": "D",
       "quotation": 7,
-      "fvm": 12,
+      "fvm": 15,
       "officialId": "fantacalcio:7469",
       "fantacalcioId": 7469,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/bracaglia/7469"
@@ -1670,7 +1670,7 @@
       "team": "Frosinone",
       "role": "P",
       "quotation": 2,
-      "fvm": 3,
+      "fvm": 1,
       "officialId": "fantacalcio:7463",
       "fantacalcioId": 7463,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/desplanches/7463"
@@ -1710,7 +1710,7 @@
       "team": "Genoa",
       "role": "A",
       "quotation": 8,
-      "fvm": 16,
+      "fvm": 13,
       "officialId": "fantacalcio:6164",
       "fantacalcioId": 6164,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/vitinha-o/6164"
@@ -1720,7 +1720,7 @@
       "team": "Genoa",
       "role": "A",
       "quotation": 11,
-      "fvm": 55,
+      "fvm": 52,
       "officialId": "fantacalcio:4923",
       "fantacalcioId": 4923,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/colombo/4923"
@@ -1730,7 +1730,7 @@
       "team": "Genoa",
       "role": "A",
       "quotation": 8,
-      "fvm": 30,
+      "fvm": 28,
       "officialId": "fantacalcio:7600",
       "fantacalcioId": 7600,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/osmajic/7600"
@@ -1740,7 +1740,7 @@
       "team": "Genoa",
       "role": "A",
       "quotation": 4,
-      "fvm": 9,
+      "fvm": 5,
       "officialId": "fantacalcio:7453",
       "fantacalcioId": 7453,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/havel/7453"
@@ -1750,7 +1750,7 @@
       "team": "Genoa",
       "role": "C",
       "quotation": 7,
-      "fvm": 20,
+      "fvm": 19,
       "officialId": "fantacalcio:5791",
       "fantacalcioId": 5791,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/frendrup/5791"
@@ -1770,7 +1770,7 @@
       "team": "Genoa",
       "role": "C",
       "quotation": 6,
-      "fvm": 18,
+      "fvm": 16,
       "officialId": "fantacalcio:6020",
       "fantacalcioId": 6020,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/ellertsson/6020"
@@ -1800,7 +1800,7 @@
       "team": "Genoa",
       "role": "C",
       "quotation": 11,
-      "fvm": 30,
+      "fvm": 28,
       "officialId": "fantacalcio:5823",
       "fantacalcioId": 5823,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/baldanzi/5823"
@@ -1840,7 +1840,7 @@
       "team": "Genoa",
       "role": "D",
       "quotation": 11,
-      "fvm": 43,
+      "fvm": 41,
       "officialId": "fantacalcio:5750",
       "fantacalcioId": 5750,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/ostigard/5750"
@@ -1870,7 +1870,7 @@
       "team": "Genoa",
       "role": "D",
       "quotation": 8,
-      "fvm": 21,
+      "fvm": 15,
       "officialId": "fantacalcio:6814",
       "fantacalcioId": 6814,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/norton-cuffy/6814"
@@ -1880,20 +1880,10 @@
       "team": "Genoa",
       "role": "D",
       "quotation": 9,
-      "fvm": 32,
+      "fvm": 30,
       "officialId": "fantacalcio:5514",
       "fantacalcioId": 5514,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/vasquez/5514"
-    },
-    {
-      "name": "Difensore Sinistro",
-      "team": "Genoa",
-      "role": "D",
-      "quotation": 4,
-      "fvm": 8,
-      "officialId": "fantacalcio:2593",
-      "fantacalcioId": 2593,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/martin/2593"
     },
     {
       "name": "Difensore Sinistro",
@@ -1929,6 +1919,16 @@
       "name": "Non gioca più in Serie A",
       "team": "Genoa",
       "role": "D",
+      "quotation": 4,
+      "fvm": 8,
+      "officialId": "fantacalcio:2593",
+      "fantacalcioId": 2593,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/martin/2593"
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Genoa",
+      "role": "D",
       "quotation": 1,
       "fvm": 2,
       "officialId": "fantacalcio:6245",
@@ -1950,7 +1950,7 @@
       "team": "Genoa",
       "role": "P",
       "quotation": 8,
-      "fvm": 17,
+      "fvm": 15,
       "officialId": "fantacalcio:7332",
       "fantacalcioId": 7332,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/bijlow/7332"
@@ -1980,7 +1980,7 @@
       "team": "Inter",
       "role": "A",
       "quotation": 33,
-      "fvm": 367,
+      "fvm": 361,
       "officialId": "fantacalcio:2764",
       "fantacalcioId": 2764,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/martinez-l/2764"
@@ -1990,7 +1990,7 @@
       "team": "Inter",
       "role": "A",
       "quotation": 28,
-      "fvm": 263,
+      "fvm": 249,
       "officialId": "fantacalcio:4871",
       "fantacalcioId": 4871,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/thuram/4871"
@@ -2010,7 +2010,7 @@
       "team": "Inter",
       "role": "A",
       "quotation": 7,
-      "fvm": 18,
+      "fvm": 15,
       "officialId": "fantacalcio:6669",
       "fantacalcioId": 6669,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/bonny/6669"
@@ -2020,7 +2020,7 @@
       "team": "Inter",
       "role": "C",
       "quotation": 28,
-      "fvm": 236,
+      "fvm": 243,
       "officialId": "fantacalcio:2194",
       "fantacalcioId": 2194,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/calhanoglu/2194"
@@ -2030,7 +2030,7 @@
       "team": "Inter",
       "role": "C",
       "quotation": 18,
-      "fvm": 80,
+      "fvm": 81,
       "officialId": "fantacalcio:1870",
       "fantacalcioId": 1870,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/barella/1870"
@@ -2050,7 +2050,7 @@
       "team": "Inter",
       "role": "C",
       "quotation": 12,
-      "fvm": 48,
+      "fvm": 47,
       "officialId": "fantacalcio:5172",
       "fantacalcioId": 5172,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/jones-c/5172"
@@ -2060,7 +2060,7 @@
       "team": "Inter",
       "role": "C",
       "quotation": 9,
-      "fvm": 44,
+      "fvm": 43,
       "officialId": "fantacalcio:6274",
       "fantacalcioId": 6274,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/diouf/6274"
@@ -2080,7 +2080,7 @@
       "team": "Inter",
       "role": "C",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 9,
       "officialId": "fantacalcio:2529",
       "fantacalcioId": 2529,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/mkhitaryan/2529"
@@ -2110,7 +2110,7 @@
       "team": "Inter",
       "role": "D",
       "quotation": 15,
-      "fvm": 51,
+      "fvm": 47,
       "officialId": "fantacalcio:4159",
       "fantacalcioId": 4159,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/akanji/4159"
@@ -2130,7 +2130,7 @@
       "team": "Inter",
       "role": "D",
       "quotation": 12,
-      "fvm": 37,
+      "fvm": 36,
       "officialId": "fantacalcio:6217",
       "fantacalcioId": 6217,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/bisseck/6217"
@@ -2140,7 +2140,7 @@
       "team": "Inter",
       "role": "D",
       "quotation": 12,
-      "fvm": 30,
+      "fvm": 25,
       "officialId": "fantacalcio:2514",
       "fantacalcioId": 2514,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/stones/2514"
@@ -2160,7 +2160,7 @@
       "team": "Inter",
       "role": "D",
       "quotation": 6,
-      "fvm": 25,
+      "fvm": 20,
       "officialId": "fantacalcio:5877",
       "fantacalcioId": 5877,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/carlos-augusto/5877"
@@ -2170,7 +2170,7 @@
       "team": "Inter",
       "role": "D",
       "quotation": 31,
-      "fvm": 253,
+      "fvm": 240,
       "officialId": "fantacalcio:254",
       "fantacalcioId": 254,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/dimarco/254"
@@ -2180,7 +2180,7 @@
       "team": "Inter",
       "role": "D",
       "quotation": 11,
-      "fvm": 40,
+      "fvm": 37,
       "officialId": "fantacalcio:5982",
       "fantacalcioId": 5982,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/spence/5982"
@@ -2200,7 +2200,7 @@
       "team": "Inter",
       "role": "P",
       "quotation": 17,
-      "fvm": 63,
+      "fvm": 68,
       "officialId": "fantacalcio:5116",
       "fantacalcioId": 5116,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/martinez-jo/5116"
@@ -2220,7 +2220,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 22,
-      "fvm": 150,
+      "fvm": 100,
       "officialId": "fantacalcio:6434",
       "fantacalcioId": 6434,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/yildiz/6434"
@@ -2230,7 +2230,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 13,
-      "fvm": 67,
+      "fvm": 68,
       "officialId": "fantacalcio:6884",
       "fantacalcioId": 6884,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/conceicao/6884"
@@ -2240,7 +2240,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 12,
-      "fvm": 41,
+      "fvm": 45,
       "officialId": "fantacalcio:4179",
       "fantacalcioId": 4179,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/gonzalez-n/4179"
@@ -2250,7 +2250,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 7,
-      "fvm": 26,
+      "fvm": 27,
       "officialId": "fantacalcio:2832",
       "fantacalcioId": 2832,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/boga/2832"
@@ -2270,7 +2270,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 25,
-      "fvm": 211,
+      "fvm": 165,
       "officialId": "fantacalcio:5951",
       "fantacalcioId": 5951,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/kolo-muani/5951"
@@ -2280,7 +2280,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 8,
-      "fvm": 37,
+      "fvm": 25,
       "officialId": "fantacalcio:5544",
       "fantacalcioId": 5544,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/david/5544"
@@ -2290,7 +2290,7 @@
       "team": "Juventus",
       "role": "A",
       "quotation": 4,
-      "fvm": 13,
+      "fvm": 10,
       "officialId": "fantacalcio:2012",
       "fantacalcioId": 2012,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/milik/2012"
@@ -2320,7 +2320,7 @@
       "team": "Juventus",
       "role": "C",
       "quotation": 9,
-      "fvm": 35,
+      "fvm": 25,
       "officialId": "fantacalcio:5562",
       "fantacalcioId": 5562,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/thuram-k/5562"
@@ -2330,7 +2330,7 @@
       "team": "Juventus",
       "role": "C",
       "quotation": 7,
-      "fvm": 13,
+      "fvm": 15,
       "officialId": "fantacalcio:5685",
       "fantacalcioId": 5685,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/koopmeiners/5685"
@@ -2360,7 +2360,7 @@
       "team": "Juventus",
       "role": "C",
       "quotation": 11,
-      "fvm": 50,
+      "fvm": 42,
       "officialId": "fantacalcio:7436",
       "fantacalcioId": 7436,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/alajbegovic/7436"
@@ -2370,7 +2370,7 @@
       "team": "Juventus",
       "role": "C",
       "quotation": 6,
-      "fvm": 20,
+      "fvm": 17,
       "officialId": "fantacalcio:5761",
       "fantacalcioId": 5761,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/zhegrova/5761"
@@ -2390,7 +2390,7 @@
       "team": "Juventus",
       "role": "D",
       "quotation": 14,
-      "fvm": 46,
+      "fvm": 47,
       "officialId": "fantacalcio:4976",
       "fantacalcioId": 4976,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/kalulu/4976"
@@ -2400,7 +2400,7 @@
       "team": "Juventus",
       "role": "D",
       "quotation": 7,
-      "fvm": 18,
+      "fvm": 17,
       "officialId": "fantacalcio:6042",
       "fantacalcioId": 6042,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/lucumì/6042"
@@ -2430,7 +2430,7 @@
       "team": "Juventus",
       "role": "D",
       "quotation": 8,
-      "fvm": 15,
+      "fvm": 16,
       "officialId": "fantacalcio:4657",
       "fantacalcioId": 4657,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/celik/4657"
@@ -2440,7 +2440,7 @@
       "team": "Juventus",
       "role": "D",
       "quotation": 8,
-      "fvm": 25,
+      "fvm": 18,
       "officialId": "fantacalcio:5520",
       "fantacalcioId": 5520,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/cambiaso/5520"
@@ -2500,7 +2500,7 @@
       "team": "Juventus",
       "role": "P",
       "quotation": 17,
-      "fvm": 58,
+      "fvm": 70,
       "officialId": "fantacalcio:4964",
       "fantacalcioId": 4964,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/vicario/4964"
@@ -2520,7 +2520,7 @@
       "team": "Lazio",
       "role": "A",
       "quotation": 16,
-      "fvm": 88,
+      "fvm": 87,
       "officialId": "fantacalcio:632",
       "fantacalcioId": 632,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/zaccagni/632"
@@ -2530,7 +2530,7 @@
       "team": "Lazio",
       "role": "A",
       "quotation": 10,
-      "fvm": 30,
+      "fvm": 20,
       "officialId": "fantacalcio:5672",
       "fantacalcioId": 5672,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/dia/5672"
@@ -2540,7 +2540,7 @@
       "team": "Lazio",
       "role": "A",
       "quotation": 9,
-      "fvm": 28,
+      "fvm": 25,
       "officialId": "fantacalcio:5500",
       "fantacalcioId": 5500,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/cancellieri/5500"
@@ -2560,7 +2560,7 @@
       "team": "Lazio",
       "role": "A",
       "quotation": 6,
-      "fvm": 17,
+      "fvm": 8,
       "officialId": "fantacalcio:6556",
       "fantacalcioId": 6556,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/noslin/6556"
@@ -2570,7 +2570,7 @@
       "team": "Lazio",
       "role": "A",
       "quotation": 12,
-      "fvm": 51,
+      "fvm": 53,
       "officialId": "fantacalcio:2038",
       "fantacalcioId": 2038,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/pinamonti/2038"
@@ -2580,7 +2580,7 @@
       "team": "Lazio",
       "role": "A",
       "quotation": 9,
-      "fvm": 26,
+      "fvm": 22,
       "officialId": "fantacalcio:7313",
       "fantacalcioId": 7313,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/ratkov/7313"
@@ -2590,7 +2590,7 @@
       "team": "Lazio",
       "role": "C",
       "quotation": 13,
-      "fvm": 57,
+      "fvm": 53,
       "officialId": "fantacalcio:7314",
       "fantacalcioId": 7314,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/taylor-k/7314"
@@ -2600,7 +2600,7 @@
       "team": "Lazio",
       "role": "C",
       "quotation": 10,
-      "fvm": 68,
+      "fvm": 75,
       "officialId": "fantacalcio:2848",
       "fantacalcioId": 2848,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/frattesi/2848"
@@ -2680,7 +2680,7 @@
       "team": "Lazio",
       "role": "D",
       "quotation": 6,
-      "fvm": 22,
+      "fvm": 20,
       "officialId": "fantacalcio:460",
       "fantacalcioId": 460,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/romagnoli/460"
@@ -2690,7 +2690,7 @@
       "team": "Lazio",
       "role": "D",
       "quotation": 4,
-      "fvm": 14,
+      "fvm": 13,
       "officialId": "fantacalcio:7012",
       "fantacalcioId": 7012,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/provstgaard/7012"
@@ -2720,7 +2720,7 @@
       "team": "Lazio",
       "role": "D",
       "quotation": 7,
-      "fvm": 12,
+      "fvm": 25,
       "officialId": "fantacalcio:5620",
       "fantacalcioId": 5620,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/tavares-n/5620"
@@ -2730,7 +2730,7 @@
       "team": "Lazio",
       "role": "D",
       "quotation": 6,
-      "fvm": 15,
+      "fvm": 14,
       "officialId": "fantacalcio:4817",
       "fantacalcioId": 4817,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/pedraza/4817"
@@ -2770,7 +2770,7 @@
       "team": "Lazio",
       "role": "P",
       "quotation": 10,
-      "fvm": 32,
+      "fvm": 36,
       "officialId": "fantacalcio:6482",
       "fantacalcioId": 6482,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/mandas/6482"
@@ -2800,7 +2800,7 @@
       "team": "Lecce",
       "role": "A",
       "quotation": 7,
-      "fvm": 22,
+      "fvm": 23,
       "officialId": "fantacalcio:7619",
       "fantacalcioId": 7619,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/monteiro-j/7619"
@@ -2810,7 +2810,7 @@
       "team": "Lecce",
       "role": "A",
       "quotation": 4,
-      "fvm": 15,
+      "fvm": 12,
       "officialId": "fantacalcio:7001",
       "fantacalcioId": 7001,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/n-dri/7001"
@@ -2820,7 +2820,7 @@
       "team": "Lecce",
       "role": "A",
       "quotation": 4,
-      "fvm": 17,
+      "fvm": 14,
       "officialId": "fantacalcio:7602",
       "fantacalcioId": 7602,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/fatah/7602"
@@ -2850,7 +2850,7 @@
       "team": "Lecce",
       "role": "A",
       "quotation": 6,
-      "fvm": 12,
+      "fvm": 11,
       "officialId": "fantacalcio:7252",
       "fantacalcioId": 7252,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/stulic/7252"
@@ -2870,7 +2870,7 @@
       "team": "Lecce",
       "role": "C",
       "quotation": 4,
-      "fvm": 13,
+      "fvm": 12,
       "officialId": "fantacalcio:7322",
       "fantacalcioId": 7322,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/ngom/7322"
@@ -2940,7 +2940,7 @@
       "team": "Lecce",
       "role": "C",
       "quotation": 1,
-      "fvm": 8,
+      "fvm": 10,
       "officialId": "fantacalcio:5007",
       "fantacalcioId": 5007,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/ilic/5007"
@@ -3020,7 +3020,7 @@
       "team": "Lecce",
       "role": "D",
       "quotation": 6,
-      "fvm": 13,
+      "fvm": 12,
       "officialId": "fantacalcio:4502",
       "fantacalcioId": 4502,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/gallo/4502"
@@ -3070,7 +3070,7 @@
       "team": "Lecce",
       "role": "P",
       "quotation": 8,
-      "fvm": 30,
+      "fvm": 26,
       "officialId": "fantacalcio:2134",
       "fantacalcioId": 2134,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/falcone/2134"
@@ -3100,10 +3100,20 @@
       "team": "Milan",
       "role": "A",
       "quotation": 24,
-      "fvm": 160,
+      "fvm": 150,
       "officialId": "fantacalcio:2423",
       "fantacalcioId": 2423,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/pulisic/2423"
+    },
+    {
+      "name": "Attaccante di raccordo",
+      "team": "Milan",
+      "role": "A",
+      "quotation": 8,
+      "fvm": 25,
+      "officialId": "fantacalcio:7618",
+      "fantacalcioId": 7618,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/hutchinson/7618"
     },
     {
       "name": "Non gioca più in Serie A",
@@ -3140,7 +3150,7 @@
       "team": "Milan",
       "role": "A",
       "quotation": 27,
-      "fvm": 228,
+      "fvm": 237,
       "officialId": "fantacalcio:6397",
       "fantacalcioId": 6397,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/ramos-g/6397"
@@ -3170,7 +3180,7 @@
       "team": "Milan",
       "role": "C",
       "quotation": 12,
-      "fvm": 46,
+      "fvm": 45,
       "officialId": "fantacalcio:2606",
       "fantacalcioId": 2606,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/modric/2606"
@@ -3200,7 +3210,7 @@
       "team": "Milan",
       "role": "C",
       "quotation": 4,
-      "fvm": 18,
+      "fvm": 16,
       "officialId": "fantacalcio:4199",
       "fantacalcioId": 4199,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/loftus-cheek/4199"
@@ -3240,7 +3250,7 @@
       "team": "Milan",
       "role": "C",
       "quotation": 5,
-      "fvm": 25,
+      "fvm": 24,
       "officialId": "fantacalcio:6618",
       "fantacalcioId": 6618,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/cissè-a/6618"
@@ -3250,7 +3260,7 @@
       "team": "Milan",
       "role": "C",
       "quotation": 11,
-      "fvm": 50,
+      "fvm": 45,
       "officialId": "fantacalcio:6372",
       "fantacalcioId": 6372,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/moreira/6372"
@@ -3270,7 +3280,7 @@
       "team": "Milan",
       "role": "D",
       "quotation": 14,
-      "fvm": 48,
+      "fvm": 49,
       "officialId": "fantacalcio:5022",
       "fantacalcioId": 5022,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/pavlovic/5022"
@@ -3290,7 +3300,7 @@
       "team": "Milan",
       "role": "D",
       "quotation": 7,
-      "fvm": 24,
+      "fvm": 15,
       "officialId": "fantacalcio:4401",
       "fantacalcioId": 4401,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/gabbia/4401"
@@ -3310,7 +3320,7 @@
       "team": "Milan",
       "role": "D",
       "quotation": 5,
-      "fvm": 12,
+      "fvm": 20,
       "officialId": "fantacalcio:5739",
       "fantacalcioId": 5739,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/de-winter/5739"
@@ -3370,7 +3380,7 @@
       "team": "Milan",
       "role": "P",
       "quotation": 15,
-      "fvm": 50,
+      "fvm": 52,
       "officialId": "fantacalcio:4312",
       "fantacalcioId": 4312,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/maignan/4312"
@@ -3410,7 +3420,7 @@
       "team": "Monza",
       "role": "A",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 8,
       "officialId": "fantacalcio:5882",
       "fantacalcioId": 5882,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/mota/5882"
@@ -3440,7 +3450,7 @@
       "team": "Monza",
       "role": "A",
       "quotation": 9,
-      "fvm": 30,
+      "fvm": 23,
       "officialId": "fantacalcio:2155",
       "fantacalcioId": 2155,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/cutrone/2155"
@@ -3450,7 +3460,7 @@
       "team": "Monza",
       "role": "A",
       "quotation": 7,
-      "fvm": 20,
+      "fvm": 40,
       "officialId": "fantacalcio:7523",
       "fantacalcioId": 7523,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/varela-g/7523"
@@ -3460,7 +3470,7 @@
       "team": "Monza",
       "role": "C",
       "quotation": 7,
-      "fvm": 12,
+      "fvm": 11,
       "officialId": "fantacalcio:6593",
       "fantacalcioId": 6593,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/akinsanmiro/6593"
@@ -3600,7 +3610,7 @@
       "team": "Monza",
       "role": "D",
       "quotation": 1,
-      "fvm": 2,
+      "fvm": 8,
       "officialId": "fantacalcio:7260",
       "fantacalcioId": 7260,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/ziolkowski/7260"
@@ -3670,7 +3680,7 @@
       "team": "Monza",
       "role": "P",
       "quotation": 4,
-      "fvm": 11,
+      "fvm": 5,
       "officialId": "fantacalcio:4485",
       "fantacalcioId": 4485,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/thiam/4485"
@@ -3690,7 +3700,7 @@
       "team": "Monza",
       "role": "P",
       "quotation": 1,
-      "fvm": 1,
+      "fvm": 10,
       "officialId": "fantacalcio:7301",
       "fantacalcioId": 7301,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/tornqvist/7301"
@@ -3700,7 +3710,7 @@
       "team": "Napoli",
       "role": "A",
       "quotation": 14,
-      "fvm": 62,
+      "fvm": 61,
       "officialId": "fantacalcio:7351",
       "fantacalcioId": 7351,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/santos-a/7351"
@@ -3710,7 +3720,7 @@
       "team": "Napoli",
       "role": "A",
       "quotation": 6,
-      "fvm": 17,
+      "fvm": 20,
       "officialId": "fantacalcio:6831",
       "fantacalcioId": 6831,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/neres/6831"
@@ -3720,7 +3730,7 @@
       "team": "Napoli",
       "role": "A",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 7,
       "officialId": "fantacalcio:7162",
       "fantacalcioId": 7162,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/giovane/7162"
@@ -3730,7 +3740,7 @@
       "team": "Napoli",
       "role": "A",
       "quotation": 4,
-      "fvm": 12,
+      "fvm": 14,
       "officialId": "fantacalcio:7120",
       "fantacalcioId": 7120,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/lang/7120"
@@ -3750,7 +3760,7 @@
       "team": "Napoli",
       "role": "A",
       "quotation": 28,
-      "fvm": 257,
+      "fvm": 260,
       "officialId": "fantacalcio:6052",
       "fantacalcioId": 6052,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/hojlund/6052"
@@ -3760,7 +3770,7 @@
       "team": "Napoli",
       "role": "A",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 12,
       "officialId": "fantacalcio:6215",
       "fantacalcioId": 6215,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/lucca/6215"
@@ -3770,7 +3780,7 @@
       "team": "Napoli",
       "role": "C",
       "quotation": 27,
-      "fvm": 228,
+      "fvm": 220,
       "officialId": "fantacalcio:4777",
       "fantacalcioId": 4777,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/mctominay/4777"
@@ -3780,7 +3790,7 @@
       "team": "Napoli",
       "role": "C",
       "quotation": 10,
-      "fvm": 47,
+      "fvm": 41,
       "officialId": "fantacalcio:4220",
       "fantacalcioId": 4220,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/zambo-anguissa/4220"
@@ -3790,7 +3800,7 @@
       "team": "Napoli",
       "role": "C",
       "quotation": 8,
-      "fvm": 22,
+      "fvm": 23,
       "officialId": "fantacalcio:4287",
       "fantacalcioId": 4287,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/lobotka/4287"
@@ -3810,7 +3820,7 @@
       "team": "Napoli",
       "role": "C",
       "quotation": 17,
-      "fvm": 107,
+      "fvm": 108,
       "officialId": "fantacalcio:2517",
       "fantacalcioId": 2517,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/de-bruyne/2517"
@@ -3820,7 +3830,7 @@
       "team": "Napoli",
       "role": "C",
       "quotation": 9,
-      "fvm": 40,
+      "fvm": 37,
       "officialId": "fantacalcio:536",
       "fantacalcioId": 536,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/politano/536"
@@ -3830,7 +3840,7 @@
       "team": "Napoli",
       "role": "C",
       "quotation": 10,
-      "fvm": 40,
+      "fvm": 35,
       "officialId": "fantacalcio:7223",
       "fantacalcioId": 7223,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/vergara/7223"
@@ -3850,7 +3860,7 @@
       "team": "Napoli",
       "role": "D",
       "quotation": 7,
-      "fvm": 21,
+      "fvm": 18,
       "officialId": "fantacalcio:4664",
       "fantacalcioId": 4664,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/badiashile/4664"
@@ -3900,7 +3910,7 @@
       "team": "Napoli",
       "role": "D",
       "quotation": 12,
-      "fvm": 40,
+      "fvm": 39,
       "officialId": "fantacalcio:2816",
       "fantacalcioId": 2816,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/di-lorenzo/2816"
@@ -3950,7 +3960,7 @@
       "team": "Napoli",
       "role": "P",
       "quotation": 5,
-      "fvm": 7,
+      "fvm": 5,
       "officialId": "fantacalcio:2170",
       "fantacalcioId": 2170,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/milinkovic-savic-v/2170"
@@ -3960,7 +3970,7 @@
       "team": "Napoli",
       "role": "P",
       "quotation": 11,
-      "fvm": 53,
+      "fvm": 48,
       "officialId": "fantacalcio:572",
       "fantacalcioId": 572,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/napoli/meret/572"
@@ -3990,7 +4000,7 @@
       "team": "Parma",
       "role": "A",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 6,
       "officialId": "fantacalcio:7213",
       "fantacalcioId": 7213,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/frigan/7213"
@@ -4010,7 +4020,7 @@
       "team": "Parma",
       "role": "A",
       "quotation": 3,
-      "fvm": 10,
+      "fvm": 11,
       "officialId": "fantacalcio:7561",
       "fantacalcioId": 7561,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/lontani/7561"
@@ -4030,7 +4040,7 @@
       "team": "Parma",
       "role": "A",
       "quotation": 10,
-      "fvm": 43,
+      "fvm": 37,
       "officialId": "fantacalcio:6229",
       "fantacalcioId": 6229,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/tourè-e/6229"
@@ -4070,7 +4080,7 @@
       "team": "Parma",
       "role": "C",
       "quotation": 7,
-      "fvm": 35,
+      "fvm": 34,
       "officialId": "fantacalcio:6666",
       "fantacalcioId": 6666,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/bernabè/6666"
@@ -4110,7 +4120,7 @@
       "team": "Parma",
       "role": "C",
       "quotation": 3,
-      "fvm": 5,
+      "fvm": 10,
       "officialId": "fantacalcio:7138",
       "fantacalcioId": 7138,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/ordonez-c/7138"
@@ -4190,7 +4200,7 @@
       "team": "Parma",
       "role": "D",
       "quotation": 8,
-      "fvm": 24,
+      "fvm": 22,
       "officialId": "fantacalcio:5862",
       "fantacalcioId": 5862,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/valeri/5862"
@@ -4240,7 +4250,7 @@
       "team": "Parma",
       "role": "P",
       "quotation": 6,
-      "fvm": 10,
+      "fvm": 7,
       "officialId": "fantacalcio:7411",
       "fantacalcioId": 7411,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/daffara/7411"
@@ -4260,7 +4270,7 @@
       "team": "Roma",
       "role": "A",
       "quotation": 16,
-      "fvm": 95,
+      "fvm": 100,
       "officialId": "fantacalcio:309",
       "fantacalcioId": 309,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/dybala/309"
@@ -4270,7 +4280,7 @@
       "team": "Roma",
       "role": "A",
       "quotation": 13,
-      "fvm": 45,
+      "fvm": 48,
       "officialId": "fantacalcio:5734",
       "fantacalcioId": 5734,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/soulè/5734"
@@ -4280,7 +4290,7 @@
       "team": "Roma",
       "role": "A",
       "quotation": 38,
-      "fvm": 414,
+      "fvm": 450,
       "officialId": "fantacalcio:5585",
       "fantacalcioId": 5585,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/malen/5585"
@@ -4290,7 +4300,7 @@
       "team": "Roma",
       "role": "A",
       "quotation": 14,
-      "fvm": 76,
+      "fvm": 70,
       "officialId": "fantacalcio:6572",
       "fantacalcioId": 6572,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/castro-s/6572"
@@ -4330,7 +4340,7 @@
       "team": "Roma",
       "role": "C",
       "quotation": 9,
-      "fvm": 25,
+      "fvm": 20,
       "officialId": "fantacalcio:530",
       "fantacalcioId": 530,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/pellegrini-lo/530"
@@ -4340,7 +4350,7 @@
       "team": "Roma",
       "role": "C",
       "quotation": 7,
-      "fvm": 17,
+      "fvm": 19,
       "officialId": "fantacalcio:6190",
       "fantacalcioId": 6190,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/pisilli/6190"
@@ -4350,7 +4360,7 @@
       "team": "Roma",
       "role": "C",
       "quotation": 4,
-      "fvm": 8,
+      "fvm": 10,
       "officialId": "fantacalcio:22",
       "fantacalcioId": 22,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/de-roon/22"
@@ -4360,7 +4370,7 @@
       "team": "Roma",
       "role": "C",
       "quotation": 4,
-      "fvm": 18,
+      "fvm": 13,
       "officialId": "fantacalcio:6271",
       "fantacalcioId": 6271,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/el-aynaoui/6271"
@@ -4370,7 +4380,7 @@
       "team": "Roma",
       "role": "C",
       "quotation": 20,
-      "fvm": 95,
+      "fvm": 100,
       "officialId": "fantacalcio:7556",
       "fantacalcioId": 7556,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/mora/7556"
@@ -4380,7 +4390,7 @@
       "team": "Roma",
       "role": "D",
       "quotation": 16,
-      "fvm": 49,
+      "fvm": 50,
       "officialId": "fantacalcio:2296",
       "fantacalcioId": 2296,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/mancini/2296"
@@ -4390,7 +4400,7 @@
       "team": "Roma",
       "role": "D",
       "quotation": 13,
-      "fvm": 44,
+      "fvm": 42,
       "officialId": "fantacalcio:4317",
       "fantacalcioId": 4317,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/n-dicka/4317"
@@ -4410,7 +4420,7 @@
       "team": "Roma",
       "role": "D",
       "quotation": 8,
-      "fvm": 17,
+      "fvm": 15,
       "officialId": "fantacalcio:7529",
       "fantacalcioId": 7529,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/koulierakis/7529"
@@ -4450,7 +4460,7 @@
       "team": "Roma",
       "role": "D",
       "quotation": 18,
-      "fvm": 82,
+      "fvm": 87,
       "officialId": "fantacalcio:7181",
       "fantacalcioId": 7181,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/wesley/7181"
@@ -4460,7 +4470,7 @@
       "team": "Roma",
       "role": "D",
       "quotation": 2,
-      "fvm": 3,
+      "fvm": 10,
       "officialId": "fantacalcio:7599",
       "fantacalcioId": 7599,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/lulli/7599"
@@ -4470,7 +4480,7 @@
       "team": "Roma",
       "role": "D",
       "quotation": 18,
-      "fvm": 80,
+      "fvm": 78,
       "officialId": "fantacalcio:4998",
       "fantacalcioId": 4998,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/molina-n/4998"
@@ -4500,7 +4510,7 @@
       "team": "Roma",
       "role": "P",
       "quotation": 19,
-      "fvm": 75,
+      "fvm": 85,
       "officialId": "fantacalcio:5841",
       "fantacalcioId": 5841,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/svilar/5841"
@@ -4520,7 +4530,7 @@
       "team": "Sassuolo",
       "role": "A",
       "quotation": 19,
-      "fvm": 101,
+      "fvm": 106,
       "officialId": "fantacalcio:531",
       "fantacalcioId": 531,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/berardi/531"
@@ -4530,7 +4540,7 @@
       "team": "Sassuolo",
       "role": "A",
       "quotation": 15,
-      "fvm": 86,
+      "fvm": 83,
       "officialId": "fantacalcio:6060",
       "fantacalcioId": 6060,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/laurientè/6060"
@@ -4570,7 +4580,7 @@
       "team": "Sassuolo",
       "role": "A",
       "quotation": 9,
-      "fvm": 39,
+      "fvm": 32,
       "officialId": "fantacalcio:7347",
       "fantacalcioId": 7347,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/bowie/7347"
@@ -4580,7 +4590,7 @@
       "team": "Sassuolo",
       "role": "C",
       "quotation": 10,
-      "fvm": 40,
+      "fvm": 39,
       "officialId": "fantacalcio:5844",
       "fantacalcioId": 5844,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/thorstvedt/5844"
@@ -4660,7 +4670,7 @@
       "team": "Sassuolo",
       "role": "C",
       "quotation": 9,
-      "fvm": 23,
+      "fvm": 25,
       "officialId": "fantacalcio:5735",
       "fantacalcioId": 5735,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/volpato/5735"
@@ -4674,6 +4684,16 @@
       "officialId": "fantacalcio:6672",
       "fantacalcioId": 6672,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/idzes/6672"
+    },
+    {
+      "name": "Difensore Centrale",
+      "team": "Sassuolo",
+      "role": "D",
+      "quotation": 6,
+      "fvm": 15,
+      "officialId": "fantacalcio:4147",
+      "fantacalcioId": 4147,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/caleta-car/4147"
     },
     {
       "name": "Difensore Centrale",
@@ -4696,16 +4716,6 @@
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/odenthal/7154"
     },
     {
-      "name": "Difensore Centrale",
-      "team": "Sassuolo",
-      "role": "D",
-      "quotation": 1,
-      "fvm": 1,
-      "officialId": "fantacalcio:7396",
-      "fantacalcioId": 7396,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/macchioni/7396"
-    },
-    {
       "name": "Difensore Destro",
       "team": "Sassuolo",
       "role": "D",
@@ -4720,7 +4730,7 @@
       "team": "Sassuolo",
       "role": "D",
       "quotation": 6,
-      "fvm": 15,
+      "fvm": 13,
       "officialId": "fantacalcio:7329",
       "fantacalcioId": 7329,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/obrador/7329"
@@ -4776,11 +4786,21 @@
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/missori/6189"
     },
     {
+      "name": "Non gioca più in Serie A",
+      "team": "Sassuolo",
+      "role": "D",
+      "quotation": 1,
+      "fvm": 1,
+      "officialId": "fantacalcio:7396",
+      "fantacalcioId": 7396,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/macchioni/7396"
+    },
+    {
       "name": "Van Der Brempt",
       "team": "Sassuolo",
       "role": "D",
       "quotation": 2,
-      "fvm": 5,
+      "fvm": 11,
       "officialId": "fantacalcio:6896",
       "fantacalcioId": 6896,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/sassuolo/van-der-brempt/6896"
@@ -4860,7 +4880,7 @@
       "team": "Torino",
       "role": "A",
       "quotation": 6,
-      "fvm": 18,
+      "fvm": 12,
       "officialId": "fantacalcio:608",
       "fantacalcioId": 608,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/zapata-d/608"
@@ -4880,7 +4900,7 @@
       "team": "Torino",
       "role": "C",
       "quotation": 6,
-      "fvm": 20,
+      "fvm": 24,
       "officialId": "fantacalcio:7060",
       "fantacalcioId": 7060,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/cacciamani/7060"
@@ -4890,7 +4910,7 @@
       "team": "Torino",
       "role": "C",
       "quotation": 9,
-      "fvm": 32,
+      "fvm": 27,
       "officialId": "fantacalcio:5888",
       "fantacalcioId": 5888,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/casadei/5888"
@@ -4920,7 +4940,7 @@
       "team": "Torino",
       "role": "C",
       "quotation": 4,
-      "fvm": 10,
+      "fvm": 8,
       "officialId": "fantacalcio:6005",
       "fantacalcioId": 6005,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/ilkhan/6005"
@@ -4940,7 +4960,7 @@
       "team": "Torino",
       "role": "C",
       "quotation": 13,
-      "fvm": 75,
+      "fvm": 73,
       "officialId": "fantacalcio:5687",
       "fantacalcioId": 5687,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/vlasic/5687"
@@ -4996,6 +5016,16 @@
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/comert/7526"
     },
     {
+      "name": "Difensore Destro",
+      "team": "Torino",
+      "role": "D",
+      "quotation": 7,
+      "fvm": 20,
+      "officialId": "fantacalcio:7220",
+      "fantacalcioId": 7220,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/belghali/7220"
+    },
+    {
       "name": "Difensore Sinistro",
       "team": "Torino",
       "role": "D",
@@ -5030,7 +5060,7 @@
       "team": "Torino",
       "role": "P",
       "quotation": 1,
-      "fvm": 13,
+      "fvm": 5,
       "officialId": "fantacalcio:7457",
       "fantacalcioId": 7457,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/mascardi/7457"
@@ -5070,7 +5100,7 @@
       "team": "Udinese",
       "role": "A",
       "quotation": 18,
-      "fvm": 85,
+      "fvm": 80,
       "officialId": "fantacalcio:2766",
       "fantacalcioId": 2766,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/zaniolo/2766"
@@ -5090,7 +5120,7 @@
       "team": "Udinese",
       "role": "A",
       "quotation": 19,
-      "fvm": 109,
+      "fvm": 108,
       "officialId": "fantacalcio:5637",
       "fantacalcioId": 5637,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/davis-k/5637"
@@ -5120,7 +5150,7 @@
       "team": "Udinese",
       "role": "C",
       "quotation": 12,
-      "fvm": 45,
+      "fvm": 57,
       "officialId": "fantacalcio:6684",
       "fantacalcioId": 6684,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/ekkelenkamp/6684"
@@ -5190,7 +5220,7 @@
       "team": "Udinese",
       "role": "C",
       "quotation": 7,
-      "fvm": 17,
+      "fvm": 16,
       "officialId": "fantacalcio:6783",
       "fantacalcioId": 6783,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/unai-gomez/6783"
@@ -5310,7 +5340,7 @@
       "team": "Udinese",
       "role": "P",
       "quotation": 9,
-      "fvm": 29,
+      "fvm": 28,
       "officialId": "fantacalcio:6462",
       "fantacalcioId": 6462,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/okoye/6462"
@@ -5370,7 +5400,7 @@
       "team": "Venezia",
       "role": "A",
       "quotation": 11,
-      "fvm": 45,
+      "fvm": 35,
       "officialId": "fantacalcio:7484",
       "fantacalcioId": 7484,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/adams-a/7484"
@@ -5380,7 +5410,7 @@
       "team": "Venezia",
       "role": "A",
       "quotation": 7,
-      "fvm": 18,
+      "fvm": 13,
       "officialId": "fantacalcio:7449",
       "fantacalcioId": 7449,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/rrahmani-al/7449"
@@ -5390,7 +5420,7 @@
       "team": "Venezia",
       "role": "A",
       "quotation": 4,
-      "fvm": 12,
+      "fvm": 8,
       "officialId": "fantacalcio:4387",
       "fantacalcioId": 4387,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/adorante/4387"
@@ -5600,7 +5630,7 @@
       "team": "Venezia",
       "role": "D",
       "quotation": 1,
-      "fvm": 3,
+      "fvm": 10,
       "officialId": "fantacalcio:5481",
       "fantacalcioId": 5481,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/mazzocchi/5481"
@@ -5650,7 +5680,7 @@
       "team": "Venezia",
       "role": "P",
       "quotation": 6,
-      "fvm": 12,
+      "fvm": 11,
       "officialId": "fantacalcio:6248",
       "fantacalcioId": 6248,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/stankovic-f/6248"
