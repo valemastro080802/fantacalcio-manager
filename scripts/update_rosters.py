@@ -193,6 +193,7 @@ class StatsTableParser(HTMLParser):
         self.in_cell = False
         self.cell_tag = None
         self.cell_text = []
+        self.cell_player_href = None
         self.cells = []
         self.row_links = []
         self.rows = []
@@ -212,10 +213,13 @@ class StatsTableParser(HTMLParser):
             self.cell_tag = tag
             self.cell_colspan = max(1, int(attrs_dict.get("colspan") or 1))
             self.cell_text = []
+            self.cell_player_href = None
         if tag == "a":
             href = attrs_dict.get("href") or ""
             if self.PROFILE_RE.search(href):
                 self.row_links.append({"href": href, "attrs": attrs})
+                if self.in_cell:
+                    self.cell_player_href = href
 
     def handle_data(self, data):
         if self.in_row and self.in_cell:
@@ -232,10 +236,12 @@ class StatsTableParser(HTMLParser):
                 "tag": self.cell_tag,
                 "text": clean_text(" ".join(self.cell_text)),
                 "colspan": self.cell_colspan,
+                "player_href": self.cell_player_href,
             })
             self.in_cell = False
             self.cell_tag = None
             self.cell_text = []
+            self.cell_player_href = None
             return
         if tag == "tr":
             if self.cells:
@@ -256,65 +262,92 @@ def parse_decimal(value):
         return None
 
 
+def extract_fantamedia_from_row(row):
+    """Estrae (Fantamedia, player_id) usando la posizione reale del calciatore.
+
+    Non usa l'indice assoluto dell'intestazione: la tabella di Fantacalcio contiene
+    celle tecniche/colspan prima del nome, che possono differire tra header e righe dati.
+    Dopo la cella del calciatore la sequenza visibile ufficiale è: Sq, PV, MV, FM.
+    """
+    data_cells = [cell for cell in row["cells"] if cell["tag"] == "td"]
+    player_index = None
+    player_href = None
+    for index, cell in enumerate(data_cells):
+        href = cell.get("player_href")
+        if href and StatsTableParser.PROFILE_RE.search(href):
+            player_index = index
+            player_href = href
+            break
+
+    if player_index is None:
+        # Fallback per HTML in cui il link venga registrato a livello di riga.
+        if not row.get("links"):
+            return None, None
+        player_href = row["links"][0].get("href") or ""
+        # Trova la cella che contiene il testo/nome del link, se possibile.
+        player_index = 0
+
+    match = StatsTableParser.PROFILE_RE.search(player_href or "")
+    if not match:
+        return None, None
+    player_id = match.group(3)
+
+    # Cerca la sigla squadra dopo il nome (es. ROM, INT, JUV). Questo rende
+    # l'estrazione indipendente da celle vuote, icone, ruolo e colspan precedenti.
+    team_index = None
+    for index in range(player_index + 1, min(len(data_cells), player_index + 5)):
+        value = clean_text(data_cells[index].get("text") or "")
+        if re.fullmatch(r"[A-Za-z]{2,4}", value):
+            team_index = index
+            break
+
+    if team_index is None:
+        return None, player_id
+
+    # Sequenza ufficiale: Sq | PV | MV | FM.
+    fm_index = team_index + 3
+    if fm_index >= len(data_cells):
+        return None, player_id
+
+    return parse_decimal(data_cells[fm_index].get("text") or ""), player_id
+
+
 def scrape_fantamedia():
     page = fetch(STATS_URL)
     parser = StatsTableParser()
     parser.feed(page)
 
-    fm_index = None
-    for row in parser.rows:
-        headers = []
-        for cell in row["cells"]:
-            if cell["tag"] != "th":
-                continue
-            headers.extend([normalize(cell["text"])] * int(cell.get("colspan") or 1))
-        if not headers:
-            continue
-        for index, header in enumerate(headers):
-            if header in {"fm", "fantamedia", "media fantavoto"}:
-                fm_index = index
-                break
-        if fm_index is not None:
-            break
-
-    if fm_index is None:
-        raise RuntimeError("colonna FM/Fantamedia non trovata nella pagina statistiche")
-
     by_id = {}
     recognized_rows = 0
+    debug_rows = []
+
     for row in parser.rows:
-        if not row["links"]:
+        if not row.get("links"):
             continue
-        # Allinea anche le celle dati alla griglia logica della tabella.
-        # Fantacalcio usa colspan=4 nella cella del calciatore: senza espanderlo,
-        # l'indice di FM finisce su una colonna successiva (spesso Gol = 0).
-        cells = []
-        for cell in row["cells"]:
-            if cell["tag"] != "td":
-                continue
-            cells.extend([cell["text"]] * int(cell.get("colspan") or 1))
-        if fm_index >= len(cells):
+        value, player_id = extract_fantamedia_from_row(row)
+        if player_id is None:
             continue
-        href = row["links"][0].get("href") or ""
-        match = StatsTableParser.PROFILE_RE.search(href)
-        if not match:
-            continue
-        player_id = match.group(3)
         recognized_rows += 1
-        by_id[player_id] = parse_decimal(cells[fm_index])
+        by_id[player_id] = value
+
+        if len(debug_rows) < 5:
+            cells = [clean_text(c.get("text") or "") for c in row["cells"] if c["tag"] == "td"]
+            debug_rows.append((player_id, value, cells))
+
+    print("DEBUG Fantamedia - prime righe lette:", file=sys.stderr)
+    for player_id, value, cells in debug_rows:
+        print(f"- id {player_id} | FM={value!r} | celle={cells}", file=sys.stderr)
 
     if recognized_rows < 250:
         raise RuntimeError(
             f"soltanto {recognized_rows} righe statistiche riconosciute: probabile cambio HTML"
         )
 
-    # Evita falsi positivi silenziosi: se una colonna sbagliata venisse letta come FM
-    # (per esempio Gol), potremmo ottenere centinaia di zeri apparentemente validi.
     positive_fm = [value for value in by_id.values() if value is not None and value > 0]
     if len(positive_fm) < 10:
         raise RuntimeError(
             f"Fantamedia sospette: soltanto {len(positive_fm)} valori positivi; "
-            "probabile disallineamento delle colonne"
+            "controlla le righe DEBUG qui sopra"
         )
 
     return by_id, recognized_rows
