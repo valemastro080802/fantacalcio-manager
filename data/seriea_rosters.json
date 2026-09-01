@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T17:23:05.611669+00:00",
+  "generated_at": "2026-09-01T18:27:33.081762+00:00",
   "teams": 20,
-  "players_count": 578,
+  "players_count": 587,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -541,6 +541,15 @@
       "name": "Punta centrale",
       "team": "Cagliari",
       "role": "A",
+      "officialId": "fantacalcio:5336",
+      "fantacalcioId": 5336,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/nzola/5336",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Punta centrale",
+      "team": "Cagliari",
+      "role": "A",
       "officialId": "fantacalcio:7317",
       "fantacalcioId": 7317,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/trepy/7317",
@@ -835,6 +844,15 @@
       "fantamedia": 0.0
     },
     {
+      "name": "Non gioca più in Serie A",
+      "team": "Como",
+      "role": "A",
+      "officialId": "fantacalcio:7027",
+      "fantacalcioId": 7027,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/azon/7027",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Punta centrale",
       "team": "Como",
       "role": "A",
@@ -851,15 +869,6 @@
       "fantacalcioId": 7017,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/douvikas/7017",
       "fantamedia": 9.75
-    },
-    {
-      "name": "Punta centrale",
-      "team": "Como",
-      "role": "A",
-      "officialId": "fantacalcio:7027",
-      "fantacalcioId": 7027,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/azon/7027",
-      "fantamedia": 0.0
     },
     {
       "name": "Centrocampista centrale",
@@ -1033,6 +1042,15 @@
       "fantamedia": 5.25
     },
     {
+      "name": "Sanchez Ro.",
+      "team": "Como",
+      "role": "P",
+      "officialId": "fantacalcio:6344",
+      "fantacalcioId": 6344,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/sanchez-ro/6344",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Vigorito",
       "team": "Como",
       "role": "P",
@@ -1045,10 +1063,10 @@
       "name": "Attaccante di raccordo",
       "team": "Fiorentina",
       "role": "A",
-      "officialId": "fantacalcio:5800",
-      "fantacalcioId": 5800,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/gudmundsson-a/5800",
-      "fantamedia": 4.0
+      "officialId": "fantacalcio:7623",
+      "fantacalcioId": 7623,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/gnonto/7623",
+      "fantamedia": 0.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -1090,15 +1108,6 @@
       "name": "Centrocampista centrale",
       "team": "Fiorentina",
       "role": "C",
-      "officialId": "fantacalcio:1933",
-      "fantacalcioId": 1933,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/mandragora/1933",
-      "fantamedia": 5.25
-    },
-    {
-      "name": "Centrocampista centrale",
-      "team": "Fiorentina",
-      "role": "C",
       "officialId": "fantacalcio:4465",
       "fantacalcioId": 4465,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/fagioli/4465",
@@ -1130,6 +1139,15 @@
       "fantacalcioId": 4947,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/brescianini/4947",
       "fantamedia": 5.25
+    },
+    {
+      "name": "Goncalves P.",
+      "team": "Fiorentina",
+      "role": "C",
+      "officialId": "fantacalcio:7625",
+      "fantacalcioId": 7625,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/fiorentina/goncalves-p/7625",
+      "fantamedia": 0.0
     },
     {
       "name": "Trequartista",
@@ -2035,6 +2053,15 @@
       "name": "Attaccante di raccordo",
       "team": "Juventus",
       "role": "A",
+      "officialId": "fantacalcio:6752",
+      "fantacalcioId": 6752,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/woltemade/6752",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Attaccante di raccordo",
+      "team": "Juventus",
+      "role": "A",
       "officialId": "fantacalcio:6434",
       "fantacalcioId": 6434,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/yildiz/6434",
@@ -2318,6 +2345,15 @@
       "fantacalcioId": 632,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/zaccagni/632",
       "fantamedia": 5.75
+    },
+    {
+      "name": "Attaccante di raccordo",
+      "team": "Lazio",
+      "role": "A",
+      "officialId": "fantacalcio:5800",
+      "fantacalcioId": 5800,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/gudmundsson-a/5800",
+      "fantamedia": 4.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -3281,6 +3317,15 @@
       "fantacalcioId": 7238,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/kouadio/7238",
       "fantamedia": 5.25
+    },
+    {
+      "name": "Difensore Centrale",
+      "team": "Monza",
+      "role": "D",
+      "officialId": "fantacalcio:6537",
+      "fantacalcioId": 6537,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/goglichidze/6537",
+      "fantamedia": 0.0
     },
     {
       "name": "Difensore Centrale",
@@ -4510,6 +4555,24 @@
       "name": "Centrocampista centrale",
       "team": "Torino",
       "role": "C",
+      "officialId": "fantacalcio:1933",
+      "fantacalcioId": 1933,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/mandragora/1933",
+      "fantamedia": 5.25
+    },
+    {
+      "name": "Centrocampista centrale",
+      "team": "Torino",
+      "role": "C",
+      "officialId": "fantacalcio:7624",
+      "fantacalcioId": 7624,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/braganca/7624",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Centrocampista centrale",
+      "team": "Torino",
+      "role": "C",
       "officialId": "fantacalcio:7535",
       "fantacalcioId": 7535,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/fitz-jim/7535",
@@ -4603,6 +4666,15 @@
       "officialId": "fantacalcio:7220",
       "fantacalcioId": 7220,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/belghali/7220",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Difensore Destro",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "fantacalcio:5751",
+      "fantacalcioId": 5751,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/patterson/5751",
       "fantamedia": 0.0
     },
     {
@@ -4937,6 +5009,15 @@
       "fantacalcioId": 6904,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/yeboah-j/6904",
       "fantamedia": 6.25
+    },
+    {
+      "name": "Attaccante di raccordo",
+      "team": "Venezia",
+      "role": "A",
+      "officialId": "fantacalcio:7232",
+      "fantacalcioId": 7232,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/fernandez-t/7232",
+      "fantamedia": 0.0
     },
     {
       "name": "Attaccante di raccordo",
