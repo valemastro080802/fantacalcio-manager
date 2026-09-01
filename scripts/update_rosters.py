@@ -279,12 +279,13 @@ def extract_fantamedia_from_row(row):
             player_href = href
             break
 
-    if player_index is None:
-        # Fallback per HTML in cui il link venga registrato a livello di riga.
+    fallback_row_link = player_index is None
+    if fallback_row_link:
+        # Nell'HTML reale di Fantacalcio il link del giocatore può essere registrato
+        # a livello di riga mentre la prima td catturata è già la squadra (ROM, JUV...).
         if not row.get("links"):
             return None, None
         player_href = row["links"][0].get("href") or ""
-        # Trova la cella che contiene il testo/nome del link, se possibile.
         player_index = 0
 
     match = StatsTableParser.PROFILE_RE.search(player_href or "")
@@ -295,7 +296,8 @@ def extract_fantamedia_from_row(row):
     # Cerca la sigla squadra dopo il nome (es. ROM, INT, JUV). Questo rende
     # l'estrazione indipendente da celle vuote, icone, ruolo e colspan precedenti.
     team_index = None
-    for index in range(player_index + 1, min(len(data_cells), player_index + 5)):
+    team_search_start = 0 if fallback_row_link else player_index + 1
+    for index in range(team_search_start, min(len(data_cells), team_search_start + 5)):
         value = clean_text(data_cells[index].get("text") or "")
         if re.fullmatch(r"[A-Za-z]{2,4}", value):
             team_index = index
