@@ -12,6 +12,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import urljoin
 
 SOURCE_URL = "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27"
+STATS_URL = "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia"
 OUTPUT = Path("data/seriea_rosters.json")
 
 HEADERS = {
@@ -180,6 +181,122 @@ class QuotesParser(HTMLParser):
                 self.in_row = False
 
 
+
+class StatsTableParser(HTMLParser):
+    """Estrae intestazioni/celle della tabella statistiche e l'ID Fantacalcio del calciatore."""
+
+    PROFILE_RE = QuotesParser.PROFILE_RE
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_row = False
+        self.in_cell = False
+        self.cell_tag = None
+        self.cell_text = []
+        self.cells = []
+        self.row_links = []
+        self.rows = []
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        attrs_dict = dict(attrs)
+        if tag == "tr":
+            self.in_row = True
+            self.cells = []
+            self.row_links = []
+            return
+        if not self.in_row:
+            return
+        if tag in {"th", "td"}:
+            self.in_cell = True
+            self.cell_tag = tag
+            self.cell_text = []
+        if tag == "a":
+            href = attrs_dict.get("href") or ""
+            if self.PROFILE_RE.search(href):
+                self.row_links.append({"href": href, "attrs": attrs})
+
+    def handle_data(self, data):
+        if self.in_row and self.in_cell:
+            value = clean_text(data)
+            if value:
+                self.cell_text.append(value)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if not self.in_row:
+            return
+        if tag in {"th", "td"} and self.in_cell:
+            self.cells.append({
+                "tag": self.cell_tag,
+                "text": clean_text(" ".join(self.cell_text)),
+            })
+            self.in_cell = False
+            self.cell_tag = None
+            self.cell_text = []
+            return
+        if tag == "tr":
+            if self.cells:
+                self.rows.append({"cells": self.cells[:], "links": self.row_links[:]})
+            self.in_row = False
+
+
+def parse_decimal(value):
+    value = clean_text(value).replace(",", ".")
+    if not value or value in {"-", "—"}:
+        return None
+    match = re.search(r"-?\d+(?:\.\d+)?", value)
+    if not match:
+        return None
+    try:
+        return float(match.group(0))
+    except ValueError:
+        return None
+
+
+def scrape_fantamedia():
+    page = fetch(STATS_URL)
+    parser = StatsTableParser()
+    parser.feed(page)
+
+    fm_index = None
+    for row in parser.rows:
+        headers = [normalize(cell["text"]) for cell in row["cells"] if cell["tag"] == "th"]
+        if not headers:
+            continue
+        for index, header in enumerate(headers):
+            if header in {"fm", "fantamedia", "media fantavoto"}:
+                fm_index = index
+                break
+        if fm_index is not None:
+            break
+
+    if fm_index is None:
+        raise RuntimeError("colonna FM/Fantamedia non trovata nella pagina statistiche")
+
+    by_id = {}
+    recognized_rows = 0
+    for row in parser.rows:
+        if not row["links"]:
+            continue
+        cells = [cell["text"] for cell in row["cells"] if cell["tag"] == "td"]
+        if fm_index >= len(cells):
+            continue
+        href = row["links"][0].get("href") or ""
+        match = StatsTableParser.PROFILE_RE.search(href)
+        if not match:
+            continue
+        player_id = match.group(3)
+        recognized_rows += 1
+        by_id[player_id] = parse_decimal(cells[fm_index])
+
+    if recognized_rows < 250:
+        raise RuntimeError(
+            f"soltanto {recognized_rows} righe statistiche riconosciute: probabile cambio HTML"
+        )
+
+    return by_id, recognized_rows
+
 def role_from_row(row):
     values = []
     values.extend(row["text"])
@@ -251,19 +368,6 @@ def best_name_from_row(row, link):
     return max(unique, key=lambda value: (len(value.split()), len(value)))
 
 
-def market_values_from_row(row):
-    """Return current Classic quotation (QA) and FVM/1000 from a quotes table row."""
-    numbers = []
-    for value in row.get("text") or []:
-        value = clean_text(value)
-        if re.fullmatch(r"\d+", value):
-            numbers.append(int(value))
-    # Fantacalcio table order is Classic QI, QA, FVM, then Mantra QI, QA, FVM.
-    if len(numbers) < 3:
-        return None
-    return {"quotation": numbers[1], "fvm": numbers[2]}
-
-
 def load_previous_players():
     if not OUTPUT.exists():
         return []
@@ -331,22 +435,26 @@ def scrape_fantacalcio():
                 unresolved_roles.append((name, team, player_id))
                 continue
 
-            values = market_values_from_row(row)
-            if values is None:
-                continue
-
             seen_ids.add(player_id)
             players.append({
                 "name": name,
                 "team": team,
                 "role": role,
-                "quotation": values["quotation"],
-                "fvm": values["fvm"],
                 # ID stabile Fantacalcio: non cambia quando il giocatore cambia club.
                 "officialId": f"fantacalcio:{player_id}",
                 "fantacalcioId": int(player_id),
                 "profileUrl": urljoin(SOURCE_URL, href),
             })
+
+    # Fantamedia ufficiale: stessa identità stabile Fantacalcio usata per le rose.
+    try:
+        fantamedia_by_id, stats_rows = scrape_fantamedia()
+    except Exception as exc:
+        raise RuntimeError(f"Fantamedia non aggiornata: {exc}") from exc
+
+    for player in players:
+        player_id = str(player.get("fantacalcioId") or "")
+        player["fantamedia"] = fantamedia_by_id.get(player_id)
 
     if unresolved_roles:
         print("ATTENZIONE: giocatori senza ruolo riconoscibile:", file=sys.stderr)
@@ -383,16 +491,14 @@ def safety_checks(players, unresolved_roles):
         if count < 20:
             raise RuntimeError(f"ruolo {role}: soltanto {count} giocatori")
 
-    missing_market = [p for p in players if not isinstance(p.get("quotation"), int) or not isinstance(p.get("fvm"), int)]
-    if missing_market:
-        raise RuntimeError(f"quotazione/FVM mancanti per {len(missing_market)} giocatori")
-
     return teams, roles
 
 
 def main():
-    print("Fonte: Fantacalcio.it — Quotazioni ufficiali 2026/27")
+    print("Fonte rose/quotazioni: Fantacalcio.it — Quotazioni ufficiali 2026/27")
     print(SOURCE_URL)
+    print("Fonte Fantamedia: Fantacalcio.it — Statistiche ufficiali 2026/27")
+    print(STATS_URL)
     print()
 
     try:
@@ -406,8 +512,9 @@ def main():
     players.sort(key=lambda p: (p["team"], p["role"], normalize(p["name"])))
 
     payload = {
-        "source": "Fantacalcio.it - Quotazioni ufficiali Serie A 2026/27",
+        "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
         "source_url": SOURCE_URL,
+        "stats_source_url": STATS_URL,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "teams": len(teams),
         "players_count": len(players),
@@ -422,7 +529,8 @@ def main():
 
     print(
         f"OK: {len(players)} giocatori | {len(teams)} squadre | "
-        f"P {roles['P']} D {roles['D']} C {roles['C']} A {roles['A']}"
+        f"P {roles['P']} D {roles['D']} C {roles['C']} A {roles['A']} | "
+        f"Fantamedia disponibili {sum(p.get('fantamedia') is not None for p in players)}"
     )
     if unresolved_roles:
         print(f"Saltati per ruolo non riconosciuto: {len(unresolved_roles)}")
