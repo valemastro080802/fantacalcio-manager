@@ -1130,7 +1130,7 @@ tbody tr:hover{
    <div class="metrics-layout">
     <div>
      <div class="metrics-grid" id="metricsGrid"></div>
-     <div class="metric-help">1 = molto basso / molto raro · 10 = molto alto / molto frequente. Per <b>infortuni</b>, 1 indica rischio minimo e 10 rischio massimo: nel radar e nella media il valore viene valutato al contrario, quindi meno infortuni = meglio. Per <b>ammonizioni</b>, un valore alto indica maggiore frequenza. Il <b>modificatore</b> è una scelta SÌ/NO.</div>
+     <div class="metric-help">1 = molto basso / molto raro · 10 = molto alto / molto frequente. Per <b>infortuni e ammonizioni</b>, 1 indica rischio/frequenza minima e 10 massima: nel radar e nella media il valore viene valutato al contrario, quindi più il valore è basso, meglio è. Il <b>modificatore</b> è una scelta SÌ/NO.</div>
     </div>
     <div class="radar-card">
      <h4>Profilo del giocatore</h4>
@@ -1152,15 +1152,15 @@ tbody tr:hover{
 <script>
 
 const ROLE_METRICS={
- "A":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"]],
- "C":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"],["difensivita","Difensività"]],
+ "A":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]],
+ "C":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]],
  "D":[["gol","Gol"],["assist","Assist"],["titolaritaScore","Titolarità"],["fisicita","Fisicità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]],
- "P":[["cleanSheet","Clean sheet"],["usciteAlte","Uscite alte"],["titolaritaScore","Titolarità"],["infortuni","Infortuni"]]
+ "P":[["cleanSheet","Clean sheet"],["usciteAlte","Uscite alte"],["titolaritaScore","Titolarità"],["infortuni","Infortuni"],["ammonizioni","Ammonizioni"]]
 };
 function hasModificatore(role){return role==="D"||role==="P";}
 function modificatoreLabel(p){return p.modificatore===true?"SÌ":"NO";}
 function clampMetric(v){const n=Number(v);return Number.isFinite(n)?Math.min(10,Math.max(1,Math.round(n))):5;}
-function metricScore(key,value){const v=clampMetric(value);return key==="infortuni"?11-v:v;}
+function metricScore(key,value){const v=clampMetric(value);return (key==="infortuni"||key==="ammonizioni")?11-v:v;}
 function ensureMetrics(p){
  if(!p.metrics)p.metrics={};
  const defs=ROLE_METRICS[p.role]||[];
