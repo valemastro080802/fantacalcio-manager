@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v2.1.5</title>
+<title>Fantacalcio Manager Online v2.2.0</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -922,13 +922,27 @@ tbody tr:hover{
 .fascia-select.fascia-2{background:rgba(140,83,216,.20);border-color:rgba(177,120,255,.60);color:#ead8ff}
 .fascia-select.fascia-3{background:rgba(55,126,210,.18);border-color:rgba(89,157,237,.55);color:#d5e9ff}
 .fascia-select.fascia-4{background:rgba(84,151,123,.16);border-color:rgba(104,190,151,.50);color:#d3f5e5}
+
+/* v2.2.0 — stato infortunio reale + Fantamedia */
+.injury-btn{
+  width:27px;height:27px;border-radius:8px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.045);color:#7f8797;font-size:17px;font-weight:900;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.16s ease;
+}
+.injury-btn:hover{transform:scale(1.06);border-color:rgba(255,255,255,.3)}
+.injury-btn.on{color:#ff496a;background:rgba(255,73,106,.12);border-color:rgba(255,73,106,.55);box-shadow:0 0 0 1px rgba(255,73,106,.08)}
+.injury-cell{white-space:nowrap;text-align:center}
+.injury-duration{display:block;margin-top:3px;max-width:112px;color:#ff9aae;font-size:9px;line-height:1.15;white-space:normal}
+.injury-lineup{margin-top:2px;color:#ffd0d9;font-size:8px;font-weight:850;line-height:1.15;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.sub-injury{display:block;color:#ffd0d9;font-size:7.5px;font-weight:800;line-height:1.1;margin-top:1px}
+.fm-value{font-weight:850;color:#f3ddff}
 </style>
 
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.1.5</small></div>
- <div class="tabs"><button class="tab active" data-page="formation">Formazione</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.2.0</small></div>
+ <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
 <section id="formation" class="page active">
@@ -938,7 +952,7 @@ tbody tr:hover{
     <div>
       <div class="team-heading">
         <div class="team-crest-wrap" id="teamCrestWrap"><span id="teamCrestFallback">FC</span><img id="teamCrest" alt=""></div>
-        <b id="teamFormationTitle">Formazione squadra</b>
+        <b id="teamFormationTitle">Squadra tipo</b>
       </div>
       <div class="small">Crea manualmente la tua formazione tipo per ogni squadra di Serie A. Ogni squadra viene salvata separatamente.</div>
     </div>
@@ -961,7 +975,7 @@ tbody tr:hover{
 <option>5-4-1</option>
 <option>5-2-1-2</option>
 </select>
-      <button id="resetLineup" class="ghost reset-lineup-btn" type="button" title="Svuota la formazione della squadra selezionata">Reset formazione</button>
+      <button id="resetLineup" class="ghost reset-lineup-btn" type="button" title="Svuota la squadra tipo della squadra selezionata">Reset squadra tipo</button>
     </div>
    </div>
    <div class="pitch" id="pitch">
@@ -1034,7 +1048,7 @@ tbody tr:hover{
   <span class="pill sync-status" id="syncStatus">Rose ufficiali: controllo automatico</span>
  </div>
  <div class="db-wrap"><div class="table-scroll">
-  <table><thead><tr><th>★</th><th>Giocatore</th><th>Squadra</th><th>R</th><th>Quot.</th><th>FVM/500</th><th>Fascia</th><th>Budget max</th><th>Profilo</th><th>Status</th></tr></thead><tbody id="tbody"></tbody></table>
+  <table><thead><tr><th>★</th><th>Giocatore</th><th>Squadra</th><th>R</th><th>Quot.</th><th>FVM/500</th><th>Fantamedia</th><th>Infortunio</th><th>Fascia</th><th>Budget max</th><th>Profilo</th><th>Status</th></tr></thead><tbody id="tbody"></tbody></table>
  </div></div>
 </section>
 
@@ -1234,6 +1248,12 @@ const formations={
 ].forEach(key=>localStorage.removeItem(key));
 
 let db=JSON.parse(localStorage.getItem("fantaFullDB")||"null")||DEFAULT_DB;
+// v2.2.0: migrazione non distruttiva dei dati già salvati.
+db.forEach(p=>{
+  if(!("fantamedia" in p))p.fantamedia=null;
+  if(!("injured" in p))p.injured=false;
+  if(!("injuryDuration" in p))p.injuryDuration="";
+});
 let teamLineups=JSON.parse(localStorage.getItem("fantaTeamLineups")||"null")||{};
 let teamSubstitutes=JSON.parse(localStorage.getItem("fantaTeamSubstitutes")||"null")||{};
 let teamFormations=JSON.parse(localStorage.getItem("fantaTeamFormations")||"null")||{};
@@ -1274,7 +1294,6 @@ function avatarContent(p){
 const OFFICIAL_ROSTER_URL="./data/seriea_rosters.json";
 const OFFICIAL_MIN_PLAYERS=300;
 const OFFICIAL_EXPECTED_TEAMS=20;
-
 function syncSetStatus(text,state=""){
   const el=document.getElementById("syncStatus");
   if(!el)return;
@@ -1298,6 +1317,8 @@ function syncMakePlayer(op,nextId){
   const name=op.name;
   return {
     id:nextId,name,team:op.team,role:op.role,quotation:Number(op.quotation)||0,fvm:Number(op.fvm)||0,
+    fantamedia:Number.isFinite(Number(op.fantamedia??op.fm))?Number(op.fantamedia??op.fm):null,
+    injured:false,injuryDuration:"",
     initials:initials(name),rating:"",titolarita:"",fascia:"",
     budgetMax:"",rigorista:false,piazzati:false,
     preferito:false,status:"Da valutare",notes:"",metrics:{},photo:"",
@@ -1357,6 +1378,8 @@ function syncMergeOfficial(payload){
       local.role=o.role;
       if(Number.isFinite(Number(o.quotation)))local.quotation=Number(o.quotation);
       if(Number.isFinite(Number(o.fvm)))local.fvm=Number(o.fvm);
+      const incomingFm=o.fantamedia??o.fm;
+      if(incomingFm!==null && incomingFm!==undefined && incomingFm!=="" && Number.isFinite(Number(incomingFm)))local.fantamedia=Number(incomingFm);
       if(o.officialId)local.officialId=String(o.officialId);
     }else{
       const p=syncMakePlayer(o,nextId++);
@@ -1393,10 +1416,12 @@ async function syncOfficialRosters(manual=false){
       return;
     }
     const result=syncMergeOfficial(payload);
+    const snapshotFm=db.filter(p=>p.fantamedia!==null && p.fantamedia!==undefined && p.fantamedia!=="" && Number.isFinite(Number(p.fantamedia))).length;
     if(snapshotId)localStorage.setItem("fantaOfficialSnapshotId",snapshotId);
     const dt=new Date(snapshotId);
     const label=snapshotId?(isNaN(dt)?snapshotId:dt.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})):"ora";
-    syncSetStatus(`Rose, quotazioni e FVM aggiornati · ${label} · ${result.moved} trasferiti · ${result.added} nuovi · ${result.removed} usciti dalla Serie A`,"ok");
+    const fmLabel=snapshotFm>0?`Fantamedia Fantacalcio.it: ${snapshotFm}`:"Fantamedia non presente nello snapshot";
+    syncSetStatus(`Rose, quotazioni e FVM aggiornati · ${fmLabel} · ${label} · ${result.moved} trasferiti · ${result.added} nuovi · ${result.removed} usciti dalla Serie A`,snapshotFm>0?"ok":"warn");
   }catch(err){
     console.warn("Sync rose:",err);
     syncSetStatus("Aggiornamento rose non disponibile: "+err.message+". I tuoi dati non sono stati modificati.","error");
@@ -1498,13 +1523,42 @@ function fasciaSelectHTML(p){
   </select>`;
 }
 
+function fantamediaDisplay(p){
+ const n=Number(p.fantamedia);
+ return Number.isFinite(n)?n.toLocaleString("it-IT",{minimumFractionDigits:2,maximumFractionDigits:2}):"—";
+}
+function injuryButtonHTML(p){
+ const active=!!p.injured;
+ const duration=String(p.injuryDuration||"").trim();
+ return `<div class="injury-cell"><button type="button" class="injury-btn ${active?"on":""}" data-injury="${p.id}" title="${active?"Modifica infortunio":"Segna come infortunato"}" aria-label="${active?"Infortunato":"Disponibile"}">×</button>${active&&duration?`<span class="injury-duration">${duration}</span>`:""}</div>`;
+}
+function editInjury(id){
+ const p=byId(id); if(!p)return;
+ const current=String(p.injuryDuration||"");
+ const message=p.injured
+   ?"Modifica la durata dell'infortunio. Lascia vuoto e conferma per segnare il giocatore come guarito."
+   :"Inserisci la durata dell'infortunio (es. 2 settimane, fino al 20 settembre, 1 mese).";
+ const value=prompt(message,current);
+ if(value===null)return;
+ const duration=value.trim();
+ if(!duration){p.injured=false;p.injuryDuration="";}
+ else{p.injured=true;p.injuryDuration=duration;}
+ save();renderDB();renderLineup();renderFavorites();
+}
+function injuryLineupHTML(p,extraClass=""){
+ if(!p||!p.injured)return "";
+ const duration=String(p.injuryDuration||"").trim();
+ return `<span class="${extraClass||"injury-lineup"}">✕ ${duration||"Infortunato"}</span>`;
+}
+
 function renderDB(){
  const arr=filtered();countPill.textContent=`${arr.length} giocatori visualizzati / ${db.length} totali`;
  tbody.innerHTML=arr.map(p=>`<tr>
  <td><button class="star ${p.preferito?"on":""}" data-star="${p.id}">${p.preferito?"★":"☆"}</button></td>
- <td><button class="player-btn" data-edit="${p.id}" style="display:flex;align-items:center;gap:7px"><span class="mini" style="width:28px;height:28px;overflow:hidden">${avatarContent(p)}</span>${p.name}</button></td><td>${p.team}</td><td><span class="tag">${p.role}</span></td><td>${p.quotation}</td><td>${fvm500(p.fvm)}</td>
+ <td><button class="player-btn" data-edit="${p.id}" style="display:flex;align-items:center;gap:7px"><span class="mini" style="width:28px;height:28px;overflow:hidden">${avatarContent(p)}</span>${p.name}</button></td><td>${p.team}</td><td><span class="tag">${p.role}</span></td><td>${p.quotation}</td><td>${fvm500(p.fvm)}</td><td class="fm-value">${fantamediaDisplay(p)}</td><td>${injuryButtonHTML(p)}</td>
  <td>${fasciaSelectHTML(p)}</td><td>${p.budgetMax||"—"}</td><td>${metricAverage(p)}</td><td>${p.status}</td></tr>`).join("");
  tbody.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>openEdit(+b.dataset.edit)));
+ tbody.querySelectorAll("[data-injury]").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();editInjury(+b.dataset.injury);}));
  tbody.querySelectorAll("[data-star]").forEach(b=>b.addEventListener("click",()=>{const p=byId(+b.dataset.star);p.preferito=!p.preferito;save();renderDB();}));
  tbody.querySelectorAll("[data-fascia]").forEach(sel=>sel.addEventListener("change",()=>{
    const p=byId(+sel.dataset.fascia); if(!p)return;
@@ -1608,7 +1662,7 @@ function renderLineup(){
  pitch.dataset.team=currentTeam;
  const coords=formations[formationSelect.value];
  pitch.querySelectorAll(".slot").forEach(x=>x.remove());
- teamFormationTitle.textContent=`${currentTeam} · Formazione`;
+ teamFormationTitle.textContent=`${currentTeam} · Squadra tipo`;
  selectedTeamLabel.textContent=`Undici ${currentTeam}`;
 
  // Rimuove automaticamente dalla formazione eventuali giocatori che non appartengono più alla squadra.
@@ -1631,12 +1685,13 @@ function renderLineup(){
    slot.innerHTML=p?`
    <button type="button" class="avatar" data-inspect-slot="${i}" title="Vedi statistiche">${avatarContent(p)}</button>
    <div class="formation-name-row"><div class="formation-player-name">${p.name}</div><span class="formation-role-badge">${p.role}</span></div>
+   ${injuryLineupHTML(p)}
    <div class="sub-slot">
      <button type="button" data-sub-slot="${i}" data-sub-index="0" class="${subP1?"":"empty-sub"}" title="${subP1?"Apri sostituto 1":"Aggiungi sostituto 1"}">
-       ${subP1?`<span class="sub-player-label">↳ ${subP1.name}</span><span class="formation-role-badge sub-role-badge">${subP1.role}</span>`:"+ sostituto 1"}
+       ${subP1?`<span class="sub-player-label">↳ ${subP1.name}</span><span class="formation-role-badge sub-role-badge">${subP1.role}</span>${injuryLineupHTML(subP1,"sub-injury")}`:"+ sostituto 1"}
      </button>
      <button type="button" data-sub-slot="${i}" data-sub-index="1" class="${subP2?"":"empty-sub"}" title="${subP2?"Apri sostituto 2":"Aggiungi sostituto 2"}">
-       ${subP2?`<span class="sub-player-label">↳ ${subP2.name}</span><span class="formation-role-badge sub-role-badge">${subP2.role}</span>`:"+ sostituto 2"}
+       ${subP2?`<span class="sub-player-label">↳ ${subP2.name}</span><span class="formation-role-badge sub-role-badge">${subP2.role}</span>${injuryLineupHTML(subP2,"sub-injury")}`:"+ sostituto 2"}
      </button>
    </div>`:
    `<button type="button" class="avatar" data-slot="${i}">+</button>
