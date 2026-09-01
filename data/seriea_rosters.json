@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-01T21:22:38.542907+00:00",
+  "generated_at": "2026-09-01T22:21:26.912953+00:00",
   "teams": 20,
   "players_count": 587,
   "players": [
@@ -1726,15 +1726,6 @@
       "fantamedia": 5.0
     },
     {
-      "name": "Difensore Destro",
-      "team": "Genoa",
-      "role": "D",
-      "officialId": "fantacalcio:6814",
-      "fantacalcioId": 6814,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/norton-cuffy/6814",
-      "fantamedia": 6.0
-    },
-    {
       "name": "Difensore Sinistro",
       "team": "Genoa",
       "role": "D",
@@ -1778,6 +1769,15 @@
       "fantacalcioId": 791,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/sabelli/791",
       "fantamedia": 0.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "fantacalcio:6814",
+      "fantacalcioId": 6814,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/norton-cuffy/6814",
+      "fantamedia": 6.0
     },
     {
       "name": "Non gioca più in Serie A",
@@ -2392,21 +2392,21 @@
       "fantamedia": 6.25
     },
     {
-      "name": "Punta centrale",
+      "name": "Non gioca più in Serie A",
       "team": "Lazio",
       "role": "A",
-      "officialId": "fantacalcio:2038",
-      "fantacalcioId": 2038,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/pinamonti/2038",
+      "officialId": "fantacalcio:7313",
+      "fantacalcioId": 7313,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/ratkov/7313",
       "fantamedia": 0.0
     },
     {
       "name": "Punta centrale",
       "team": "Lazio",
       "role": "A",
-      "officialId": "fantacalcio:7313",
-      "fantacalcioId": 7313,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/ratkov/7313",
+      "officialId": "fantacalcio:2038",
+      "fantacalcioId": 2038,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/pinamonti/2038",
       "fantamedia": 0.0
     },
     {
@@ -2962,15 +2962,6 @@
       "name": "Centrocampista centrale",
       "team": "Milan",
       "role": "C",
-      "officialId": "fantacalcio:4686",
-      "fantacalcioId": 4686,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/fofana-y/4686",
-      "fantamedia": 0.0
-    },
-    {
-      "name": "Centrocampista centrale",
-      "team": "Milan",
-      "role": "C",
       "officialId": "fantacalcio:4199",
       "fantacalcioId": 4199,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/loftus-cheek/4199",
@@ -3019,6 +3010,15 @@
       "officialId": "fantacalcio:6372",
       "fantacalcioId": 6372,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/moreira/6372",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Milan",
+      "role": "C",
+      "officialId": "fantacalcio:4686",
+      "fantacalcioId": 4686,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/milan/fofana-y/4686",
       "fantamedia": 0.0
     },
     {
@@ -3976,6 +3976,15 @@
       "fantamedia": 7.75
     },
     {
+      "name": "Non gioca più in Serie A",
+      "team": "Roma",
+      "role": "A",
+      "officialId": "fantacalcio:6981",
+      "fantacalcioId": 6981,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/vaz/6981",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Punta centrale",
       "team": "Roma",
       "role": "A",
@@ -3992,15 +4001,6 @@
       "fantacalcioId": 6572,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/castro-s/6572",
       "fantamedia": 6.0
-    },
-    {
-      "name": "Punta centrale",
-      "team": "Roma",
-      "role": "A",
-      "officialId": "fantacalcio:6981",
-      "fantacalcioId": 6981,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/vaz/6981",
-      "fantamedia": 0.0
     },
     {
       "name": "Centrocampista centrale",
