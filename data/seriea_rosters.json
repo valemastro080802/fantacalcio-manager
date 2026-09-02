@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-02T11:23:54.259369+00:00",
+  "generated_at": "2026-09-02T12:30:13.712772+00:00",
   "teams": 20,
-  "players_count": 587,
+  "players_count": 588,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -238,6 +238,15 @@
       "officialId": "fantacalcio:7545",
       "fantacalcioId": 7545,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/vismara/7545",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Portiere",
+      "team": "Atalanta",
+      "role": "P",
+      "officialId": "fantacalcio:7626",
+      "fantacalcioId": 7626,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/pompei/7626",
       "fantamedia": 0.0
     },
     {
