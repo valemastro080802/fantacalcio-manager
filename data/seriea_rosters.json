@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-02T21:22:21.015181+00:00",
+  "generated_at": "2026-09-02T22:22:33.182067+00:00",
   "teams": 20,
-  "players_count": 588,
+  "players_count": 589,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -1661,6 +1661,15 @@
       "fantacalcioId": 7341,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/amorim/7341",
       "fantamedia": 5.5
+    },
+    {
+      "name": "El Shaarawy",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "fantacalcio:795",
+      "fantacalcioId": 795,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/el-shaarawy/795",
+      "fantamedia": 0.0
     },
     {
       "name": "Traorè Hj.",
