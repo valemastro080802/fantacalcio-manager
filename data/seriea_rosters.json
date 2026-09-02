@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-02T10:25:23.962026+00:00",
+  "generated_at": "2026-09-02T11:23:54.259369+00:00",
   "teams": 20,
   "players_count": 587,
   "players": [
@@ -496,6 +496,15 @@
       "name": "Non gioca più in Serie A",
       "team": "Cagliari",
       "role": "A",
+      "officialId": "fantacalcio:6598",
+      "fantacalcioId": 6598,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mutandwa/6598",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Cagliari",
+      "role": "A",
       "officialId": "fantacalcio:7338",
       "fantacalcioId": 7338,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/albarracin/7338",
@@ -509,15 +518,6 @@
       "fantacalcioId": 7547,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/kevin-carlos/7547",
       "fantamedia": 5.0
-    },
-    {
-      "name": "Punta centrale",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "fantacalcio:6598",
-      "fantacalcioId": 6598,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mutandwa/6598",
-      "fantamedia": 0.0
     },
     {
       "name": "Punta centrale",
