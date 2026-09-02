@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-02T22:22:33.182067+00:00",
+  "generated_at": "2026-09-02T23:21:28.055931+00:00",
   "teams": 20,
-  "players_count": 589,
+  "players_count": 590,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -311,6 +311,15 @@
       "fantacalcioId": 4359,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/piccoli/4359",
       "fantamedia": 5.5
+    },
+    {
+      "name": "Punta centrale",
+      "team": "Bologna",
+      "role": "A",
+      "officialId": "fantacalcio:7627",
+      "fantacalcioId": 7627,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/enem/7627",
+      "fantamedia": 0.0
     },
     {
       "name": "Bernardeschi",
