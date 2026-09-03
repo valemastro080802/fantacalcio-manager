@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-03T21:22:34.386775+00:00",
+  "generated_at": "2026-09-03T22:22:32.534198+00:00",
   "teams": 20,
   "players_count": 592,
   "players": [
@@ -2530,15 +2530,6 @@
       "name": "Difensore Centrale",
       "team": "Lazio",
       "role": "D",
-      "officialId": "fantacalcio:460",
-      "fantacalcioId": 460,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/romagnoli/460",
-      "fantamedia": 0.0
-    },
-    {
-      "name": "Difensore Centrale",
-      "team": "Lazio",
-      "role": "D",
       "officialId": "fantacalcio:7012",
       "fantacalcioId": 7012,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/provstgaard/7012",
@@ -2606,6 +2597,15 @@
       "fantacalcioId": 7131,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/floriani-mussolini/7131",
       "fantamedia": 6.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "fantacalcio:460",
+      "fantacalcioId": 460,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/romagnoli/460",
+      "fantamedia": 0.0
     },
     {
       "name": "Portiere",
