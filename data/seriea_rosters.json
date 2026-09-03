@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-03T18:26:58.169471+00:00",
+  "generated_at": "2026-09-03T19:20:13.231245+00:00",
   "teams": 20,
-  "players_count": 590,
+  "players_count": 592,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -1751,6 +1751,15 @@
       "fantacalcioId": 6977,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/otoa/6977",
       "fantamedia": 5.0
+    },
+    {
+      "name": "Difensore Destro",
+      "team": "Genoa",
+      "role": "D",
+      "officialId": "fantacalcio:6047",
+      "fantacalcioId": 6047,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/ehizibue/6047",
+      "fantamedia": 0.0
     },
     {
       "name": "Difensore Sinistro",
@@ -4702,6 +4711,15 @@
       "officialId": "fantacalcio:5751",
       "fantacalcioId": 5751,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/patterson/5751",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Difensore Sinistro",
+      "team": "Torino",
+      "role": "D",
+      "officialId": "fantacalcio:2169",
+      "fantacalcioId": 2169,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/rodriguez-r/2169",
       "fantamedia": 0.0
     },
     {
