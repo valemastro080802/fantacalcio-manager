@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v2.2.3</title>
+<title>Fantacalcio Manager Online v2.2.0</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -941,7 +941,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.2.3</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.2.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
 </header>
 
@@ -1032,7 +1032,7 @@ tbody tr:hover{
   <input id="search" class="search" placeholder="Cerca giocatore...">
   <select id="teamFilter"><option value="">Tutte le squadre</option></select>
   <select id="roleFilter"><option value="">Tutti i ruoli</option><option>P</option><option>D</option><option>C</option><option>A</option></select>
-  <select id="statusFilter"><option value="">Tutti gli status</option><option>Da valutare</option><option>Top</option><option>Buono</option><option>Titolare low cost</option><option>Scommessa</option><option>Usato sicuro</option><option>Evita</option></select>
+  <select id="statusFilter"><option value="">Tutti gli status</option><option>Da valutare</option><option>Titolare low cost</option><option>Top</option><option>Buono</option><option>Scommessa</option><option>Evita</option></select>
   <select id="sortFilter" aria-label="Ordina database">
    <option value="">Ordine predefinito</option>
    <option value="fvm-desc">FVM: alto → basso</option>
@@ -1043,6 +1043,7 @@ tbody tr:hover{
    <option value="fascia-desc">Fascia: 4 → 1</option>
   </select>
   <button id="resetFilters" class="ghost">Azzera</button>
+  <button id="addManualPlayer" class="action" type="button">+ Aggiungi giocatore</button>
   <button id="syncSerieA" class="sync-seriea" type="button">↻ Aggiorna rose</button>
  </div>
  <div class="summary">
@@ -1098,6 +1099,18 @@ tbody tr:hover{
  </div>
 </div>
 
+<div class="modal" id="addPlayerModal"><div class="card" style="max-width:560px">
+ <div class="cardhead"><div><h2 style="margin:0">Aggiungi giocatore</h2><div class="small">Inserisci il giocatore nel database e assegnalo a una squadra.</div></div><button class="close" id="closeAddPlayer" type="button">×</button></div>
+ <form id="addPlayerForm">
+  <div class="edit-grid">
+   <div class="field wide"><label>Nome</label><input id="addPlayerName" required placeholder="Nome e cognome"></div>
+   <div class="field"><label>Squadra</label><select id="addPlayerTeam" required></select></div>
+   <div class="field"><label>Ruolo</label><select id="addPlayerRole" required><option>P</option><option>D</option><option>C</option><option>A</option></select></div>
+  </div>
+  <button class="action" style="width:100%;margin-top:12px" type="submit">Aggiungi al database</button>
+ </form>
+</div></div>
+
 <div class="modal" id="editModal"><div class="card">
  <div class="cardhead"><div class="bigavatar" id="modalAvatar">XX</div><div><h2 id="modalTitle" style="margin:0"></h2><div class="small">Scheda completamente personalizzabile</div>
  <div class="photo-tools">
@@ -1114,7 +1127,7 @@ tbody tr:hover{
    <div class="field"><label>FVM / 500 (ufficiale)</label><input id="eFvm" type="number" min="0" readonly></div>
    <div class="field"><label>Fascia</label><select id="eFascia" class="fascia-select fascia-" aria-label="Fascia giocatore"><option value="">—</option><option value="1">1ª fascia</option><option value="2">2ª fascia</option><option value="3">3ª fascia</option><option value="4">4ª fascia</option></select></div>
    <div class="field"><label>Budget massimo</label><input id="eBudget" type="number" min="0" placeholder="crediti"></div>
-   <div class="field"><label>Status</label><select id="eStatus"><option>Da valutare</option><option>Top</option><option>Buono</option><option>Titolare low cost</option><option>Scommessa</option><option>Usato sicuro</option><option>Evita</option></select></div>
+   <div class="field"><label>Status</label><select id="eStatus"><option>Da valutare</option><option>Titolare low cost</option><option>Top</option><option>Buono</option><option>Scommessa</option><option>Evita</option></select></div>
    <div class="wide checks"><label><input id="eRig" type="checkbox"> Rigorista</label><label><input id="ePiaz" type="checkbox"> Piazzati</label><label><input id="eFav" type="checkbox"> Preferito ★</label></div>
    <div class="field wide"><label>Note personali</label><textarea id="eNotes" placeholder="Tutto quello che vuoi ricordare sul giocatore..."></textarea></div>
   </div>
@@ -1323,7 +1336,7 @@ function syncMakePlayer(op,nextId){
     injured:false,injuryDuration:"",
     initials:initials(name),rating:"",titolarita:"",fascia:"",
     budgetMax:"",rigorista:false,piazzati:false,
-    preferito:false,status:"Da valutare",notes:"",metrics:{},photo:"",
+    preferito:false,status:"Da valutare",notes:"",metrics:{},photo:"",manual:false,
     officialId:op.officialId||""
   };
 }
@@ -1355,7 +1368,7 @@ function syncMergeOfficial(payload){
   const bySig=new Map();
   db.forEach(p=>{
     if(p.officialId)byOfficialId.set(String(p.officialId),p);
-    const sig=syncNameSignature(p.name);
+    const sig=p.manual?"":syncNameSignature(p.name);
     if(sig){
       const list=bySig.get(sig)||[];
       list.push(p); bySig.set(sig,list);
@@ -1390,7 +1403,7 @@ function syncMergeOfficial(payload){
   }
 
   const before=db.length;
-  db=db.filter(p=>matched.has(p.id));
+  db=db.filter(p=>p.manual||matched.has(p.id));
   const removed=before-db.length;
 
   syncCleanupLineups();
@@ -1445,6 +1458,7 @@ document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{
 TEAMS.forEach(t=>{
  teamFilter.insertAdjacentHTML("beforeend",`<option>${t}</option>`);
  eTeam.insertAdjacentHTML("beforeend",`<option>${t}</option>`);
+ addPlayerTeam.insertAdjacentHTML("beforeend",`<option>${t}</option>`);
  formationTeamSelect.insertAdjacentHTML("beforeend",`<option>${t}</option>`);
 });
 TEAMS.forEach(t=>favTeamFilter.insertAdjacentHTML("beforeend",`<option>${t}</option>`));
@@ -1554,6 +1568,34 @@ function injuryLineupHTML(p,extraClass=""){
  const duration=String(p.injuryDuration||"").trim();
  return `<span class="${extraClass||"injury-lineup"}">✕ ${duration||"Infortunato"}</span>`;
 }
+
+function createManualPlayer(name,team,role){
+ const cleanName=String(name||"").trim();
+ if(!cleanName||!TEAMS.includes(team)||!["P","D","C","A"].includes(role))return null;
+ const nextId=Math.max(0,...db.map(p=>Number(p.id)||0))+1;
+ const p={
+   id:nextId,name:cleanName,team,role,quotation:0,fvm:0,fantamedia:null,
+   injured:false,injuryDuration:"",initials:initials(cleanName),rating:"",titolarita:"",fascia:"",
+   budgetMax:"",rigorista:false,piazzati:false,preferito:false,status:"Da valutare",notes:"",metrics:{},photo:"",
+   officialId:"",manual:true
+ };
+ ensureMetrics(p);db.push(p);save();renderDB();renderFavorites();renderLineup();
+ return p;
+}
+
+addManualPlayer.addEventListener("click",()=>{
+ addPlayerName.value="";addPlayerTeam.value=currentTeam;addPlayerRole.value="P";addPlayerModal.classList.add("open");
+ setTimeout(()=>addPlayerName.focus(),0);
+});
+closeAddPlayer.addEventListener("click",()=>addPlayerModal.classList.remove("open"));
+addPlayerModal.addEventListener("click",e=>{if(e.target===addPlayerModal)addPlayerModal.classList.remove("open");});
+addPlayerForm.addEventListener("submit",e=>{
+ e.preventDefault();
+ const p=createManualPlayer(addPlayerName.value,addPlayerTeam.value,addPlayerRole.value);
+ if(!p)return;
+ addPlayerModal.classList.remove("open");
+ openEdit(p.id);
+});
 
 function renderDB(){
  const arr=filtered();countPill.textContent=`${arr.length} giocatori visualizzati / ${db.length} totali`;
