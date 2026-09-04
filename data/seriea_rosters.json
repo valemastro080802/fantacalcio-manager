@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-04T20:23:04.530615+00:00",
+  "generated_at": "2026-09-04T21:22:01.418186+00:00",
   "teams": 20,
-  "players_count": 592,
+  "players_count": 593,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -523,6 +523,15 @@
       "name": "Non gioca più in Serie A",
       "team": "Cagliari",
       "role": "A",
+      "officialId": "fantacalcio:6243",
+      "fantacalcioId": 6243,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/borrelli/6243",
+      "fantamedia": 6.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Cagliari",
+      "role": "A",
       "officialId": "fantacalcio:7338",
       "fantacalcioId": 7338,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/albarracin/7338",
@@ -536,15 +545,6 @@
       "fantacalcioId": 7547,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/kevin-carlos/7547",
       "fantamedia": 5.0
-    },
-    {
-      "name": "Punta centrale",
-      "team": "Cagliari",
-      "role": "A",
-      "officialId": "fantacalcio:6243",
-      "fantacalcioId": 6243,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/borrelli/6243",
-      "fantamedia": 6.0
     },
     {
       "name": "Punta centrale",
@@ -3859,6 +3859,15 @@
       "fantamedia": 5.5
     },
     {
+      "name": "Centrocampista centrale",
+      "team": "Parma",
+      "role": "C",
+      "officialId": "fantacalcio:7628",
+      "fantacalcioId": 7628,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/sierro/7628",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Non gioca più in Serie A",
       "team": "Parma",
       "role": "C",
@@ -4633,7 +4642,7 @@
       "fantamedia": 5.5
     },
     {
-      "name": "Centrocampista centrale",
+      "name": "Non gioca più in Serie A",
       "team": "Torino",
       "role": "C",
       "officialId": "fantacalcio:6889",
@@ -4759,21 +4768,21 @@
       "fantamedia": 4.0
     },
     {
-      "name": "Portiere",
+      "name": "Non gioca più in Serie A",
       "team": "Torino",
       "role": "P",
-      "officialId": "fantacalcio:6534",
-      "fantacalcioId": 6534,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/perri/6534",
+      "officialId": "fantacalcio:5320",
+      "fantacalcioId": 5320,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/paleari/5320",
       "fantamedia": 0.0
     },
     {
       "name": "Portiere",
       "team": "Torino",
       "role": "P",
-      "officialId": "fantacalcio:5320",
-      "fantacalcioId": 5320,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/paleari/5320",
+      "officialId": "fantacalcio:6534",
+      "fantacalcioId": 6534,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/perri/6534",
       "fantamedia": 0.0
     },
     {
