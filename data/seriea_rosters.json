@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-04T09:24:10.629747+00:00",
+  "generated_at": "2026-09-04T10:24:19.955942+00:00",
   "teams": 20,
   "players_count": 592,
   "players": [
@@ -1351,15 +1351,6 @@
       "name": "Centrocampista centrale",
       "team": "Frosinone",
       "role": "C",
-      "officialId": "fantacalcio:7474",
-      "fantacalcioId": 7474,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/koutsoupias/7474",
-      "fantamedia": 0.0
-    },
-    {
-      "name": "Centrocampista centrale",
-      "team": "Frosinone",
-      "role": "C",
       "officialId": "fantacalcio:7550",
       "fantacalcioId": 7550,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/grillitsch/7550",
@@ -1418,6 +1409,15 @@
       "fantacalcioId": 6506,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/fini/6506",
       "fantamedia": 5.75
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Frosinone",
+      "role": "C",
+      "officialId": "fantacalcio:7474",
+      "fantacalcioId": 7474,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/frosinone/koutsoupias/7474",
+      "fantamedia": 0.0
     },
     {
       "name": "Trequartista",
