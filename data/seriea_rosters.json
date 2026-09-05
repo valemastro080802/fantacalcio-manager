@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-04T23:20:22.889373+00:00",
+  "generated_at": "2026-09-05T00:32:54.471251+00:00",
   "teams": 20,
   "players_count": 593,
   "players": [
@@ -814,7 +814,7 @@
       "officialId": "fantacalcio:6875",
       "fantacalcioId": 6875,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/paz-n/6875",
-      "fantamedia": 6.0
+      "fantamedia": 7.33
     },
     {
       "name": "Attaccante di raccordo",
@@ -823,7 +823,7 @@
       "officialId": "fantacalcio:6967",
       "fantacalcioId": 6967,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/diao/6967",
-      "fantamedia": 6.75
+      "fantamedia": 9.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -877,7 +877,7 @@
       "officialId": "fantacalcio:2097",
       "fantacalcioId": 2097,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/kean/2097",
-      "fantamedia": 6.0
+      "fantamedia": 6.75
     },
     {
       "name": "Punta centrale",
@@ -886,7 +886,7 @@
       "officialId": "fantacalcio:7017",
       "fantacalcioId": 7017,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/douvikas/7017",
-      "fantamedia": 9.75
+      "fantamedia": 8.33
     },
     {
       "name": "Centrocampista centrale",
@@ -904,7 +904,7 @@
       "officialId": "fantacalcio:6151",
       "fantacalcioId": 6151,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/perrone/6151",
-      "fantamedia": 5.75
+      "fantamedia": 6.0
     },
     {
       "name": "Centrocampista centrale",
@@ -931,7 +931,7 @@
       "officialId": "fantacalcio:5453",
       "fantacalcioId": 5453,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/ricci-s/5453",
-      "fantamedia": 0.0
+      "fantamedia": 6.0
     },
     {
       "name": "Centrocampista centrale",
@@ -949,7 +949,7 @@
       "officialId": "fantacalcio:7126",
       "fantacalcioId": 7126,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/baturina/7126",
-      "fantamedia": 8.0
+      "fantamedia": 8.5
     },
     {
       "name": "Trequartista",
@@ -976,7 +976,7 @@
       "officialId": "fantacalcio:5641",
       "fantacalcioId": 5641,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/chalobah-t/5641",
-      "fantamedia": 6.5
+      "fantamedia": 6.33
     },
     {
       "name": "Difensore Centrale",
@@ -1012,7 +1012,7 @@
       "officialId": "fantacalcio:6727",
       "fantacalcioId": 6727,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/couto/6727",
-      "fantamedia": 5.75
+      "fantamedia": 6.33
     },
     {
       "name": "Difensore Destro",
@@ -1039,7 +1039,7 @@
       "officialId": "fantacalcio:6867",
       "fantacalcioId": 6867,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/valle/6867",
-      "fantamedia": 6.0
+      "fantamedia": 6.67
     },
     {
       "name": "Non gioca più in Serie A",
@@ -1057,7 +1057,7 @@
       "officialId": "fantacalcio:6966",
       "fantacalcioId": 6966,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/como/butez/6966",
-      "fantamedia": 5.25
+      "fantamedia": 5.17
     },
     {
       "name": "Sanchez Ro.",
@@ -1615,7 +1615,7 @@
       "officialId": "fantacalcio:4923",
       "fantacalcioId": 4923,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/colombo/4923",
-      "fantamedia": 5.5
+      "fantamedia": 6.0
     },
     {
       "name": "Punta centrale",
@@ -1624,7 +1624,7 @@
       "officialId": "fantacalcio:7600",
       "fantacalcioId": 7600,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/osmajic/7600",
-      "fantamedia": 5.5
+      "fantamedia": 7.5
     },
     {
       "name": "Punta centrale",
@@ -1642,7 +1642,7 @@
       "officialId": "fantacalcio:5791",
       "fantacalcioId": 5791,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/frendrup/5791",
-      "fantamedia": 6.0
+      "fantamedia": 5.83
     },
     {
       "name": "Centrocampista centrale",
@@ -1651,7 +1651,7 @@
       "officialId": "fantacalcio:5946",
       "fantacalcioId": 5946,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/sow/5946",
-      "fantamedia": 5.75
+      "fantamedia": 5.5
     },
     {
       "name": "Centrocampista centrale",
@@ -1696,7 +1696,7 @@
       "officialId": "fantacalcio:5823",
       "fantacalcioId": 5823,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/baldanzi/5823",
-      "fantamedia": 5.75
+      "fantamedia": 5.83
     },
     {
       "name": "Trequartista",
@@ -1732,7 +1732,7 @@
       "officialId": "fantacalcio:5750",
       "fantacalcioId": 5750,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/ostigard/5750",
-      "fantamedia": 5.75
+      "fantamedia": 5.17
     },
     {
       "name": "Difensore Centrale",
@@ -1741,7 +1741,7 @@
       "officialId": "fantacalcio:6660",
       "fantacalcioId": 6660,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/marcandalli/6660",
-      "fantamedia": 5.5
+      "fantamedia": 5.17
     },
     {
       "name": "Difensore Centrale",
@@ -1759,7 +1759,7 @@
       "officialId": "fantacalcio:6047",
       "fantacalcioId": 6047,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/ehizibue/6047",
-      "fantamedia": 0.0
+      "fantamedia": 5.5
     },
     {
       "name": "Difensore Sinistro",
@@ -1768,7 +1768,7 @@
       "officialId": "fantacalcio:5514",
       "fantacalcioId": 5514,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/vasquez/5514",
-      "fantamedia": 5.75
+      "fantamedia": 5.33
     },
     {
       "name": "Difensore Sinistro",
@@ -1804,7 +1804,7 @@
       "officialId": "fantacalcio:791",
       "fantacalcioId": 791,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/sabelli/791",
-      "fantamedia": 0.0
+      "fantamedia": 5.0
     },
     {
       "name": "Non gioca più in Serie A",
@@ -1849,7 +1849,7 @@
       "officialId": "fantacalcio:7332",
       "fantacalcioId": 7332,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/bijlow/7332",
-      "fantamedia": 4.0
+      "fantamedia": 3.0
     },
     {
       "name": "Portiere",
