@@ -936,13 +936,17 @@ tbody tr:hover{
 .injury-lineup{margin-top:2px;color:#ffd0d9;font-size:8px;font-weight:850;line-height:1.15;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.8)}
 .sub-injury{display:block;color:#ffd0d9;font-size:7.5px;font-weight:800;line-height:1.1;margin-top:1px}
 .fm-value{font-weight:850;color:#f3ddff}
+/* v3.0.0 — Modalità asta */
+.auction-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.auction-nav button.active{background:linear-gradient(135deg,#8b5cf6,#d946ef);color:#fff;border-color:transparent}.auction-view{display:none}.auction-view.active{display:block}.auction-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.auction-team-card{background:linear-gradient(145deg,rgba(20,31,55,.98),rgba(12,19,35,.98));border:1px solid #2b3959;border-radius:16px;padding:15px}.auction-team-card.mine{border-color:#a855f7;box-shadow:0 0 0 1px rgba(168,85,247,.25)}.auction-team-head{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:10px;align-items:end}.auction-team-head input{width:100%;background:#0d172b;color:#fff;border:1px solid #34415f;border-radius:9px;padding:9px}.auction-team-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0}.auction-stat{background:#0c1528;border:1px solid #263652;border-radius:10px;padding:8px;text-align:center}.auction-stat b{display:block;font-size:16px}.auction-stat small{font-size:10px;color:#9eabc4}.auction-roles{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.auction-role{border:1px solid #2c3b5b;border-radius:9px;padding:7px;text-align:center;font-weight:800}.auction-role.full{border-color:#ef476f;color:#ff8fa8}.auction-roster{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.auction-role-group{background:rgba(7,13,25,.55);border-radius:10px;padding:8px}.auction-role-group h4{margin:0 0 6px;color:#c4a7ff}.auction-purchase{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px}.auction-purchase:last-child{border:0}.auction-remove{border:0;background:rgba(239,71,111,.14);color:#ff8fa8;border-radius:6px;cursor:pointer}.auction-assignment{margin-top:16px;padding:14px;border:1px solid #8b5cf6;border-radius:12px;background:rgba(139,92,246,.09)}.auction-assignment h3{margin:0 0 10px}.auction-assignment-grid{display:grid;grid-template-columns:1fr 150px;gap:10px}.auction-assignment-message{min-height:18px;margin:7px 0;color:#ff9aae;font-size:12px}.auction-lineup-layout{display:grid;grid-template-columns:minmax(0,680px) minmax(260px,1fr);gap:18px}.auction-pitch{min-height:720px}.auction-roster-list{display:grid;gap:7px}.auction-roster-list button{text-align:left;background:#101a30;color:#fff;border:1px solid #31405e;border-radius:9px;padding:9px;cursor:pointer}.auction-empty{padding:22px;text-align:center;color:#9ba8c1}.auction-db-note{margin-bottom:10px}.auction-buyer-max{font-size:11px;color:#b9c5db;margin-top:5px}
+@media(max-width:900px){.auction-team-grid{grid-template-columns:1fr}.auction-lineup-layout{grid-template-columns:1fr}.auction-pitch{min-height:680px}}
+@media(max-width:560px){.auction-team-head,.auction-assignment-grid{grid-template-columns:1fr}.auction-team-stats,.auction-roles{grid-template-columns:repeat(2,1fr)}.auction-roster{grid-template-columns:1fr}}
 </style>
 
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v2.2.0</small></div>
- <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.0.0</small></div>
+ <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button><button class="tab" data-page="auction">🔨 Asta</button></div>
 </header>
 
 <section id="formation" class="page active">
@@ -1024,6 +1028,47 @@ tbody tr:hover{
    
    
   </aside>
+ </div>
+</section>
+
+<section id="auction" class="page">
+ <div class="panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+   <div><h2 style="margin:0">Modalità asta</h2><div class="small">Gestisci otto rose senza modificare il Database Serie A normale.</div></div>
+  </div>
+  <div class="auction-nav">
+   <button type="button" class="ghost active" data-auction-view="teams">8 squadre</button>
+   <button type="button" class="ghost" data-auction-view="lineup">La mia formazione</button>
+   <button type="button" class="ghost" data-auction-view="database">Database asta</button>
+  </div>
+  <div id="auctionTeamsView" class="auction-view active"><div id="auctionTeamGrid" class="auction-team-grid"></div></div>
+  <div id="auctionLineupView" class="auction-view">
+   <div class="auction-lineup-layout">
+    <div class="pitch-box">
+     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+      <div><b id="auctionLineupTitle">La mia formazione</b><div class="small">Puoi schierare soltanto i giocatori acquistati dalla tua squadra.</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><select id="auctionFormationSelect" class="ghost"></select><button id="auctionResetLineup" class="ghost" type="button">Reset formazione</button></div>
+     </div>
+     <div class="pitch auction-pitch" id="auctionPitch">
+      <svg class="real-field-lines" viewBox="0 0 680 1050" preserveAspectRatio="none" aria-hidden="true"><rect x="26" y="26" width="628" height="998" rx="2"/><line x1="26" y1="525" x2="654" y2="525"/><circle cx="340" cy="525" r="91.5"/><circle class="spot" cx="340" cy="525" r="4"/><rect x="137" y="26" width="406" height="165"/><rect x="247" y="26" width="186" height="55"/><circle class="spot" cx="340" cy="136" r="4"/><path d="M 286 191 A 91.5 91.5 0 0 0 394 191"/><rect class="goal" x="286" y="8" width="108" height="18"/><rect x="137" y="859" width="406" height="165"/><rect x="247" y="969" width="186" height="55"/><circle class="spot" cx="340" cy="914" r="4"/><path d="M 286 859 A 91.5 91.5 0 0 1 394 859"/><rect class="goal" x="286" y="1024" width="108" height="18"/></svg><div class="circle"></div>
+     </div>
+    </div>
+    <aside class="side"><b>Rosa disponibile</b><div class="small" style="margin:4px 0 12px">Giocatori acquistati dalla tua squadra</div><div id="auctionMyRoster" class="auction-roster-list"></div></aside>
+   </div>
+  </div>
+  <div id="auctionDatabaseView" class="auction-view">
+   <div class="small auction-db-note">Questa è una copia indipendente: acquisti e modifiche non cambiano il database normale.</div>
+   <div class="toolbar">
+    <input id="auctionSearch" class="search" placeholder="Cerca giocatore...">
+    <select id="auctionTeamFilter"><option value="">Tutte le squadre</option></select>
+    <select id="auctionRoleFilter"><option value="">Tutti i ruoli</option><option>P</option><option>D</option><option>C</option><option>A</option></select>
+    <select id="auctionStatusFilter"><option value="">Tutti gli status</option><option>Da valutare</option><option>Titolare low cost</option><option>Top</option><option>Buono</option><option>Scommessa</option><option>Evita</option></select>
+    <select id="auctionSortFilter"><option value="">Ordine predefinito</option><option value="fvm-desc">FVM: alto → basso</option><option value="fvm-asc">FVM: basso → alto</option><option value="fm-desc">Fantamedia: alta → bassa</option><option value="fm-asc">Fantamedia: bassa → alta</option><option value="fascia-asc">Fascia: 1 → 4</option><option value="fascia-desc">Fascia: 4 → 1</option></select>
+    <button id="auctionResetFilters" class="ghost">Azzera</button>
+   </div>
+   <div class="summary"><span class="pill" id="auctionCountPill"></span><span class="pill">Solo giocatori ancora disponibili</span></div>
+   <div class="db-wrap"><div class="table-scroll"><table><thead><tr><th>★</th><th>Giocatore</th><th>Squadra</th><th>R</th><th>Quot.</th><th>FVM/500</th><th>Fantamedia</th><th>Infortunio</th><th>Fascia</th><th>Budget max</th><th>Profilo</th><th>Status</th></tr></thead><tbody id="auctionTbody"></tbody></table></div></div>
+  </div>
  </div>
 </section>
 
@@ -1152,8 +1197,24 @@ tbody tr:hover{
    </div>
   </div>
 
+  <div class="auction-assignment" id="auctionAssignmentBox" hidden>
+   <h3>Assegna durante l'asta</h3>
+   <div class="auction-assignment-grid">
+    <div class="field"><label>Squadra acquirente</label><select id="auctionBuyerTeam"></select><div id="auctionBuyerMax" class="auction-buyer-max"></div></div>
+    <div class="field"><label>Prezzo d'acquisto</label><input id="auctionPurchasePrice" type="number" min="1" step="1" value="1"></div>
+   </div>
+   <div id="auctionAssignmentMessage" class="auction-assignment-message"></div>
+   <button type="button" class="action" id="auctionAssignButton" style="width:100%">Assegna giocatore</button>
+  </div>
+
   <button class="action" style="width:100%;margin-top:12px">Salva modifiche</button>
  </form>
+</div></div>
+
+<div class="modal" id="auctionPickModal"><div class="card">
+ <div class="cardhead"><div><h2 style="margin:0">Scegli giocatore</h2><div class="small" id="auctionPickHint">Giocatori della tua rosa</div></div><button class="close" id="auctionClosePick" type="button">×</button></div>
+ <input id="auctionPickSearch" placeholder="Cerca..." style="width:100%;margin:14px 0;background:#10192e;color:#fff;border:1px solid #34415f;border-radius:9px;padding:11px">
+ <div id="auctionPickResults" class="lineup-list"></div>
 </div></div>
 
 <div class="modal" id="pickModal"><div class="card">
@@ -1269,6 +1330,76 @@ db.forEach(p=>{
   if(!("injured" in p))p.injured=false;
   if(!("injuryDuration" in p))p.injuryDuration="";
 });
+
+/* AUCTION CORE START */
+const AUCTION_STORAGE_KEY="fantaAuctionStateV1";
+const AUCTION_ROLE_LIMITS={P:3,D:8,C:8,A:6};
+function auctionClone(value){return JSON.parse(JSON.stringify(value));}
+function createAuctionState(sourceDb){
+ return {
+  version:1,
+  players:auctionClone(sourceDb||[]),
+  teams:Array.from({length:8},(_,i)=>({id:`auction-team-${i+1}`,name:`Squadra ${i+1}`,totalCredits:500,isMine:i===0,purchases:[]})),
+  lineup:Array(11).fill(null),
+  substitutes:Array.from({length:11},()=>[null,null]),
+  formation:"3-5-2"
+ };
+}
+function normalizeAuctionState(raw,sourceDb){
+ const base=createAuctionState(sourceDb);
+ if(!raw||typeof raw!=="object")return base;
+ const teams=Array.from({length:8},(_,i)=>{
+  const saved=Array.isArray(raw.teams)?raw.teams[i]:null;
+  return {...base.teams[i],...(saved||{}),id:base.teams[i].id,totalCredits:Math.max(0,Number(saved?.totalCredits??500)||0),purchases:Array.isArray(saved?.purchases)?saved.purchases.filter(x=>x&&Number.isFinite(Number(x.playerId))&&Number(x.price)>=1).map(x=>({playerId:Number(x.playerId),price:Number(x.price)})):[]};
+ });
+ if(!teams.some(t=>t.isMine))teams[0].isMine=true;
+ let mineFound=false;teams.forEach(t=>{if(t.isMine&&!mineFound)mineFound=true;else t.isMine=false;});
+ return {
+  version:1,
+  players:Array.isArray(raw.players)?raw.players:base.players,
+  teams,
+  lineup:Array.isArray(raw.lineup)?Array.from({length:11},(_,i)=>raw.lineup[i]||null):base.lineup,
+  substitutes:Array.from({length:11},(_,i)=>Array.isArray(raw.substitutes?.[i])?[raw.substitutes[i][0]||null,raw.substitutes[i][1]||null]:[null,null]),
+  formation:raw.formation&&typeof raw.formation==="string"?raw.formation:base.formation
+ };
+}
+var auctionState=normalizeAuctionState(JSON.parse(localStorage.getItem(AUCTION_STORAGE_KEY)||"null"),db);
+function saveAuction(){localStorage.setItem(AUCTION_STORAGE_KEY,JSON.stringify(auctionState));}
+function auctionPlayerById(id){return auctionState.players.find(p=>Number(p.id)===Number(id));}
+function auctionTeamById(id){return auctionState.teams.find(t=>t.id===id);}
+function auctionRoster(teamId){const t=auctionTeamById(teamId);return t?t.purchases.map(x=>({...x,player:auctionPlayerById(x.playerId)})).filter(x=>x.player):[];}
+function auctionRoleCount(teamId,role){return auctionRoster(teamId).filter(x=>x.player.role===role).length;}
+function auctionSpent(teamId){return auctionRoster(teamId).reduce((sum,x)=>sum+Number(x.price||0),0);}
+function auctionCreditsLeft(teamId){const t=auctionTeamById(teamId);return t?Math.max(0,Number(t.totalCredits||0)-auctionSpent(teamId)):0;}
+function auctionRemainingSlots(teamId){return Math.max(0,25-auctionRoster(teamId).length);}
+function auctionMaxBid(teamId){return Math.max(0,auctionCreditsLeft(teamId)-Math.max(0,auctionRemainingSlots(teamId)-1));}
+function auctionPurchasedTeam(playerId){return auctionState.teams.find(t=>t.purchases.some(x=>Number(x.playerId)===Number(playerId)))||null;}
+function validateAuctionPurchase(playerId,teamId,price){
+ const p=auctionPlayerById(playerId),t=auctionTeamById(teamId),amount=Number(price),maxBid=auctionMaxBid(teamId);
+ if(!p)return {ok:false,message:"Giocatore non trovato.",maxBid};
+ if(!t)return {ok:false,message:"Seleziona una squadra valida.",maxBid};
+ if(auctionPurchasedTeam(playerId))return {ok:false,message:"Il giocatore è già stato acquistato.",maxBid};
+ if(!Number.isInteger(amount)||amount<1)return {ok:false,message:"Il prezzo deve essere un numero intero di almeno 1 credito.",maxBid};
+ if(auctionRoleCount(teamId,p.role)>=AUCTION_ROLE_LIMITS[p.role])return {ok:false,message:`Il reparto ${p.role} di ${t.name} è già completo.`,maxBid};
+ if(amount>maxBid)return {ok:false,message:`Offerta troppo alta. Massimo consentito: ${maxBid} crediti.`,maxBid};
+ return {ok:true,message:"",maxBid};
+}
+function assignAuctionPlayerCore(playerId,teamId,price){
+ const check=validateAuctionPurchase(playerId,teamId,price);if(!check.ok)return check;
+ auctionTeamById(teamId).purchases.push({playerId:Number(playerId),price:Number(price)});return {ok:true,message:"Giocatore assegnato.",maxBid:auctionMaxBid(teamId)};
+}
+function removeAuctionPurchaseCore(teamId,playerId){
+ const t=auctionTeamById(teamId);if(!t)return {ok:false,message:"Squadra non trovata."};
+ const before=t.purchases.length;t.purchases=t.purchases.filter(x=>Number(x.playerId)!==Number(playerId));
+ if(before===t.purchases.length)return {ok:false,message:"Acquisto non trovato."};
+ auctionState.lineup=auctionState.lineup.map(id=>Number(id)===Number(playerId)?null:id);
+ auctionState.substitutes=auctionState.substitutes.map(pair=>pair.map(id=>Number(id)===Number(playerId)?null:id));
+ return {ok:true,message:"Acquisto annullato."};
+}
+function myAuctionTeam(){return auctionState.teams.find(t=>t.isMine)||auctionState.teams[0];}
+function myAuctionPlayers(){return auctionRoster(myAuctionTeam().id).map(x=>x.player);}
+saveAuction();
+/* AUCTION CORE END */
 let teamLineups=JSON.parse(localStorage.getItem("fantaTeamLineups")||"null")||{};
 let teamSubstitutes=JSON.parse(localStorage.getItem("fantaTeamSubstitutes")||"null")||{};
 let teamFormations=JSON.parse(localStorage.getItem("fantaTeamFormations")||"null")||{};
@@ -1616,9 +1747,13 @@ function renderDB(){
 [search,teamFilter,roleFilter,statusFilter,sortFilter].forEach(el=>el.addEventListener("input",renderDB));
 resetFilters.addEventListener("click",()=>{search.value="";teamFilter.value="";roleFilter.value="";statusFilter.value="";sortFilter.value="";renderDB();});
 
-function openEdit(id){
- editId=id;const p=byId(id);modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;eFvm.value=fvm500Value(p.fvm) ?? "";
+let editContext="normal";
+function currentEditPlayer(){return editContext==="auction"?auctionPlayerById(editId):byId(editId);}
+function openEdit(id,context="normal"){
+ editId=id;editContext=context;const p=currentEditPlayer();if(!p)return;modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;eFvm.value=fvm500Value(p.fvm) ?? "";
  eFascia.value=fasciaNum(p.fascia);eFascia.className=`fascia-select fascia-${fasciaNum(p.fascia)}`;eBudget.value=p.budgetMax;eStatus.value=p.status;eRig.checked=p.rigorista;ePiaz.checked=p.piazzati;eFav.checked=p.preferito;eNotes.value=p.notes;renderMetricsEditor(p);editModal.classList.add("open");
+ auctionAssignmentBox.hidden=context!=="auction";
+ if(context==="auction")renderAuctionAssignmentBox();
 }
 closeModal.addEventListener("click",()=>editModal.classList.remove("open"));
 
@@ -1628,31 +1763,27 @@ photoInput.addEventListener("change",e=>{
  if(file.size>2.5*1024*1024){alert("Usa una foto sotto 2,5 MB.");photoInput.value="";return;}
  const reader=new FileReader();
  reader.onload=()=>{
-   const p=byId(editId);
+   const p=currentEditPlayer();
    p.photo=reader.result;
    modalAvatar.innerHTML=avatarContent(p);
-   save();
-   renderDB();
-   renderLineup();
+   if(editContext==="auction"){saveAuction();renderAuctionDB();renderAuctionTeams();renderAuctionLineup();}else{save();renderDB();renderLineup();}
  };
  reader.readAsDataURL(file);
 });
 removePhoto.addEventListener("click",()=>{
  if(!editId)return;
- const p=byId(editId);
+ const p=currentEditPlayer();
  p.photo="";
  modalAvatar.innerHTML=avatarContent(p);
  photoInput.value="";
- save();
- renderDB();
- renderLineup();
+ if(editContext==="auction"){saveAuction();renderAuctionDB();renderAuctionTeams();renderAuctionLineup();}else{save();renderDB();renderLineup();}
 });
 
 eFascia.addEventListener("change",()=>{eFascia.className=`fascia-select fascia-${eFascia.value}`;});
-eRole.addEventListener("change",()=>{const p=byId(editId); if(!p)return; p.role=eRole.value; ensureMetrics(p); renderMetricsEditor(p);});
-editForm.addEventListener("submit",e=>{e.preventDefault();const p=byId(editId);p.name=eName.value.trim()||p.name;p.team=eTeam.value;p.role=eRole.value;p.quotation=Math.max(0,+eQuote.value||0);
+eRole.addEventListener("change",()=>{const p=currentEditPlayer(); if(!p)return; p.role=eRole.value; ensureMetrics(p); renderMetricsEditor(p);});
+editForm.addEventListener("submit",e=>{e.preventDefault();const p=currentEditPlayer();if(!p)return;p.name=eName.value.trim()||p.name;p.team=eTeam.value;p.role=eRole.value;p.quotation=Math.max(0,+eQuote.value||0);
  p.fascia=fasciaLabel(eFascia.value);p.budgetMax=eBudget.value;p.status=eStatus.value;p.rigorista=eRig.checked;p.piazzati=ePiaz.checked;p.preferito=eFav.checked;p.notes=eNotes.value;
- p.initials=initials(p.name);save();editModal.classList.remove("open");renderDB();renderLineup();
+ p.initials=initials(p.name);if(editContext==="auction"){saveAuction();renderAuctionDB();renderAuctionTeams();renderAuctionLineup();}else{save();renderDB();renderLineup();}editModal.classList.remove("open");
 });
 
 
@@ -1919,9 +2050,120 @@ function renderPicker(){
  }));
 }
 
+/* === MODALITÀ ASTA v3.0.0 === */
+function auctionEsc(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));}
+function auctionRoleName(role){return ({P:"Portieri",D:"Difensori",C:"Centrocampisti",A:"Attaccanti"})[role]||role;}
+function availableAuctionPlayers(){return auctionState.players.filter(p=>!auctionPurchasedTeam(p.id));}
+function sanitizeAuctionLineup(){
+ const allowed=new Set(myAuctionPlayers().map(p=>Number(p.id)));
+ auctionState.lineup=Array.from({length:11},(_,i)=>allowed.has(Number(auctionState.lineup[i]))?auctionState.lineup[i]:null);
+ auctionState.substitutes=Array.from({length:11},(_,i)=>{
+  const pair=Array.isArray(auctionState.substitutes[i])?auctionState.substitutes[i]:[null,null];
+  return [allowed.has(Number(pair[0]))?pair[0]:null,allowed.has(Number(pair[1]))?pair[1]:null];
+ });
+}
+function renderAuctionTeams(){
+ auctionTeamGrid.innerHTML=auctionState.teams.map(t=>{
+  const roster=auctionRoster(t.id),left=auctionCreditsLeft(t.id),max=auctionMaxBid(t.id);
+  const roleGroups=Object.keys(AUCTION_ROLE_LIMITS).map(role=>{
+   const players=roster.filter(x=>x.player.role===role);
+   return `<div class="auction-role-group"><h4>${auctionRoleName(role)} ${players.length}/${AUCTION_ROLE_LIMITS[role]}</h4>${players.length?players.map(x=>`<div class="auction-purchase"><span>${auctionEsc(x.player.name)} <b>${x.price}</b></span><button class="auction-remove" type="button" data-auction-remove="${x.playerId}" data-auction-team="${t.id}" title="Annulla acquisto">×</button></div>`).join(""):`<div class="small">Nessun acquisto</div>`}</div>`;
+  }).join("");
+  return `<article class="auction-team-card ${t.isMine?"mine":""}">
+   <div class="auction-team-head"><div><label class="small">Nome squadra</label><input data-auction-name="${t.id}" value="${auctionEsc(t.name)}"></div><div><label class="small">Crediti totali</label><input data-auction-credits="${t.id}" type="number" min="25" step="1" value="${t.totalCredits}"></div></div>
+   <label class="checks" style="margin-top:9px"><input type="radio" name="myAuctionTeam" data-auction-mine="${t.id}" ${t.isMine?"checked":""}> La mia squadra</label>
+   <div class="auction-team-stats"><div class="auction-stat"><b>${left}</b><small>Crediti rimasti</small></div><div class="auction-stat"><b>${max}</b><small>Offerta massima</small></div><div class="auction-stat"><b>${auctionSpent(t.id)}</b><small>Spesi</small></div><div class="auction-stat"><b>${roster.length}/25</b><small>Rosa</small></div></div>
+   <div class="auction-roles">${Object.keys(AUCTION_ROLE_LIMITS).map(role=>{const count=auctionRoleCount(t.id,role),limit=AUCTION_ROLE_LIMITS[role];return `<div class="auction-role ${count>=limit?"full":""}">${role} ${count}/${limit}</div>`}).join("")}</div>
+   <div class="auction-roster">${roleGroups}</div>
+  </article>`;
+ }).join("");
+ auctionTeamGrid.querySelectorAll("[data-auction-name]").forEach(input=>input.addEventListener("change",()=>{const t=auctionTeamById(input.dataset.auctionName);t.name=input.value.trim()||t.name;saveAuction();renderAuctionTeams();renderAuctionAssignmentBox();renderAuctionLineup();}));
+ auctionTeamGrid.querySelectorAll("[data-auction-credits]").forEach(input=>input.addEventListener("change",()=>{
+  const t=auctionTeamById(input.dataset.auctionCredits),next=Math.floor(Number(input.value));
+  const minimum=auctionSpent(t.id)+auctionRemainingSlots(t.id);
+  if(!Number.isFinite(next)||next<minimum){alert(`Servono almeno ${minimum} crediti per rispettare gli acquisti e completare la rosa.`);input.value=t.totalCredits;return;}
+  t.totalCredits=next;saveAuction();renderAuctionTeams();renderAuctionAssignmentBox();
+ }));
+ auctionTeamGrid.querySelectorAll("[data-auction-mine]").forEach(input=>input.addEventListener("change",()=>{auctionState.teams.forEach(t=>t.isMine=t.id===input.dataset.auctionMine);sanitizeAuctionLineup();saveAuction();renderAuctionTeams();renderAuctionLineup();}));
+ auctionTeamGrid.querySelectorAll("[data-auction-remove]").forEach(btn=>btn.addEventListener("click",()=>removeAuctionPurchase(btn.dataset.auctionTeam,Number(btn.dataset.auctionRemove))));
+}
+function auctionFiltered(){
+ const q=auctionSearch.value.trim().toLowerCase(),team=auctionTeamFilter.value,role=auctionRoleFilter.value,status=auctionStatusFilter.value,sort=auctionSortFilter.value;
+ const arr=availableAuctionPlayers().filter(p=>(!q||p.name.toLowerCase().includes(q))&&(!team||p.team===team)&&(!role||p.role===role)&&(!status||p.status===status));
+ const byName=(a,b)=>a.name.localeCompare(b.name,"it",{sensitivity:"base"});
+ if(sort==="fvm-desc")arr.sort((a,b)=>(Number(b.fvm)||0)-(Number(a.fvm)||0)||byName(a,b));
+ else if(sort==="fvm-asc")arr.sort((a,b)=>(Number(a.fvm)||0)-(Number(b.fvm)||0)||byName(a,b));
+ else if(sort==="fm-desc")arr.sort((a,b)=>(Number(b.fantamedia)||0)-(Number(a.fantamedia)||0)||byName(a,b));
+ else if(sort==="fm-asc")arr.sort((a,b)=>(Number(a.fantamedia)||0)-(Number(b.fantamedia)||0)||byName(a,b));
+ else if(sort==="fascia-asc"||sort==="fascia-desc")arr.sort((a,b)=>{const fa=Number(fasciaNum(a.fascia))||99,fb=Number(fasciaNum(b.fascia))||99;return (sort==="fascia-asc"?fa-fb:fb-fa)||byName(a,b);});
+ return arr;
+}
+function renderAuctionDB(){
+ const arr=auctionFiltered();auctionCountPill.textContent=`${arr.length} disponibili / ${auctionState.players.length} totali`;
+ auctionTbody.innerHTML=arr.map(p=>`<tr><td><button class="star ${p.preferito?"on":""}" data-auction-star="${p.id}">${p.preferito?"★":"☆"}</button></td><td><button class="player-btn" data-auction-edit="${p.id}" style="display:flex;align-items:center;gap:7px"><span class="mini" style="width:28px;height:28px;overflow:hidden">${avatarContent(p)}</span>${auctionEsc(p.name)}</button></td><td>${auctionEsc(p.team)}</td><td><span class="tag">${p.role}</span></td><td>${p.quotation}</td><td>${fvm500(p.fvm)}</td><td class="fm-value">${fantamediaDisplay(p)}</td><td><button type="button" class="injury-btn ${p.injured?"on":""}" data-auction-injury="${p.id}">×</button>${p.injured&&p.injuryDuration?`<span class="injury-duration">${auctionEsc(p.injuryDuration)}</span>`:""}</td><td><select class="fascia-select fascia-${fasciaNum(p.fascia)}" data-auction-fascia="${p.id}"><option value="">—</option><option value="1" ${fasciaNum(p.fascia)==="1"?"selected":""}>1ª</option><option value="2" ${fasciaNum(p.fascia)==="2"?"selected":""}>2ª</option><option value="3" ${fasciaNum(p.fascia)==="3"?"selected":""}>3ª</option><option value="4" ${fasciaNum(p.fascia)==="4"?"selected":""}>4ª</option></select></td><td>${p.budgetMax||"—"}</td><td>${metricAverage(p)}</td><td>${auctionEsc(p.status||"Da valutare")}</td></tr>`).join("");
+ auctionTbody.querySelectorAll("[data-auction-edit]").forEach(b=>b.addEventListener("click",()=>openEdit(Number(b.dataset.auctionEdit),"auction")));
+ auctionTbody.querySelectorAll("[data-auction-star]").forEach(b=>b.addEventListener("click",()=>{const p=auctionPlayerById(Number(b.dataset.auctionStar));p.preferito=!p.preferito;saveAuction();renderAuctionDB();}));
+ auctionTbody.querySelectorAll("[data-auction-injury]").forEach(b=>b.addEventListener("click",()=>{const p=auctionPlayerById(Number(b.dataset.auctionInjury));const value=prompt(p.injured?"Modifica la durata. Lascia vuoto per segnarlo come guarito.":"Inserisci la durata dell'infortunio:",p.injuryDuration||"");if(value===null)return;p.injuryDuration=value.trim();p.injured=Boolean(p.injuryDuration);saveAuction();renderAuctionDB();renderAuctionLineup();}));
+ auctionTbody.querySelectorAll("[data-auction-fascia]").forEach(sel=>sel.addEventListener("change",()=>{const p=auctionPlayerById(Number(sel.dataset.auctionFascia));p.fascia=fasciaLabel(sel.value);saveAuction();renderAuctionDB();}));
+}
+function renderAuctionAssignmentBox(){
+ if(editContext!=="auction"||auctionAssignmentBox.hidden)return;
+ auctionBuyerTeam.innerHTML=auctionState.teams.map(t=>`<option value="${t.id}">${auctionEsc(t.name)}</option>`).join("");
+ const selected=auctionBuyerTeam.dataset.selected;
+ if(selected&&auctionTeamById(selected))auctionBuyerTeam.value=selected;
+ auctionBuyerTeam.dataset.selected=auctionBuyerTeam.value;
+ auctionBuyerMax.textContent=`Crediti rimasti: ${auctionCreditsLeft(auctionBuyerTeam.value)} · offerta massima: ${auctionMaxBid(auctionBuyerTeam.value)}`;
+ auctionAssignmentMessage.textContent="";
+}
+auctionBuyerTeam.addEventListener("change",()=>{auctionBuyerTeam.dataset.selected=auctionBuyerTeam.value;auctionBuyerMax.textContent=`Crediti rimasti: ${auctionCreditsLeft(auctionBuyerTeam.value)} · offerta massima: ${auctionMaxBid(auctionBuyerTeam.value)}`;auctionAssignmentMessage.textContent="";});
+auctionPurchasePrice.addEventListener("input",()=>{const check=validateAuctionPurchase(editId,auctionBuyerTeam.value,auctionPurchasePrice.value);auctionAssignmentMessage.textContent=check.ok?"":check.message;});
+auctionAssignButton.addEventListener("click",()=>{
+ const result=assignAuctionPlayerCore(editId,auctionBuyerTeam.value,auctionPurchasePrice.value);
+ if(!result.ok){auctionAssignmentMessage.textContent=result.message;return;}
+ saveAuction();editModal.classList.remove("open");auctionPurchasePrice.value=1;renderAuctionDB();renderAuctionTeams();renderAuctionLineup();
+});
+function removeAuctionPurchase(teamId,playerId){
+ const t=auctionTeamById(teamId),item=t?.purchases.find(x=>Number(x.playerId)===Number(playerId)),p=auctionPlayerById(playerId);if(!t||!item||!p)return;
+ if(!confirm(`Annullare l'acquisto di ${p.name} da ${t.name}? Saranno restituiti ${item.price} crediti.`))return;
+ removeAuctionPurchaseCore(teamId,playerId);saveAuction();renderAuctionDB();renderAuctionTeams();renderAuctionLineup();
+}
+
+let auctionPickSlot=null,auctionPickMode="starter",auctionPickSubIndex=0;
+function renderAuctionLineup(){
+ sanitizeAuctionLineup();const mine=myAuctionTeam(),coords=formations[auctionState.formation]||formations["3-5-2"];
+ auctionLineupTitle.textContent=`${mine.name} · La mia formazione`;auctionFormationSelect.value=auctionState.formation;
+ auctionPitch.querySelectorAll(".slot").forEach(x=>x.remove());
+ auctionState.lineup.forEach((id,i)=>{
+  const p=id?auctionPlayerById(id):null,pair=auctionState.substitutes[i]||[null,null],sub1=pair[0]?auctionPlayerById(pair[0]):null,sub2=pair[1]?auctionPlayerById(pair[1]):null;
+  const slot=document.createElement("div");slot.className="slot";slot.style.left=coords[i][0]+"%";slot.style.top=coords[i][1]+"%";
+  slot.innerHTML=`<button type="button" class="avatar" data-auction-slot="${i}">${p?avatarContent(p):"+"}</button><div class="formation-name-row"><div class="formation-player-name ${p?"":"empty-name"}">${p?auctionEsc(p.name):"Scegli"}</div>${p?`<span class="formation-role-badge">${p.role}</span>`:""}</div><div class="sub-slot"><button type="button" data-auction-sub="${i}" data-auction-sub-index="0" class="${sub1?"":"empty-sub"}">${sub1?`<span class="sub-player-label">↳ ${auctionEsc(sub1.name)}</span><span class="formation-role-badge sub-role-badge">${sub1.role}</span>`:"+ sostituto 1"}</button><button type="button" data-auction-sub="${i}" data-auction-sub-index="1" class="${sub2?"":"empty-sub"}">${sub2?`<span class="sub-player-label">↳ ${auctionEsc(sub2.name)}</span><span class="formation-role-badge sub-role-badge">${sub2.role}</span>`:"+ sostituto 2"}</button></div>`;
+  auctionPitch.appendChild(slot);
+ });
+ auctionPitch.querySelectorAll("[data-auction-slot]").forEach(b=>b.addEventListener("click",()=>openAuctionPicker(Number(b.dataset.auctionSlot),"starter",0)));
+ auctionPitch.querySelectorAll("[data-auction-sub]").forEach(b=>b.addEventListener("click",()=>openAuctionPicker(Number(b.dataset.auctionSub),"sub",Number(b.dataset.auctionSubIndex))));
+ const roster=myAuctionPlayers();auctionMyRoster.innerHTML=roster.length?roster.sort((a,b)=>"PDCA".indexOf(a.role)-"PDCA".indexOf(b.role)||a.name.localeCompare(b.name)).map(p=>`<button type="button" data-auction-roster-player="${p.id}"><b>${auctionEsc(p.name)}</b> · ${p.role}</button>`).join(""):`<div class="auction-empty">Non hai ancora acquistato giocatori.</div>`;
+ saveAuction();
+}
+function openAuctionPicker(slot,mode="starter",subIndex=0){auctionPickSlot=slot;auctionPickMode=mode;auctionPickSubIndex=subIndex;auctionPickSearch.value="";auctionPickHint.textContent=`${mode==="sub"?`Sostituto ${subIndex+1}`:"Titolare"} · giocatori di ${myAuctionTeam().name}`;auctionPickModal.classList.add("open");renderAuctionPicker();}
+function renderAuctionPicker(){
+ const q=auctionPickSearch.value.trim().toLowerCase(),players=myAuctionPlayers().filter(p=>!q||p.name.toLowerCase().includes(q)||p.role.toLowerCase().includes(q));
+ auctionPickResults.innerHTML=`<button data-auction-pick="">Svuota posizione</button>`+players.map(p=>`<button data-auction-pick="${p.id}"><b>${auctionEsc(p.name)}</b> · ${p.role} <span class="small">Pagato ${auctionRoster(myAuctionTeam().id).find(x=>Number(x.playerId)===Number(p.id))?.price||"—"}</span></button>`).join("");
+ auctionPickResults.querySelectorAll("[data-auction-pick]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.auctionPick?Number(b.dataset.auctionPick):null;if(auctionPickMode==="sub")auctionState.substitutes[auctionPickSlot][auctionPickSubIndex]=id;else auctionState.lineup[auctionPickSlot]=id;saveAuction();auctionPickModal.classList.remove("open");renderAuctionLineup();}));
+}
+auctionClosePick.addEventListener("click",()=>auctionPickModal.classList.remove("open"));auctionPickSearch.addEventListener("input",renderAuctionPicker);
+auctionFormationSelect.innerHTML=Object.keys(formations).map(name=>`<option>${name}</option>`).join("");auctionFormationSelect.value=auctionState.formation;
+auctionFormationSelect.addEventListener("change",()=>{auctionState.formation=auctionFormationSelect.value;saveAuction();renderAuctionLineup();});
+auctionResetLineup.addEventListener("click",()=>{if(!auctionState.lineup.some(Boolean)&&!auctionState.substitutes.some(pair=>pair.some(Boolean)))return;if(!confirm("Svuotare la formazione dell'asta?"))return;auctionState.lineup=Array(11).fill(null);auctionState.substitutes=Array.from({length:11},()=>[null,null]);saveAuction();renderAuctionLineup();});
+[auctionSearch,auctionTeamFilter,auctionRoleFilter,auctionStatusFilter,auctionSortFilter].forEach(el=>el.addEventListener("input",renderAuctionDB));
+auctionResetFilters.addEventListener("click",()=>{auctionSearch.value="";auctionTeamFilter.value="";auctionRoleFilter.value="";auctionStatusFilter.value="";auctionSortFilter.value="";renderAuctionDB();});
+TEAMS.forEach(t=>auctionTeamFilter.insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+document.querySelectorAll("[data-auction-view]").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll("[data-auction-view]").forEach(x=>x.classList.toggle("active",x===btn));document.querySelectorAll(".auction-view").forEach(x=>x.classList.remove("active"));document.getElementById(`auction${btn.dataset.auctionView[0].toUpperCase()+btn.dataset.auctionView.slice(1)}View`).classList.add("active");if(btn.dataset.auctionView==="lineup")renderAuctionLineup();if(btn.dataset.auctionView==="database")renderAuctionDB();}));
+
 renderDB();renderLineup();
 
 renderFavorites();
+
+renderAuctionTeams();renderAuctionDB();renderAuctionLineup();
 
 
 
