@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-08T13:26:17.457390+00:00",
+  "generated_at": "2026-09-08T14:26:50.083845+00:00",
   "teams": 20,
-  "players_count": 593,
+  "players_count": 594,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -2524,6 +2524,15 @@
       "officialId": "fantacalcio:7580",
       "fantacalcioId": 7580,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/sutalo-j/7580",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Difensore Centrale",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "fantacalcio:6319",
+      "fantacalcioId": 6319,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/leite/6319",
       "fantamedia": 0.0
     },
     {
