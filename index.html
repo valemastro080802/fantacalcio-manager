@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v3.3.0</title>
+<title>Fantacalcio Manager Online v3.3.1</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -951,7 +951,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.3.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.3.1</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button><button class="tab" data-page="auction">🔨 Asta</button></div>
 </header>
 
@@ -1304,7 +1304,7 @@ function bestAvailableGoalkeeperByTeam(players){return (players||[]).filter(p=>p
 function goalkeeperRecommendations(sourceTeam,players,limit=5){const best=bestAvailableGoalkeeperByTeam(players);return Object.entries(best).filter(([team])=>team!==sourceTeam).map(([team,player])=>({team,gridValue:goalkeeperGridValue(sourceTeam,team),player})).filter(x=>Number.isFinite(x.gridValue)).sort((a,b)=>(a.gridValue-b.gridValue)||(Number(b.player.fvm||0)-Number(a.player.fvm||0))||a.team.localeCompare(b.team,"it")).slice(0,limit);}
 function shouldShowInlineGoalkeeperRecommendations(context,player){return context==="auction"&&player?.role==="P";}
 function groupAuctionRosterByRole(players){const groups={P:[],D:[],C:[],A:[]};(players||[]).forEach(player=>{if(groups[player.role])groups[player.role].push(player);});return groups;}
-function auctionGoalkeeperAdvice(rosterPlayers,availablePlayers,limit=5){const source=(rosterPlayers||[]).find(player=>player.role==="P")||null;return {source,recommendations:source?goalkeeperRecommendations(source.team,availablePlayers,limit):[]};}
+function auctionGoalkeeperAdvice(rosterPlayers,availablePlayers,limit=5){const keepers=(rosterPlayers||[]).filter(player=>player.role==="P"),source=keepers.length===1?keepers[0]:null;return {source,complete:keepers.length>=2,recommendations:source?goalkeeperRecommendations(source.team,availablePlayers,limit):[]};}
 /* GOALKEEPER GRID DATA END */
 /* AUCTION ROLE ADVICE START */
 const AUCTION_ROLE_ADVICE_CONFIG={D:{total:8,free:4},C:{total:8,free:4},A:{total:6,free:3}};
@@ -1321,6 +1321,7 @@ function auctionRoleProfileAdvice(role,rosterPlayers){
  const modifier=role==="D"?(()=>{const current=players.filter(p=>p.modificatore===true).length,needed=Math.max(0,4-current);return {current,needed,remaining,requiredNext:needed>0&&needed>=remaining};})():null;
  return {active:count>=config.free&&count<config.total,complete:count>=config.total,count,remaining,averages,targets,rawTargets,profile:averages.titolarita>7?"Scommessa consentita":"Titolare consigliato",modifier};
 }
+function auctionRoleAdviceMode(role,rosterPlayers){const advice=auctionRoleProfileAdvice(role,rosterPlayers);return advice.complete?"stats-only":advice.active?"advice":"free";}
 function auctionModifierMatches(player,filter){if(!filter)return true;if(filter==="yes")return player?.modificatore===true;return (player?.role==="D"||player?.role==="P")&&player?.modificatore!==true;}
 /* AUCTION ROLE ADVICE END */
 function hasModificatore(role){return role==="D"||role==="P";}
@@ -2252,14 +2253,11 @@ function removeAuctionPurchase(teamId,playerId){
 
 let auctionPickSlot=null,auctionPickMode="starter",auctionPickSubIndex=0;
 function renderAuctionRoleAdvice(role,roster){
- const advice=auctionRoleProfileAdvice(role,roster),box=document.getElementById(`auctionAssistantAdvice${role}`),free=AUCTION_ROLE_ADVICE_CONFIG[role].free,total=AUCTION_ROLE_ADVICE_CONFIG[role].total;
- if(advice.count<free){box.innerHTML=`<b>Consigli non ancora attivi</b><div class="auction-assistant-placeholder">Libertà sui primi ${free} acquisti · ${advice.count}/${total} presi.</div>`;return;}
+ const advice=auctionRoleProfileAdvice(role,roster),mode=auctionRoleAdviceMode(role,roster),box=document.getElementById(`auctionAssistantAdvice${role}`),free=AUCTION_ROLE_ADVICE_CONFIG[role].free,total=AUCTION_ROLE_ADVICE_CONFIG[role].total;
+ if(mode==="free"){box.innerHTML=`<b>Consigli non ancora attivi</b><div class="auction-assistant-placeholder">Libertà sui primi ${free} acquisti · ${advice.count}/${total} presi.</div>`;return;}
  const metric=(label,value,ok,target)=>`<div class="role-profile-metric ${ok?"ok":"warn"}"><span>${label}</span><strong>${value} ${target}</strong></div>`;
  const metrics=`<div class="role-profile-metrics">${metric("Titolarità media",advice.averages.titolarita,advice.averages.titolarita>=6.5,"/ ≥ 6,5")}${metric("Ammonizioni medie",advice.averages.ammonizioni,advice.averages.ammonizioni<=5,"/ ≤ 5")}${metric("Infortuni medi",advice.averages.infortuni,advice.averages.infortuni<=5,"/ ≤ 5")}</div>`;
- if(advice.complete){
-  const allOk=advice.averages.titolarita>=6.5&&advice.averages.ammonizioni<=5&&advice.averages.infortuni<=5&&(!advice.modifier||advice.modifier.current>=4);
-  box.innerHTML=`<b>${allOk?"✓ Reparto in equilibrio":"⚠ Reparto da controllare"}</b>${metrics}${advice.modifier?`<div class="role-profile-modifier">Modificatore: ${advice.modifier.current}/4</div>`:""}`;return;
- }
+ if(mode==="stats-only"){box.innerHTML=metrics;return;}
  const impossible=advice.rawTargets.titolaritaMin>10||advice.rawTargets.ammonizioniMax<1||advice.rawTargets.infortuniMax<1;
  const modifierText=advice.modifier?(advice.modifier.needed===0?"Obiettivo modificatore già raggiunto.":advice.modifier.requiredNext?`Il prossimo difensore deve avere Modificatore: SÌ. Ne servono ${advice.modifier.needed} nei ${advice.remaining} posti rimasti.`:`Preferisci Modificatore: SÌ. Ne servono ancora ${advice.modifier.needed} nei ${advice.remaining} posti rimasti.`):"";
  box.innerHTML=`<b>${advice.profile} · ${advice.remaining} posti rimasti</b>${metrics}<div class="role-profile-callout">Profilo da cercare: Titolarità almeno <b>${advice.targets.titolaritaMin}</b>, Ammonizioni massimo <b>${advice.targets.ammonizioniMax}</b>, Infortuni massimo <b>${advice.targets.infortuniMax}</b>.${impossible?" <b>Serve una scelta molto correttiva: con i valori attuali l’obiettivo è a rischio.</b>":""}</div>${modifierText?`<div class="role-profile-modifier">${modifierText}</div>`:""}`;
@@ -2273,6 +2271,8 @@ function renderAuctionAssistant(){
  document.querySelectorAll("[data-auction-assistant-player]").forEach(button=>button.addEventListener("click",()=>openEdit(Number(button.dataset.auctionAssistantPlayer),"auction")));
  ["D","C","A"].forEach(role=>renderAuctionRoleAdvice(role,roster));
  const advice=auctionGoalkeeperAdvice(roster,availableAuctionPlayers(),5),box=document.getElementById("auctionGoalkeeperAdvice");
+ if(advice.complete){box.hidden=true;box.innerHTML="";return;}
+ box.hidden=false;
  if(!advice.source){box.innerHTML=`<b>Consigli portieri</b><div class="auction-assistant-placeholder">Acquista il primo portiere: qui compariranno automaticamente i 5 migliori abbinamenti della griglia.</div>`;return;}
  box.innerHTML=`<b>Consigli per affiancare ${auctionEsc(advice.source.name)}</b><div class="small">Portieri ancora disponibili, ordinati secondo la griglia; per ogni squadra viene scelto quello con FVM più alta.</div><div class="goalkeeper-rec-list">${advice.recommendations.length?advice.recommendations.map((rec,index)=>`<article class="goalkeeper-rec ${rec.gridValue===0?"best":rec.gridValue>=3&&rec.gridValue<=8?"interesting":""}"><div class="goalkeeper-rec-rank">${index+1}</div><div><b>${auctionEsc(rec.player.name)}</b><div class="small">${auctionEsc(rec.team)} · incrocio ${rec.gridValue} · FVM/500 ${fvm500(rec.player.fvm)}</div></div><button type="button" data-auction-advice-player="${rec.player.id}">Apri scheda</button></article>`).join(""):`<div class="auction-empty">Non ci sono altri portieri disponibili da consigliare.</div>`}</div>`;
  box.querySelectorAll("[data-auction-advice-player]").forEach(button=>button.addEventListener("click",()=>openEdit(Number(button.dataset.auctionAdvicePlayer),"auction")));
