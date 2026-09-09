@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-09T15:24:50.666480+00:00",
+  "generated_at": "2026-09-09T16:26:07.022731+00:00",
   "teams": 20,
   "players_count": 594,
   "players": [
@@ -5029,6 +5029,15 @@
       "fantamedia": 0.0
     },
     {
+      "name": "Non gioca più in Serie A",
+      "team": "Udinese",
+      "role": "P",
+      "officialId": "fantacalcio:5707",
+      "fantacalcioId": 5707,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/piana/5707",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Portiere",
       "team": "Udinese",
       "role": "P",
@@ -5044,15 +5053,6 @@
       "officialId": "fantacalcio:543",
       "fantacalcioId": 543,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/padelli/543",
-      "fantamedia": 0.0
-    },
-    {
-      "name": "Portiere",
-      "team": "Udinese",
-      "role": "P",
-      "officialId": "fantacalcio:5707",
-      "fantacalcioId": 5707,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/piana/5707",
       "fantamedia": 0.0
     },
     {
