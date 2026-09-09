@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v3.4.1</title>
+<title>Fantacalcio Manager Online v3.5.0</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -944,16 +944,17 @@ tbody tr:hover{
 .auction-assistant{margin-top:18px;padding:14px;border:1px solid #334463;border-radius:15px;background:linear-gradient(145deg,rgba(15,25,45,.98),rgba(10,17,31,.98))}.auction-assistant-head{display:flex;justify-content:space-between;gap:10px;align-items:end;margin-bottom:12px}.auction-assistant-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.auction-assistant-role{min-width:0;border:1px solid #2d3c5a;border-radius:12px;background:#0b1426;padding:11px}.auction-assistant-role h3{margin:0 0 8px;color:#cfb2ff}.auction-assistant-player{width:100%;display:block;text-align:left;margin:5px 0;padding:8px;border:1px solid #334563;border-radius:8px;background:#111d34;color:#fff;cursor:pointer}.auction-assistant-player:hover{border-color:#a855f7}.auction-assistant-advice{grid-column:1/-1;margin-top:2px;padding-top:10px;border-top:1px solid rgba(255,255,255,.09)}.auction-assistant-advice .goalkeeper-rec-list{grid-template-columns:repeat(5,minmax(0,1fr))}.auction-assistant-advice .goalkeeper-rec{grid-template-columns:24px minmax(0,1fr);padding:8px}.auction-assistant-advice .goalkeeper-rec button{grid-column:1/-1}.auction-assistant-placeholder{font-size:11px;color:#8f9bb2;padding:9px 0}.role-profile-advice{margin-top:10px;padding-top:9px;border-top:1px solid rgba(255,255,255,.09);font-size:11px}.role-profile-advice b{display:block;margin-bottom:5px;color:#fff}.role-profile-metrics{display:grid;gap:4px;margin-top:7px}.role-profile-metric{display:flex;justify-content:space-between;gap:6px;padding:5px 6px;border-radius:6px;background:#101b30}.role-profile-metric.ok{color:#70e69e}.role-profile-metric.warn{color:#ff9aae}.role-profile-callout{margin-top:7px;padding:7px;border-radius:7px;background:rgba(168,85,247,.1);color:#d9c6ff;line-height:1.35}.role-profile-modifier{margin-top:6px;color:#8fc5ff}
 .auction-concentration-banner,.auction-concentration-modal-warning{margin-top:14px;padding:11px 13px;border:1px solid #ef8354;border-radius:11px;background:rgba(239,131,84,.11);color:#ffd4bf}.auction-concentration-banner b,.auction-concentration-modal-warning b{color:#fff}.auction-concentration-items{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}.auction-concentration-item{padding:6px 8px;border-radius:7px;background:rgba(239,71,111,.12);border:1px solid rgba(239,131,84,.34);font-size:11px;font-weight:800}
 .auction-team-warning{margin-top:7px;padding:7px;border:1px solid rgba(239,131,84,.48);border-radius:8px;background:rgba(239,131,84,.1)}.auction-team-warning b{display:block;color:#ffd4bf;font-size:10px;margin-bottom:4px}.auction-team-warning span{display:block;color:#ffb99b;font-size:9px;font-weight:800;line-height:1.35}
+.auction-budget-panel{margin-top:18px;padding:14px;border:1px solid #3b4c70;border-radius:15px;background:#101a30}.auction-budget-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.auction-budget-fund{padding:8px 12px;border-radius:9px;background:rgba(55,200,113,.12);border:1px solid rgba(55,200,113,.45);color:#79eda8;font-weight:900}.auction-budget-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:11px}.auction-budget-role{padding:10px;border:1px solid #2d3d5c;border-radius:10px;background:#0b1426}.auction-budget-role h4{margin:0 0 7px;color:#cfb2ff}.auction-budget-role div{display:flex;justify-content:space-between;gap:7px;font-size:10px;padding:3px 0}.auction-budget-role strong{color:#fff}.auction-budget-role.over strong{color:#ff8fa8}.auction-budget-controls{display:grid;grid-template-columns:120px 120px auto auto;gap:7px;margin-top:10px}.auction-budget-controls select,.auction-budget-controls input{min-width:0;background:#0b1426;color:#fff;border:1px solid #344563;border-radius:8px;padding:8px}.auction-budget-message{min-height:16px;margin-top:6px;color:#ffb99b;font-size:11px}
 @media(max-width:1450px){.auction-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:1100px){.auction-assistant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.auction-assistant-advice .goalkeeper-rec-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.auction-team-grid{grid-template-columns:1fr}.auction-lineup-layout{grid-template-columns:1fr}.auction-pitch{min-height:680px}#auctionDatabaseView .toolbar{grid-template-columns:1fr 1fr}#auctionDatabaseView .toolbar .search{grid-column:1/-1}}
-@media(max-width:560px){.auction-team-head,.auction-assignment-grid{grid-template-columns:1fr}.auction-team-stats,.auction-roles{grid-template-columns:repeat(2,1fr)}.auction-roster,.auction-assistant-grid,.auction-assistant-advice .goalkeeper-rec-list{grid-template-columns:1fr}}
+@media(max-width:900px){.auction-team-grid{grid-template-columns:1fr}.auction-lineup-layout{grid-template-columns:1fr}.auction-pitch{min-height:680px}.auction-budget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#auctionDatabaseView .toolbar{grid-template-columns:1fr 1fr}#auctionDatabaseView .toolbar .search{grid-column:1/-1}}
+@media(max-width:560px){.auction-team-head,.auction-assignment-grid{grid-template-columns:1fr}.auction-team-stats,.auction-roles{grid-template-columns:repeat(2,1fr)}.auction-roster,.auction-assistant-grid,.auction-assistant-advice .goalkeeper-rec-list,.auction-budget-grid,.auction-budget-controls{grid-template-columns:1fr}}
 </style>
 
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.4.1</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.5.0</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button><button class="tab" data-page="auction">🔨 Asta</button></div>
 </header>
 
@@ -1064,6 +1065,12 @@ tbody tr:hover{
     </div>
    <aside class="side"><b>Rosa disponibile</b><div class="small" style="margin:4px 0 12px">Giocatori acquistati dalla tua squadra</div><div id="auctionMyRoster" class="auction-roster-list"></div></aside>
    </div>
+   <section id="auctionBudgetPanel" class="auction-budget-panel">
+    <div class="auction-budget-head"><div><b>Gestione budget</b><div class="small">P 45 · D 45 · C 130 · A 280</div></div><div id="auctionBudgetFund" class="auction-budget-fund">Fondo libero: 0</div></div>
+    <div id="auctionBudgetGrid" class="auction-budget-grid"></div>
+    <div class="auction-budget-controls"><select id="auctionBudgetRole"><option value="D">Difesa</option><option value="C">Centrocampo</option><option value="A">Attacco</option></select><input id="auctionBudgetAmount" type="number" min="1" step="1" value="1"><button id="auctionBudgetAdd" type="button" class="ghost">Assegna dal fondo</button><button id="auctionBudgetReturn" type="button" class="ghost">Restituisci al fondo</button></div>
+    <div id="auctionBudgetMessage" class="auction-budget-message"></div>
+   </section>
    <div id="auctionConcentrationBanner" class="auction-concentration-banner" hidden></div>
    <section class="auction-assistant" aria-labelledby="auctionAssistantTitle">
     <div class="auction-assistant-head"><div><b id="auctionAssistantTitle">Rosa e consigli d’asta</b><div class="small">Acquisti divisi per ruolo e suggerimenti basati sulla tua rosa.</div></div></div>
@@ -1431,6 +1438,7 @@ db.forEach(p=>{
 /* AUCTION CORE START */
 const AUCTION_STORAGE_KEY="fantaAuctionStateV1";
 const AUCTION_ROLE_LIMITS={P:3,D:8,C:8,A:6};
+const AUCTION_BASE_BUDGETS={P:45,D:45,C:130,A:280};
 function auctionClone(value){return JSON.parse(JSON.stringify(value));}
 function createAuctionState(sourceDb){
  return {
@@ -1439,7 +1447,8 @@ function createAuctionState(sourceDb){
   teams:Array.from({length:8},(_,i)=>({id:`auction-team-${i+1}`,name:`Squadra ${i+1}`,totalCredits:500,isMine:i===0,purchases:[]})),
   lineup:Array(11).fill(null),
   substitutes:Array.from({length:11},()=>[null,null]),
-  formation:"3-5-2"
+  formation:"3-5-2",
+  budgetAllocations:{P:0,D:0,C:0,A:0}
  };
 }
 function normalizeAuctionState(raw,sourceDb){
@@ -1457,7 +1466,8 @@ function normalizeAuctionState(raw,sourceDb){
   teams,
   lineup:Array.isArray(raw.lineup)?Array.from({length:11},(_,i)=>raw.lineup[i]||null):base.lineup,
   substitutes:Array.from({length:11},(_,i)=>Array.isArray(raw.substitutes?.[i])?[raw.substitutes[i][0]||null,raw.substitutes[i][1]||null]:[null,null]),
-  formation:raw.formation&&typeof raw.formation==="string"?raw.formation:base.formation
+  formation:raw.formation&&typeof raw.formation==="string"?raw.formation:base.formation,
+  budgetAllocations:Object.fromEntries(Object.keys(AUCTION_ROLE_LIMITS).map(role=>[role,Math.max(0,Math.floor(Number(raw.budgetAllocations?.[role])||0))]))
  };
 }
 var auctionState=normalizeAuctionState(JSON.parse(localStorage.getItem(AUCTION_STORAGE_KEY)||"null"),db);
@@ -1512,6 +1522,25 @@ function auctionCandidateConcentrationWarnings(rosterPlayers,candidate){
  return warnings;
 }
 function auctionTeamCardWarnings(team,rosterPlayers){return team?.isMine?[]:auctionConcentrationWarnings(rosterPlayers);}
+function auctionBudgetSummary(teamId){
+ const allocations=auctionState.budgetAllocations||{P:0,D:0,C:0,A:0},roles={};let released=0,overruns=0,allocated=0;
+ Object.keys(AUCTION_ROLE_LIMITS).forEach(role=>{
+  const base=AUCTION_BASE_BUDGETS[role],bonus=Math.max(0,Number(allocations[role])||0),budget=base+bonus,items=auctionRoleRoster(teamId,role),spent=items.reduce((sum,x)=>sum+Number(x.price||0),0),count=items.length,remainingSlots=Math.max(0,AUCTION_ROLE_LIMITS[role]-count),complete=remainingSlots===0,available=Math.max(0,budget-spent),maxBid=remainingSlots?Math.max(0,available-Math.max(0,remainingSlots-1)):0;
+  if(complete)released+=Math.max(0,budget-spent);overruns+=Math.max(0,spent-budget);allocated+=bonus;
+  roles[role]={base,bonus,budget,spent,count,remainingSlots,complete,available,maxBid,average:remainingSlots?Math.floor(available/remainingSlots*10)/10:0};
+ });
+ const rawFund=released-allocated-overruns;return {roles,released,allocated,overruns,fund:Math.max(0,rawFund),deficit:Math.max(0,-rawFund)};
+}
+function adjustAuctionBudgetAllocation(role,delta){
+ if(!["D","C","A"].includes(role))return {ok:false,message:"Puoi assegnare il fondo soltanto a D, C o A."};
+ const amount=Math.trunc(Number(delta));if(!amount)return {ok:false,message:"Inserisci una quantità valida."};
+ const summary=auctionBudgetSummary(myAuctionTeam().id),current=Math.max(0,Number(auctionState.budgetAllocations?.[role])||0);
+ if(summary.roles[role].complete)return {ok:false,message:"Il reparto è già completo."};
+ if(amount>0&&amount>summary.fund)return {ok:false,message:`Nel Fondo libero ci sono ${summary.fund} crediti.`};
+ if(amount<0&&Math.abs(amount)>current)return {ok:false,message:`Puoi restituire al massimo ${current} crediti.`};
+ if(!auctionState.budgetAllocations)auctionState.budgetAllocations={P:0,D:0,C:0,A:0};auctionState.budgetAllocations[role]=current+amount;return {ok:true,message:"Budget aggiornato."};
+}
+function auctionBudgetPurchaseWarning(summary,player,price){const role=summary?.roles?.[player?.role],amount=Number(price);return role&&Number.isFinite(amount)&&amount>role.maxBid?{type:"budget",role:player.role,price:amount,maxBid:role.maxBid}:null;}
 saveAuction();
 /* AUCTION CORE END */
 let teamLineups=JSON.parse(localStorage.getItem("fantaTeamLineups")||"null")||{};
@@ -2250,10 +2279,11 @@ function renderAuctionDB(){
  auctionTbody.querySelectorAll("[data-auction-injury]").forEach(b=>b.addEventListener("click",()=>{const p=auctionPlayerById(Number(b.dataset.auctionInjury));const value=prompt(p.injured?"Modifica la durata. Lascia vuoto per segnarlo come guarito.":"Inserisci la durata dell'infortunio:",p.injuryDuration||"");if(value===null)return;p.injuryDuration=value.trim();p.injured=Boolean(p.injuryDuration);saveAuction();renderAuctionDB();renderAuctionLineup();}));
  auctionTbody.querySelectorAll("[data-auction-fascia]").forEach(sel=>sel.addEventListener("change",()=>{const p=auctionPlayerById(Number(sel.dataset.auctionFascia));p.fascia=fasciaLabel(sel.value);saveAuction();renderAuctionDB();}));
 }
-function auctionConcentrationWarningText(warning){return warning.type==="team"?`Evita ${warning.team}: hai già ${warning.count} giocatori`:`Evita ${warning.team} nel ruolo ${warning.role}: hai già ${warning.count} giocatori`;}
+function auctionConcentrationWarningText(warning){if(warning.type==="team")return `Evita ${warning.team}: hai già ${warning.count} giocatori`;if(warning.type==="role")return `Evita ${warning.team} nel ruolo ${warning.role}: hai già ${warning.count} giocatori`;return `Budget ${warning.role}: offerta pianificata massima ${warning.maxBid} crediti`;}
 function selectedAuctionConcentrationWarnings(){
  const buyer=auctionTeamById(auctionBuyerTeam.value),mine=myAuctionTeam(),candidate=auctionPlayerById(editId);
- return buyer&&mine&&buyer.id===mine.id?auctionCandidateConcentrationWarnings(myAuctionPlayers(),candidate):[];
+ if(!buyer||!mine||buyer.id!==mine.id)return [];
+ const warnings=auctionCandidateConcentrationWarnings(myAuctionPlayers(),candidate),budgetWarning=auctionBudgetPurchaseWarning(auctionBudgetSummary(mine.id),candidate,auctionPurchasePrice.value);if(budgetWarning)warnings.push(budgetWarning);return warnings;
 }
 let auctionConcentrationConfirmed=false;
 function renderAuctionConcentrationModalWarning(){
@@ -2268,11 +2298,11 @@ function renderAuctionAssignmentBox(){
  const selected=auctionBuyerTeam.dataset.selected;
  if(selected&&auctionTeamById(selected))auctionBuyerTeam.value=selected;
  auctionBuyerTeam.dataset.selected=auctionBuyerTeam.value;
- auctionBuyerMax.textContent=`Crediti rimasti: ${auctionCreditsLeft(auctionBuyerTeam.value)} · offerta massima: ${auctionMaxBid(auctionBuyerTeam.value)}`;
+ const budget=auctionBudgetSummary(myAuctionTeam().id),candidate=auctionPlayerById(editId),roleBudget=auctionBuyerTeam.value===myAuctionTeam().id&&candidate?` · budget ${candidate.role}: ${budget.roles[candidate.role].available} · max ruolo: ${budget.roles[candidate.role].maxBid}`:"";auctionBuyerMax.textContent=`Crediti rimasti: ${auctionCreditsLeft(auctionBuyerTeam.value)} · offerta massima: ${auctionMaxBid(auctionBuyerTeam.value)}${roleBudget}`;
  auctionAssignmentMessage.textContent="";
  renderAuctionConcentrationModalWarning();
 }
-auctionBuyerTeam.addEventListener("change",()=>{auctionConcentrationConfirmed=false;auctionBuyerTeam.dataset.selected=auctionBuyerTeam.value;auctionBuyerMax.textContent=`Crediti rimasti: ${auctionCreditsLeft(auctionBuyerTeam.value)} · offerta massima: ${auctionMaxBid(auctionBuyerTeam.value)}`;auctionAssignmentMessage.textContent="";renderAuctionConcentrationModalWarning();});
+auctionBuyerTeam.addEventListener("change",()=>{auctionConcentrationConfirmed=false;auctionBuyerTeam.dataset.selected=auctionBuyerTeam.value;auctionAssignmentMessage.textContent="";renderAuctionAssignmentBox();});
 auctionPurchasePrice.addEventListener("input",()=>{auctionConcentrationConfirmed=false;const check=validateAuctionPurchase(editId,auctionBuyerTeam.value,auctionPurchasePrice.value);auctionAssignmentMessage.textContent=check.ok?"":check.message;renderAuctionConcentrationModalWarning();});
 auctionAssignButton.addEventListener("click",()=>{
  const check=validateAuctionPurchase(editId,auctionBuyerTeam.value,auctionPurchasePrice.value);
@@ -2290,6 +2320,12 @@ function removeAuctionPurchase(teamId,playerId){
 }
 
 let auctionPickSlot=null,auctionPickMode="starter",auctionPickSubIndex=0;
+function renderAuctionBudget(){
+ const summary=auctionBudgetSummary(myAuctionTeam().id);auctionBudgetFund.textContent=`Fondo libero: ${summary.fund}`;
+ auctionBudgetGrid.innerHTML=Object.keys(AUCTION_ROLE_LIMITS).map(role=>{const item=summary.roles[role];return `<article class="auction-budget-role ${item.spent>item.budget?"over":""}"><h4>${role} · ${auctionRoleName(role)}</h4><div><span>Budget</span><strong>${item.budget}${item.bonus?` (+${item.bonus})`:""}</strong></div><div><span>Spesi</span><strong>${item.spent}</strong></div><div><span>Disponibili</span><strong>${item.available}</strong></div><div><span>Posti rimasti</span><strong>${item.remainingSlots}</strong></div><div><span>Media per posto</span><strong>${item.average}</strong></div><div><span>Offerta max ruolo</span><strong>${item.maxBid}</strong></div></article>`;}).join("");
+ if(summary.deficit)auctionBudgetMessage.textContent=`Attenzione: devi recuperare ${summary.deficit} crediti riducendo il budget di un reparto futuro.`;
+}
+function changeAuctionBudget(direction){const amount=Math.max(1,Math.trunc(Number(auctionBudgetAmount.value)||0)),result=adjustAuctionBudgetAllocation(auctionBudgetRole.value,direction*amount);auctionBudgetMessage.textContent=result.message;if(result.ok){saveAuction();renderAuctionBudget();renderAuctionAssignmentBox();}}
 function renderAuctionRoleAdvice(role,roster){
  const advice=auctionRoleProfileAdvice(role,roster),mode=auctionRoleAdviceMode(role,roster),box=document.getElementById(`auctionAssistantAdvice${role}`),free=AUCTION_ROLE_ADVICE_CONFIG[role].free,total=AUCTION_ROLE_ADVICE_CONFIG[role].total;
  if(mode==="free"){box.innerHTML=`<b>Consigli non ancora attivi</b><div class="auction-assistant-placeholder">Libertà sui primi ${free} acquisti · ${advice.count}/${total} presi.</div>`;return;}
@@ -2302,6 +2338,7 @@ function renderAuctionRoleAdvice(role,roster){
 }
 function renderAuctionAssistant(){
  const roster=myAuctionPlayers(),groups=groupAuctionRosterByRole(roster),teamRoster=auctionRoster(myAuctionTeam().id);
+ renderAuctionBudget();
  const concentrationWarnings=auctionConcentrationWarnings(roster);auctionConcentrationBanner.hidden=!concentrationWarnings.length;auctionConcentrationBanner.innerHTML=concentrationWarnings.length?`<b>⚠ Squadre da evitare</b><div class="auction-concentration-items">${concentrationWarnings.map(w=>`<span class="auction-concentration-item">${auctionEsc(auctionConcentrationWarningText(w))}</span>`).join("")}</div>`:"";
  ["P","D","C","A"].forEach(role=>{
   const box=document.getElementById(`auctionAssistant${role}`),players=groups[role];
@@ -2342,6 +2379,9 @@ auctionClosePick.addEventListener("click",()=>auctionPickModal.classList.remove(
 auctionFormationSelect.innerHTML=Object.keys(formations).map(name=>`<option>${name}</option>`).join("");auctionFormationSelect.value=auctionState.formation;
 auctionFormationSelect.addEventListener("change",()=>{auctionState.formation=auctionFormationSelect.value;saveAuction();renderAuctionLineup();});
 auctionResetLineup.addEventListener("click",()=>{if(!auctionState.lineup.some(Boolean)&&!auctionState.substitutes.some(pair=>pair.some(Boolean)))return;if(!confirm("Svuotare la formazione dell'asta?"))return;auctionState.lineup=Array(11).fill(null);auctionState.substitutes=Array.from({length:11},()=>[null,null]);saveAuction();renderAuctionLineup();});
+auctionBudgetAdd.addEventListener("click",()=>changeAuctionBudget(1));
+auctionBudgetReturn.addEventListener("click",()=>changeAuctionBudget(-1));
+auctionBudgetRole.addEventListener("change",()=>{auctionBudgetMessage.textContent="";});
 [auctionSearch,auctionTeamFilter,auctionRoleFilter,auctionModifierFilter,auctionStatusFilter,auctionSortFilter].forEach(el=>el.addEventListener("input",renderAuctionDB));
 auctionResetFilters.addEventListener("click",()=>{auctionSearch.value="";auctionTeamFilter.value="";auctionRoleFilter.value="";auctionModifierFilter.value="";auctionStatusFilter.value="";auctionSortFilter.value="";renderAuctionDB();});
 TEAMS.forEach(t=>auctionTeamFilter.insertAdjacentHTML("beforeend",`<option>${t}</option>`));
