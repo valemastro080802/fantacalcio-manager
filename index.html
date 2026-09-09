@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v3.4.0</title>
+<title>Fantacalcio Manager Online v3.4.1</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -943,6 +943,7 @@ tbody tr:hover{
 .inline-goalkeeper-recs{margin-top:16px;padding:14px;border:1px solid #3876ff;border-radius:12px;background:rgba(56,118,255,.06)}.inline-goalkeeper-recs h3{margin:0}.inline-goalkeeper-recs .goalkeeper-rec{padding:8px}.inline-goalkeeper-recs .goalkeeper-rec-rank{font-size:15px}
 .auction-assistant{margin-top:18px;padding:14px;border:1px solid #334463;border-radius:15px;background:linear-gradient(145deg,rgba(15,25,45,.98),rgba(10,17,31,.98))}.auction-assistant-head{display:flex;justify-content:space-between;gap:10px;align-items:end;margin-bottom:12px}.auction-assistant-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.auction-assistant-role{min-width:0;border:1px solid #2d3c5a;border-radius:12px;background:#0b1426;padding:11px}.auction-assistant-role h3{margin:0 0 8px;color:#cfb2ff}.auction-assistant-player{width:100%;display:block;text-align:left;margin:5px 0;padding:8px;border:1px solid #334563;border-radius:8px;background:#111d34;color:#fff;cursor:pointer}.auction-assistant-player:hover{border-color:#a855f7}.auction-assistant-advice{grid-column:1/-1;margin-top:2px;padding-top:10px;border-top:1px solid rgba(255,255,255,.09)}.auction-assistant-advice .goalkeeper-rec-list{grid-template-columns:repeat(5,minmax(0,1fr))}.auction-assistant-advice .goalkeeper-rec{grid-template-columns:24px minmax(0,1fr);padding:8px}.auction-assistant-advice .goalkeeper-rec button{grid-column:1/-1}.auction-assistant-placeholder{font-size:11px;color:#8f9bb2;padding:9px 0}.role-profile-advice{margin-top:10px;padding-top:9px;border-top:1px solid rgba(255,255,255,.09);font-size:11px}.role-profile-advice b{display:block;margin-bottom:5px;color:#fff}.role-profile-metrics{display:grid;gap:4px;margin-top:7px}.role-profile-metric{display:flex;justify-content:space-between;gap:6px;padding:5px 6px;border-radius:6px;background:#101b30}.role-profile-metric.ok{color:#70e69e}.role-profile-metric.warn{color:#ff9aae}.role-profile-callout{margin-top:7px;padding:7px;border-radius:7px;background:rgba(168,85,247,.1);color:#d9c6ff;line-height:1.35}.role-profile-modifier{margin-top:6px;color:#8fc5ff}
 .auction-concentration-banner,.auction-concentration-modal-warning{margin-top:14px;padding:11px 13px;border:1px solid #ef8354;border-radius:11px;background:rgba(239,131,84,.11);color:#ffd4bf}.auction-concentration-banner b,.auction-concentration-modal-warning b{color:#fff}.auction-concentration-items{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}.auction-concentration-item{padding:6px 8px;border-radius:7px;background:rgba(239,71,111,.12);border:1px solid rgba(239,131,84,.34);font-size:11px;font-weight:800}
+.auction-team-warning{margin-top:7px;padding:7px;border:1px solid rgba(239,131,84,.48);border-radius:8px;background:rgba(239,131,84,.1)}.auction-team-warning b{display:block;color:#ffd4bf;font-size:10px;margin-bottom:4px}.auction-team-warning span{display:block;color:#ffb99b;font-size:9px;font-weight:800;line-height:1.35}
 @media(max-width:1450px){.auction-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:1100px){.auction-assistant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.auction-assistant-advice .goalkeeper-rec-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.auction-team-grid{grid-template-columns:1fr}.auction-lineup-layout{grid-template-columns:1fr}.auction-pitch{min-height:680px}#auctionDatabaseView .toolbar{grid-template-columns:1fr 1fr}#auctionDatabaseView .toolbar .search{grid-column:1/-1}}
@@ -952,7 +953,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.4.0</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.4.1</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button><button class="tab" data-page="auction">🔨 Asta</button></div>
 </header>
 
@@ -1510,6 +1511,7 @@ function auctionCandidateConcentrationWarnings(rosterPlayers,candidate){
  if(roleCount>=2)warnings.push({type:"role",team:candidate.team,role:candidate.role,count:roleCount});
  return warnings;
 }
+function auctionTeamCardWarnings(team,rosterPlayers){return team?.isMine?[]:auctionConcentrationWarnings(rosterPlayers);}
 saveAuction();
 /* AUCTION CORE END */
 let teamLineups=JSON.parse(localStorage.getItem("fantaTeamLineups")||"null")||{};
@@ -2176,12 +2178,13 @@ function sanitizeAuctionLineup(){
 }
 function renderAuctionTeams(){
  auctionTeamGrid.innerHTML=auctionState.teams.map(t=>{
-  const roster=auctionRoster(t.id),left=auctionCreditsLeft(t.id),max=auctionMaxBid(t.id);
+  const roster=auctionRoster(t.id),left=auctionCreditsLeft(t.id),max=auctionMaxBid(t.id),warnings=auctionTeamCardWarnings(t,roster.map(x=>x.player));
   return `<article class="auction-team-card ${t.isMine?"mine":""}">
    <div class="auction-team-head"><div><label class="small">Nome squadra</label><input data-auction-name="${t.id}" value="${auctionEsc(t.name)}"></div><div><label class="small">Crediti totali</label><input data-auction-credits="${t.id}" type="number" min="25" step="1" value="${t.totalCredits}"></div></div>
    <label class="checks auction-mine-choice"><input type="radio" name="myAuctionTeam" data-auction-mine="${t.id}" ${t.isMine?"checked":""}> La mia squadra</label>
    <div class="auction-team-stats"><div class="auction-stat"><b>${left}</b><small>Crediti rimasti</small></div><div class="auction-stat"><b>${max}</b><small>Offerta massima</small></div><div class="auction-stat"><b>${auctionSpent(t.id)}</b><small>Spesi</small></div><div class="auction-stat"><b>${roster.length}/25</b><small>Rosa</small></div></div>
    <div class="auction-roles">${Object.keys(AUCTION_ROLE_LIMITS).map(role=>{const count=auctionRoleCount(t.id,role),limit=AUCTION_ROLE_LIMITS[role];return `<button type="button" class="auction-role ${count>=limit?"full":""}" data-auction-open-roster="${t.id}" data-auction-role="${role}" title="Apri ${auctionRoleName(role).toLowerCase()}">${role} ${count}/${limit}</button>`}).join("")}</div>
+   ${warnings.length?`<div class="auction-team-warning"><b>⚠ Concentrazione rosa</b>${warnings.map(w=>`<span>${auctionEsc(auctionConcentrationWarningText(w))}</span>`).join("")}</div>`:""}
   </article>`;
  }).join("");
  auctionTeamGrid.querySelectorAll("[data-auction-name]").forEach(input=>input.addEventListener("change",()=>{const t=auctionTeamById(input.dataset.auctionName);t.name=input.value.trim()||t.name;saveAuction();renderAuctionTeams();renderAuctionAssignmentBox();renderAuctionLineup();}));
