@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-10T09:24:51.388671+00:00",
+  "generated_at": "2026-09-10T10:24:54.892070+00:00",
   "teams": 20,
-  "players_count": 594,
+  "players_count": 595,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -365,6 +365,15 @@
       "fantacalcioId": 6054,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/moro-n/6054",
       "fantamedia": 5.5
+    },
+    {
+      "name": "Centrocampista centrale",
+      "team": "Bologna",
+      "role": "C",
+      "officialId": "fantacalcio:7629",
+      "fantacalcioId": 7629,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/libra/7629",
+      "fantamedia": 0.0
     },
     {
       "name": "El Azzouzi O.",
