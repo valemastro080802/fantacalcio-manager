@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v3.5.1</title>
+<title>Fantacalcio Manager Online v3.5.2</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -957,7 +957,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.5.1</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.5.2</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button><button class="tab" data-page="auction">🔨 Asta</button></div>
 </header>
 
@@ -1436,6 +1436,8 @@ db.forEach(p=>{
   if(!("fantamedia" in p))p.fantamedia=null;
   if(!("injured" in p))p.injured=false;
   if(!("injuryDuration" in p))p.injuryDuration="";
+  if(!("officialRole" in p))p.officialRole=p.role;
+  if(!("roleOverride" in p))p.roleOverride=false;
 });
 
 /* AUCTION CORE START */
@@ -1565,7 +1567,7 @@ function normalizeSubstitutes(raw){
  });
 }
 let substitutes=normalizeSubstitutes(teamSubstitutes[currentTeam]);
-let editId=null,pickSlot=null,pickMode="starter",pickSubIndex=0;
+let editId=null,editOriginalRole=null,pickSlot=null,pickMode="starter",pickSubIndex=0;
 
 function save(){
  localStorage.setItem("fantaFullDB",JSON.stringify(db));
@@ -1609,10 +1611,26 @@ function syncNormName(s){
 function syncNameSignature(s){
   return syncNormName(s).split(" ").filter(Boolean).sort().join("|");
 }
+/* ROLE OVERRIDE CORE START */
+function setManualPlayerRole(player,role){
+  if(!player||!["P","D","C","A"].includes(role))return player;
+  if(!player.officialRole)player.officialRole=player.role;
+  player.role=role;
+  player.roleOverride=role!==player.officialRole;
+  return player;
+}
+function syncApplyOfficialRole(player,officialRole){
+  if(!player||!["P","D","C","A"].includes(officialRole))return player;
+  player.officialRole=officialRole;
+  if(player.roleOverride){if(player.role===officialRole)player.roleOverride=false;}
+  else player.role=officialRole;
+  return player;
+}
+/* ROLE OVERRIDE CORE END */
 function syncMakePlayer(op,nextId){
   const name=op.name;
   return {
-    id:nextId,name,team:op.team,role:op.role,quotation:Number(op.quotation)||0,fvm:Number(op.fvm)||0,
+    id:nextId,name,team:op.team,role:op.role,officialRole:op.role,roleOverride:false,quotation:Number(op.quotation)||0,fvm:Number(op.fvm)||0,
     fantamedia:Number.isFinite(Number(op.fantamedia??op.fm))?Number(op.fantamedia??op.fm):null,
     injured:false,injuryDuration:"",
     initials:initials(name),rating:"",titolarita:"",fascia:"",
@@ -1671,7 +1689,7 @@ function syncMergeOfficial(payload){
       matched.add(local.id);
       if(local.team!==o.team)moved++;
       local.team=o.team;
-      local.role=o.role;
+      syncApplyOfficialRole(local,o.role);
       if(Number.isFinite(Number(o.quotation)))local.quotation=Number(o.quotation);
       if(Number.isFinite(Number(o.fvm)))local.fvm=Number(o.fvm);
       const incomingFm=o.fantamedia??o.fm;
@@ -1900,7 +1918,7 @@ resetFilters.addEventListener("click",()=>{search.value="";teamFilter.value="";r
 let editContext="normal";
 function currentEditPlayer(){return editContext==="auction"?auctionPlayerById(editId):byId(editId);}
 function openEdit(id,context="normal"){
- editId=id;editContext=context;const p=currentEditPlayer();if(!p)return;modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;eFvm.value=fvm500Value(p.fvm) ?? "";
+ editId=id;editContext=context;const p=currentEditPlayer();if(!p)return;editOriginalRole=p.role;modalAvatar.innerHTML=avatarContent(p);modalTitle.textContent=p.name;eName.value=p.name;eTeam.value=p.team;eRole.value=p.role;eQuote.value=p.quotation;eFvm.value=fvm500Value(p.fvm) ?? "";
  eFascia.value=fasciaNum(p.fascia);eFascia.className=`fascia-select fascia-${fasciaNum(p.fascia)}`;eBudget.value=p.budgetMax;eStatus.value=p.status;eRig.checked=p.rigorista;ePiaz.checked=p.piazzati;eFav.checked=p.preferito;eNotes.value=p.notes;renderMetricsEditor(p);renderInlineGoalkeeperRecommendations(p);editModal.classList.add("open");
  auctionAssignmentBox.hidden=context!=="auction";
  if(context==="auction")renderAuctionAssignmentBox();
@@ -1931,7 +1949,7 @@ removePhoto.addEventListener("click",()=>{
 
 eFascia.addEventListener("change",()=>{eFascia.className=`fascia-select fascia-${eFascia.value}`;});
 eRole.addEventListener("change",()=>{const p=currentEditPlayer(); if(!p)return; p.role=eRole.value; ensureMetrics(p); renderMetricsEditor(p);renderInlineGoalkeeperRecommendations(p);});
-editForm.addEventListener("submit",e=>{e.preventDefault();const p=currentEditPlayer();if(!p)return;p.name=eName.value.trim()||p.name;p.team=eTeam.value;p.role=eRole.value;p.quotation=Math.max(0,+eQuote.value||0);
+editForm.addEventListener("submit",e=>{e.preventDefault();const p=currentEditPlayer();if(!p)return;p.name=eName.value.trim()||p.name;p.team=eTeam.value;if(editContext==="auction")p.role=eRole.value;else{if(!p.officialRole)p.officialRole=editOriginalRole||p.role;setManualPlayerRole(p,eRole.value);}p.quotation=Math.max(0,+eQuote.value||0);
  p.fascia=fasciaLabel(eFascia.value);p.budgetMax=eBudget.value;p.status=eStatus.value;p.rigorista=eRig.checked;p.piazzati=ePiaz.checked;p.preferito=eFav.checked;p.notes=eNotes.value;
  p.initials=initials(p.name);if(editContext==="auction"){saveAuction();renderAuctionDB();renderAuctionTeams();renderAuctionLineup();}else{save();renderDB();renderLineup();}editModal.classList.remove("open");
 });
