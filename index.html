@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fantacalcio Manager Online v3.5.2</title>
+<title>Fantacalcio Manager Online v3.5.3</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#f5f7fb}button,select,input,textarea{font:inherit}
 .top{min-height:70px;background:#121a31;border-bottom:1px solid #293352;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:15px;flex-wrap:wrap}
@@ -957,7 +957,7 @@ tbody tr:hover{
 </head>
 <body>
 <header class="top">
- <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.5.2</small></div>
+ <div class="logo">⚽ Fantacalcio <span>Manager</span> <small style="font-size:10px;color:#8996b3">v3.5.3</small></div>
  <div class="tabs"><button class="tab active" data-page="formation">Squadre tipo</button><button class="tab" data-page="database">Database Serie A</button><button class="tab" data-page="favorites">★ Preferiti <span id="favoritesCount"></span></button><button class="tab" data-page="auction">🔨 Asta</button></div>
 </header>
 
@@ -1475,8 +1475,14 @@ function normalizeAuctionState(raw,sourceDb){
   budgetAllocations:Object.fromEntries(Object.keys(AUCTION_ROLE_LIMITS).map(role=>[role,Math.max(0,Math.floor(Number(raw.budgetAllocations?.[role])||0))]))
  };
 }
+function syncAuctionPlayersWithDatabase(state,database){
+ if(!state||!Array.isArray(database))return state;
+ state.players=database;
+ return state;
+}
 var auctionState=normalizeAuctionState(JSON.parse(localStorage.getItem(AUCTION_STORAGE_KEY)||"null"),db);
-function saveAuction(){localStorage.setItem(AUCTION_STORAGE_KEY,JSON.stringify(auctionState));}
+syncAuctionPlayersWithDatabase(auctionState,db);
+function saveAuction(){localStorage.setItem("fantaFullDB",JSON.stringify(db));localStorage.setItem(AUCTION_STORAGE_KEY,JSON.stringify(auctionState));}
 function auctionPlayerById(id){return auctionState.players.find(p=>Number(p.id)===Number(id));}
 function auctionTeamById(id){return auctionState.teams.find(t=>t.id===id);}
 function auctionRoster(teamId){const t=auctionTeamById(teamId);return t?t.purchases.map(x=>({...x,player:auctionPlayerById(x.playerId)})).filter(x=>x.player):[];}
@@ -1705,8 +1711,10 @@ function syncMergeOfficial(payload){
   db=db.filter(p=>p.manual||matched.has(p.id));
   const removed=before-db.length;
 
+  syncAuctionPlayersWithDatabase(auctionState,db);
   syncCleanupLineups();
   save();
+  saveAuction();
   renderDB();
   renderFavorites();
   renderLineup();
