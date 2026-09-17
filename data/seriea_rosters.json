@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-17T08:26:22.223647+00:00",
+  "generated_at": "2026-09-17T09:24:49.567808+00:00",
   "teams": 20,
-  "players_count": 595,
+  "players_count": 596,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -4901,6 +4901,15 @@
       "fantacalcioId": 6212,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/zarraga/6212",
       "fantamedia": 5.75
+    },
+    {
+      "name": "Centrocampista centrale",
+      "team": "Udinese",
+      "role": "C",
+      "officialId": "fantacalcio:5850",
+      "fantacalcioId": 5850,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/lovric/5850",
+      "fantamedia": 6.0
     },
     {
       "name": "Non gioca più in Serie A",
