@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-18T06:28:32.828757+00:00",
+  "generated_at": "2026-09-18T07:23:49.126331+00:00",
   "teams": 20,
-  "players_count": 596,
+  "players_count": 597,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -2705,6 +2705,15 @@
       "fantacalcioId": 7252,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/stulic/7252",
       "fantamedia": 5.5
+    },
+    {
+      "name": "Punta centrale",
+      "team": "Lecce",
+      "role": "A",
+      "officialId": "fantacalcio:7647",
+      "fantacalcioId": 7647,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lecce/esteban/7647",
+      "fantamedia": 6.0
     },
     {
       "name": "Centrocampista centrale",
