@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-19T23:20:27.377708+00:00",
+  "generated_at": "2026-09-20T00:31:18.147232+00:00",
   "teams": 20,
   "players_count": 597,
   "players": [
@@ -265,7 +265,7 @@
       "officialId": "fantacalcio:2167",
       "fantacalcioId": 2167,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/orsolini/2167",
-      "fantamedia": 5.75
+      "fantamedia": 5.83
     },
     {
       "name": "Attaccante di raccordo",
@@ -274,7 +274,7 @@
       "officialId": "fantacalcio:4436",
       "fantacalcioId": 4436,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/cambiaghi/4436",
-      "fantamedia": 5.62
+      "fantamedia": 5.7
     },
     {
       "name": "Attaccante di raccordo",
@@ -310,7 +310,7 @@
       "officialId": "fantacalcio:4359",
       "fantacalcioId": 4359,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/piccoli/4359",
-      "fantamedia": 6.5
+      "fantamedia": 6.4
     },
     {
       "name": "Punta centrale",
@@ -328,7 +328,7 @@
       "officialId": "fantacalcio:184",
       "fantacalcioId": 184,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/bernardeschi/184",
-      "fantamedia": 6.38
+      "fantamedia": 7.1
     },
     {
       "name": "Centrocampista centrale",
@@ -337,7 +337,7 @@
       "officialId": "fantacalcio:5858",
       "fantacalcioId": 5858,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/ferguson/5858",
-      "fantamedia": 6.25
+      "fantamedia": 6.2
     },
     {
       "name": "Centrocampista centrale",
@@ -346,7 +346,7 @@
       "officialId": "fantacalcio:5298",
       "fantacalcioId": 5298,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/pobega/5298",
-      "fantamedia": 5.67
+      "fantamedia": 5.75
     },
     {
       "name": "Centrocampista centrale",
@@ -364,7 +364,7 @@
       "officialId": "fantacalcio:6054",
       "fantacalcioId": 6054,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/moro-n/6054",
-      "fantamedia": 5.5
+      "fantamedia": 5.67
     },
     {
       "name": "Centrocampista centrale",
@@ -391,7 +391,7 @@
       "officialId": "fantacalcio:2765",
       "fantacalcioId": 2765,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/odgaard/2765",
-      "fantamedia": 5.38
+      "fantamedia": 5.4
     },
     {
       "name": "Difensore Centrale",
@@ -436,7 +436,7 @@
       "officialId": "fantacalcio:4433",
       "fantacalcioId": 4433,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/zortea/4433",
-      "fantamedia": 6.0
+      "fantamedia": 5.83
     },
     {
       "name": "Difensore Destro",
@@ -445,7 +445,7 @@
       "officialId": "fantacalcio:487",
       "fantacalcioId": 487,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/de-silvestri/487",
-      "fantamedia": 0.0
+      "fantamedia": 5.5
     },
     {
       "name": "Difensore Sinistro",
@@ -454,7 +454,7 @@
       "officialId": "fantacalcio:4734",
       "fantacalcioId": 4734,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/miranda-j/4734",
-      "fantamedia": 6.17
+      "fantamedia": 6.12
     },
     {
       "name": "Difensore Sinistro",
@@ -463,7 +463,7 @@
       "officialId": "fantacalcio:5675",
       "fantacalcioId": 5675,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/theate/5675",
-      "fantamedia": 5.75
+      "fantamedia": 5.83
     },
     {
       "name": "Difensore Sinistro",
@@ -472,7 +472,7 @@
       "officialId": "fantacalcio:7212",
       "fantacalcioId": 7212,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/heggem/7212",
-      "fantamedia": 5.38
+      "fantamedia": 5.4
     },
     {
       "name": "Difensore Sinistro",
@@ -508,7 +508,7 @@
       "officialId": "fantacalcio:133",
       "fantacalcioId": 133,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/skorupski/133",
-      "fantamedia": 4.17
+      "fantamedia": 4.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -517,7 +517,7 @@
       "officialId": "fantacalcio:4896",
       "fantacalcioId": 4896,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/maldini/4896",
-      "fantamedia": 7.88
+      "fantamedia": 8.3
     },
     {
       "name": "Non gioca più in Serie A",
@@ -553,7 +553,7 @@
       "officialId": "fantacalcio:7547",
       "fantacalcioId": 7547,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/kevin-carlos/7547",
-      "fantamedia": 5.5
+      "fantamedia": 5.67
     },
     {
       "name": "Punta centrale",
@@ -562,7 +562,7 @@
       "officialId": "fantacalcio:7374",
       "fantacalcioId": 7374,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mendy-p/7374",
-      "fantamedia": 7.0
+      "fantamedia": 6.9
     },
     {
       "name": "Punta centrale",
@@ -589,7 +589,7 @@
       "officialId": "fantacalcio:4870",
       "fantacalcioId": 4870,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/adopo/4870",
-      "fantamedia": 6.75
+      "fantamedia": 6.7
     },
     {
       "name": "Centrocampista centrale",
@@ -598,7 +598,7 @@
       "officialId": "fantacalcio:7311",
       "fantacalcioId": 7311,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/romano/7311",
-      "fantamedia": 7.62
+      "fantamedia": 7.4
     },
     {
       "name": "Centrocampista centrale",
@@ -607,7 +607,7 @@
       "officialId": "fantacalcio:4260",
       "fantacalcioId": 4260,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/winks/4260",
-      "fantamedia": 6.25
+      "fantamedia": 6.3
     },
     {
       "name": "Centrocampista centrale",
@@ -625,7 +625,7 @@
       "officialId": "fantacalcio:1871",
       "fantacalcioId": 1871,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/deiola/1871",
-      "fantamedia": 6.0
+      "fantamedia": 5.9
     },
     {
       "name": "Centrocampista centrale",
@@ -697,7 +697,7 @@
       "officialId": "fantacalcio:4210",
       "fantacalcioId": 4210,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mina/4210",
-      "fantamedia": 0.0
+      "fantamedia": 6.5
     },
     {
       "name": "Difensore Centrale",
@@ -706,7 +706,7 @@
       "officialId": "fantacalcio:7274",
       "fantacalcioId": 7274,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/zè-pedro/7274",
-      "fantamedia": 6.12
+      "fantamedia": 6.2
     },
     {
       "name": "Difensore Centrale",
@@ -733,7 +733,7 @@
       "officialId": "fantacalcio:5701",
       "fantacalcioId": 5701,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/obert/5701",
-      "fantamedia": 6.25
+      "fantamedia": 6.2
     },
     {
       "name": "Difensore Sinistro",
@@ -742,7 +742,7 @@
       "officialId": "fantacalcio:7268",
       "fantacalcioId": 7268,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/rodriguez-ju/7268",
-      "fantamedia": 6.38
+      "fantamedia": 6.3
     },
     {
       "name": "Difensore Sinistro",
@@ -796,7 +796,7 @@
       "officialId": "fantacalcio:4360",
       "fantacalcioId": 4360,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/caprile/4360",
-      "fantamedia": 5.75
+      "fantamedia": 6.0
     },
     {
       "name": "Portiere",
@@ -1885,7 +1885,7 @@
       "officialId": "fantacalcio:2764",
       "fantacalcioId": 2764,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/martinez-l/2764",
-      "fantamedia": 8.0
+      "fantamedia": 9.5
     },
     {
       "name": "Punta centrale",
@@ -1894,7 +1894,7 @@
       "officialId": "fantacalcio:4871",
       "fantacalcioId": 4871,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/thuram/4871",
-      "fantamedia": 9.0
+      "fantamedia": 8.62
     },
     {
       "name": "Punta centrale",
@@ -1930,7 +1930,7 @@
       "officialId": "fantacalcio:1870",
       "fantacalcioId": 1870,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/barella/1870",
-      "fantamedia": 7.5
+      "fantamedia": 7.0
     },
     {
       "name": "Centrocampista centrale",
@@ -1939,7 +1939,7 @@
       "officialId": "fantacalcio:152",
       "fantacalcioId": 152,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/zielinski/152",
-      "fantamedia": 7.38
+      "fantamedia": 7.1
     },
     {
       "name": "Centrocampista centrale",
@@ -1948,7 +1948,7 @@
       "officialId": "fantacalcio:5172",
       "fantacalcioId": 5172,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/jones-c/5172",
-      "fantamedia": 6.17
+      "fantamedia": 6.0
     },
     {
       "name": "Centrocampista centrale",
@@ -1957,7 +1957,7 @@
       "officialId": "fantacalcio:6274",
       "fantacalcioId": 6274,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/diouf/6274",
-      "fantamedia": 7.67
+      "fantamedia": 7.38
     },
     {
       "name": "Centrocampista centrale",
@@ -1966,7 +1966,7 @@
       "officialId": "fantacalcio:7070",
       "fantacalcioId": 7070,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/sucic-p/7070",
-      "fantamedia": 5.83
+      "fantamedia": 5.88
     },
     {
       "name": "Centrocampista centrale",
@@ -2002,7 +2002,7 @@
       "officialId": "fantacalcio:4159",
       "fantacalcioId": 4159,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/akanji/4159",
-      "fantamedia": 5.88
+      "fantamedia": 5.8
     },
     {
       "name": "Difensore Centrale",
@@ -2011,7 +2011,7 @@
       "officialId": "fantacalcio:2120",
       "fantacalcioId": 2120,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/bastoni/2120",
-      "fantamedia": 6.12
+      "fantamedia": 5.9
     },
     {
       "name": "Difensore Centrale",
@@ -2020,7 +2020,7 @@
       "officialId": "fantacalcio:6217",
       "fantacalcioId": 6217,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/bisseck/6217",
-      "fantamedia": 7.83
+      "fantamedia": 7.25
     },
     {
       "name": "Difensore Centrale",
@@ -2047,7 +2047,7 @@
       "officialId": "fantacalcio:5877",
       "fantacalcioId": 5877,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/carlos-augusto/5877",
-      "fantamedia": 9.0
+      "fantamedia": 8.17
     },
     {
       "name": "Dimarco",
@@ -2056,7 +2056,7 @@
       "officialId": "fantacalcio:254",
       "fantacalcioId": 254,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/dimarco/254",
-      "fantamedia": 6.5
+      "fantamedia": 6.3
     },
     {
       "name": "Esterno",
@@ -2083,7 +2083,7 @@
       "officialId": "fantacalcio:5116",
       "fantacalcioId": 5116,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/inter/martinez-jo/5116",
-      "fantamedia": 4.38
+      "fantamedia": 4.4
     },
     {
       "name": "Provedel",
@@ -2389,7 +2389,7 @@
       "officialId": "fantacalcio:632",
       "fantacalcioId": 632,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/zaccagni/632",
-      "fantamedia": 6.5
+      "fantamedia": 7.2
     },
     {
       "name": "Attaccante di raccordo",
@@ -2398,7 +2398,7 @@
       "officialId": "fantacalcio:5800",
       "fantacalcioId": 5800,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/gudmundsson-a/5800",
-      "fantamedia": 6.67
+      "fantamedia": 6.5
     },
     {
       "name": "Attaccante di raccordo",
@@ -2407,7 +2407,7 @@
       "officialId": "fantacalcio:5500",
       "fantacalcioId": 5500,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/cancellieri/5500",
-      "fantamedia": 6.75
+      "fantamedia": 6.7
     },
     {
       "name": "Attaccante di raccordo",
@@ -2425,7 +2425,7 @@
       "officialId": "fantacalcio:6556",
       "fantacalcioId": 6556,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/noslin/6556",
-      "fantamedia": 8.0
+      "fantamedia": 8.67
     },
     {
       "name": "Non gioca più in Serie A",
@@ -2452,7 +2452,7 @@
       "officialId": "fantacalcio:2038",
       "fantacalcioId": 2038,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/pinamonti/2038",
-      "fantamedia": 5.25
+      "fantamedia": 5.5
     },
     {
       "name": "Centrocampista centrale",
@@ -2461,7 +2461,7 @@
       "officialId": "fantacalcio:7314",
       "fantacalcioId": 7314,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/taylor-k/7314",
-      "fantamedia": 6.25
+      "fantamedia": 6.3
     },
     {
       "name": "Centrocampista centrale",
@@ -2470,7 +2470,7 @@
       "officialId": "fantacalcio:2848",
       "fantacalcioId": 2848,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/frattesi/2848",
-      "fantamedia": 9.25
+      "fantamedia": 8.6
     },
     {
       "name": "Centrocampista centrale",
@@ -2497,7 +2497,7 @@
       "officialId": "fantacalcio:6191",
       "fantacalcioId": 6191,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/belahyane/6191",
-      "fantamedia": 6.0
+      "fantamedia": 6.12
     },
     {
       "name": "Centrocampista centrale",
@@ -2533,7 +2533,7 @@
       "officialId": "fantacalcio:7580",
       "fantacalcioId": 7580,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/sutalo-j/7580",
-      "fantamedia": 5.5
+      "fantamedia": 6.0
     },
     {
       "name": "Difensore Centrale",
@@ -2551,7 +2551,7 @@
       "officialId": "fantacalcio:7012",
       "fantacalcioId": 7012,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/provstgaard/7012",
-      "fantamedia": 5.88
+      "fantamedia": 5.9
     },
     {
       "name": "Difensore Centrale",
@@ -2578,7 +2578,7 @@
       "officialId": "fantacalcio:5620",
       "fantacalcioId": 5620,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/tavares-n/5620",
-      "fantamedia": 7.0
+      "fantamedia": 7.25
     },
     {
       "name": "Difensore Sinistro",
@@ -2614,7 +2614,7 @@
       "officialId": "fantacalcio:7131",
       "fantacalcioId": 7131,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/floriani-mussolini/7131",
-      "fantamedia": 5.88
+      "fantamedia": 5.8
     },
     {
       "name": "Non gioca più in Serie A",
@@ -2632,7 +2632,7 @@
       "officialId": "fantacalcio:6482",
       "fantacalcioId": 6482,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/mandas/6482",
-      "fantamedia": 5.62
+      "fantamedia": 6.6
     },
     {
       "name": "Portiere",
@@ -4036,7 +4036,7 @@
       "officialId": "fantacalcio:309",
       "fantacalcioId": 309,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/dybala/309",
-      "fantamedia": 8.12
+      "fantamedia": 8.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -4045,7 +4045,7 @@
       "officialId": "fantacalcio:5734",
       "fantacalcioId": 5734,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/soulè/5734",
-      "fantamedia": 8.25
+      "fantamedia": 7.9
     },
     {
       "name": "Non gioca più in Serie A",
@@ -4063,7 +4063,7 @@
       "officialId": "fantacalcio:5585",
       "fantacalcioId": 5585,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/malen/5585",
-      "fantamedia": 11.75
+      "fantamedia": 10.6
     },
     {
       "name": "Punta centrale",
@@ -4081,7 +4081,7 @@
       "officialId": "fantacalcio:5589",
       "fantacalcioId": 5589,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/konè-m/5589",
-      "fantamedia": 6.25
+      "fantamedia": 7.8
     },
     {
       "name": "Centrocampista centrale",
@@ -4090,7 +4090,7 @@
       "officialId": "fantacalcio:779",
       "fantacalcioId": 779,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/cristante/779",
-      "fantamedia": 6.38
+      "fantamedia": 6.4
     },
     {
       "name": "Centrocampista centrale",
@@ -4108,7 +4108,7 @@
       "officialId": "fantacalcio:6190",
       "fantacalcioId": 6190,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/pisilli/6190",
-      "fantamedia": 8.33
+      "fantamedia": 7.75
     },
     {
       "name": "Centrocampista centrale",
@@ -4144,7 +4144,7 @@
       "officialId": "fantacalcio:2296",
       "fantacalcioId": 2296,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/mancini/2296",
-      "fantamedia": 6.5
+      "fantamedia": 6.3
     },
     {
       "name": "Difensore Centrale",
@@ -4153,7 +4153,7 @@
       "officialId": "fantacalcio:4317",
       "fantacalcioId": 4317,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/n-dicka/4317",
-      "fantamedia": 6.5
+      "fantamedia": 6.17
     },
     {
       "name": "Difensore Centrale",
@@ -4162,7 +4162,7 @@
       "officialId": "fantacalcio:4807",
       "fantacalcioId": 4807,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/hermoso/4807",
-      "fantamedia": 7.12
+      "fantamedia": 6.8
     },
     {
       "name": "Difensore Centrale",
@@ -4180,7 +4180,7 @@
       "officialId": "fantacalcio:4705",
       "fantacalcioId": 4705,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/balerdi/4705",
-      "fantamedia": 6.75
+      "fantamedia": 6.67
     },
     {
       "name": "Difensore Centrale",
@@ -4189,7 +4189,7 @@
       "officialId": "fantacalcio:6631",
       "fantacalcioId": 6631,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/ghilardi/6631",
-      "fantamedia": 6.25
+      "fantamedia": 6.0
     },
     {
       "name": "Difensore Destro",
@@ -4198,7 +4198,7 @@
       "officialId": "fantacalcio:6986",
       "fantacalcioId": 6986,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/rensch/6986",
-      "fantamedia": 0.0
+      "fantamedia": 6.0
     },
     {
       "name": "Esterno",
@@ -4207,7 +4207,7 @@
       "officialId": "fantacalcio:7181",
       "fantacalcioId": 7181,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/wesley/7181",
-      "fantamedia": 7.0
+      "fantamedia": 6.75
     },
     {
       "name": "Esterno",
@@ -4225,7 +4225,7 @@
       "officialId": "fantacalcio:4998",
       "fantacalcioId": 4998,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/molina-n/4998",
-      "fantamedia": 6.0
+      "fantamedia": 6.38
     },
     {
       "name": "Non gioca più in Serie A",
@@ -4252,7 +4252,7 @@
       "officialId": "fantacalcio:5841",
       "fantacalcioId": 5841,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/svilar/5841",
-      "fantamedia": 6.0
+      "fantamedia": 5.7
     },
     {
       "name": "Portiere",
@@ -4585,7 +4585,7 @@
       "officialId": "fantacalcio:2061",
       "fantacalcioId": 2061,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/simeone/2061",
-      "fantamedia": 5.75
+      "fantamedia": 5.7
     },
     {
       "name": "Punta centrale",
@@ -4603,7 +4603,7 @@
       "officialId": "fantacalcio:7349",
       "fantacalcioId": 7349,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/kulenovic/7349",
-      "fantamedia": 5.5
+      "fantamedia": 7.75
     },
     {
       "name": "Cacciamani",
@@ -4612,7 +4612,7 @@
       "officialId": "fantacalcio:7060",
       "fantacalcioId": 7060,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/cacciamani/7060",
-      "fantamedia": 6.38
+      "fantamedia": 6.3
     },
     {
       "name": "Centrocampista centrale",
@@ -4621,7 +4621,7 @@
       "officialId": "fantacalcio:1933",
       "fantacalcioId": 1933,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/mandragora/1933",
-      "fantamedia": 6.88
+      "fantamedia": 6.9
     },
     {
       "name": "Centrocampista centrale",
@@ -4639,7 +4639,7 @@
       "officialId": "fantacalcio:7624",
       "fantacalcioId": 7624,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/braganca/7624",
-      "fantamedia": 6.25
+      "fantamedia": 6.0
     },
     {
       "name": "Centrocampista centrale",
@@ -4666,7 +4666,7 @@
       "officialId": "fantacalcio:6005",
       "fantacalcioId": 6005,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/ilkhan/6005",
-      "fantamedia": 5.75
+      "fantamedia": 5.83
     },
     {
       "name": "Non gioca più in Serie A",
@@ -4684,7 +4684,7 @@
       "officialId": "fantacalcio:5687",
       "fantacalcioId": 5687,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/vlasic/5687",
-      "fantamedia": 5.62
+      "fantamedia": 5.6
     },
     {
       "name": "Trequartista",
@@ -4693,7 +4693,7 @@
       "officialId": "fantacalcio:6218",
       "fantacalcioId": 6218,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/oristanio/6218",
-      "fantamedia": 0.0
+      "fantamedia": 6.0
     },
     {
       "name": "Difensore Centrale",
@@ -4711,7 +4711,7 @@
       "officialId": "fantacalcio:6642",
       "fantacalcioId": 6642,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/coco/6642",
-      "fantamedia": 5.75
+      "fantamedia": 5.8
     },
     {
       "name": "Difensore Centrale",
@@ -4720,7 +4720,7 @@
       "officialId": "fantacalcio:5010",
       "fantacalcioId": 5010,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/ismajli/5010",
-      "fantamedia": 6.17
+      "fantamedia": 6.12
     },
     {
       "name": "Difensore Centrale",
@@ -4729,7 +4729,7 @@
       "officialId": "fantacalcio:7526",
       "fantacalcioId": 7526,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/comert/7526",
-      "fantamedia": 6.17
+      "fantamedia": 6.12
     },
     {
       "name": "Difensore Destro",
@@ -4738,7 +4738,7 @@
       "officialId": "fantacalcio:7220",
       "fantacalcioId": 7220,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/belghali/7220",
-      "fantamedia": 6.25
+      "fantamedia": 6.0
     },
     {
       "name": "Difensore Destro",
@@ -4747,7 +4747,7 @@
       "officialId": "fantacalcio:5751",
       "fantacalcioId": 5751,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/patterson/5751",
-      "fantamedia": 6.0
+      "fantamedia": 5.75
     },
     {
       "name": "Difensore Sinistro",
@@ -4774,7 +4774,7 @@
       "officialId": "fantacalcio:7069",
       "fantacalcioId": 7069,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/fortini/7069",
-      "fantamedia": 6.12
+      "fantamedia": 6.0
     },
     {
       "name": "Non gioca più in Serie A",
@@ -4810,7 +4810,7 @@
       "officialId": "fantacalcio:6534",
       "fantacalcioId": 6534,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/perri/6534",
-      "fantamedia": 3.75
+      "fantamedia": 4.17
     },
     {
       "name": "Portiere",
@@ -4828,7 +4828,7 @@
       "officialId": "fantacalcio:2766",
       "fantacalcioId": 2766,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/zaniolo/2766",
-      "fantamedia": 6.5
+      "fantamedia": 5.5
     },
     {
       "name": "Non gioca più in Serie A",
@@ -4846,7 +4846,7 @@
       "officialId": "fantacalcio:5637",
       "fantacalcioId": 5637,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/davis-k/5637",
-      "fantamedia": 7.0
+      "fantamedia": 6.75
     },
     {
       "name": "Punta centrale",
@@ -4855,7 +4855,7 @@
       "officialId": "fantacalcio:7272",
       "fantacalcioId": 7272,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/gueye/7272",
-      "fantamedia": 6.83
+      "fantamedia": 6.62
     },
     {
       "name": "Punta centrale",
@@ -4864,7 +4864,7 @@
       "officialId": "fantacalcio:7161",
       "fantacalcioId": 7161,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/bayo-v/7161",
-      "fantamedia": 4.75
+      "fantamedia": 5.0
     },
     {
       "name": "Centrocampista centrale",
@@ -4873,7 +4873,7 @@
       "officialId": "fantacalcio:6684",
       "fantacalcioId": 6684,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/ekkelenkamp/6684",
-      "fantamedia": 8.12
+      "fantamedia": 7.7
     },
     {
       "name": "Centrocampista centrale",
@@ -4882,7 +4882,7 @@
       "officialId": "fantacalcio:6680",
       "fantacalcioId": 6680,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/karlstrom/6680",
-      "fantamedia": 6.62
+      "fantamedia": 6.4
     },
     {
       "name": "Centrocampista centrale",
@@ -4900,7 +4900,7 @@
       "officialId": "fantacalcio:7208",
       "fantacalcioId": 7208,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/miller-l/7208",
-      "fantamedia": 5.75
+      "fantamedia": 5.6
     },
     {
       "name": "Centrocampista centrale",
@@ -4936,7 +4936,7 @@
       "officialId": "fantacalcio:7418",
       "fantacalcioId": 7418,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/chakvetadze/7418",
-      "fantamedia": 5.5
+      "fantamedia": 5.75
     },
     {
       "name": "Trequartista",
@@ -4954,7 +4954,7 @@
       "officialId": "fantacalcio:6783",
       "fantacalcioId": 6783,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/unai-gomez/6783",
-      "fantamedia": 6.0
+      "fantamedia": 5.75
     },
     {
       "name": "Difensore Centrale",
@@ -4972,7 +4972,7 @@
       "officialId": "fantacalcio:6021",
       "fantacalcioId": 6021,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/abankwah/6021",
-      "fantamedia": 6.75
+      "fantamedia": 6.6
     },
     {
       "name": "Difensore Centrale",
@@ -4981,7 +4981,7 @@
       "officialId": "fantacalcio:4263",
       "fantacalcioId": 4263,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/kabasele/4263",
-      "fantamedia": 5.25
+      "fantamedia": 5.17
     },
     {
       "name": "Difensore Centrale",
@@ -4999,7 +4999,7 @@
       "officialId": "fantacalcio:4994",
       "fantacalcioId": 4994,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/vojvoda/4994",
-      "fantamedia": 5.88
+      "fantamedia": 5.8
     },
     {
       "name": "Difensore Destro",
@@ -5008,7 +5008,7 @@
       "officialId": "fantacalcio:5527",
       "fantacalcioId": 5527,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/zanoli/5527",
-      "fantamedia": 0.0
+      "fantamedia": 6.0
     },
     {
       "name": "Difensore Sinistro",
@@ -5017,7 +5017,7 @@
       "officialId": "fantacalcio:5555",
       "fantacalcioId": 5555,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/kamara-h/5555",
-      "fantamedia": 7.88
+      "fantamedia": 7.5
     },
     {
       "name": "Difensore Sinistro",
@@ -5035,7 +5035,7 @@
       "officialId": "fantacalcio:5994",
       "fantacalcioId": 5994,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/ebosse/5994",
-      "fantamedia": 5.62
+      "fantamedia": 5.6
     },
     {
       "name": "Difensore Sinistro",
@@ -5071,7 +5071,7 @@
       "officialId": "fantacalcio:6462",
       "fantacalcioId": 6462,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/okoye/6462",
-      "fantamedia": 3.75
+      "fantamedia": 4.0
     },
     {
       "name": "Portiere",
@@ -5098,7 +5098,7 @@
       "officialId": "fantacalcio:6904",
       "fantacalcioId": 6904,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/yeboah-j/6904",
-      "fantamedia": 7.0
+      "fantamedia": 6.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -5125,7 +5125,7 @@
       "officialId": "fantacalcio:7484",
       "fantacalcioId": 7484,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/adams-a/7484",
-      "fantamedia": 6.38
+      "fantamedia": 6.1
     },
     {
       "name": "Punta centrale",
@@ -5179,7 +5179,7 @@
       "officialId": "fantacalcio:6994",
       "fantacalcioId": 6994,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/perez-k/6994",
-      "fantamedia": 5.62
+      "fantamedia": 5.6
     },
     {
       "name": "Centrocampista centrale",
@@ -5188,7 +5188,7 @@
       "officialId": "fantacalcio:5319",
       "fantacalcioId": 5319,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/sohm/5319",
-      "fantamedia": 4.83
+      "fantamedia": 5.12
     },
     {
       "name": "Centrocampista centrale",
@@ -5242,7 +5242,7 @@
       "officialId": "fantacalcio:6890",
       "fantacalcioId": 6890,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/moreno-m/6890",
-      "fantamedia": 5.0
+      "fantamedia": 5.17
     },
     {
       "name": "Difensore Centrale",
@@ -5269,7 +5269,7 @@
       "officialId": "fantacalcio:6821",
       "fantacalcioId": 6821,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/hainaut/6821",
-      "fantamedia": 7.12
+      "fantamedia": 6.9
     },
     {
       "name": "Difensore Destro",
@@ -5278,7 +5278,7 @@
       "officialId": "fantacalcio:6681",
       "fantacalcioId": 6681,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/sagrado/6681",
-      "fantamedia": 7.25
+      "fantamedia": 6.83
     },
     {
       "name": "Difensore Sinistro",
@@ -5287,7 +5287,7 @@
       "officialId": "fantacalcio:4845",
       "fantacalcioId": 4845,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/correia-t/4845",
-      "fantamedia": 5.83
+      "fantamedia": 5.75
     },
     {
       "name": "Difensore Sinistro",
@@ -5305,7 +5305,7 @@
       "officialId": "fantacalcio:256",
       "fantacalcioId": 256,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/juan-jesus/256",
-      "fantamedia": 6.0
+      "fantamedia": 5.5
     },
     {
       "name": "Difensore Sinistro",
@@ -5377,7 +5377,7 @@
       "officialId": "fantacalcio:6248",
       "fantacalcioId": 6248,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/venezia/stankovic-f/6248",
-      "fantamedia": 3.25
+      "fantamedia": 3.4
     }
   ]
 }
