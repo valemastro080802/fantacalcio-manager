@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-24T11:24:06.762090+00:00",
+  "generated_at": "2026-09-24T12:30:08.458937+00:00",
   "teams": 20,
-  "players_count": 597,
+  "players_count": 598,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -4964,6 +4964,15 @@
       "fantacalcioId": 6956,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/solet/6956",
       "fantamedia": 6.17
+    },
+    {
+      "name": "Difensore Centrale",
+      "team": "Udinese",
+      "role": "D",
+      "officialId": "fantacalcio:2404",
+      "fantacalcioId": 2404,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/udinese/alaba/2404",
+      "fantamedia": 0.0
     },
     {
       "name": "Difensore Centrale",
