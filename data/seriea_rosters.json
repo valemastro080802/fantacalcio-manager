@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-09-28T14:28:55.911154+00:00",
+  "generated_at": "2026-09-28T15:28:18.459845+00:00",
   "teams": 20,
-  "players_count": 598,
+  "players_count": 599,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -2383,6 +2383,15 @@
       "fantamedia": 0.0
     },
     {
+      "name": "Portiere",
+      "team": "Juventus",
+      "role": "P",
+      "officialId": "fantacalcio:283",
+      "fantacalcioId": 283,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/juventus/neto/283",
+      "fantamedia": 0.0
+    },
+    {
       "name": "Attaccante di raccordo",
       "team": "Lazio",
       "role": "A",
@@ -2554,15 +2563,6 @@
       "fantamedia": 5.9
     },
     {
-      "name": "Difensore Centrale",
-      "team": "Lazio",
-      "role": "D",
-      "officialId": "fantacalcio:327",
-      "fantacalcioId": 327,
-      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/patric/327",
-      "fantamedia": 0.0
-    },
-    {
       "name": "Difensore Destro",
       "team": "Lazio",
       "role": "D",
@@ -2623,6 +2623,15 @@
       "officialId": "fantacalcio:460",
       "fantacalcioId": 460,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/romagnoli/460",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Non gioca più in Serie A",
+      "team": "Lazio",
+      "role": "D",
+      "officialId": "fantacalcio:327",
+      "fantacalcioId": 327,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/lazio/patric/327",
       "fantamedia": 0.0
     },
     {
