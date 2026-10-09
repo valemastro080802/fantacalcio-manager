@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-10-08T19:54:49.023449+00:00",
+  "generated_at": "2026-10-09T00:19:49.134367+00:00",
   "teams": 20,
-  "players_count": 600,
+  "players_count": 601,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -446,6 +446,15 @@
       "fantacalcioId": 4433,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/zortea/4433",
       "fantamedia": 5.83
+    },
+    {
+      "name": "Difensore Destro",
+      "team": "Bologna",
+      "role": "D",
+      "officialId": "fantacalcio:2525",
+      "fantacalcioId": 2525,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/bologna/darmian/2525",
+      "fantamedia": 0.0
     },
     {
       "name": "Difensore Destro",
