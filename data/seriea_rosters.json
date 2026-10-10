@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-10-10T17:49:58.759162+00:00",
+  "generated_at": "2026-10-10T21:38:14.820141+00:00",
   "teams": 20,
-  "players_count": 601,
+  "players_count": 603,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -1697,6 +1697,15 @@
       "fantacalcioId": 7341,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/amorim/7341",
       "fantamedia": 5.5
+    },
+    {
+      "name": "Centrocampista centrale",
+      "team": "Genoa",
+      "role": "C",
+      "officialId": "fantacalcio:7608",
+      "fantacalcioId": 7608,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/genoa/wiafe/7608",
+      "fantamedia": 0.0
     },
     {
       "name": "El Shaarawy",
@@ -4288,6 +4297,15 @@
       "officialId": "fantacalcio:610",
       "fantacalcioId": 610,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/gollini/610",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Vasquez D.",
+      "team": "Roma",
+      "role": "P",
+      "officialId": "fantacalcio:6125",
+      "fantacalcioId": 6125,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/roma/vasquez-d/6125",
       "fantamedia": 0.0
     },
     {
