@@ -2,7 +2,7 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-10-19T23:36:04.487663+00:00",
+  "generated_at": "2026-10-20T04:43:14.281050+00:00",
   "teams": 20,
   "players_count": 603,
   "players": [
@@ -535,7 +535,7 @@
       "officialId": "fantacalcio:4896",
       "fantacalcioId": 4896,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/maldini/4896",
-      "fantamedia": 8.58
+      "fantamedia": 8.07
     },
     {
       "name": "Non gioca più in Serie A",
@@ -571,7 +571,7 @@
       "officialId": "fantacalcio:7374",
       "fantacalcioId": 7374,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mendy-p/7374",
-      "fantamedia": 7.0
+      "fantamedia": 6.79
     },
     {
       "name": "Punta centrale",
@@ -580,7 +580,7 @@
       "officialId": "fantacalcio:7547",
       "fantacalcioId": 7547,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/kevin-carlos/7547",
-      "fantamedia": 5.67
+      "fantamedia": 5.75
     },
     {
       "name": "Punta centrale",
@@ -607,7 +607,7 @@
       "officialId": "fantacalcio:4870",
       "fantacalcioId": 4870,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/adopo/4870",
-      "fantamedia": 6.67
+      "fantamedia": 6.36
     },
     {
       "name": "Centrocampista centrale",
@@ -616,7 +616,7 @@
       "officialId": "fantacalcio:7311",
       "fantacalcioId": 7311,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/romano/7311",
-      "fantamedia": 7.25
+      "fantamedia": 6.93
     },
     {
       "name": "Centrocampista centrale",
@@ -625,7 +625,7 @@
       "officialId": "fantacalcio:4260",
       "fantacalcioId": 4260,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/winks/4260",
-      "fantamedia": 6.25
+      "fantamedia": 6.0
     },
     {
       "name": "Centrocampista centrale",
@@ -688,7 +688,7 @@
       "officialId": "fantacalcio:6815",
       "fantacalcioId": 6815,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/fadera/6815",
-      "fantamedia": 6.0
+      "fantamedia": 5.9
     },
     {
       "name": "Felici",
@@ -715,7 +715,7 @@
       "officialId": "fantacalcio:4210",
       "fantacalcioId": 4210,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/mina/4210",
-      "fantamedia": 6.25
+      "fantamedia": 5.67
     },
     {
       "name": "Difensore Centrale",
@@ -724,7 +724,7 @@
       "officialId": "fantacalcio:7274",
       "fantacalcioId": 7274,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/zè-pedro/7274",
-      "fantamedia": 6.17
+      "fantamedia": 5.93
     },
     {
       "name": "Difensore Centrale",
@@ -742,7 +742,7 @@
       "officialId": "fantacalcio:7621",
       "fantacalcioId": 7621,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/sugawara/7621",
-      "fantamedia": 6.0
+      "fantamedia": 5.88
     },
     {
       "name": "Difensore Sinistro",
@@ -751,7 +751,7 @@
       "officialId": "fantacalcio:5701",
       "fantacalcioId": 5701,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/obert/5701",
-      "fantamedia": 6.08
+      "fantamedia": 5.86
     },
     {
       "name": "Difensore Sinistro",
@@ -760,7 +760,7 @@
       "officialId": "fantacalcio:7268",
       "fantacalcioId": 7268,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/rodriguez-ju/7268",
-      "fantamedia": 6.17
+      "fantamedia": 5.93
     },
     {
       "name": "Difensore Sinistro",
@@ -814,7 +814,7 @@
       "officialId": "fantacalcio:4360",
       "fantacalcioId": 4360,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/caprile/4360",
-      "fantamedia": 6.0
+      "fantamedia": 5.36
     },
     {
       "name": "Portiere",
@@ -3253,7 +3253,7 @@
       "officialId": "fantacalcio:5882",
       "fantacalcioId": 5882,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/mota/5882",
-      "fantamedia": 6.83
+      "fantamedia": 7.0
     },
     {
       "name": "Attaccante di raccordo",
@@ -3262,7 +3262,7 @@
       "officialId": "fantacalcio:7546",
       "fantacalcioId": 7546,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/robinson-j/7546",
-      "fantamedia": 7.67
+      "fantamedia": 8.25
     },
     {
       "name": "Attaccante di raccordo",
@@ -3298,7 +3298,7 @@
       "officialId": "fantacalcio:7523",
       "fantacalcioId": 7523,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/varela-g/7523",
-      "fantamedia": 9.0
+      "fantamedia": 10.0
     },
     {
       "name": "Punta centrale",
@@ -3316,7 +3316,7 @@
       "officialId": "fantacalcio:6593",
       "fantacalcioId": 6593,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/akinsanmiro/6593",
-      "fantamedia": 6.2
+      "fantamedia": 6.33
     },
     {
       "name": "Centrocampista centrale",
@@ -3343,7 +3343,7 @@
       "officialId": "fantacalcio:7574",
       "fantacalcioId": 7574,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/foe-ondoa/7574",
-      "fantamedia": 5.67
+      "fantamedia": 6.12
     },
     {
       "name": "Centrocampista centrale",
@@ -3415,7 +3415,7 @@
       "officialId": "fantacalcio:7238",
       "fantacalcioId": 7238,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/kouadio/7238",
-      "fantamedia": 5.42
+      "fantamedia": 6.07
     },
     {
       "name": "Difensore Centrale",
@@ -3424,7 +3424,7 @@
       "officialId": "fantacalcio:6537",
       "fantacalcioId": 6537,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/goglichidze/6537",
-      "fantamedia": 9.5
+      "fantamedia": 8.0
     },
     {
       "name": "Difensore Centrale",
@@ -3460,7 +3460,7 @@
       "officialId": "fantacalcio:7485",
       "fantacalcioId": 7485,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/mangas/7485",
-      "fantamedia": 7.0
+      "fantamedia": 6.93
     },
     {
       "name": "Difensore Sinistro",
@@ -3469,7 +3469,7 @@
       "officialId": "fantacalcio:5838",
       "fantacalcioId": 5838,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/birindelli/5838",
-      "fantamedia": 6.17
+      "fantamedia": 6.14
     },
     {
       "name": "Difensore Sinistro",
@@ -3478,7 +3478,7 @@
       "officialId": "fantacalcio:4925",
       "fantacalcioId": 4925,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/carboni-a/4925",
-      "fantamedia": 5.5
+      "fantamedia": 5.64
     },
     {
       "name": "Difensore Sinistro",
@@ -3532,7 +3532,7 @@
       "officialId": "fantacalcio:7301",
       "fantacalcioId": 7301,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/monza/tornqvist/7301",
-      "fantamedia": 4.25
+      "fantamedia": 5.17
     },
     {
       "name": "Attaccante di raccordo",
@@ -3802,7 +3802,7 @@
       "officialId": "fantacalcio:7561",
       "fantacalcioId": 7561,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/lontani/7561",
-      "fantamedia": 6.42
+      "fantamedia": 6.29
     },
     {
       "name": "Attaccante di raccordo",
@@ -3811,7 +3811,7 @@
       "officialId": "fantacalcio:7536",
       "fantacalcioId": 7536,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/diallo-o/7536",
-      "fantamedia": 5.5
+      "fantamedia": 5.75
     },
     {
       "name": "Attaccante di raccordo",
@@ -3820,7 +3820,7 @@
       "officialId": "fantacalcio:7213",
       "fantacalcioId": 7213,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/frigan/7213",
-      "fantamedia": 5.5
+      "fantamedia": 5.67
     },
     {
       "name": "Non gioca più in Serie A",
@@ -3838,7 +3838,7 @@
       "officialId": "fantacalcio:7554",
       "fantacalcioId": 7554,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/romero-d/7554",
-      "fantamedia": 7.4
+      "fantamedia": 7.17
     },
     {
       "name": "Punta centrale",
@@ -3847,7 +3847,7 @@
       "officialId": "fantacalcio:6229",
       "fantacalcioId": 6229,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/tourè-e/6229",
-      "fantamedia": 5.67
+      "fantamedia": 5.64
     },
     {
       "name": "Punta centrale",
@@ -3874,7 +3874,7 @@
       "officialId": "fantacalcio:6666",
       "fantacalcioId": 6666,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/bernabè/6666",
-      "fantamedia": 5.88
+      "fantamedia": 5.9
     },
     {
       "name": "Centrocampista centrale",
@@ -3883,7 +3883,7 @@
       "officialId": "fantacalcio:6898",
       "fantacalcioId": 6898,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/keita-m/6898",
-      "fantamedia": 5.58
+      "fantamedia": 5.57
     },
     {
       "name": "Centrocampista centrale",
@@ -3901,7 +3901,7 @@
       "officialId": "fantacalcio:6206",
       "fantacalcioId": 6206,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/fabbian/6206",
-      "fantamedia": 5.33
+      "fantamedia": 5.25
     },
     {
       "name": "Centrocampista centrale",
@@ -3910,7 +3910,7 @@
       "officialId": "fantacalcio:7138",
       "fantacalcioId": 7138,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/ordonez-c/7138",
-      "fantamedia": 5.83
+      "fantamedia": 5.88
     },
     {
       "name": "Centrocampista centrale",
@@ -3946,7 +3946,7 @@
       "officialId": "fantacalcio:4137",
       "fantacalcioId": 4137,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/diego-carlos/4137",
-      "fantamedia": 5.62
+      "fantamedia": 5.4
     },
     {
       "name": "Difensore Centrale",
@@ -3955,7 +3955,7 @@
       "officialId": "fantacalcio:7235",
       "fantacalcioId": 7235,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/troilo/7235",
-      "fantamedia": 5.5
+      "fantamedia": 5.36
     },
     {
       "name": "Difensore Centrale",
@@ -3973,7 +3973,7 @@
       "officialId": "fantacalcio:7615",
       "fantacalcioId": 7615,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/drobnic/7615",
-      "fantamedia": 5.5
+      "fantamedia": 5.67
     },
     {
       "name": "Difensore Centrale",
@@ -3991,7 +3991,7 @@
       "officialId": "fantacalcio:6664",
       "fantacalcioId": 6664,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/delprato/6664",
-      "fantamedia": 5.75
+      "fantamedia": 5.64
     },
     {
       "name": "Difensore Sinistro",
@@ -4000,7 +4000,7 @@
       "officialId": "fantacalcio:5862",
       "fantacalcioId": 5862,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/valeri/5862",
-      "fantamedia": 5.75
+      "fantamedia": 5.64
     },
     {
       "name": "Difensore Sinistro",
@@ -4009,7 +4009,7 @@
       "officialId": "fantacalcio:7255",
       "fantacalcioId": 7255,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/britschgi/7255",
-      "fantamedia": 5.83
+      "fantamedia": 5.38
     },
     {
       "name": "Difensore Sinistro",
@@ -4054,7 +4054,7 @@
       "officialId": "fantacalcio:6662",
       "fantacalcioId": 6662,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/parma/corvi/6662",
-      "fantamedia": 4.5
+      "fantamedia": 4.21
     },
     {
       "name": "Portiere",
@@ -4612,7 +4612,7 @@
       "officialId": "fantacalcio:6646",
       "fantacalcioId": 6646,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/adams-c/6646",
-      "fantamedia": 8.0
+      "fantamedia": 8.4
     },
     {
       "name": "Attaccante di raccordo",
@@ -4621,7 +4621,7 @@
       "officialId": "fantacalcio:7183",
       "fantacalcioId": 7183,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/aboukhlal/7183",
-      "fantamedia": 5.5
+      "fantamedia": 5.67
     },
     {
       "name": "Punta centrale",
@@ -4630,7 +4630,7 @@
       "officialId": "fantacalcio:2061",
       "fantacalcioId": 2061,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/simeone/2061",
-      "fantamedia": 5.75
+      "fantamedia": 6.93
     },
     {
       "name": "Punta centrale",
@@ -4639,7 +4639,7 @@
       "officialId": "fantacalcio:7349",
       "fantacalcioId": 7349,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/kulenovic/7349",
-      "fantamedia": 8.33
+      "fantamedia": 7.75
     },
     {
       "name": "Punta centrale",
@@ -4657,7 +4657,7 @@
       "officialId": "fantacalcio:7060",
       "fantacalcioId": 7060,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/cacciamani/7060",
-      "fantamedia": 6.25
+      "fantamedia": 6.29
     },
     {
       "name": "Centrocampista centrale",
@@ -4666,7 +4666,7 @@
       "officialId": "fantacalcio:1933",
       "fantacalcioId": 1933,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/mandragora/1933",
-      "fantamedia": 6.83
+      "fantamedia": 6.71
     },
     {
       "name": "Centrocampista centrale",
@@ -4675,7 +4675,7 @@
       "officialId": "fantacalcio:7624",
       "fantacalcioId": 7624,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/braganca/7624",
-      "fantamedia": 7.0
+      "fantamedia": 6.9
     },
     {
       "name": "Centrocampista centrale",
@@ -4684,7 +4684,7 @@
       "officialId": "fantacalcio:5888",
       "fantacalcioId": 5888,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/casadei/5888",
-      "fantamedia": 5.0
+      "fantamedia": 5.5
     },
     {
       "name": "Centrocampista centrale",
@@ -4702,7 +4702,7 @@
       "officialId": "fantacalcio:6170",
       "fantacalcioId": 6170,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/gineitis/6170",
-      "fantamedia": 5.5
+      "fantamedia": 5.6
     },
     {
       "name": "Centrocampista centrale",
@@ -4729,7 +4729,7 @@
       "officialId": "fantacalcio:5687",
       "fantacalcioId": 5687,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/vlasic/5687",
-      "fantamedia": 5.75
+      "fantamedia": 5.86
     },
     {
       "name": "Trequartista",
@@ -4747,7 +4747,7 @@
       "officialId": "fantacalcio:6642",
       "fantacalcioId": 6642,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/coco/6642",
-      "fantamedia": 5.92
+      "fantamedia": 5.93
     },
     {
       "name": "Difensore Centrale",
@@ -4765,7 +4765,7 @@
       "officialId": "fantacalcio:5010",
       "fantacalcioId": 5010,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/ismajli/5010",
-      "fantamedia": 6.1
+      "fantamedia": 6.08
     },
     {
       "name": "Difensore Centrale",
@@ -4783,7 +4783,7 @@
       "officialId": "fantacalcio:7220",
       "fantacalcioId": 7220,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/belghali/7220",
-      "fantamedia": 6.0
+      "fantamedia": 6.6
     },
     {
       "name": "Difensore Destro",
@@ -4855,7 +4855,7 @@
       "officialId": "fantacalcio:6534",
       "fantacalcioId": 6534,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/perri/6534",
-      "fantamedia": 4.38
+      "fantamedia": 4.7
     },
     {
       "name": "Portiere",
