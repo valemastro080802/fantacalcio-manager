@@ -2,9 +2,9 @@
   "source": "Fantacalcio.it - Quotazioni + Statistiche ufficiali Serie A 2026/27",
   "source_url": "https://www.fantacalcio.it/quotazioni-fantacalcio/2026-27",
   "stats_source_url": "https://www.fantacalcio.it/statistiche-serie-a/2026-27/italia",
-  "generated_at": "2026-11-25T09:47:39.043423+00:00",
+  "generated_at": "2026-11-25T19:53:51.797086+00:00",
   "teams": 20,
-  "players_count": 603,
+  "players_count": 606,
   "players": [
     {
       "name": "Attaccante di raccordo",
@@ -256,6 +256,15 @@
       "officialId": "fantacalcio:7626",
       "fantacalcioId": 7626,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/pompei/7626",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Sonzogni",
+      "team": "Atalanta",
+      "role": "P",
+      "officialId": "fantacalcio:7653",
+      "fantacalcioId": 7653,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/atalanta/sonzogni/7653",
       "fantamedia": 0.0
     },
     {
@@ -778,6 +787,15 @@
       "officialId": "fantacalcio:7548",
       "fantacalcioId": 7548,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/aurelio/7548",
+      "fantamedia": 0.0
+    },
+    {
+      "name": "Difensore Sinistro",
+      "team": "Cagliari",
+      "role": "D",
+      "officialId": "fantacalcio:7662",
+      "fantacalcioId": 7662,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/cagliari/grandu/7662",
       "fantamedia": 0.0
     },
     {
@@ -4649,6 +4667,15 @@
       "fantacalcioId": 608,
       "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/zapata-d/608",
       "fantamedia": 5.75
+    },
+    {
+      "name": "Punta centrale",
+      "team": "Torino",
+      "role": "A",
+      "officialId": "fantacalcio:2103",
+      "fantacalcioId": 2103,
+      "profileUrl": "https://www.fantacalcio.it/serie-a/squadre/torino/pellegri/2103",
+      "fantamedia": 0.0
     },
     {
       "name": "Cacciamani",
